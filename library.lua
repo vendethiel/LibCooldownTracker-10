@@ -46,8 +46,6 @@ local registered_units = {} -- [unitid] = count
 -- spell_data = GetCooldownData(spellid)
 
 function lib:Enable()
-	print("lib:Enable")
-
 	self.frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 	self.frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 	self.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
@@ -61,8 +59,6 @@ function lib:Enable()
 end
 
 function lib:Disable()
-	print("lib:Disable")
-
 	self.frame:UnregisterAllEvents()
 end
 
@@ -207,7 +203,6 @@ function lib:CooldownUsed(event, unit, spellId)
 			end
 		end
 
-		-- print(UnitName(unit), "used", spelldata.name, "cooldown:", spelldata.cooldown, used_start, used_end, cooldown_start)
 		if used_start then
 			tpu[spellId].used_start = now
 			tpu[spellId].used_end = spelldata.duration and (now + spelldata.duration)
