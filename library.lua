@@ -118,7 +118,7 @@ function lib:PLAYER_ENTERING_WORLD()
 
 	-- reset cooldowns when joining an arena
 	if instanceType == "arena" then
-		for unit in pairs(tracked, players) do
+		for unit in pairs(tracked_players) do
 			tracked_players[unit] = nil
 			self.callbacks:Fire("CooldownsReset", unit)
 		end
