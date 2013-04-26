@@ -1,3 +1,17 @@
+--[[
+	Callbacks:
+		LCT_CooldownUsed(unitid, spellid)
+		LCT_CooldownsReset(unit)
+
+	Functions:
+		lib:RegisterUnit(unitid)
+		lib:UnregisterUnit(unitid)
+		tpu = lib:GetUnitCooldownInfo(unitid, spellid)
+		for spellid, spell_data in lib:IterateCooldowns(class, specId, race) do
+		spell_data = lib:GetCooldownData(spellid)
+		spells_data = lib:GetCooldownsData()
+]]
+
 local version = 1
 local lib = LibStub:NewLibrary("LibCooldownTracker-1.0", version)
 
@@ -18,35 +32,36 @@ local tinsert, tsort = table.insert, table.sort
 local pairs, ipairs, select, type = pairs, ipairs, select, type
 local min, max = math.min, math.max
 local GetTime, UnitExists, UnitFactionGroup, UnitRace, UnitGUID = GetTime, UnitExists, UnitFactionGroup, UnitRace, UnitGUID
-local SpellData = LCT_SpellData
 
 -- insert additional info into SpellData
-for spellid, spelldata in pairs(LCT_SpellData) do
-	if type(spelldata) == "table" then
-		-- add name and icon
-		local name, _, icon = GetSpellInfo(spellid)	
+do
+	for spellid, spelldata in pairs(LCT_SpellData) do
+		if type(spelldata) == "table" then
+			-- add name and icon
+			local name, _, icon = GetSpellInfo(spellid)	
 
-		if not name then
-			print("LibCooldownTracker-1.0: bad spellid: " .. spellid)
-		else
-			spelldata.name = name
-			spelldata.icon = icon
+			if not name then
+				print("LibCooldownTracker-1.0: bad spellid: " .. spellid)
+			else
+				spelldata.name = name
+				spelldata.icon = icon
 
-			-- convert specID list into a more appropiate format for doing lookups
-			if type(spelldata.specID) == "number" then
-				spelldata.specID = { [spelldata.specID] = true }
-			elseif type(spelldata.specID) == "table" then
-				local specs = {}
-				for i=1, #spelldata.specID do
-					specs[spelldata.specID[i]] = true
+				-- convert specID list into a more appropiate format for doing lookups
+				if type(spelldata.specID) == "number" then
+					spelldata.specID = { [spelldata.specID] = true }
+				elseif type(spelldata.specID) == "table" then
+					local specs = {}
+					for i=1, #spelldata.specID do
+						specs[spelldata.specID[i]] = true
+					end
+					spelldata.specID = specs
 				end
-				spelldata.specID = specs
 			end
 		end
 	end
 end
+local SpellData = LCT_SpellData
 LCT_SpellData = nil
-
 
 -- state
 local guid_to_unitid = {} -- [guid] = unitid
@@ -61,16 +76,6 @@ local tracked_players = {} --[[
 	}
 ]]
 local registered_units = {} -- [unitid] = count
-
--- Callbacks
--- CooldownUsed(unitid, spellid)
-
--- RegisterUnit(unitid)
--- UnregisterUnit(unitid)
--- tpu = GetUnitCooldownInfo(unitid, spellid)
--- spellid, spell_data in IterateCooldowns(class, specId, race)
--- SpellData = GetCooldownsData()
--- spell_data = GetCooldownData(spellid)
 
 function lib:Enable()
 	self.frame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -90,13 +95,13 @@ function lib:Disable()
 end
 
 function lib.callbacks:OnUsed(target, event)
-	if event == "CooldownUsed" then
+	if event == "LCT_CooldownUsed" then
 		lib:Enable()
 	end
 end
 
 function lib.callbacks:OnUnused(target, event)
-	if event == "CooldownUsed" then
+	if event == "LCT_CooldownUsed" then
 		lib:Disable()
 	end
 end
@@ -147,7 +152,7 @@ function lib:PLAYER_ENTERING_WORLD()
 	if instanceType == "arena" then
 		for unit in pairs(tracked_players) do
 			tracked_players[unit] = nil
-			self.callbacks:Fire("CooldownsReset", unit)
+			self.callbacks:Fire("LCT_CooldownsReset", unit)
 		end
 	end
 end
@@ -271,7 +276,7 @@ function lib:CooldownUsed(event, unit, spellId)
 			end
 		end
 
-		self.callbacks:Fire("CooldownUsed", unit, spellId)
+		self.callbacks:Fire("LCT_CooldownUsed", unit, spellId)
 	end
 end
 
