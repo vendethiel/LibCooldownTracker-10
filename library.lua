@@ -19,7 +19,34 @@ local pairs, ipairs, select, type = pairs, ipairs, select, type
 local min, max = math.min, math.max
 local GetTime, UnitExists, UnitFactionGroup, UnitRace, UnitGUID = GetTime, UnitExists, UnitFactionGroup, UnitRace, UnitGUID
 local SpellData = LCT_SpellData
+
+-- insert additional info into SpellData
+for spellid, spelldata in pairs(LCT_SpellData) do
+	if type(spelldata) == "table" then
+		-- add name and icon
+		local name, _, icon = GetSpellInfo(spellid)	
+
+		if not name then
+			print("LibCooldownTracker-1.0: bad spellid: " .. spellid)
+		else
+			spelldata.name = name
+			spelldata.icon = icon
+
+			-- convert specID list into a more appropiate format for doing lookups
+			if type(spelldata.specID) == "number" then
+				spelldata.specID = { [spelldata.specID] = true }
+			elseif type(spelldata.specID) == "table" then
+				local specs = {}
+				for i=1, #spelldata.specID do
+					specs[spelldata.specID[i]] = true
+				end
+				spelldata.specID = specs
+			end
+		end
+	end
+end
 LCT_SpellData = nil
+
 
 -- state
 local guid_to_unitid = {} -- [guid] = unitid
