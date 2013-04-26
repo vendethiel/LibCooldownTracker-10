@@ -225,8 +225,7 @@ function lib.callbacks:OnUnused(target, event)
 	end
 end
 
---- Registers an unit to be tracked by the library. While the same unit may be registered more than once, it is important that
--- UnregisterUnit is called exactly once for each call to RegisterUnit.
+--- Registers an unit to be tracked by the library.
 -- @param unitid The unitid to register.
 function lib:RegisterUnit(unitid)
 	local count = (lib.registered_units[unitid] or 0) + 1
@@ -237,7 +236,8 @@ function lib:RegisterUnit(unitid)
 	return count
 end
 
---- Unregisters an unit. While the same unit may be registered more than once, it is important that
+--- Unregisters an unit.
+-- While the same unit may be registered more than once, it is important that
 -- UnregisterUnit is called exactly once for each call to RegisterUnit.
 -- @param unitid The unitid to unregister.
 function lib:UnregisterUnit(unitid)
@@ -258,14 +258,17 @@ function lib:IsUnitRegistered(unitid)
 end
 
 --- Returns a table with the state of a unit's cooldown, or nil if there is no state stored about it.
--- @param unitid The unit unitid
--- @param spellid The cooldown spellid
--- @return The table returned by this function contains the following values (times are as returned by GetTime()):
--- ["cooldown_start"] = time
--- ["cooldown_end"] = time
--- ["used_start"] = time
--- ["used_end"] = time
--- ["detected"] = boolean # true if the unit has been detected using this spell before (useful to confirm is a unit has a specific talent or glyph)>>
+-- @param unitid The unit unitid.
+-- @param spellid The cooldown spellid.
+-- @usage
+-- local tracked = lib:GetUnitCooldownInfo(unitid, spellid)
+-- if tracked then
+--     print(tracked.cooldown_start) -- times are based on GetTime()
+--     print(tracked.cooldown_end)
+--     print(tracked.used_start)
+--     print(tracked.used_end)
+--     print(tracked.detected) -- use this to check if the unit has used this spell before (useful for detecting talents/glyphs)
+-- end
 function lib:GetUnitCooldownInfo(unitid, spellid)
 	local tpu = lib.tracked_players[unitid]
 	return tpu and tpu[spellid]
@@ -277,6 +280,7 @@ function lib:GetCooldownsData()
 end
 
 --- Returns the raw data of a specified cooldown spellid.
+-- @param spellid The cooldown spellid.
 function lib:GetCooldownData(spellid)
 	return SpellData[spellid]
 end
