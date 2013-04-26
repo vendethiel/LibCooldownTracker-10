@@ -28,10 +28,8 @@ if not lib.frame then
 end
 
 -- global functions
-local tinsert, tsort = table.insert, table.sort
-local pairs, ipairs, select, type = pairs, ipairs, select, type
-local min, max = math.min, math.max
-local GetTime, UnitExists, UnitFactionGroup, UnitRace, UnitGUID = GetTime, UnitExists, UnitFactionGroup, UnitRace, UnitGUID
+local pairs, type, next, select, assert = pairs, type, next, select, assert
+local GetTime, UnitGUID, IsInInstance = GetTime, UnitGUID, IsInInstance
 
 -- insert additional info into SpellData
 do
@@ -64,8 +62,8 @@ local SpellData = LCT_SpellData
 LCT_SpellData = nil
 
 -- state
-local guid_to_unitid = {} -- [guid] = unitid
-local tracked_players = {} --[[
+lib.guid_to_unitid = lib.guid_to_unitid or {} -- [guid] = unitid
+lib.tracked_players = lib.tracked_players or {} --[[
 	[unitid][spellid] = {
 		["cooldown_start"] = time,
 		["cooldown_end"] = time,
@@ -75,7 +73,7 @@ local tracked_players = {} --[[
 		[EVENT] = time
 	}
 ]]
-local registered_units = {} -- [unitid] = count
+lib.registered_units = lib.registered_units or {} -- [unitid] = count
 
 function lib:Enable()
 	self.frame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -83,9 +81,10 @@ function lib:Enable()
 	self.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 	self.frame:RegisterEvent("UNIT_NAME_UPDATE")
 
-	tracked_players = {}
-	guid_to_unitid = {}
-	for unitid in pairs(tracked_players) do
+	lib.tracked_players = {}
+	lib.guid_to_unitid = {}
+
+	for unitid in pairs(lib.registered_units) do
 		self:UpdateGUID(unitid)
 	end
 end
@@ -107,33 +106,33 @@ function lib.callbacks:OnUnused(target, event)
 end
 
 function lib:RegisterUnit(unitid)
-	local count = (registered_units[unitid] or 0) + 1
+	local count = (lib.registered_units[unitid] or 0) + 1
 	if count == 1 then
 		self:UpdateGUID(unitid)
 	end
-	registered_units[unitid] = count
+	lib.registered_units[unitid] = count
 	return count
 end
 
 function lib:UnregisterUnit(unitid)
-	assert(registered_units[unitid] ~= nil, "Attempting to unregister a unit not registered")
+	assert(lib.registered_units[unitid] ~= nil, "Attempting to unregister a unit not registered")
 
-	local count = registered_units[unitid] - 1
+	local count = lib.registered_units[unitid] - 1
 	if count == 0 then
-		registered_units[unitid] = nil
+		lib.registered_units[unitid] = nil
 		self:RemoveGUID(unitid)
 	else
-		registered_units[unitid] = count
+		lib.registered_units[unitid] = count
 	end
 	return count
 end
 
 function lib:IsUnitRegistered(unitid)
-	return registered_units[unitid]
+	return lib.registered_units[unitid]
 end
 
 function lib:GetUnitCooldownInfo(unitid, spellid)
-	local tpu = tracked_players[unitid]
+	local tpu = lib.tracked_players[unitid]
 	return tpu and tpu[spellid]
 end
 
@@ -150,8 +149,8 @@ function lib:PLAYER_ENTERING_WORLD()
 
 	-- reset cooldowns when joining an arena
 	if instanceType == "arena" then
-		for unit in pairs(tracked_players) do
-			tracked_players[unit] = nil
+		for unit in pairs(lib.tracked_players) do
+			lib.tracked_players[unit] = nil
 			self.callbacks:Fire("LCT_CooldownsReset", unit)
 		end
 	end
@@ -162,7 +161,7 @@ function lib:UNIT_SPELLCAST_SUCCEEDED(event, unit, spellName, rank, lineaID, spe
 end
 
 function lib:COMBAT_LOG_EVENT_UNFILTERED(_, timestamp, event, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellId, spellName, spellSchool)
-	if not guid_to_unitid[sourceGUID] then return end
+	if not lib.guid_to_unitid[sourceGUID] then return end
 	local spelldata = SpellData[spellId]
 	if not spelldata then return end
 
@@ -170,7 +169,7 @@ function lib:COMBAT_LOG_EVENT_UNFILTERED(_, timestamp, event, hideCaster, source
 	   event == "SPELL_AURA_REMOVED" or
 	   event == "SPELL_AURA_APPLIED" or
 	   event == "SPELL_CAST_SUCCESS" then
-		self:CooldownUsed(event, guid_to_unitid[sourceGUID], spellId)
+		self:CooldownUsed(event, lib.guid_to_unitid[sourceGUID], spellId)
 	end
 end
 
@@ -191,11 +190,11 @@ function lib:CooldownUsed(event, unit, spellId)
 	if self:IsUnitRegistered(unit) then
 		local now = GetTime()
 
-		if not tracked_players[unit] then
-			tracked_players[unit] = {}
+		if not lib.tracked_players[unit] then
+			lib.tracked_players[unit] = {}
 		end
 
-		local tpu = tracked_players[unit]
+		local tpu = lib.tracked_players[unit]
 
 		-- check if the same spell cast was detected recently
 		-- if so, we assume that the first detection time is more accurate and ignore this one
@@ -322,9 +321,9 @@ end
 
 function lib:RemoveGUID(unit)
 	-- find and delete old reference to that unit
-	for guid, unitid in pairs(guid_to_unitid) do
+	for guid, unitid in pairs(lib.guid_to_unitid) do
 		if unitid == unit then
-			guid_to_unitid[guid] = nil
+			lib.guid_to_unitid[guid] = nil
 			break
 		end
 	end
@@ -335,6 +334,6 @@ function lib:UpdateGUID(unit)
 
 	local guid = UnitGUID(unit)
 	if guid then
-		guid_to_unitid[guid] = unit
+		lib.guid_to_unitid[guid] = unit
 	end
 end
