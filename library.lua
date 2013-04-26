@@ -227,7 +227,7 @@ end
 
 --- Registers an unit to be tracked by the library. While the same unit may be registered more than once, it is important that
 -- UnregisterUnit is called exactly once for each call to RegisterUnit.
--- @param unitid the unitid to register.
+-- @param unitid The unitid to register.
 function lib:RegisterUnit(unitid)
 	local count = (lib.registered_units[unitid] or 0) + 1
 	if count == 1 then
@@ -239,7 +239,7 @@ end
 
 --- Unregisters an unit. While the same unit may be registered more than once, it is important that
 -- UnregisterUnit is called exactly once for each call to RegisterUnit.
--- @param unitid the unitid to unregister.
+-- @param unitid The unitid to unregister.
 function lib:UnregisterUnit(unitid)
 	assert(lib.registered_units[unitid] ~= nil, "Attempting to unregister a unit not registered")
 
@@ -258,14 +258,14 @@ function lib:IsUnitRegistered(unitid)
 end
 
 --- Returns a table with the state of a unit's cooldown, or nil if there is no state stored about it.
--- @param unitid the unit unitid
--- @param spellid the cooldown spellid
+-- @param unitid The unit unitid
+-- @param spellid The cooldown spellid
 -- @return The table returned by this function contains the following values (times are as returned by GetTime()):
--- <<	["cooldown_start"] = time>>
--- <<	["cooldown_end"] = time>>
--- <<	["used_start"] = time>>
--- <<	["used_end"] = time>>
--- <<	["detected"] = boolean -- true if the unit has been detected using this spell before (useful to confirm is a unit has a specific talent or glyph)>>
+-- ["cooldown_start"] = time
+-- ["cooldown_end"] = time
+-- ["used_start"] = time
+-- ["used_end"] = time
+-- ["detected"] = boolean # true if the unit has been detected using this spell before (useful to confirm is a unit has a specific talent or glyph)>>
 function lib:GetUnitCooldownInfo(unitid, spellid)
 	local tpu = lib.tracked_players[unitid]
 	return tpu and tpu[spellid]
@@ -314,9 +314,9 @@ local function CooldownIterator(state, spellid)
 end
 
 --- Iterates over the cooldowns that apply to a unit of the specified //class//, //specID// and //race//.
--- @param class the unit class. Can be nil.
--- @param specID the unit talent spec ID. Can be nil.
--- @param race the unit race. Can be nil.
+-- @param class The unit class. Can be nil.
+-- @param specID The unit talent spec ID. Can be nil.
+-- @param race The unit race. Can be nil.
 function lib:IterateCooldowns(class, specID, race)
 	local state = {}
 	state.class = class
