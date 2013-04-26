@@ -97,7 +97,7 @@ LCT_SpellData[1856] = {
 -- Vendetta
 LCT_SpellData[79140] = {
 	class = "ROGUE",
-	specID = 259,
+	specID = { 259 },
 	offensive = true,
 	duration = 20,
 	cooldown = 120
@@ -107,7 +107,7 @@ LCT_SpellData[79140] = {
 -- Adrenaline Rush
 LCT_SpellData[13750] = {
 	class = "ROGUE",
-	specID = 260,
+	specID = { 260 },
 	offensive = true,
 	duration = 15,
 	cooldown = 180
@@ -115,7 +115,7 @@ LCT_SpellData[13750] = {
 -- Killing Spree
 LCT_SpellData[51690] = {
 	class = "ROGUE",
-	specID = 260,
+	specID = { 260 },
 	offensive = true,
 	duration = 3,
 	cooldown = 120
@@ -125,14 +125,14 @@ LCT_SpellData[51690] = {
 -- Premeditation
 LCT_SpellData[14183] = {
 class = "ROGUE",
-specID = 261,
+specID = { 261 },
 offensive = true,
 cooldown = 20
 }
 -- Shadow Dance
 LCT_SpellData[51713] = {
 class = "ROGUE",
-specID = 261,
+specID = { 261 },
 offensive = true,
 duration = 8,
 cooldown = 60

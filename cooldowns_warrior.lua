@@ -209,7 +209,7 @@ LCT_SpellData[86346] = {
 -- Mortal Strike
 LCT_SpellData[12294] = {
 	class ="WARRIOR",
-	specID = 71,
+	specID = { 71 },
 	offensive = true,
 	cooldown = 6
 }
@@ -226,7 +226,7 @@ LCT_SpellData[118038] = {
 -- Demoralizing Shout
 LCT_SpellData[1160] = {
 	class = "WARRIOR",
-	specID = 73,
+	specID = { 73 },
 	defensive = true,
 	duration = 10,
 	cooldown = 60
@@ -234,7 +234,7 @@ LCT_SpellData[1160] = {
 -- Last Stand
 LCT_SpellData[12975] = {
 	class = "WARRIOR",
-	specID = 73,
+	specID = { 73 },
 	defensive = true,
 	duration = 20,
 	cooldown = 180
@@ -242,7 +242,7 @@ LCT_SpellData[12975] = {
 -- Shield Barrier
 LCT_SpellData[112048] = {
 	class = "WARRIOR",
-	specID = 73,
+	specID = { 73 },
 	defensive = true,
 	duration = 6,
 	cooldown = 90

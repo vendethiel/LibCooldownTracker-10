@@ -148,7 +148,7 @@ LCT_SpellData[14914] = {
 -- Archangel
 LCT_SpellData[81700] = {
 	class = "PRIEST",
-	specID = 256,
+	specID = { 256 },
 	heal = true,
 	duration = 18,
 	cooldown = 30
@@ -156,7 +156,7 @@ LCT_SpellData[81700] = {
 -- Penance
 LCT_SpellData[47540] = {
 	class = "PRIEST",
-	specID = 256,
+	specID = { 256 },
 	heal = true,
 	duration = 2,
 	cooldown = 10,
@@ -164,7 +164,7 @@ LCT_SpellData[47540] = {
 -- Inner Focus
 LCT_SpellData[89485] = {
 	class = "PRIEST",
-	specID = 256,
+	specID = { 256 },
 	defensive = true,
 	cooldown_starts_on_aura_fade = true,
 	sets_cooldown = { spellid = 96267, cooldown = 45 },
@@ -173,7 +173,7 @@ LCT_SpellData[89485] = {
 -- Glyph of Inner Focus
 LCT_SpellData[96267] = {
 	class = "PRIEST",
-	specID = 256,
+	specID = { 256 },
 	glyph = true,
 	defensive = true,
 	replaces = 89485,
@@ -183,7 +183,7 @@ LCT_SpellData[96267] = {
 -- Pain Suppression
 LCT_SpellData[33206] = {
 	class = "PRIEST",
-	specID = 256,
+	specID = { 256 },
 	defensive = true,
 	duration = 8,
 	cooldown = 180,
@@ -191,7 +191,7 @@ LCT_SpellData[33206] = {
 -- Power Word: Barrier
 LCT_SpellData[62618] = {
 	class = "PRIEST",
-	specID = 256,
+	specID = { 256 },
 	defensive = true,
 	duration = 10,
 	cooldown = 180,
@@ -199,7 +199,7 @@ LCT_SpellData[62618] = {
 -- Spirit Shell
 LCT_SpellData[109964] = {
 	class = "PRIEST",
-	specID = 256,
+	specID = { 256 },
 	defensive = true,
 	duration = 15,
 	cooldown = 60,
@@ -217,7 +217,7 @@ LCT_SpellData[527] = {
 -- Guardian Spirit
 LCT_SpellData[47788] = {
 	class = "PRIEST",
-	specID = 257,
+	specID = { 257 },
 	defensive = true,
 	duration = 10,
 	cooldown = 180,
@@ -225,14 +225,14 @@ LCT_SpellData[47788] = {
 -- Lightwell
 LCT_SpellData[724] = {
 	class = "PRIEST",
-	specID = 257,
+	specID = { 257 },
 	heal = true,
 	cooldown = 180,
 }
 -- Divine Hymn
 LCT_SpellData[64843] = {
 	class = "PRIEST",
-	specID = 257,
+	specID = { 257 },
 	heal = true,
 	duration = 8,
 	cooldown = 18
@@ -240,7 +240,7 @@ LCT_SpellData[64843] = {
 -- Holy Word: Chastise
 LCT_SpellData[88625] = {
 	class = "PRIEST",
-	specID = 257,
+	specID = { 257 },
 	cc = true,
 	cooldown = 30
 }
@@ -249,7 +249,7 @@ LCT_SpellData[88625] = {
 -- Circle of Healing
 LCT_SpellData[34861] = {
 	class = "PRIEST",
-	specID = 257,
+	specID = { 257 },
 	heal = true,
 	cooldown = 10
 }
@@ -258,7 +258,7 @@ LCT_SpellData[34861] = {
 -- Dispersion
 LCT_SpellData[47585] = {
 	class = "PRIEST",
-	specID = 258,
+	specID = { 258 },
 	defensive = true,
 	duration = 6,
 	cooldown = 105, -- 120
@@ -266,14 +266,14 @@ LCT_SpellData[47585] = {
 -- Psychic Horror
 LCT_SpellData[64044] = {
 	class = "PRIEST",
-	specID = 258,
+	specID = { 258 },
 	cc = true,
 	cooldown = 45
 }
 -- Silence
 LCT_SpellData[15487] = {
 	class = "PRIEST",
-	specID = 258,
+	specID = { 258 },
 	silence = true,
 	cooldown = 45,
 }

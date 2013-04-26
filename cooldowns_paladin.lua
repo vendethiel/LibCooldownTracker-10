@@ -170,7 +170,7 @@ LCT_SpellData[85499] = {
 -- Divine Favor
 LCT_SpellData[31842] = {
 	class = "PALADIN",
-	specID = 65,
+	specID = { 65 },
 	defensive = true,
 	duration = 20,
 	cooldown = 180
@@ -178,14 +178,14 @@ LCT_SpellData[31842] = {
 -- Divine Plea
 LCT_SpellData[54428] = {
 	class = "PALADIN",
-	specID = 65,
+	specID = { 65 },
 	duration = 9,
 	cooldown = 120
 }
 -- Guardian of Ancient Kings
 LCT_SpellData[86669] = {
 	class = "PALADIN",
-	specID = 65,
+	specID = { 65 },
 	heal = true,
 	duration = 30,
 	cooldown = 300
@@ -193,7 +193,7 @@ LCT_SpellData[86669] = {
 -- Holy Shock
 LCT_SpellData[20473] = {
 	class = "PALADIN",
-	specID = 65,
+	specID = { 65 },
 	offensive = true,
 	heal = true,
 	cooldown = 6
@@ -203,7 +203,7 @@ LCT_SpellData[20473] = {
 -- Ardent Defender
 LCT_SpellData[31850] = {
 	class = "PALADIN",
-	specID = 66,
+	specID = { 66 },
 	defensive = true,
 	duration = 10,
 	cooldown = 180
@@ -211,7 +211,7 @@ LCT_SpellData[31850] = {
 -- Avenger's Shield
 LCT_SpellData[31935] = {
 	class = "PALADIN",
-	specID = 66,
+	specID = { 66 },
 	silence = true,
 	interrupt = true,
 	cooldown = 15
@@ -219,7 +219,7 @@ LCT_SpellData[31935] = {
 -- Consecration
 LCT_SpellData[26573] = {
 	class = "PALADIN",
-	specID = 66,
+	specID = { 66 },
 	offensive = true,
 	duration = 9,
 	cooldown = 9
@@ -234,7 +234,7 @@ LCT_SpellData[86659] = {
 -- Holy Wrath
 LCT_SpellData[119072] = {
 	class = "PALADIN",
-	specID = 66,
+	specID = { 66 },
 	offensive = true,
 	cooldown = 9
 }
@@ -243,14 +243,14 @@ LCT_SpellData[119072] = {
 -- Exorcism
 LCT_SpellData[879] = {
 	class = "PALADIN",
-	specID = 70,
+	specID = { 70 },
 	offensive = true,
 	cooldown = 15
 }
 -- Guardian of Ancient Kings
 LCT_SpellData[86698] = {
 	class = "PALADIN",
-	specID = 70,
+	specID = { 70 },
 	offensive = true,
 	duration = 30,
 	cooldown = 300

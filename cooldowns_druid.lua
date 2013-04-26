@@ -160,7 +160,7 @@ LCT_SpellData[102401] = {
 -- Celestial Alignment
 LCT_SpellData[112071] = {
 	class = "DRUID",
-	specID = 102,
+	specID = { 102 },
 	offensive = true,
 	duration = 15,
 	cooldown = 180
@@ -176,7 +176,7 @@ LCT_SpellData[2782] = {
 -- Solar Beam
 LCT_SpellData[78675] = {
 	class = "DRUID",
-	specID = 102,
+	specID = { 102 },
 	interrupt = true,
 	silence = true,
 	duration = 10,
@@ -185,7 +185,7 @@ LCT_SpellData[78675] = {
 -- Starfall
 LCT_SpellData[48505] = {
 	class = "DRUID",
-	specID = 102,
+	specID = { 102 },
 	offensive = true,
 	duration = 10,
 	cooldown = 90
@@ -193,14 +193,14 @@ LCT_SpellData[48505] = {
 -- Starsurge
 LCT_SpellData[78674] = {
 	class = "DRUID",
-	specID = 102,
+	specID = { 102 },
 	offensive = true,
 	cooldown = 15
 }
 -- Wild Mushroom: Detonate
 LCT_SpellData[88751] = {
 	class = "DRUID",
-	specID = 102,
+	specID = { 102 },
 	offensive = true,
 	cooldown = 10
 }
@@ -234,7 +234,7 @@ LCT_SpellData[106839] = {
 -- Tiger's Fury
 LCT_SpellData[5217] = {
 	class = "DRUID",
-	specID = 103,
+	specID = { 103 },
 	offensive = true,
 	duration = 6,
 	cooldown = 30
@@ -244,7 +244,7 @@ LCT_SpellData[5217] = {
 -- Bear Hug
 LCT_SpellData[102795] = {
 	class = "DRUID",
-	specID = 104,
+	specID = { 104 },
 	stun = true,
 	duration = 3,
 	cooldown = 60
@@ -252,14 +252,14 @@ LCT_SpellData[102795] = {
 -- Enrage
 LCT_SpellData[5229] = {
 	class = "DRUID",
-	specID = 104,
+	specID = { 104 },
 	duration = 10,
 	cooldown = 60
 }
 -- Savage Defense
 LCT_SpellData[62606] = {
 	class = "DRUID",
-	specID = 104,
+	specID = { 104 },
 	defensive = true,
 	duration = 6,
 	cooldown = 90
@@ -267,7 +267,7 @@ LCT_SpellData[62606] = {
 -- Survival Instincts
 LCT_SpellData[61336] = {
 	class = "DRUID",
-	specID = 104,
+	specID = { 104 },
 	defensive = true,
 	duration = 12,
 	cooldown = 180
@@ -277,7 +277,7 @@ LCT_SpellData[61336] = {
 -- Ironbark
 LCT_SpellData[102342] = {
 	class = "DRUID",
-	specID = 105,
+	specID = { 105 },
 	defensive = true,
 	duration = 12,
 	cooldown = 120
@@ -285,7 +285,7 @@ LCT_SpellData[102342] = {
 -- Nature's Cure
 LCT_SpellData[88423] = {
 	class = "DRUID",
-	specID = 105,
+	specID = { 105 },
 	dispel = true,
 	cooldown_starts_on_dispel = true,
 	cooldown = 8
@@ -293,14 +293,14 @@ LCT_SpellData[88423] = {
 -- Swiftmend
 LCT_SpellData[18562] = {
 	class = "DRUID",
-	specID = 105,
+	specID = { 105 },
 	heal = true,
 	cooldown = 15
 }
 -- Wild Growth
 LCT_SpellData[48438] = {
 	class = "DRUID",
-	specID = 105,
+	specID = { 105 },
 	heal = true,
 	cooldown = 8
 }

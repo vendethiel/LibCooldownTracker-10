@@ -135,7 +135,7 @@ LCT_SpellData[116841] = {
 -- Avert Harm
 LCT_SpellData[115213] = {
 	class = "MONK",
-	specID = 268,
+	specID = { 268 },
 	defensive = true,
 	duration = 6,
 	cooldown = 180
@@ -143,13 +143,13 @@ LCT_SpellData[115213] = {
 -- Clash
 LCT_SpellData[122057] = {
 	class = "MONK",
-	specID = 268,
+	specID = { 268 },
 	cooldown = 35
 }
 -- Elusive Brew
 LCT_SpellData[115308] = {
 	class = "MONK",
-	specID = 268,
+	specID = { 268 },
 	defensive = true,
 	duration = 3,
 	cooldown = 9,
@@ -157,7 +157,7 @@ LCT_SpellData[115308] = {
 -- Guard
 LCT_SpellData[115295] = {
 	class = "MONK",
-	specID = 268,
+	specID = { 268 },
 	defensive = true,
 	duration = 30,
 	cooldown = 30
@@ -165,14 +165,14 @@ LCT_SpellData[115295] = {
 -- Keg Smash
 LCT_SpellData[121253] = {
 	class = "MONK",
-	specID = 268,
+	specID = { 268 },
 	offensive = true,
 	cooldown = 8
 }
 -- Summon Black Ox
 LCT_SpellData[115315] = {
 	class = "MONK",
-	specID = 268,
+	specID = { 268 },
 	cooldown = 30
 }
 
@@ -180,7 +180,7 @@ LCT_SpellData[115315] = {
 -- Energizing Brew
 LCT_SpellData[115288] = {
 	class = "MONK",
-	specID = 269,
+	specID = { 269 },
 	offensive = true,
 	duration = 6,
 	cooldown = 60,
@@ -188,7 +188,7 @@ LCT_SpellData[115288] = {
 -- Fists of Fury
 LCT_SpellData[113656] = {
 	class = "MONK",
-	specID = 269,
+	specID = { 269 },
 	offensive = true,
 	duration = 4,
 	cooldown = 25,
@@ -196,14 +196,14 @@ LCT_SpellData[113656] = {
 -- Flying Serpent Kick
 LCT_SpellData[101545] = {
 	class = "MONK",
-	specID = 269,
+	specID = { 269 },
 	cooldown = 25,
 
 }
 -- Rising Sun Kick
 LCT_SpellData[107428] = {
 	class = "MONK",
-	specID = 269,
+	specID = { 269 },
 	offensive = true,
 	cooldown = 8,
 
@@ -211,7 +211,7 @@ LCT_SpellData[107428] = {
 -- Touch of Karma
 LCT_SpellData[122470] = {
 	class = "MONK",
-	specID = 269,
+	specID = { 269 },
 	offensive = true,
 	defensive = true,
 	duration = 10,
@@ -222,7 +222,7 @@ LCT_SpellData[122470] = {
 -- Life Cocoon
 LCT_SpellData[116849] = {
 	class = "MONK",
-	specID = 270,
+	specID = { 270 },
 	heal = true,
 	duration = 12,
 	cooldown = 120,
@@ -230,28 +230,28 @@ LCT_SpellData[116849] = {
 -- Renewing Misg
 LCT_SpellData[115151] = {
 	class = "MONK",
-	specID = 270,
+	specID = { 270 },
 	heal = true,
 	cooldown = 8
 }
 -- Revival
 LCT_SpellData[115310] = {
 	class = "MONK",
-	specID = 270,
+	specID = { 270 },
 	mass_dispel = true,
 	cooldown = 180
 }
 -- Summon Jade Serpent
 LCT_SpellData[115313] = {
 	class = "MONK",
-	specID = 270,
+	specID = { 270 },
 	heal = true,
 	cooldown = 30
 }
 -- Thunder Focus Tea
 LCT_SpellData[116680] = {
 	class = "MONK",
-	specID = 270,
+	specID = { 270 },
 	heal = true,
 	duration = 30,
 	cooldown = 45

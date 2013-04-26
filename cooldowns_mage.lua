@@ -201,7 +201,7 @@ LCT_SpellData[115610] = {
 -- Arcane Power
 LCT_SpellData[12042] = {
 	class = "MAGE",
-	specID = 62,
+	specID = { 62 },
 	offensive = true,
 	duration = 15,
 	cooldown = 90
@@ -210,7 +210,7 @@ LCT_SpellData[12042] = {
 -- Combustion
 LCT_SpellData[11129] = {
 	class = "MAGE",
-	specID = 63,
+	specID = { 63 },
 	stun = true,
 	offensive = true,
 	cooldown = 45
@@ -218,7 +218,7 @@ LCT_SpellData[11129] = {
 -- Dragon's Breath
 LCT_SpellData[31661] = {
 	class = "MAGE",
-	specID = 63,
+	specID = { 63 },
 	cc = true,
 	cooldown = 20
 }
@@ -226,7 +226,7 @@ LCT_SpellData[31661] = {
 -- Frozen Orb
 LCT_SpellData[84714] = {
 	class = "MAGE",
-	specID = 64,
+	specID = { 64 },
 	offensive = true,
 	duration = 10,
 	cooldown = 60
@@ -234,7 +234,7 @@ LCT_SpellData[84714] = {
 -- Icy Veins
 LCT_SpellData[12472] = {
 	class = "MAGE",
-	specID = 64,
+	specID = { 64 },
 	offensive = true,
 	duration = 20,
 	cooldown = 180
@@ -242,7 +242,7 @@ LCT_SpellData[12472] = {
 -- Summon Water Elemental
 LCT_SpellData[31687] = {
 	class = "MAGE",
-	specID = 64,
+	specID = { 64 },
 	offensive = true,
 	cooldown = 60
 }

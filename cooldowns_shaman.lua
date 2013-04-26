@@ -237,7 +237,7 @@ LCT_SpellData[108273] = {
 -- Earthquake
 LCT_SpellData[61882] = {
 	class = "SHAMAN",
-	specID = 262,
+	specID = { 262 },
 	knockback = true,
 	duration = 10,
 	cooldown = 10
@@ -245,14 +245,14 @@ LCT_SpellData[61882] = {
 -- Lave Burst
 LCT_SpellData[51505] = {
 	class = "SHAMAN",
-	specID = 262,
+	specID = { 262 },
 	offensive = true,
 	cooldown = 8
 }
 -- Thunderstorm
 LCT_SpellData[51490] = {
 	class = "SHAMAN",
-	specID = 262,
+	specID = { 262 },
 	knockback = true,
 	cc = true,
 	cooldown = 45
@@ -263,7 +263,7 @@ LCT_SpellData[51490] = {
 -- Feral Spirit
 LCT_SpellData[51533] = {
 	class = "SHAMAN",
-	specID = 263,
+	specID = { 263 },
 	offensive = true,
 	heal = true,
 	duration = 30,
@@ -272,14 +272,14 @@ LCT_SpellData[51533] = {
 -- Lava Lash
 LCT_SpellData[60103] = {
 	class = "SHAMAN",
-	specID = 263,
+	specID = { 263 },
 	offensive = true,
 	cooldown = 10
 }
 -- Shamanistic Rage
 LCT_SpellData[30823] = {
 	class = "SHAMAN",
-	specID = 263,
+	specID = { 263 },
 	defensive = true,
 	duration = 15,
 	cooldown = 60
@@ -287,7 +287,7 @@ LCT_SpellData[30823] = {
 -- Spirit Walk
 LCT_SpellData[58875] = {
 	class = "SHAMAN",
-	specID = 263,
+	specID = { 263 },
 	defensive = true,
 	duration = 15,
 	cooldown = 120
@@ -295,7 +295,7 @@ LCT_SpellData[58875] = {
 -- Stormstrike
 LCT_SpellData[17364] = {
 	class = "SHAMAN",
-	specID = 263,
+	specID = { 263 },
 	offensive = true,
 	cooldown = 8
 }
@@ -305,14 +305,14 @@ LCT_SpellData[17364] = {
 -- Mana Tide Totem
 LCT_SpellData[16190] = {
 	class = "SHAMAN",
-	specID = 264,
+	specID = { 264 },
 	duration = 16,
 	cooldown = 180
 }
 -- Purify Spirit
 LCT_SpellData[77130] = {
 	class = "SHAMAN",
-	specID = 264,
+	specID = { 264 },
 	dispel = true,
 	cooldown_starts_on_dispel = true,
 	cooldown = 8
@@ -320,14 +320,14 @@ LCT_SpellData[77130] = {
 -- Riptide
 LCT_SpellData[61295] = {
 	class = "SHAMAN",
-	specID = 264,
+	specID = { 264 },
 	heal = true,
 	cooldown = 6
 }
 -- Spirit Link Totem
 LCT_SpellData[98008] = {
 	class = "SHAMAN",
-	specID = 264,
+	specID = { 264 },
 	defensive = true,
 	duration = 6,
 	cooldown = 180
