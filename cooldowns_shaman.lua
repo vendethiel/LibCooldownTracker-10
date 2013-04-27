@@ -161,7 +161,7 @@ LCT_SpellData[16188] = {
 	class = "SHAMAN",
 	talent = true,
 	cooldown_starts_on_aura_fade = true,
-	cooldown = 60
+	cooldown = 90
 }
 -- Astral Shift
 LCT_SpellData[108271] = {
@@ -199,7 +199,7 @@ LCT_SpellData[16166] = {
 	talent = true,
 	offensive = true,
 	duration = 20,
-	cooldown = 120
+	cooldown = 90
 }
 -- Healing Tide Totem
 LCT_SpellData[108280] = {
@@ -290,7 +290,7 @@ LCT_SpellData[58875] = {
 	specID = { 263 },
 	defensive = true,
 	duration = 15,
-	cooldown = 120
+	cooldown = 60
 }
 -- Stormstrike
 LCT_SpellData[17364] = {

@@ -71,7 +71,7 @@ LCT_SpellData[119392] = {
 	class = "MONK",
 	talent = true,
 	stun = true,
-	cooldown = 60,
+	cooldown = 30,
 }
 -- Chi Brew
 LCT_SpellData[115399] = {
@@ -79,11 +79,11 @@ LCT_SpellData[115399] = {
 	talent = true,
 	cooldown = 90
 }
--- Chii Wave
+-- Chi Wave
 LCT_SpellData[115098] = {
 	class = "MONK",
 	talent = true,
-	cooldown = 8
+	cooldown = 15
 }
 -- Dampen Harm
 LCT_SpellData[122278] = {
@@ -152,7 +152,7 @@ LCT_SpellData[115308] = {
 	specID = { 268 },
 	defensive = true,
 	duration = 3,
-	cooldown = 9,
+	cooldown = 6,
 }
 -- Guard
 LCT_SpellData[115295] = {

@@ -133,7 +133,7 @@ LCT_SpellData[110959] = {
 	defensive = true,
 	replaces = 66,
 	duration = 20,
-	cooldown = 150
+	cooldown = 90
 }
 -- Ice Barrier
 LCT_SpellData[11426] = {
@@ -148,7 +148,8 @@ LCT_SpellData[108839] = {
 	class = "MAGE",
 	talent = true,
 	offensive = true,
-	cooldown = 60
+	duration = 15,
+	cooldown = 45
 }
 -- Ice Ward
 LCT_SpellData[111264] = {
@@ -187,7 +188,7 @@ LCT_SpellData[113724] = {
 	talent = true,
 	cc = true,
 	duration = 10,
-	cooldown = 30
+	cooldown = 45
 }
 -- Temporal Shield
 LCT_SpellData[115610] = {

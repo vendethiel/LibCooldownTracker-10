@@ -102,7 +102,7 @@ LCT_SpellData[102359] = {
 	class = "DRUID",
 	talent = true,
 	cc = true,
-	cooldown = 120
+	cooldown = 30
 }
 -- Mighty Bash
 LCT_SpellData[5211] = {
@@ -126,7 +126,7 @@ LCT_SpellData[124974] = {
 	offensive = true,
 	defensive = true,
 	duration = 30,
-	cooldown = 180
+	cooldown = 90
 }
 -- Renewal
 LCT_SpellData[108238] = {
@@ -140,7 +140,7 @@ LCT_SpellData[132469] = {
 	class = "DRUID",
 	talent = true,
 	knockback = true,
-	cooldown = 20
+	cooldown = 30
 }
 -- Ursol's Vortex
 LCT_SpellData[102793] = {
@@ -255,14 +255,6 @@ LCT_SpellData[5229] = {
 	specID = { 104 },
 	duration = 10,
 	cooldown = 60
-}
--- Savage Defense
-LCT_SpellData[62606] = {
-	class = "DRUID",
-	specID = { 104 },
-	defensive = true,
-	duration = 6,
-	cooldown = 90
 }
 -- Survival Instincts
 LCT_SpellData[61336] = {

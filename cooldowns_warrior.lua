@@ -67,7 +67,7 @@ LCT_SpellData[1719] = {
 	class = "WARRIOR",
 	offensive = true,
 	duration = 12,
-	cooldown = 300
+	cooldown = 180
 }
 -- Shattering Throw
 LCT_SpellData[64382] = {
@@ -132,7 +132,7 @@ LCT_SpellData[46968] = {
 	class = "WARRIOR",
 	talent = true,
 	stun = true,
-	cooldown = 20
+	cooldown = 40
 }
 -- Bladestorm
 LCT_SpellData[46924] = {
@@ -238,12 +238,4 @@ LCT_SpellData[12975] = {
 	defensive = true,
 	duration = 20,
 	cooldown = 180
-}
--- Shield Barrier
-LCT_SpellData[112048] = {
-	class = "WARRIOR",
-	specID = { 73 },
-	defensive = true,
-	duration = 6,
-	cooldown = 90
 }

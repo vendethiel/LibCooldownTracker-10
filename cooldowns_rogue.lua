@@ -4,14 +4,14 @@
 LCT_SpellData[2094] = {
 	class = "ROGUE",
 	cc = true,
-	cooldown = 180
+	cooldown = 120
 }
 -- Cloak of Shadows
 LCT_SpellData[31224] = {
 	class = "ROGUE",
 	defensive = true,
 	duration = 5,
-	cooldown = 120
+	cooldown = 60
 }
 -- Dismantle
 LCT_SpellData[51722] = {
@@ -90,7 +90,7 @@ LCT_SpellData[1856] = {
 	class = "ROGUE",
 	defensive = true,
 	duration = 3,
-	cooldown = 180
+	cooldown = 120
 }
 
 -- Rogue/Assassination 259

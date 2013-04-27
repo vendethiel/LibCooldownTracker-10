@@ -159,7 +159,7 @@ LCT_SpellData[47540] = {
 	specID = { 256 },
 	heal = true,
 	duration = 2,
-	cooldown = 10,
+	cooldown = 9,
 }
 -- Inner Focus
 LCT_SpellData[89485] = {
@@ -235,7 +235,7 @@ LCT_SpellData[64843] = {
 	specID = { 257 },
 	heal = true,
 	duration = 8,
-	cooldown = 18
+	cooldown = 180
 }
 -- Holy Word: Chastise
 LCT_SpellData[88625] = {
