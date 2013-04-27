@@ -33,6 +33,11 @@ do
 		end)
 end
 
+-- lookup tables
+local class_spelldata = {}
+local item_spelldata = {}
+local race_spelldata = {}
+
 -- insert additional info into SpellData
 do
 	for spellid, spelldata in pairs(LCT_SpellData) do
@@ -54,10 +59,24 @@ do
 					end
 					spelldata.specID_table = specs
 				end
+
+				-- insert into lookup tables
+				if spelldata.class then
+					class_spelldata[spelldata.class] = class_spelldata[spelldata.class] or {}
+					class_spelldata[spelldata.class][spellid] = spelldata
+				end
+				if spelldata.race then
+					race_spelldata[spelldata.race] = race_spelldata[spelldata.race] or {}
+					race_spelldata[spelldata.race][spellid] = spelldata
+				end
+				if spelldata.item then
+					item_spelldata[spellid] = spelldata
+				end
 			end
 		end
 	end
 end
+
 local SpellData = LCT_SpellData
 LCT_SpellData = nil
 
@@ -287,11 +306,11 @@ end
 
 local function CooldownIterator(state, spellid)
 	while true do
-		spellid = next(SpellData, spellid)
+		spellid = next(state.data_source, spellid)
 		if spellid == nil then
 			return
 		end
-		local spelldata = SpellData[spellid]
+		local spelldata = state.data_source[spellid]
 		-- ignore references to other spells
 		if type(spelldata) ~= "number" then
 			if state.class and state.class == spelldata.class then
@@ -317,6 +336,47 @@ local function CooldownIterator(state, spellid)
 	end
 end
 
+local function FastCooldownIterator(state, spellid)
+	local spelldata
+	-- class
+	if state.class then
+		if state.data_source then
+			spellid, spelldata = CooldownIterator(state, spellid)
+		end
+
+		if spellid then
+			return spellid, spelldata
+		else
+			-- do race next
+			state.data_source = race_spelldata[state.race]
+			state.class = nil
+			spellid = nil
+		end
+	end
+
+	-- race
+	if state.race then
+		if state.data_source then
+			spellid, spelldata = CooldownIterator(state, spellid)
+		end
+
+		if spellid then
+			return spellid, spelldata
+		else
+			-- do items next
+			state.data_source = item_spelldata
+			state.race = nil
+			spellid = nil
+		end
+	end
+
+	-- item
+	if state.item and state.data_source then
+		spellid, spelldata = CooldownIterator(state, spellid)
+		return spellid, spelldata
+	end
+end
+
 --- Iterates over the cooldowns that apply to a unit of the specified //class//, //specID// and //race//.
 -- @param class The unit class. Can be nil.
 -- @param specID The unit talent spec ID. Can be nil.
@@ -326,7 +386,15 @@ function lib:IterateCooldowns(class, specID, race)
 	state.class = class
 	state.specID = specID
 	state.race = race
-	return CooldownIterator, state
+	state.item = true
+
+	if class then
+		state.data_source = class_spelldata[state.class]
+		return FastCooldownIterator, state
+	else
+		state.data_source = SpellData
+		return CooldownIterator, state
+	end
 end
 
 function events:PLAYER_ENTERING_WORLD()
