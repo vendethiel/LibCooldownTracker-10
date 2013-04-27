@@ -8,6 +8,12 @@ LCT_SpellData[31884] = {
 	duration = 20,
 	cooldown = 180
 }
+-- Blinding Light
+LCT_SpellData[115750] = {
+	class = "PALADIN",
+	cc = true,
+	cooldown = 120
+}
 -- Cleanse
 LCT_SpellData[4987] = {
 	class = "PALADIN",
