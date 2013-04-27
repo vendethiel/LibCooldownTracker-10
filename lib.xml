@@ -11,7 +11,7 @@
 	<Script file="cooldowns_rogue.lua"/>
 	<Script file="cooldowns_shaman.lua"/>
 	<Script file="cooldowns_warlock.lua"/>
-	<Script file="cooldowns_warrior.lua	"/>
+	<Script file="cooldowns_warrior.lua"/>
 	<Script file="cooldowns_racials.lua"/>
 	<Script file="cooldowns_items.lua"/>
 	<Script file="library.lua"/>
