@@ -38,20 +38,20 @@ local class_spelldata = {}
 local item_spelldata = {}
 local race_spelldata = {}
 
--- insert additional info into SpellData
+-- generate lookup tables
 do
 	for spellid, spelldata in pairs(LCT_SpellData) do
 		if type(spelldata) == "table" then
-			-- add name and icon
-			local name, _, icon = GetSpellInfo(spellid)	
-
+			local name, _, icon = GetSpellInfo(spellid)
 			if not name then
 				print("LibCooldownTracker-1.0: bad spellid: " .. spellid)
+				LCT_SpellData[spellid] = nil
 			else
+				-- add name and icon
 				spelldata.name = name
 				spelldata.icon = icon
 
-				-- convert specID list into a more appropiate format for doing lookups
+				-- convert specID list into lookups table
 				if spelldata.specID then
 					local specs = {}
 					for i = 1, #spelldata.specID do
@@ -95,11 +95,10 @@ lib.tracked_players = lib.tracked_players or {} --[[
 lib.registered_units = lib.registered_units or {} -- [unitid] = count
 
 local function RemoveGUID(unit)
-	-- find and delete old reference to that unit
+	-- find and delete old references to that unit
 	for guid, unitid in pairs(lib.guid_to_unitid) do
 		if unitid == unit then
 			lib.guid_to_unitid[guid] = nil
-			break
 		end
 	end
 end
@@ -108,9 +107,10 @@ local function UpdateGUID(unit)
 	RemoveGUID(unit)
 
 	local guid = UnitGUID(unit)
-	if guid then
-		lib.guid_to_unitid[guid] = unit
-	end
+	if guid then lib.guid_to_unitid[guid] = unit end
+
+	local pet_guid = UnitGUID(unit .. "pet")
+	if pet_guid then lib.guid_to_unitid[pet_guid] = unit end
 end
 
 local function CooldownUsed(event, unit, spellId)
@@ -414,7 +414,11 @@ function events:UNIT_SPELLCAST_SUCCEEDED(event, unit, spellName, rank, lineaID, 
 end
 
 function events:COMBAT_LOG_EVENT_UNFILTERED(_, timestamp, event, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellId, spellName, spellSchool)
-	if not lib.guid_to_unitid[sourceGUID] then return end
+	-- check unit
+	local unit = lib.guid_to_unitid[sourceGUID]
+	if not unit then return end
+
+	-- check spell
 	local spelldata = SpellData[spellId]
 	if not spelldata then return end
 
@@ -422,7 +426,7 @@ function events:COMBAT_LOG_EVENT_UNFILTERED(_, timestamp, event, hideCaster, sou
 	   event == "SPELL_AURA_REMOVED" or
 	   event == "SPELL_AURA_APPLIED" or
 	   event == "SPELL_CAST_SUCCESS" then
-		CooldownUsed(event, lib.guid_to_unitid[sourceGUID], spellId)
+		CooldownUsed(event, unit, spellId)
 	end
 end
 
