@@ -67,10 +67,10 @@ LCT_SpellData[23989] = {
 	class = "HUNTER",
 	defensive = true,
 	offensive = true,
-	resets = { 781, 1499, 1543, 3045, 5116, 5384, 13809, -- "All hunter abilities with a base cooldown less than 5 minutes"
-	 13813, 19263, 19386, 19503, 34490, 34600, 51753, 53271,
-	 53351, 82726, 109259, 109304, 117050, 120360, 120679,
-	 120697, 130392, 131894 },
+	resets = { 781, 1499, 1543, 3045, 5116, 5384, 13809, -- "All hunter abilities with a base cooldown of less than 5 minutes"
+		13813, 19263, 19386, 19503, 34490, 34600, 51753, 53271,
+		53351, 82726, 109259, 109304, 117050, 120360, 120679,
+		120697, 130392, 131894 },
 	cooldown = 300
 }
 -- Snake Trap
