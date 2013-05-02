@@ -279,7 +279,7 @@ LCT_SpellData[60103] = {
 -- Shamanistic Rage
 LCT_SpellData[30823] = {
 	class = "SHAMAN",
-	specID = { 263 },
+	specID = { 262, 263 },
 	defensive = true,
 	duration = 15,
 	cooldown = 60
