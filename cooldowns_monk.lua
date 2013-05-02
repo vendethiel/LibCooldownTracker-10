@@ -99,7 +99,7 @@ LCT_SpellData[122783] = {
 	talent = true,
 	defensive = true,
 	duration = 6,
-	cooldown = 90,
+	cooldown = 90
 }
 -- Invoke Xuen, the White
 LCT_SpellData[123904] = {
@@ -113,7 +113,15 @@ LCT_SpellData[119381] = {
 	class = "MONK",
 	talent = true,
 	stun = true,
-	cooldown = 45,
+	cooldown = 45
+}
+-- Ring of Peace
+LCT_SpellData[116844] = {
+	class = "MONK",
+	talent = true,
+	defensive = true,
+	duration = 8,
+	cooldown = 45
 }
 -- Rushing Jade Wind
 LCT_SpellData[116847] = {
