@@ -233,6 +233,7 @@ LCT_SpellData[26573] = {
 -- Guardian of Ancient Kings
 LCT_SpellData[86659] = {
 	class = "PALADIN",
+	specID = { 66 },
 	duration = 12,
 	defensive = true,
 	cooldown = 180
