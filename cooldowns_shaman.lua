@@ -8,6 +8,7 @@ LCT_SpellData[114049] = {
 	duration = 15,
 	cooldown = 180
 }
+--[[
 -- Bloodlust
 LCT_SpellData[2825] = {
 	class = "SHAMAN",
@@ -15,6 +16,9 @@ LCT_SpellData[2825] = {
 	offensive = true,
 	cooldown = 300
 }
+-- Heroism
+LCT_SpellData[32182] = 2825
+]]
 -- Capacitor Totem
 LCT_SpellData[108269] = {
 	class = "SHAMAN",
@@ -88,8 +92,6 @@ LCT_SpellData[5394] = {
 	duration = 15,
 	cooldown = 30
 }
--- Heroism
-LCT_SpellData[32182] = 2825
 -- Hex
 LCT_SpellData[51514] = {
 	class = "SHAMAN",

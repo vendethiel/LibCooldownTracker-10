@@ -80,6 +80,7 @@ LCT_SpellData[55342] = {
 	duration = 30,
 	cooldown = 180
 }
+--[[
 -- Time Warp
 LCT_SpellData[80353] = {
 	class = "MAGE",
@@ -87,6 +88,7 @@ LCT_SpellData[80353] = {
 	duration = 40,
 	cooldown = 300
 }
+]]
 -- Mage/talents
 -- Blazing Speed
 LCT_SpellData[108843] = {

@@ -516,6 +516,7 @@ LCT_SpellData[90314] = {
 	offensive = true,
 	cooldown = 10
 }
+--[[
 -- Ancient Hysteria
 LCT_SpellData[90355] = {
 	class = "HUNTER",
@@ -524,6 +525,7 @@ LCT_SpellData[90355] = {
 	duration = 40,
 	cooldown = 360
 }
+]]
 -- Lava Breath
 LCT_SpellData[58604] = {
 	class = "HUNTER",
