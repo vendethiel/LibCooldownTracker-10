@@ -24,7 +24,7 @@ LCT_SpellData[2139] = {
 	class = "MAGE",
 	interrupt = true,
 	silence = true, -- with glyph
-	cooldown = 24,
+	cooldown = 20,
 }
 -- Deep Freeze
 LCT_SpellData[44572] = {
