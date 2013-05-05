@@ -22,7 +22,7 @@ LCT_SpellData[19503] = {
 LCT_SpellData[1499] = {
 	class = "HUNTER",
 	cc = true,
-	cooldown = 30
+	cooldown = 28
 }
 -- Feign Death
 LCT_SpellData[5384] = {
@@ -41,7 +41,7 @@ LCT_SpellData[13813] = {
 	class = "HUNTER",
 	offensive = true,
 	sets_cooldown = { spellid = 3674, cooldown = 30 }, -- Black Arrow
-	cooldown = 30
+	cooldown = 28
 }
 -- Flare
 LCT_SpellData[1543] = {
@@ -53,7 +53,7 @@ LCT_SpellData[1543] = {
 LCT_SpellData[13809] = {
 	class = "HUNTER",
 	cc = true,
-	cooldown = 30
+	cooldown = 28
 }
 -- Rapid Fire
 LCT_SpellData[3045] = {
@@ -77,7 +77,7 @@ LCT_SpellData[23989] = {
 LCT_SpellData[34600] = {
 	class = "HUNTER",
 	offensive = true,
-	cooldown = 30
+	cooldown = 28
 }
 -- Master's Call
 LCT_SpellData[53271] = {
@@ -240,7 +240,7 @@ LCT_SpellData[3674] = {
 	specID = { 255 },
 	offensive = true,
 	sets_cooldown = { spellid = 13813, cooldown = 30 }, -- Explosive Trap
-	cooldown = 30
+	cooldown = 28
 }
 
 -- Pet/Basic
