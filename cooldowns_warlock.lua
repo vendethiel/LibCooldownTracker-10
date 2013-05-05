@@ -18,13 +18,19 @@ LCT_SpellData[104773] = {
 	class = "WARLOCK",
 	defensive = true,
 	duration = 8,
-	cooldown = 180
+	cooldown = 160
 }
 -- Seed of Corruption
 LCT_SpellData[87385] = {
 	class = "WARLOCK",
 	offensive = true,
 	cooldown = 60
+}
+-- Demonic Circle: Teleport
+LCT_SpellData[48020] = {
+	class = "WARLOCK",
+	defensive = true,
+	cooldown = 25
 }
 
 -- Warlock/talent
