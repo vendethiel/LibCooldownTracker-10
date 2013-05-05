@@ -287,7 +287,7 @@ LCT_SpellData[18562] = {
 	class = "DRUID",
 	specID = { 105 },
 	heal = true,
-	cooldown = 15
+	cooldown = 13
 }
 -- Wild Growth
 LCT_SpellData[48438] = {
