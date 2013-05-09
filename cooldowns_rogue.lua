@@ -147,6 +147,7 @@ LCT_SpellData[31230] = {
 	duration = 3,
 	cooldown = 90
 }
+LCT_SpellData[45181] = 31230
 -- Combat Readiness
 LCT_SpellData[74001] = {
 	class = "ROGUE",
