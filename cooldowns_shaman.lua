@@ -316,6 +316,7 @@ LCT_SpellData[77130] = {
 	class = "SHAMAN",
 	specID = { 264 },
 	dispel = true,
+	replaces = 51886,
 	cooldown_starts_on_dispel = true,
 	cooldown = 8
 }
