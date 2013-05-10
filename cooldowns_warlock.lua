@@ -122,6 +122,15 @@ LCT_SpellData[113860] = {
 	duration = 20,
 	cooldown = 120
 }
+-- Symbiosis/Rejuvenation
+LCT_SpellData[113295] = {
+	class = "WARLOCK",
+	specID = { 265, 266, 267 },
+	requires_aura = 110490,
+	heal = true,
+	duration = 12,
+	cooldown = 10
+}
 
 -- Warlock/266 - Demonology
 -- Demonic Leap

@@ -12,7 +12,7 @@
 		spells_data = lib:GetCooldownsData()
 ]]
 
-local version = 3
+local version = 4
 local lib = LibStub:NewLibrary("LibCooldownTracker-1.0", version)
 
 if not lib then return end
@@ -50,6 +50,11 @@ do
 				-- add name and icon
 				spelldata.name = name
 				spelldata.icon = icon
+
+				-- add required aura name
+				if spelldata.requires_aura then
+					spelldata.requires_aura_name = GetSpellInfo(spelldata.requires_aura)
+				end
 
 				-- convert specID list into lookups table
 				if spelldata.specID then

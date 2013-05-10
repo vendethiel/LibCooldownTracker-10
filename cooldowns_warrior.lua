@@ -221,6 +221,15 @@ LCT_SpellData[118038] = {
 	duration = 8,
 	cooldown = 120
 }
+-- Symbiosis/Stampeding Shout
+LCT_SpellData[122294] = {
+	class = "WARRIOR",
+	specID = { 71, 72 },
+	requires_aura = 110491,
+	duration = 8,
+	cooldown = 300
+}
+
 -- Warrior/Fury
 -- Warrior/Protection
 -- Demoralizing Shout
@@ -238,4 +247,13 @@ LCT_SpellData[12975] = {
 	defensive = true,
 	duration = 20,
 	cooldown = 180
+}
+-- Symbiosis/Savage Defense
+LCT_SpellData[122286] = {
+	class = "WARRIOR",
+	specID = { 73 },
+	requires_aura = 110491,
+	defensive = true,
+	duration = 6,
+	cooldown = 60
 }

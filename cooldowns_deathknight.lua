@@ -203,7 +203,15 @@ LCT_SpellData[114866] = {
 	offensive = true,
 	cooldown = 6
 }
-
+-- Symbiosis/Might of Ursoc
+LCT_SpellData[113072] = {
+	class = "DEATHKNIGHT",
+	specID = { 250 },
+	requires_aura = 110478,
+	defensive = true,
+	duration = 20,
+	cooldown = 180
+}
 
 -- DK/251 - Frost
 -- Pillar of Frost
@@ -222,7 +230,14 @@ LCT_SpellData[130735] = {
 	offensive = true,
 	cooldown = 6
 }
-
+-- Symbiosis/Wild Mushroom: Plague
+LCT_SpellData[113516] = {
+	class = "DEATHKNIGHT",
+	specID = { 251, 252 },
+	requires_aura = 110478,
+	offensive = true,
+	cooldown = 180
+}
 
 -- DK/252 - Unholy
 -- Unholy Frenzy

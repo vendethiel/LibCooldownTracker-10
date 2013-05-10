@@ -245,6 +245,15 @@ LCT_SpellData[119072] = {
 	offensive = true,
 	cooldown = 9
 }
+-- Symbiosis/Barkskin
+LCT_SpellData[113075] = {
+	class = "PALADIN",
+	specID = { 66 },
+	requires_aura = 110484,
+	defensive = true,
+	duration = 6,
+	cooldown = 60
+}
 
 -- Paladin/Retribution
 -- Exorcism

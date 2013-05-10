@@ -40,7 +40,7 @@ LCT_SpellData[53351] = {
 LCT_SpellData[13813] = {
 	class = "HUNTER",
 	offensive = true,
-	sets_cooldown = { spellid = 3674, cooldown = 30 }, -- Black Arrow
+	sets_cooldown = { spellid = 3674, cooldown = 28 }, -- Black Arrow
 	cooldown = 28
 }
 -- Flare
@@ -216,6 +216,14 @@ LCT_SpellData[19574] = {
 	duration = 10,
 	cooldown = 60
 }
+-- Symbiosis/Dash
+LCT_SpellData[113073] = {
+	class = "HUNTER",
+	specID = { 253, 254, 255 },
+	requires_aura = 110479,
+	duration = 15,
+	cooldown = 180
+}
 
 -- Hunter/254 - Marksmanship
 -- Chimera Shot
@@ -239,7 +247,7 @@ LCT_SpellData[3674] = {
 	class = "HUNTER",
 	specID = { 255 },
 	offensive = true,
-	sets_cooldown = { spellid = 13813, cooldown = 30 }, -- Explosive Trap
+	sets_cooldown = { spellid = 13813, cooldown = 28 }, -- Explosive Trap
 	cooldown = 28
 }
 

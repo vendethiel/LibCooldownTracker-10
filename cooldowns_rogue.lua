@@ -102,6 +102,15 @@ LCT_SpellData[79140] = {
 	duration = 20,
 	cooldown = 120
 }
+-- Symbiosis/Growl
+LCT_SpellData[113613] = {
+	class = "ROGUE",
+	specID = { 259, 260, 261 },
+	requires_aura = 110486,
+	defensive = true,
+	duration = 30,
+	cooldown = 180
+}
 
 -- Rogue/Combat 260
 -- Adrenaline Rush

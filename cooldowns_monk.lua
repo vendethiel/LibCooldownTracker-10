@@ -183,6 +183,15 @@ LCT_SpellData[115315] = {
 	specID = { 268 },
 	cooldown = 30
 }
+-- Symbiosis/Survival Instincts
+LCT_SpellData[113306] = {
+	class = "MONK",
+	specID = { 268 },
+	requires_aura = 110483,
+	defensive = true,
+	duration = 6,
+	cooldown = 180
+}
 
 -- Monk/Windwalker
 -- Energizing Brew
@@ -224,6 +233,16 @@ LCT_SpellData[122470] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 90
+}
+-- Symbiosis/Bear Hug
+LCT_SpellData[127361] = {
+	class = "MONK",
+	specID = { 269 },
+	requires_aura = 110483,
+	cc = true,
+	offensive = true,
+	duration = 3,
+	cooldown = 60
 }
 
 -- Monk/Mistweaver

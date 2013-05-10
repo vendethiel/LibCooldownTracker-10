@@ -205,6 +205,77 @@ LCT_SpellData[88751] = {
 	cooldown = 10
 }
 
+-- Symbiosis/Anti-Magic Shell
+LCT_SpellData[110570] = {
+	class = "DRUID",
+	specID = { 102 },
+	symbiosis = true,
+	defensive = true,
+	duration = 5,
+	cooldown = 45
+}
+-- Symbiosis/Mirror Image
+LCT_SpellData[110621] = {
+	class = "DRUID",
+	specID = { 102 },
+	symbiosis = true,
+	offensive = true,
+	duration = 30,
+	cooldown = 180
+}
+-- Symbiosis/Grapple Weapon
+LCT_SpellData[126458] = {
+	class = "DRUID",
+	specID = { 102 },
+	symbiosis = true,
+	cc = true,
+	duration = 8,
+	cooldown = 60
+}
+-- Symbiosis/Hammer of Justice
+LCT_SpellData[110698] = {
+	class = "DRUID",
+	specID = { 102 },
+	symbiosis = true,
+	stun = true,
+	cooldown = 60
+}
+-- Symbiosis/Mass Dispel
+LCT_SpellData[110707] = {
+	class = "DRUID",
+	specID = { 102 },
+	symbiosis = true,
+	mass_dispel = true,
+	cooldown = 60
+}
+-- Symbiosis/Cloak of Shadows
+LCT_SpellData[110788] = {
+	class = "DRUID",
+	specID = { 102 },
+	symbiosis = true,
+	defensive = true,
+	duration = 5,
+	cooldown = 120
+}
+-- Symbiosis/Unending Resolve
+LCT_SpellData[122291] = {
+	class = "DRUID",
+	specID = { 102 },
+	symbiosis = true,
+	defensive = true,
+	duration = 12,
+	cooldown = 180
+}
+-- Symbiosis/Intervene
+LCT_SpellData[122292] = {
+	class = "DRUID",
+	specID = { 102 },
+	symbiosis = true,
+	defensive = true,
+	duration = 10,
+	cooldown = 30
+}
+
 -- Druid/Feral
 -- Berserk (Cat Form)
 LCT_SpellData[106951] = {
@@ -239,6 +310,83 @@ LCT_SpellData[5217] = {
 	duration = 6,
 	cooldown = 30
 }
+-- Symbiosis/Play Dead
+LCT_SpellData[110597] = {
+	class = "DRUID",
+	specID = { 103 },
+	symbiosis = true,
+	defensive = true,
+	cooldown = 30
+}
+-- Symbiosis/Frost Nova
+LCT_SpellData[110693] = {
+	class = "DRUID",
+	specID = { 103 },
+	symbiosis = true,
+	cc = true,
+	cooldown = 25
+}
+-- Symbiosis/Clash
+LCT_SpellData[126449] = {
+	class = "DRUID",
+	specID = { 103 },
+	symbiosis = true,
+	stun = true,
+	cooldown = 35
+}
+-- Symbiosis/Divine Shield
+LCT_SpellData[110700] = {
+	class = "DRUID",
+	specID = { 103 },
+	symbiosis = true,
+	immune = true,
+	duration = 8,
+	cooldown = 300
+}
+-- Symbiosis/Dispersion
+LCT_SpellData[110715] = {
+	class = "DRUID",
+	specID = { 103 },
+	symbiosis = true,
+	defensive = true,
+	duration = 6,
+	cooldown = 180
+}
+-- Symbiosis/Redirect
+LCT_SpellData[110730] = {
+	class = "DRUID",
+	specID = { 103 },
+	symbiosis = true,
+	offensive = true,
+	cooldown = 60
+}
+-- Symbiosis/Feral Spirit
+LCT_SpellData[110807] = {
+	class = "DRUID",
+	specID = { 103 },
+	symbiosis = true,
+	offensive = true,
+	duration = 30,
+	cooldown = 120
+}
+-- Symbiosis/Soul Swap
+LCT_SpellData[110810] = {
+	class = "DRUID",
+	specID = { 103 },
+	symbiosis = true,
+	offensive = true,
+	cooldown = 30
+}
+-- Symbiosis/Shattering Blow
+LCT_SpellData[112997] = {
+	class = "DRUID",
+	specID = { 103 },
+	symbiosis = true,
+	mass_dispel = true,
+	offensive = true,
+	cooldown = 300
+}
+
 
 -- Druid/Guardian
 -- Bear Hug
@@ -263,6 +411,48 @@ LCT_SpellData[61336] = {
 	defensive = true,
 	duration = 12,
 	cooldown = 180
+}
+-- Symbiosis/Bone Shield
+LCT_SpellData[122285] = {
+	class = "DRUID",
+	specID = { 104 },
+	symbiosis = true,
+	defensive = true,
+	cooldown = 60
+}
+-- Symbiosis/Consecration
+LCT_SpellData[110701] = {
+	class = "DRUID",
+	specID = { 104 },
+	symbiosis = true,
+	offensive = true,
+	duration = 10,
+	cooldown = 30
+}
+-- Symbiosis/Fear Ward
+LCT_SpellData[110717] = {
+	class = "DRUID",
+	specID = { 104 },
+	symbiosis = true,
+	defensive = true,
+	cooldown = 180
+}
+-- Symbiosis/Life Tap
+LCT_SpellData[122290] = {
+	class = "DRUID",
+	specID = { 104 },
+	symbiosis = true,
+	offensive = true,
+	cooldown = 15
+}
+-- Symbiosis/Spell Reflection
+LCT_SpellData[113002] = {
+	class = "DRUID",
+	specID = { 104 },
+	symbiosis = true,
+	defensive = true,
+	duration = 5,
+	cooldown = 120
 }
 
 -- Druid/Restoration
@@ -295,4 +485,91 @@ LCT_SpellData[48438] = {
 	specID = { 105 },
 	heal = true,
 	cooldown = 8
+}
+-- Symbiosis/Icebound Fortitude
+LCT_SpellData[110575] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	defensive = true,
+	duration = 12,
+	cooldown = 180
+}
+-- Symbiosis/Deterrence
+LCT_SpellData[110617] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	defensive = true,
+	duration = 5,
+	cooldown = 120
+}
+-- Symbiosis/Ice Block
+LCT_SpellData[110696] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	immune = true,
+	duration = 10,
+	cooldown = 300
+}
+-- Symbiosis/Fortifying Brew
+LCT_SpellData[126456] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	defensive = true,
+	duration = 20,
+	cooldown = 180
+}
+-- Symbiosis/Cleanse
+LCT_SpellData[122288] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	dispel = true,
+	cooldown_starts_on_dispel = true,
+	cooldown = 8
+}
+-- Symbiosis/Leap of Faith
+LCT_SpellData[110718] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	defensive = true,
+	cooldown = 90
+}
+-- Symbiosis/Evasion
+LCT_SpellData[110791] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	defensive = true,
+	duration = 15,
+	cooldown = 180
+}
+-- Symbiosis/Spiritwalker's Grace
+LCT_SpellData[110806] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	defensive = true,
+	offensive = true,
+	duration = 15,
+	cooldown = 120
+}
+-- Symbiosis/Demonic Circle: Teleport
+LCT_SpellData[112970] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	cooldown = 30
+}
+-- Symbiosis/Intimidating Roar
+LCT_SpellData[113004] = {
+	class = "DRUID",
+	specID = { 105 },
+	symbiosis = true,
+	cc = true,
+	cooldown = 60
 }

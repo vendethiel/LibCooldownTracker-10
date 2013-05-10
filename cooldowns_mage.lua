@@ -80,6 +80,7 @@ LCT_SpellData[55342] = {
 	duration = 30,
 	cooldown = 180
 }
+
 --[[
 -- Time Warp
 LCT_SpellData[80353] = {
@@ -209,6 +210,15 @@ LCT_SpellData[12042] = {
 	duration = 15,
 	cooldown = 90
 }
+-- Symbiosis/Healing Touch
+LCT_SpellData[113074] = {
+	class = "MAGE",
+	specID = { 62, 63, 64 },
+	requires_aura = 110482,
+	heal = true,
+	cooldown = 10
+}
+
 -- Mage/Fire
 -- Combustion
 LCT_SpellData[11129] = {
@@ -225,6 +235,7 @@ LCT_SpellData[31661] = {
 	cc = true,
 	cooldown = 20
 }
+
 -- Mage/Frost
 -- Frozen Orb
 LCT_SpellData[84714] = {

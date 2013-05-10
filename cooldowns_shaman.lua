@@ -259,7 +259,16 @@ LCT_SpellData[51490] = {
 	cc = true,
 	cooldown = 45
 }
-
+-- Symbiosis/Solar Beam
+LCT_SpellData[113286] = {
+	class = "SHAMAN",
+	specID = { 262, 263 },
+	requires_aura = 110488,
+	silence = true,
+	interrupt = true,
+	duration = 4,
+	cooldown = 60
+}
 
 -- Shaman/Enhancement
 -- Feral Spirit
@@ -301,7 +310,6 @@ LCT_SpellData[17364] = {
 	offensive = true,
 	cooldown = 8
 }
-
 
 -- Shaman/Restoration 264
 -- Mana Tide Totem

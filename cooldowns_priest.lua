@@ -275,5 +275,14 @@ LCT_SpellData[15487] = {
 	class = "PRIEST",
 	specID = { 258 },
 	silence = true,
-	cooldown = 45,
+	cooldown = 45
+}
+-- Symbiosis/Tranquility
+LCT_SpellData[113277] = {
+	class = "PRIEST",
+	specID = { 258 },
+	requires_aura = 110485,
+	heal = true,
+	duration = 8,
+	cooldown = 480
 }
