@@ -296,12 +296,13 @@ LCT_SpellData[50334] = {
 	cooldown = 180
 }
 -- Skull Bash
-LCT_SpellData[106839] = {
+LCT_SpellData[80964] = {
 	class = "DRUID",
 	specID = { 103, 104 },
 	interrupt = true,
 	cooldown = 15
 }
+LCT_SpellData[80965] = 80964
 -- Tiger's Fury
 LCT_SpellData[5217] = {
 	class = "DRUID",
@@ -403,6 +404,15 @@ LCT_SpellData[5229] = {
 	specID = { 104 },
 	duration = 10,
 	cooldown = 60
+}
+-- Savage Defense
+LCT_SpellData[62606] = {
+	class = "DRUID",
+	specID = { 104 },
+	charges = 3,
+	defensive = true,
+	duration = 6,
+	cooldown = 9
 }
 -- Survival Instincts
 LCT_SpellData[61336] = {
