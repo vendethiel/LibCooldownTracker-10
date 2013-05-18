@@ -58,6 +58,8 @@ LCT_SpellData[24275] = {
 LCT_SpellData[1044] = {
 	class = "PALADIN",
 	defensive = true,
+	opt_charges = 2,
+	opt_charges_linked = { 1022, 6940 },
 	duration = 6,
 	cooldown = 25
 }
@@ -65,6 +67,8 @@ LCT_SpellData[1044] = {
 LCT_SpellData[1022] = {
 	class = "PALADIN",
 	defensive = true,
+	opt_charges = 2,
+	opt_charges_linked = { 1044, 6940 },
 	duration = 10,
 	cooldown = 300
 }
@@ -72,6 +76,8 @@ LCT_SpellData[1022] = {
 LCT_SpellData[6940] = {
 	class = "PALADIN",
 	defensive = true,
+	opt_charges = 2,
+	opt_charges_linked = { 1044, 1022 },
 	duration = 12,
 	cooldown = 120
 }
