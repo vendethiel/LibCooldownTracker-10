@@ -11,6 +11,7 @@ LCT_SpellData[18499] = {
 LCT_SpellData[100] = {
 	class = "WARRIOR",
 	stun = true,
+	opt_charges = 2,
 	cooldown = 20
 }
 -- -- Deadly Calm
