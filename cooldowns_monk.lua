@@ -1,5 +1,20 @@
 -- ================ MONK ================
 -- Monk/baseline
+
+-- Roll
+LCT_SpellData[109132] = {
+	class = "MONK",
+	charges = 2,
+	cooldown = 20,
+}
+-- Roll (Celerity)
+LCT_SpellData[121827] = {
+	class = "MONK",
+	talent = true,
+	replaces = 109132,
+	charges = 3,
+	cooldown = 15,
+}
 -- Detox
 LCT_SpellData[115450] = {
 	class = "MONK",
