@@ -70,8 +70,15 @@ LCT_SpellData[114239] = {
 	class = "PRIEST",
 	talent = true,
 	defensive = true,
-	duration = 3,
+	duration = 5,
 	cooldown = 30
+}
+-- Angelic Feather
+LCT_SpellData[121536] = {
+	class = "PRIEST",
+	talent = true,
+	charges = 3,
+	cooldown = 10
 }
 -- Mindbender
 LCT_SpellData[123040] = {
