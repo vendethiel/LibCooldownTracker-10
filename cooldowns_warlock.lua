@@ -155,6 +155,14 @@ LCT_SpellData[103967] = {
 	knockback = true,
 	cooldown = 12
 }
+-- Hand of Gul'dan
+LCT_SpellData[105174] = {
+	class = "WARLOCK",
+	specID = { 266 },
+	offensive = true,
+	charges = 2,
+	cooldown = 15
+}
 
 -- Warlock/267 - Destruction
 -- Havoc
@@ -180,6 +188,14 @@ LCT_SpellData[113858] = {
 	offensive = true,
 	duration = 20,
 	cooldown = 120
+}
+-- Conflagrate
+LCT_SpellData[17962] = {
+	class = "WARLOCK",
+	specID = { 267 },
+	offensive = true,
+	charges = 2,
+	cooldown = 12
 }
 
 -- Warlock/Felguard
