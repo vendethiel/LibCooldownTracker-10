@@ -71,23 +71,29 @@ LCT_SpellData[102280] = {
 	talent = true,
 	cooldown = 30
 }
+-- Wild Charge
+LCT_SpellData[102401] = {
+	class = "DRUID",
+	talent = true,
+	cooldown = 15
+}
+LCT_SpellData[16979] = 102401 -- Bear
+LCT_SpellData[49376] = 102401 -- Cat
+LCT_SpellData[102416] = 102401 -- Aquatic
+LCT_SpellData[102417] = 102401 -- Travel
+LCT_SpellData[102383] = 102401 -- Moonkin
 -- Force of Nature
 LCT_SpellData[106737] = {
 	class = "DRUID",
 	talent = true,
 	offensive = true,
-	duration = 15,
-	cooldown = 60
+	charges = 3,
+	cooldown = 20
 }
--- Heart of the Wild
-LCT_SpellData[108288] = {
-	class = "DRUID",
-	talent = true,
-	offensive = true,
-	defensive = true,
-	duration = 45,
-	cooldown = 360
-}
+LCT_SpellData[102706] = 106737 -- Guardian
+LCT_SpellData[102703] = 106737 -- Feral
+LCT_SpellData[102693] = 106737 -- Restoration
+LCT_SpellData[33831] = 106737 -- Balance
 -- Incarnation
 LCT_SpellData[106731] = {
 	class = "DRUID",
@@ -96,6 +102,19 @@ LCT_SpellData[106731] = {
 	defensive = true,
 	duration = 30,
 	cooldown = 180
+}
+LCT_SpellData[102558] = 106731 -- Guardian
+LCT_SpellData[102543] = 106731 -- Feral
+LCT_SpellData[33891] = 106731 -- Restoration
+LCT_SpellData[102560] = 106731 -- Balance
+-- Heart of the Wild
+LCT_SpellData[108288] = {
+	class = "DRUID",
+	talent = true,
+	offensive = true,
+	defensive = true,
+	duration = 45,
+	cooldown = 360
 }
 -- Mass Entaglement
 LCT_SpellData[102359] = {
@@ -148,12 +167,6 @@ LCT_SpellData[102793] = {
 	talent = true,
 	cc = true,
 	cooldown = 60
-}
--- Wild Charge
-LCT_SpellData[102401] = {
-	class = "DRUID",
-	talent = true,
-	cooldown = 15
 }
 
 -- Druid/Balance
@@ -472,7 +485,7 @@ LCT_SpellData[102342] = {
 	specID = { 105 },
 	defensive = true,
 	duration = 12,
-	cooldown = 120
+	cooldown = 30
 }
 -- Nature's Cure
 LCT_SpellData[88423] = {
@@ -581,5 +594,5 @@ LCT_SpellData[113004] = {
 	specID = { 105 },
 	symbiosis = true,
 	cc = true,
-	cooldown = 60
+	cooldown = 90
 }
