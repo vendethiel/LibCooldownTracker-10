@@ -190,17 +190,17 @@ LCT_SpellData[109259] = {
 	talent = true,
 	offensive = true,
 	knockback = true,
+	cooldown = 45
+}
+-- Intimidation
+LCT_SpellData[19577] = {
+	class = "HUNTER",
+	talent = true,
+	stun = true,
 	cooldown = 60
 }
 
 -- Hunter/253 - Beast Mastery
--- Intimidation
-LCT_SpellData[19577] = {
-	class = "HUNTER",
-	specID = { 253 },
-	stun = true,
-	cooldown = 60
-}
 -- Kill Command
 LCT_SpellData[34026] = {
 	class = "HUNTER",
@@ -268,7 +268,7 @@ LCT_SpellData[53401] = {
 	pet = true,
 	offensive = true,
 	duration = 20,
-	cooldown = 120
+	cooldown = 90
 }
 -- Heart of the Phoenix
 LCT_SpellData[55709] = {
@@ -357,7 +357,7 @@ LCT_SpellData[126423] = {
 	pet = true,
 	cc = true,
 	duration = 3,
-	cooldown = 60
+	cooldown = 120
 }
 -- Reflective Armor Plating
 LCT_SpellData[137798] = {
@@ -422,7 +422,7 @@ LCT_SpellData[50519] = {
 	class = "HUNTER",
 	pet = true,
 	stun = true,
-	cooldown = 60
+	cooldown = 120
 }
 -- Lock Jaw
 LCT_SpellData[90327] = {
@@ -465,21 +465,21 @@ LCT_SpellData[56626] = {
 	class = "HUNTER",
 	pet = true,
 	stun = true,
-	cooldown = 45
+	cooldown = 90
 }
 -- Bad Manner
 LCT_SpellData[90337] = {
 	class = "HUNTER",
 	pet = true,
 	cc = true,
-	cooldown = 60
+	cooldown = 120
 }
 -- Paralyzing Quill
 LCT_SpellData[126355] = {
 	class = "HUNTER",
 	pet = true,
 	cc = true,
-	cooldown = 60
+	cooldown = 120
 }
 -- Venom Web Spray
 LCT_SpellData[54706] = {
@@ -515,7 +515,7 @@ LCT_SpellData[93433] = {
 	pet = true,
 	offensive = true,
 	duration = 8,
-	cooldown = 20
+	cooldown = 14
 }
 -- Tailspin
 LCT_SpellData[90314] = {
@@ -545,14 +545,14 @@ LCT_SpellData[96201] = {
 	class = "HUNTER",
 	pet = true,
 	stun = true,
-	cooldown = 45
+	cooldown = 90
 }
 -- Lullaby
 LCT_SpellData[126246] = {
 	class = "HUNTER",
 	pet = true,
 	cc = true,
-	cooldown = 60
+	cooldown = 120
 }
 -- Spore Cloud
 LCT_SpellData[50274] = {
@@ -572,5 +572,5 @@ LCT_SpellData[90361] = {
 	class = "HUNTER",
 	pet = true,
 	heal = true,
-	cooldown = 40
+	cooldown = 30
 }

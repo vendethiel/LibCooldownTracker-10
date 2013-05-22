@@ -195,9 +195,6 @@ local function CooldownEvent(event, unit, spellid)
 		local tpu = lib.tracked_players[unit]
 
 		if tpu[spellid] then
-			-- register event time
-			tpu[spellid][event] = now
-
 			-- check if the same spell cast was detected recently
 			-- if so, we assume that the first detection time is more accurate and ignore this one
 			-- this can happen because we listen to both UNIT_SPELLCAST_SUCCEEDED and SPELL_CAST_SUCCESS from COMBAT_LOG_EVENT_UNFILTERED
@@ -210,6 +207,9 @@ local function CooldownEvent(event, unit, spellid)
 					return
 				end
 			end
+
+			-- register event time
+			tpu[spellid][event] = now
 		else
 			tpu[spellid] = {
 				detected = true,

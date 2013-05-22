@@ -79,6 +79,13 @@ LCT_SpellData[115176] = {
 	duration = 8,
 	cooldown = 180,
 }
+-- Nimble Brew
+LCT_SpellData[137562] = {
+	class = "MONK",
+	defensive = true,
+	duration = 6,
+	cooldown = 120,
+}
 
 -- Monk/talents
 -- Charging Ox Wave

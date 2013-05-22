@@ -37,12 +37,6 @@ LCT_SpellData[73325] = {
 	defensive = true,
 	cooldown = 90,
 }
--- Void Shift
-LCT_SpellData[108968] = {
-	class = "PRIEST",
-	defensive = true,
-	cooldown = 360,
-}
 -- Mass Dispel
 LCT_SpellData[32375] = {
 	class = "PRIEST",
@@ -218,6 +212,13 @@ LCT_SpellData[527] = {
 	dispel = true,
 	cooldown_starts_on_dispel = true,
 	cooldown = 8,
+}
+-- Void Shift
+LCT_SpellData[108968] = {
+	class = "PRIEST",
+	specID = { 256, 257 },
+	defensive = true,
+	cooldown = 300,
 }
 
 -- Priest/Holy

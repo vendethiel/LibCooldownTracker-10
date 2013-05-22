@@ -47,7 +47,7 @@ LCT_SpellData[3411] = {
 LCT_SpellData[5246] = {
 	class = "WARRIOR",
 	cc = true,
-	cooldown = 60
+	cooldown = 90
 }
 -- Pummel
 LCT_SpellData[6552] = {
@@ -82,7 +82,7 @@ LCT_SpellData[871] = {
 	class = "WARRIOR",
 	defensive = true,
 	duration = 12,
-	cooldown = 300
+	cooldown = 180
 }
 -- Skull Banner
 LCT_SpellData[114207] = {

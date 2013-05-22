@@ -18,7 +18,7 @@ LCT_SpellData[104773] = {
 	class = "WARLOCK",
 	defensive = true,
 	duration = 8,
-	cooldown = 160
+	cooldown = 180
 }
 -- Seed of Corruption
 LCT_SpellData[87385] = {
