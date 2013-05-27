@@ -237,6 +237,27 @@ LCT_SpellData[19647] = {
 	silence = true,
 	cooldown = 24
 }
+LCT_SpellData[119910] = 19647
+LCT_SpellData[132409] = 19647
+
+-- Warlock/Observer
+-- Clone Magic
+LCT_SpellData[115284] = {
+	class = "WARLOCK",
+	pet = true,
+	purge = true,
+	cooldown = 15
+}
+-- Optical Blast
+LCT_SpellData[115781] = {
+	class = "WARLOCK",
+	pet = true,
+	interrupt = true,
+	silence = true,
+	cooldown = 24
+}
+LCT_SpellData[119911] = 115781
+
 
 -- Warlock/Fel Imp
 -- Sear Magic
