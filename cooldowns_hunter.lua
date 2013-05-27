@@ -24,12 +24,6 @@ LCT_SpellData[1499] = {
 	cc = true,
 	cooldown = 28
 }
--- Feign Death
-LCT_SpellData[5384] = {
-	class = "HUNTER",
-	defensive = true,
-	cooldown = 30
-}
 -- Kill Shot
 LCT_SpellData[53351] = {
 	class = "HUNTER",

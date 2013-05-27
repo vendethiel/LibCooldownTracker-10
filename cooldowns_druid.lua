@@ -120,7 +120,7 @@ LCT_SpellData[108291] = 108288
 LCT_SpellData[108292] = 108288
 LCT_SpellData[108293] = 108288
 LCT_SpellData[108294] = 108288
--- Mass Entaglement
+-- Mass Entanglement
 LCT_SpellData[102359] = {
 	class = "DRUID",
 	talent = true,
