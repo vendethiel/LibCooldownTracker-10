@@ -116,6 +116,10 @@ LCT_SpellData[108288] = {
 	duration = 45,
 	cooldown = 360
 }
+LCT_SpellData[108291] = 108288
+LCT_SpellData[108292] = 108288
+LCT_SpellData[108293] = 108288
+LCT_SpellData[108294] = 108288
 -- Mass Entaglement
 LCT_SpellData[102359] = {
 	class = "DRUID",
