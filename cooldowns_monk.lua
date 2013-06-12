@@ -15,6 +15,10 @@ LCT_SpellData[121827] = {
 	charges = 3,
 	cooldown = 15,
 }
+-- Chii Torpedo
+LCT_SpellData[115008] = 109132
+-- Chii Torpedo (Celerity)
+LCT_SpellData[121828] = 121827
 -- Detox
 LCT_SpellData[115450] = {
 	class = "MONK",
