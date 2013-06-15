@@ -441,7 +441,7 @@ LCT_SpellData[62606] = {
 -- Survival Instincts
 LCT_SpellData[61336] = {
 	class = "DRUID",
-	specID = { 104 },
+	specID = { 103, 104 },
 	defensive = true,
 	duration = 12,
 	cooldown = 180
