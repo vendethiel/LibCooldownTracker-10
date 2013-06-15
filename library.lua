@@ -12,7 +12,7 @@
 		spells_data = lib:GetCooldownsData()
 ]]
 
-local version = 9
+local version = 10
 local lib = LibStub:NewLibrary("LibCooldownTracker-1.0", version)
 
 if not lib then return end
