@@ -257,7 +257,7 @@ LCT_SpellData[51490] = {
 	specID = { 262 },
 	knockback = true,
 	cc = true,
-	cooldown = 45
+	cooldown = 22.5
 }
 -- Symbiosis/Solar Beam
 LCT_SpellData[113286] = {
