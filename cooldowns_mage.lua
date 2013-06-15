@@ -80,6 +80,13 @@ LCT_SpellData[55342] = {
 	duration = 30,
 	cooldown = 180
 }
+-- Remove Curse
+LCT_SpellData[475] = {
+	class = "MAGE",
+	dispel = true,
+	cooldown_starts_on_dispel = true,
+	cooldown = 8
+}
 
 --[[
 -- Time Warp
