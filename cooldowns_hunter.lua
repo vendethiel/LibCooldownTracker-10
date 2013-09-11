@@ -10,7 +10,7 @@ LCT_SpellData[5116] = {
 LCT_SpellData[781] = {
 	class = "HUNTER",
 	defensive = true,
-	cooldown = 25
+	cooldown = 20
 }
 -- Scatter Shot
 LCT_SpellData[19503] = {
@@ -56,17 +56,6 @@ LCT_SpellData[3045] = {
 	duration = 15,
 	cooldown = 180
 }
--- Readiness
-LCT_SpellData[23989] = {
-	class = "HUNTER",
-	defensive = true,
-	offensive = true,
-	resets = { 781, 1499, 1543, 3045, 5116, 5384, 13809, -- "All hunter abilities with a base cooldown of less than 5 minutes"
-		13813, 19263, 19386, 19503, 34490, 34600, 51753, 53271,
-		53351, 82726, 109259, 109304, 117050, 120360, 120679,
-		120697, 130392, 131894 },
-	cooldown = 300
-}
 -- Snake Trap
 LCT_SpellData[34600] = {
 	class = "HUNTER",
@@ -85,7 +74,8 @@ LCT_SpellData[19263] = {
 	class = "HUNTER",
 	defensive = true,
 	duration = 5,
-	cooldown = 120
+	charges = 2,
+	cooldown = 180
 }
 -- Camouflage
 LCT_SpellData[51753] = {
@@ -103,12 +93,12 @@ LCT_SpellData[121818] = {
 }
 
 -- Hunter/talent
--- Silencing Shot
-LCT_SpellData[34490] = {
+-- Binding Shot
+LCT_SpellData[109248] = {
 	class = "HUNTER",
 	talent = true,
-	interrupt = true,
-	cooldown = 24
+	cc = true,
+	cooldown = 45
 }
 -- Wyvern Sting
 LCT_SpellData[19386] = {
@@ -226,6 +216,13 @@ LCT_SpellData[53209] = {
 	specID = { 254 },
 	offensive = true,
 	cooldown = 9
+}
+-- Silencing Shot
+LCT_SpellData[34490] = {
+	class = "HUNTER",
+	specID = { 254 },
+	interrupt = true,
+	cooldown = 24
 }
 
 -- Hunter/255 - Survival

@@ -23,8 +23,8 @@ LCT_SpellData[51722] = {
 LCT_SpellData[5277] = {
 	class = "ROGUE",
 	defensive = true,
-	duration = 15,
-	cooldown = 180
+	duration = 10,
+	cooldown = 120
 }
 --[[
 -- Feint
@@ -179,7 +179,7 @@ LCT_SpellData[36554] = {
 	talent = true,
 	offensive = true,
 	duration = 2,
-	cooldown = 24
+	cooldown = 20
 }
 LCT_SpellData[137619] = {
 	class = "ROGUE",

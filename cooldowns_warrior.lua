@@ -141,7 +141,7 @@ LCT_SpellData[46924] = {
 	talent = true,
 	offensive = true,
 	duration = 6,
-	cooldown = 90
+	cooldown = 60
 }
 -- Dragon Roar
 LCT_SpellData[118000] = {

@@ -101,7 +101,12 @@ LCT_SpellData[96231] = {
 	interrupt = true,
 	cooldown = 15
 }
-
+-- Turn Evil
+LCT_SpellData[10326] = {
+	class = "PALADIN",
+	offensive = true,
+	cooldown = 15
+}
 -- Paladin/talents
 -- Execution Sentence
 LCT_SpellData[114157] = {
@@ -177,7 +182,6 @@ LCT_SpellData[85499] = {
 	cooldown = 45
 }
 
-
 -- Paladin/Holy
 -- Divine Favor
 LCT_SpellData[31842] = {
@@ -200,7 +204,7 @@ LCT_SpellData[86669] = {
 	specID = { 65 },
 	heal = true,
 	duration = 30,
-	cooldown = 300
+	cooldown = 180
 }
 -- Holy Shock
 LCT_SpellData[20473] = {
@@ -275,5 +279,5 @@ LCT_SpellData[86698] = {
 	specID = { 70 },
 	offensive = true,
 	duration = 30,
-	cooldown = 300
+	cooldown = 180
 }

@@ -159,7 +159,7 @@ LCT_SpellData[108839] = {
 	talent = true,
 	offensive = true,
 	duration = 15,
-	cooldown = 45
+	cooldown = 20
 }
 -- Ice Ward
 LCT_SpellData[111264] = {

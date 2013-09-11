@@ -294,13 +294,6 @@ LCT_SpellData[122292] = {
 }
 
 -- Druid/Feral
--- Cyclone
-LCT_SpellData[33786] = {
-	class = "DRUID",
-	specID = { 103 },
-	cc = true,
-	cooldown = 20
-}
 -- Berserk (Cat Form)
 LCT_SpellData[106951] = {
 	class = "DRUID",

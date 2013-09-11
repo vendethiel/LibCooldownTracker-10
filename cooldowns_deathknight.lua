@@ -103,7 +103,7 @@ LCT_SpellData[51052] = {
 	class = "DEATHKNIGHT",
 	talent = true,
 	defensive = true,
-	duration = 10,
+	duration = 3,
 	cooldown = 120
 }
 -- Lichborne

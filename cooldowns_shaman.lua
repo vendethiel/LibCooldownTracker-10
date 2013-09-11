@@ -171,7 +171,7 @@ LCT_SpellData[108271] = {
 	talent = true,
 	defensive = true,
 	duration = 6,
-	cooldown = 120
+	cooldown = 90
 }
 -- Call of the Elements
 LCT_SpellData[108285] = {

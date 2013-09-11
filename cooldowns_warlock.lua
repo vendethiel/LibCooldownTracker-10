@@ -265,7 +265,7 @@ LCT_SpellData[115276] = {
 	class = "WARLOCK",
 	pet = true,
 	dispel = true,
-	cooldown = 10
+	cooldown = 20
 }
 
 -- Warlock/Imp

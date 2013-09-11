@@ -103,7 +103,8 @@ LCT_SpellData[119392] = {
 LCT_SpellData[115399] = {
 	class = "MONK",
 	talent = true,
-	cooldown = 90
+	charges = 2,
+	cooldown = 45
 }
 -- Chi Wave
 LCT_SpellData[115098] = {
@@ -154,7 +155,7 @@ LCT_SpellData[116847] = {
 	class = "MONK",
 	talent = true,
 	offensive = true,
-	cooldown = 30,
+	cooldown = 6,
 }
 -- Tiger's Lust
 LCT_SpellData[116841] = {
