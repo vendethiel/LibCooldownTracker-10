@@ -202,7 +202,7 @@ LCT_SpellData[109964] = {
 	class = "PRIEST",
 	specID = { 256 },
 	defensive = true,
-	duration = 15,
+	duration = 10,
 	cooldown = 60,
 }
 -- Purify
