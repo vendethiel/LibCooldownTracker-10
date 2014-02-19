@@ -310,3 +310,10 @@ LCT_SpellData[116680] = {
 	duration = 30,
 	cooldown = 45
 }
+-- Dematerialize
+LCT_SpellData[122464] = {
+	class = "MONK",
+	specID = { 270 },
+	defensive = true,
+	cooldown = 10
+}
