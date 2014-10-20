@@ -1,5 +1,12 @@
 -- ================ ROGUE ================
 -- Rogue/baseline
+-- Preparation
+LCT_SpellData[14185] = {
+	class = "ROGUE",
+	defensive = true,
+	resets = { 2983, 1856, 31224, 5277, 51722 },
+	cooldown = 300
+}
 -- Blind
 LCT_SpellData[2094] = {
 	class = "ROGUE",
@@ -11,12 +18,6 @@ LCT_SpellData[31224] = {
 	class = "ROGUE",
 	defensive = true,
 	duration = 5,
-	cooldown = 60
-}
--- Dismantle
-LCT_SpellData[51722] = {
-	class = "ROGUE",
-	cc = true,
 	cooldown = 60
 }
 -- Evasion
@@ -51,19 +52,6 @@ LCT_SpellData[408] = {
 	class = "ROGUE",
 	stun = true,
 	cooldown = 20
-}
--- Redirect
-LCT_SpellData[73981] = {
-	class = "ROGUE",
-	offensive = true,
-	cooldown = 60
-}
--- Shadow Blades
-LCT_SpellData[121471] = {
-	class = "ROGUE",
-	offensive = true,
-	duration = 12,
-	cooldown = 180
 }
 -- Smoke Bomb
 LCT_SpellData[76577] = {
@@ -101,15 +89,6 @@ LCT_SpellData[79140] = {
 	offensive = true,
 	duration = 20,
 	cooldown = 120
-}
--- Symbiosis/Growl
-LCT_SpellData[113613] = {
-	class = "ROGUE",
-	specID = { 259, 260, 261 },
-	requires_aura = 110486,
-	defensive = true,
-	duration = 30,
-	cooldown = 180
 }
 
 -- Rogue/Combat 260
@@ -165,14 +144,6 @@ LCT_SpellData[74001] = {
 	duration = 20,
 	cooldown = 120
 }
--- Preparation
-LCT_SpellData[14185] = {
-	class = "ROGUE",
-	talent = true,
-	defensive = true,
-	resets = { 2983, 1856, 31224, 5277, 51722 },
-	cooldown = 300
-}
 -- Shadowstep
 LCT_SpellData[36554] = {
 	class = "ROGUE",
@@ -181,6 +152,14 @@ LCT_SpellData[36554] = {
 	duration = 2,
 	cooldown = 20
 }
+-- Death from above 
+LCT_SpellData[152150] = {
+	class = "ROGUE",
+	talent = true,
+	offensive = true,
+	cooldown = 20
+}
+-- Marked for death
 LCT_SpellData[137619] = {
 	class = "ROGUE",
 	talent = true,
