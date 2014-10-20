@@ -6,13 +6,6 @@ LCT_SpellData[20707] = {
 	res = true,
 	cooldown = 600
 }
--- Twilight Ward
-LCT_SpellData[6229] = {
-	class = "WARLOCK",
-	defensive = true,
-	duration = 30,
-	cooldown = 30
-}
 -- Unending Resolve
 LCT_SpellData[104773] = {
 	class = "WARLOCK",
@@ -20,17 +13,17 @@ LCT_SpellData[104773] = {
 	duration = 8,
 	cooldown = 180
 }
--- Seed of Corruption
-LCT_SpellData[87385] = {
-	class = "WARLOCK",
-	offensive = true,
-	cooldown = 60
-}
 -- Demonic Circle: Teleport
 LCT_SpellData[48020] = {
 	class = "WARLOCK",
 	defensive = true,
-	cooldown = 25
+	cooldown = 30
+}
+-- Demonic gateway
+LCT_SpellData[111771] = {
+	class = "WARLOCK",
+	defensive = true,
+	cooldown = 10,
 }
 
 -- Warlock/talent
@@ -87,33 +80,53 @@ LCT_SpellData[111397] = {
 	talent = true,
 	cc = true,
 	duration = 60,
-	cooldown = 30
+	cooldown = 60
 }
 -- Unbound Will
 LCT_SpellData[108482] = {
 	class = "WARLOCK",
 	talent = true,
 	dispel = true,
-	cooldown = 60
+	cooldown = 120
 }
 -- Grimoire of Service
 LCT_SpellData[108501] = {
 	class = "WARLOCK",
 	talent = true,
 	defensive = true,
-	cooldown = 120
+	cooldown = 30
 }
--- Archimonde's Vengeance
+-- Kil'jaeden's Cunning
 LCT_SpellData[108505] = {
 	class = "WARLOCK",
 	talent = true,
 	offensive = true,
-	defensive = true,
 	duration = 8,
-	cooldown = 120
+	cooldown = 60
 }
-
+-- Mannoroth's fury
+LCT_SpellData[108508] = {
+	class = "WARLOCK",
+	talent = true,
+	offensive = true,
+	duration = 10,
+	cooldown = 60
+}
+-- Cataclysm
+LCT_SpellData[152108] = {
+	class = "WARLOCK",
+	talent = true,
+	offensive = true,
+	cooldown = 60
+}
 -- Warlock/265 - Affliction
+-- Seed of Corruption
+LCT_SpellData[87385] = {
+	class = "WARLOCK",
+	specID = { 265 },
+	offensive = true,
+	cooldown = 60
+}
 -- Dark Soul: Misery
 LCT_SpellData[113860] = {
 	class = "WARLOCK",
@@ -121,15 +134,6 @@ LCT_SpellData[113860] = {
 	offensive = true,
 	duration = 20,
 	cooldown = 120
-}
--- Symbiosis/Rejuvenation
-LCT_SpellData[113295] = {
-	class = "WARLOCK",
-	specID = { 265, 266, 267 },
-	requires_aura = 110490,
-	heal = true,
-	duration = 12,
-	cooldown = 10
 }
 
 -- Warlock/266 - Demonology
@@ -147,14 +151,6 @@ LCT_SpellData[113861] = {
 	duration = 20,
 	cooldown = 120
 }
--- Carrion Swarm
-LCT_SpellData[103967] = {
-	class = "WARLOCK",
-	specID = { 266 },
-	offensive = true,
-	knockback = true,
-	cooldown = 12
-}
 -- Hand of Gul'dan
 LCT_SpellData[105174] = {
 	class = "WARLOCK",
@@ -171,7 +167,7 @@ LCT_SpellData[80240] = {
 	specID = { 267 },
 	offensive = true,
 	duration = 15,
-	cooldown = 25
+	cooldown = 25 -- Will be 20 at lvl100
 }
 -- Flames of Xoroth
 LCT_SpellData[120451] = {
@@ -265,7 +261,7 @@ LCT_SpellData[115276] = {
 	class = "WARLOCK",
 	pet = true,
 	dispel = true,
-	cooldown = 20
+	cooldown = 30
 }
 
 -- Warlock/Imp
@@ -313,13 +309,6 @@ LCT_SpellData[6360] = {
 }
 
 -- Warlock/Voidlord
--- Disarm
-LCT_SpellData[118093] = {
-	class = "WARLOCK",
-	pet = true,
-	cc = true,
-	cooldown = 60
-}
 
 -- Warlock/Voidwalker
 -- Shadow Bulwark
