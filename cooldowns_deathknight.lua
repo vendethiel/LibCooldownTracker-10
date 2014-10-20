@@ -166,6 +166,7 @@ LCT_SpellData[152280] = {
 	talent = true,
 	offensive = true,
 	defensive = true,
+	replaces = 43265,
 	duration = 10,
 	cooldown = 30
 }
