@@ -12,18 +12,6 @@ LCT_SpellData[33076] = {
 	heal = true,
 	cooldown = 10
 }
--- Hymn of Hope
-LCT_SpellData[64901] = {
-	class = "PRIEST",
-	duration = 8,
-	cooldown = 360,
-}
--- Psychic Scream
-LCT_SpellData[8122] = {
-	class = "PRIEST",
-	cc = true,
-	cooldown = 27,
-}
 -- Shadowfiend
 LCT_SpellData[34433] = {
 	class = "PRIEST",
@@ -44,20 +32,19 @@ LCT_SpellData[32375] = {
 	cooldown = 15
 }
 -- Priest/talents
+-- Psychic Scream
+LCT_SpellData[8122] = {
+	class = "PRIEST",
+	talent = true,
+	cc = true,
+	cooldown = 45,
+}
 -- Void Tendrils
 LCT_SpellData[108920] = {
 	class = "PRIEST",
 	talent = true,
 	cc = true,
 	cooldown = 30
-}
--- Psyfiend
-LCT_SpellData[108921] = {
-	class = "PRIEST",
-	talent = true,
-	cc = true,
-	duration = 10,
-	cooldown = 45
 }
 -- Phantasm
 LCT_SpellData[114239] = {
@@ -73,15 +60,6 @@ LCT_SpellData[121536] = {
 	talent = true,
 	charges = 3,
 	cooldown = 10
-}
--- Mindbender
-LCT_SpellData[123040] = {
-	class = "PRIEST",
-	talent = true,
-	replaces = 34433,
-	offensive = true,
-	duration = 15,
-	cooldown = 60
 }
 -- Desperate Prayer
 LCT_SpellData[19236] = {
@@ -113,26 +91,60 @@ LCT_SpellData[10060] = {
 	duration = 20,
 	cooldown = 120
 }
+-- Spirit Shell
+LCT_SpellData[109964] = {
+	class = "PRIEST",
+	talent = true,
+	specID = { 256 },
+	defensive = true,
+	duration = 15,
+	cooldown = 60
+}
 -- Cascade
 LCT_SpellData[121135] = {
 	class = "PRIEST",
 	talent = true,
-	offensive = true,
+	specID = { 256, 257 },
 	heal = true,
+	cooldown = 25
+}
+-- Cascade (SP)
+LCT_SpellData[127632] = {
+	class = "PRIEST",
+	talent = true,
+	specID = { 258 },
+	offensive = true,
 	cooldown = 25
 }
 -- Divine Star
 LCT_SpellData[110744] = {
 	class = "PRIEST",
 	talent = true,
-	offensive = true,
+	specID = { 256, 257 },
 	heal = true,
+	cooldown = 15
+}
+-- Divine Star (SP)
+LCT_SpellData[122121] = {
+	class = "PRIEST",
+	talent = true,
+	specID = { 258 },
+	offensive = true,
 	cooldown = 15
 }
 -- Halo
 LCT_SpellData[120517] = {
 	class = "PRIEST",
 	talent = true,
+	specID = { 256, 257 },
+	heal = true,
+	cooldown = 40
+}
+-- Halo (SP)
+LCT_SpellData[120644] = {
+	class = "PRIEST",
+	talent = true,
+	specID = { 258 },
 	offensive = true,
 	heal = true,
 	cooldown = 40
@@ -171,16 +183,6 @@ LCT_SpellData[89485] = {
 	sets_cooldown = { spellid = 96267, cooldown = 45 },
 	cooldown = 45,
 }
--- Glyph of Inner Focus
-LCT_SpellData[96267] = {
-	class = "PRIEST",
-	specID = { 256 },
-	glyph = true,
-	defensive = true,
-	replaces = 89485,
-	active_until_cooldown_start = true,
-	duration = 5,
-}
 -- Pain Suppression
 LCT_SpellData[33206] = {
 	class = "PRIEST",
@@ -197,14 +199,6 @@ LCT_SpellData[62618] = {
 	duration = 10,
 	cooldown = 180,
 }
--- Spirit Shell
-LCT_SpellData[109964] = {
-	class = "PRIEST",
-	specID = { 256 },
-	defensive = true,
-	duration = 10,
-	cooldown = 60,
-}
 -- Purify
 LCT_SpellData[527] = {
 	class = "PRIEST",
@@ -212,13 +206,6 @@ LCT_SpellData[527] = {
 	dispel = true,
 	cooldown_starts_on_dispel = true,
 	cooldown = 8,
-}
--- Void Shift
-LCT_SpellData[108968] = {
-	class = "PRIEST",
-	specID = { 256, 257 },
-	defensive = true,
-	cooldown = 300,
 }
 
 -- Priest/Holy
@@ -253,13 +240,18 @@ LCT_SpellData[88625] = {
 	cooldown = 30
 }
 -- Holy Word: Serenity
--- 88684 0 10
+LCT_SpellData[88684] = {
+	class = "PRIEST",
+	specID = { 257 },
+	heal = true,
+	cooldown = 10
+}
 -- Circle of Healing
 LCT_SpellData[34861] = {
 	class = "PRIEST",
 	specID = { 257 },
 	heal = true,
-	cooldown = 10
+	cooldown = 12
 }
 
 -- Priest/Shadow
@@ -269,7 +261,7 @@ LCT_SpellData[47585] = {
 	specID = { 258 },
 	defensive = true,
 	duration = 6,
-	cooldown = 105, -- 120
+	cooldown = 120
 }
 -- Psychic Horror
 LCT_SpellData[64044] = {
@@ -281,16 +273,7 @@ LCT_SpellData[64044] = {
 -- Silence
 LCT_SpellData[15487] = {
 	class = "PRIEST",
-	specID = { 258 },
+	specID = { 258, 256 },
 	silence = true,
 	cooldown = 45
-}
--- Symbiosis/Tranquility
-LCT_SpellData[113277] = {
-	class = "PRIEST",
-	specID = { 258 },
-	requires_aura = 110485,
-	heal = true,
-	duration = 8,
-	cooldown = 480
 }
