@@ -13,5 +13,5 @@ LCT_SpellData[6262] = {
 	item = true,
 	talent = true, -- hack to prevent it being displayed before being detected
 	heal = true,
-	cooldown = 120
+	cooldown = 60
 }
