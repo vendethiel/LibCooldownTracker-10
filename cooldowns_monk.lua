@@ -40,13 +40,6 @@ LCT_SpellData[115203] = {
 	duration = 20,
 	cooldown = 180,
 }
--- Grapple Weapon
-LCT_SpellData[117368] = {
-	class = "MONK",
-	disarm = true,
-	cc = true,
-	cooldown = 60,
-}
 -- Paralysis
 LCT_SpellData[115078] = {
 	class = "MONK",
@@ -76,13 +69,6 @@ LCT_SpellData[119996] = {
 	class = "MONK",
 	cooldown = 25,
 }
--- Zen Meditation
-LCT_SpellData[115176] = {
-	class = "MONK",
-	defensive = true,
-	duration = 8,
-	cooldown = 180,
-}
 -- Nimble Brew
 LCT_SpellData[137562] = {
 	class = "MONK",
@@ -104,7 +90,7 @@ LCT_SpellData[115399] = {
 	class = "MONK",
 	talent = true,
 	charges = 2,
-	cooldown = 45
+	cooldown = 60
 }
 -- Chi Wave
 LCT_SpellData[115098] = {
@@ -165,22 +151,34 @@ LCT_SpellData[116841] = {
 	duration = 6,
 	cooldown = 30,
 }
-
--- Monk/Brewmaster
--- Avert Harm
-LCT_SpellData[115213] = {
+-- Serenity
+LCT_SpellData[152173] = {
 	class = "MONK",
-	specID = { 268 },
+	talent = true,
+	specID = { 268, 269 },
 	defensive = true,
-	duration = 6,
-	cooldown = 180
+	duration = 10,
+	cooldown = 90
 }
--- Clash
-LCT_SpellData[122057] = {
+-- Breath of the serpent
+LCT_SpellData[157535] = {
 	class = "MONK",
-	specID = { 268 },
-	cooldown = 35
+	talent = true,
+	specID = { 270 },
+	defensive = true,
+	duration = 10,
+	cooldown = 90,
 }
+-- Hurricane strike
+LCT_SpellData[152175] = {
+	class = "MONK",
+	talent = true,
+	specID = { 269 },
+	offensive = true,
+	duration = 2,
+	cooldown = 45,
+}
+-- Monk/Brewmaster
 -- Elusive Brew
 LCT_SpellData[115308] = {
 	class = "MONK",
@@ -204,23 +202,22 @@ LCT_SpellData[121253] = {
 	offensive = true,
 	cooldown = 8
 }
--- Summon Black Ox
+-- Summon Black Ox Statue
 LCT_SpellData[115315] = {
 	class = "MONK",
 	specID = { 268 },
-	cooldown = 30
-}
--- Symbiosis/Survival Instincts
-LCT_SpellData[113306] = {
-	class = "MONK",
-	specID = { 268 },
-	requires_aura = 110483,
-	defensive = true,
-	duration = 6,
-	cooldown = 180
+	cooldown = 10
 }
 
 -- Monk/Windwalker
+-- Zen Meditation
+LCT_SpellData[115176] = {
+	class = "MONK",
+	specID = { 268, 269},
+	defensive = true,
+	duration = 8,
+	cooldown = 180,
+}
 -- Energizing Brew
 LCT_SpellData[115288] = {
 	class = "MONK",
@@ -242,7 +239,6 @@ LCT_SpellData[101545] = {
 	class = "MONK",
 	specID = { 269 },
 	cooldown = 25,
-
 }
 -- Rising Sun Kick
 LCT_SpellData[107428] = {
@@ -250,7 +246,6 @@ LCT_SpellData[107428] = {
 	specID = { 269 },
 	offensive = true,
 	cooldown = 8,
-
 }
 -- Touch of Karma
 LCT_SpellData[122470] = {
@@ -260,16 +255,6 @@ LCT_SpellData[122470] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 90
-}
--- Symbiosis/Bear Hug
-LCT_SpellData[127361] = {
-	class = "MONK",
-	specID = { 269 },
-	requires_aura = 110483,
-	cc = true,
-	offensive = true,
-	duration = 3,
-	cooldown = 60
 }
 
 -- Monk/Mistweaver
@@ -295,12 +280,12 @@ LCT_SpellData[115310] = {
 	mass_dispel = true,
 	cooldown = 180
 }
--- Summon Jade Serpent
+-- Summon Jade Serpent Statue
 LCT_SpellData[115313] = {
 	class = "MONK",
 	specID = { 270 },
 	heal = true,
-	cooldown = 30
+	cooldown = 10
 }
 -- Thunder Focus Tea
 LCT_SpellData[116680] = {
@@ -309,11 +294,4 @@ LCT_SpellData[116680] = {
 	heal = true,
 	duration = 30,
 	cooldown = 45
-}
--- Dematerialize
-LCT_SpellData[122464] = {
-	class = "MONK",
-	specID = { 270 },
-	defensive = true,
-	cooldown = 10
 }
