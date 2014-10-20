@@ -7,11 +7,6 @@ LCT_SpellData[49576] = {
 	offensive = true,
 	cooldown = 25
 }
--- Raise Dead
-LCT_SpellData[46584] = {
-	class = "DEATHKNIGHT",
-	cooldown = 120
-}
 -- Mind Freeze
 LCT_SpellData[47528] = {
 	class = "DEATHKNIGHT",
@@ -35,13 +30,8 @@ LCT_SpellData[43265] = {
 LCT_SpellData[48792] = {
 	class = "DEATHKNIGHT",
 	defensive = true,
-	duration = 12,
+	duration = 8,
 	cooldown = 180
-}
--- Horn of Winter
-LCT_SpellData[57330] = {
-	class = "DEATHKNIGHT",
-	cooldown = 20
 }
 -- Anti-Magic Shell
 LCT_SpellData[48707] = {
@@ -186,15 +176,21 @@ LCT_SpellData[49028] = {
 	specID = { 250 },
 	offensive = true,
 	defensive = true,
-	duration = 12,
+	duration = 8,
 	cooldown = 90
 }
+-- Dark command
+LCT_SpellData[56222] = {
+	class ="DEATHKNIGHT",
+	specID = { 250 },
+	cooldown = 8
 -- Rune Tap
 LCT_SpellData[48982] = {
 	class = "DEATHKNIGHT",
 	specID = { 250 },
-	heal = true,
-	cooldown = 30
+	defensive = true,
+	duration = 3,
+	cooldown = 40
 }
 -- Soul Reaper
 LCT_SpellData[114866] = {
@@ -202,15 +198,6 @@ LCT_SpellData[114866] = {
 	specID = { 250 },
 	offensive = true,
 	cooldown = 6
-}
--- Symbiosis/Might of Ursoc
-LCT_SpellData[113072] = {
-	class = "DEATHKNIGHT",
-	specID = { 250 },
-	requires_aura = 110478,
-	defensive = true,
-	duration = 20,
-	cooldown = 180
 }
 
 -- DK/251 - Frost
@@ -230,24 +217,8 @@ LCT_SpellData[130735] = {
 	offensive = true,
 	cooldown = 6
 }
--- Symbiosis/Wild Mushroom: Plague
-LCT_SpellData[113516] = {
-	class = "DEATHKNIGHT",
-	specID = { 251, 252 },
-	requires_aura = 110478,
-	offensive = true,
-	cooldown = 180
-}
 
 -- DK/252 - Unholy
--- Unholy Frenzy
-LCT_SpellData[49016] = {
-	class = "DEATHKNIGHT",
-	specID = { 252 },
-	offensive = true,
-	duration = 30,
-	cooldown = 180
-}
 -- Summon Gargoyle
 LCT_SpellData[49206] = {
 	class = "DEATHKNIGHT",
@@ -262,6 +233,12 @@ LCT_SpellData[130736] = {
 	specID = { 252 },
 	offensive = true,
 	cooldown = 6
+}
+-- Raise dead
+LCT_SpellData[46584] = {
+	class = "DEATHKNIGHT",
+	specID = { 252 },
+	cooldown = 60
 }
 
 -- DK/pet
