@@ -45,7 +45,7 @@ do
 		if type(spelldata) == "table" then
 			local name, _, icon = GetSpellInfo(spellid)
 			if not name then
-				DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: bad spellid: " .. spellid)
+				DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: bad spellid for " .. (spelldata.class or spelldata.race or "ITEM") .. ": " .. spellid)
 				LCT_SpellData[spellid] = nil
 			else
 				-- add name and icon
@@ -55,6 +55,9 @@ do
 				-- add required aura name
 				if spelldata.requires_aura then
 					spelldata.requires_aura_name = GetSpellInfo(spelldata.requires_aura)
+					if not spelldata.requires_aura_name then
+						DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: bad aura spellid: " .. spelldata.requires_aura)
+					end
 				end
 
 				-- convert specID list into lookups table
