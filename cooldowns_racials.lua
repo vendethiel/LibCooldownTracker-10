@@ -5,7 +5,7 @@ LCT_SpellData[59752] = 42292
 LCT_SpellData[59544] = {
 	race = "Draenei",
 	heal = true,
-	duration = 15,
+	duration = 5,
 	cooldown = 180,
 }
 LCT_SpellData[28880] = 59544
@@ -24,6 +24,7 @@ LCT_SpellData[28730] = {
 LCT_SpellData[50613] = 28730
 LCT_SpellData[80483] = 28730
 LCT_SpellData[129597] = 28730
+LCT_SpellData[155145] = 28730
 LCT_SpellData[25046] = 28730
 LCT_SpellData[69179] = 28730
 -- Blood Fury (Orc)
@@ -46,7 +47,7 @@ LCT_SpellData[20577] = {
 LCT_SpellData[7744] = {
 	race = "Scourge",
 	sets_cooldown = { spellid = 42292, cooldown = 30 }, -- PvP trinket
-	cooldown = 120,
+	cooldown = 180,
 }
 -- Darkflight (Worgen)
 LCT_SpellData[68992] = {
@@ -58,7 +59,7 @@ LCT_SpellData[68992] = {
 LCT_SpellData[20589] = {
 	race = "Gnome",
 	defensive = true,
-	cooldown = 90,
+	cooldown = 60,
 }
 -- Quaking Palm (Pandaren)
 LCT_SpellData[107079] = {
@@ -70,11 +71,13 @@ LCT_SpellData[107079] = {
 LCT_SpellData[69041] = {
 	race = "Goblin",
 	offensive = true,
+	sets_cooldown = { spellid = 69070, cooldown = 120 }, -- Rocket jump
 	cooldown = 120,
 }
 -- Rocket Jump (Goblin)
 LCT_SpellData[69070] = {
 	race = "Goblin",
+	sets_cooldown = { spellid = 69041, cooldown = 120 }, -- Rocket Barrage
 	cooldown = 120,
 }
 -- Shadowmeld (Night Elf)
