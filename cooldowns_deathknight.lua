@@ -202,6 +202,7 @@ LCT_SpellData[56222] = {
 	class ="DEATHKNIGHT",
 	specID = { 250 },
 	cooldown = 8
+}
 -- Rune Tap
 LCT_SpellData[48982] = {
 	class = "DEATHKNIGHT",

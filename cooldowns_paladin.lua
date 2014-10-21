@@ -186,7 +186,7 @@ LCT_SpellData[85499] = {
 -- Devotion Aura
 LCT_SpellData[31821] = {
 	class = "PALADIN",
-	specID = { 65 }
+	specID = { 65 },
 	defensive = true,
 	duration = 6,
 	cooldown = 180

@@ -108,6 +108,7 @@ LCT_SpellData[157980] = {
 	specID = { 62 },
 	replaces = 122,
 	offensive = true,
+	charges = 2,
 	cooldown = 25
 }
 -- Blast Wave
@@ -117,6 +118,7 @@ LCT_SpellData[157981] = {
 	specID = { 63 },
 	replaces = 122,
 	offensive = true,
+	charges = 2,
 	cooldown = 25
 }
 -- Ice nova
