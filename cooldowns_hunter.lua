@@ -1,5 +1,11 @@
 -- ================ HUNTER ================
 -- Hunter/baseline
+-- Counter shot
+LCT_SpellData[147362] = {
+	class = "HUNTER",
+	interrupt = true,
+	cooldown = 24
+}
 -- Concussive Shot
 LCT_SpellData[5116] = {
 	class = "HUNTER",
@@ -12,30 +18,18 @@ LCT_SpellData[781] = {
 	defensive = true,
 	cooldown = 20
 }
--- Scatter Shot
-LCT_SpellData[19503] = {
-	class = "HUNTER",
-	cc = true,
-	cooldown = 30
-}
 -- Freezing Trap
 LCT_SpellData[1499] = {
 	class = "HUNTER",
 	cc = true,
-	cooldown = 28
-}
--- Kill Shot
-LCT_SpellData[53351] = {
-	class = "HUNTER",
-	offensive = true,
-	cooldown = 10
+	cooldown = 30
 }
 -- Explosive Trap
 LCT_SpellData[13813] = {
 	class = "HUNTER",
+	knockback = true, -- With the glyph
 	offensive = true,
-	sets_cooldown = { spellid = 3674, cooldown = 28 }, -- Black Arrow
-	cooldown = 28
+	cooldown = 30
 }
 -- Flare
 LCT_SpellData[1543] = {
@@ -47,20 +41,14 @@ LCT_SpellData[1543] = {
 LCT_SpellData[13809] = {
 	class = "HUNTER",
 	cc = true,
-	cooldown = 28
-}
--- Rapid Fire
-LCT_SpellData[3045] = {
-	class = "HUNTER",
-	offensive = true,
-	duration = 15,
-	cooldown = 180
+	cooldown = 30
 }
 -- Snake Trap
 LCT_SpellData[34600] = {
 	class = "HUNTER",
-	offensive = true,
-	cooldown = 28
+	replaces = 13809,
+	cc = true,
+	cooldown = 30
 }
 -- Master's Call
 LCT_SpellData[53271] = {
@@ -84,15 +72,21 @@ LCT_SpellData[51753] = {
 	duration = 6,
 	cooldown = 60
 }
+-- Aspect of the fox
+LCT_SpellData[172106] = {
+	class = "HUNTER",
+	duration = 6,
+	cooldown = 180
+}
+-- Hunter/talent
 -- Stampede
 LCT_SpellData[121818] = {
 	class = "HUNTER",
+	talent = true,
 	offensive = true,
 	duration = 20,
 	cooldown = 300
 }
-
--- Hunter/talent
 -- Binding Shot
 LCT_SpellData[109248] = {
 	class = "HUNTER",
@@ -135,9 +129,10 @@ LCT_SpellData[131894] = {
 	class = "HUNTER",
 	talent = true,
 	offensive = true,
-	duration = 30,
+	duration = 15,
 	cooldown = 120
 }
+--[[ Passive ability
 -- Blink Strike
 LCT_SpellData[130392] = {
 	class = "HUNTER",
@@ -145,6 +140,8 @@ LCT_SpellData[130392] = {
 	offensive = true,
 	cooldown = 20
 }
+--]]
+--[[ Apparently remove from talent tree, but still present in wowhead databse.
 -- Lynx Rush
 LCT_SpellData[120697] = {
 	class = "HUNTER",
@@ -152,20 +149,20 @@ LCT_SpellData[120697] = {
 	offensive = true,
 	cooldown = 90
 }
+--]]
 -- Barrage
 LCT_SpellData[120360] = {
 	class = "HUNTER",
 	talent = true,
 	offensive = true,
 	duration = 3,
-	cooldown = 30
+	cooldown = 20
 }
 -- Glaive Toss
 LCT_SpellData[117050] = {
 	class = "HUNTER",
 	talent = true,
 	offensive = true,
-	cc = true,
 	cooldown = 15
 }
 -- Powershot
@@ -200,29 +197,29 @@ LCT_SpellData[19574] = {
 	duration = 10,
 	cooldown = 60
 }
--- Symbiosis/Dash
-LCT_SpellData[113073] = {
-	class = "HUNTER",
-	specID = { 253, 254, 255 },
-	requires_aura = 110479,
-	duration = 15,
-	cooldown = 180
-}
 
 -- Hunter/254 - Marksmanship
+-- Rapid Fire
+LCT_SpellData[3045] = {
+	class = "HUNTER",
+	specID = { 254 },
+	offensive = true,
+	duration = 15,
+	cooldown = 120
+}
+-- Kill Shot
+LCT_SpellData[53351] = {
+	class = "HUNTER",
+	specID = { 253, 254 },
+	offensive = true,
+	cooldown = 10
+}
 -- Chimera Shot
 LCT_SpellData[53209] = {
 	class = "HUNTER",
 	specID = { 254 },
 	offensive = true,
 	cooldown = 9
-}
--- Silencing Shot
-LCT_SpellData[34490] = {
-	class = "HUNTER",
-	specID = { 254 },
-	interrupt = true,
-	cooldown = 24
 }
 
 -- Hunter/255 - Survival
@@ -238,29 +235,13 @@ LCT_SpellData[3674] = {
 	class = "HUNTER",
 	specID = { 255 },
 	offensive = true,
-	sets_cooldown = { spellid = 13813, cooldown = 28 }, -- Explosive Trap
-	cooldown = 28
+	sets_cooldown = { spellid = 13813, cooldown = 30 }, -- Explosive Trap
+	cooldown = 30
 }
 
 -- Pet/Basic
--- Cower
-LCT_SpellData[1742] = {
-	class = "HUNTER",
-	pet = true,
-	defensive = true,
-	duration = 6,
-	cooldown = 45
-}
 
 -- Pet/Ferocity
--- Rabid
-LCT_SpellData[53401] = {
-	class = "HUNTER",
-	pet = true,
-	offensive = true,
-	duration = 20,
-	cooldown = 90
-}
 -- Heart of the Phoenix
 LCT_SpellData[55709] = {
 	class = "HUNTER",
@@ -296,7 +277,7 @@ LCT_SpellData[61685] = {
 LCT_SpellData[63900] = {
 	class = "HUNTER",
 	pet = true,
-	offensive = true,
+	-- offensive = true, -- Threat generating ability
 	cooldown = 10
 }
 
@@ -317,39 +298,9 @@ LCT_SpellData[53490] = {
 	duration = 12,
 	cooldown = 180
 }
--- Dash
 
 
 -- Pet/Specific
--- Pin
-LCT_SpellData[50245] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
-	cooldown = 40
-}
--- Dust Cloud
-LCT_SpellData[50285] = {
-	class = "HUNTER",
-	pet = true,
-	offensive = true,
-	cooldown = 25
-}
--- Clench
-LCT_SpellData[50541] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
-	cooldown = 60
-}
--- Petrifying Gaze
-LCT_SpellData[126423] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
-	duration = 3,
-	cooldown = 120
-}
 -- Reflective Armor Plating
 LCT_SpellData[137798] = {
 	class = "HUNTER",
@@ -358,13 +309,14 @@ LCT_SpellData[137798] = {
 	duration = 6,
 	cooldown = 30
 }
+--[[ No cooldown anymore, buff
 -- Lightning Breath
 LCT_SpellData[24844] = {
 	class = "HUNTER",
 	pet = true,
-	offensive = true,
-	cooldown = 30
+	offensive = true
 }
+--]]
 -- Shell Shield
 LCT_SpellData[26064] = {
 	class = "HUNTER",
@@ -373,26 +325,20 @@ LCT_SpellData[26064] = {
 	duration = 12,
 	cooldown = 60
 }
+--[[ No cooldown anymore, buff
 -- Fire Breath
 LCT_SpellData[34889] = {
 	class = "HUNTER",
 	pet = true,
 	offensive = true,
-	cooldown = 30
 }
+--]]
 -- Time Warp
 LCT_SpellData[35346] = {
 	class = "HUNTER",
 	pet = true,
 	cc = true,
 	cooldown = 15
-}
--- Web
-LCT_SpellData[4167] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
-	cooldown = 40
 }
 -- Ankle Crack
 LCT_SpellData[50433] = {
@@ -401,89 +347,19 @@ LCT_SpellData[50433] = {
 	cc = true,
 	cooldown = 10
 }
--- Nether Shock
-LCT_SpellData[50479] = {
-	class = "HUNTER",
-	pet = true,
-	interrupt = true,
-	cooldown = 40
-}
+--[[ No cooldown anymore, buff
 -- Sonic Blast
 LCT_SpellData[50519] = {
 	class = "HUNTER",
 	pet = true,
-	stun = true,
-	cooldown = 120
 }
--- Lock Jaw
-LCT_SpellData[90327] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
-	cooldown = 40
-}
+--]]
 -- Harden Carapace
 LCT_SpellData[90339] = {
 	class = "HUNTER",
 	pet = true,
 	defensive = true,
 	duration = 12,
-	cooldown = 60
-}
--- Trample
-LCT_SpellData[126402] = {
-	class = "HUNTER",
-	pet = true,
-	offensive = true,
-	cooldown = 10
-}
--- Pummel
-LCT_SpellData[26090] = {
-	class = "HUNTER",
-	pet = true,
-	interrupt = true,
-	cooldown = 30
-}
--- Serenity Dust
-LCT_SpellData[50318] = {
-	class = "HUNTER",
-	pet = true,
-	interrupt = true,
-	cooldown = 60
-}
--- Sting
-LCT_SpellData[56626] = {
-	class = "HUNTER",
-	pet = true,
-	stun = true,
-	cooldown = 90
-}
--- Bad Manner
-LCT_SpellData[90337] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
-	cooldown = 120
-}
--- Paralyzing Quill
-LCT_SpellData[126355] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
-	cooldown = 120
-}
--- Venom Web Spray
-LCT_SpellData[54706] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
-	cooldown = 40
-}
--- Snatch
-LCT_SpellData[91644] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
 	cooldown = 60
 }
 -- Eternal Guardian
@@ -508,13 +384,6 @@ LCT_SpellData[93433] = {
 	duration = 8,
 	cooldown = 14
 }
--- Tailspin
-LCT_SpellData[90314] = {
-	class = "HUNTER",
-	pet = true,
-	offensive = true,
-	cooldown = 10
-}
 --[[
 -- Ancient Hysteria
 LCT_SpellData[90355] = {
@@ -525,39 +394,14 @@ LCT_SpellData[90355] = {
 	cooldown = 360
 }
 ]]
+--[[ No cooldown anymore, a buff
 -- Lava Breath
 LCT_SpellData[58604] = {
 	class = "HUNTER",
 	pet = true,
 	cooldown = 8
 }
--- Web Wrap
-LCT_SpellData[96201] = {
-	class = "HUNTER",
-	pet = true,
-	stun = true,
-	cooldown = 90
-}
--- Lullaby
-LCT_SpellData[126246] = {
-	class = "HUNTER",
-	pet = true,
-	cc = true,
-	cooldown = 120
-}
--- Spore Cloud
-LCT_SpellData[50274] = {
-	class = "HUNTER",
-	pet = true,
-	cooldown = 8
-}
--- Horn Toss
-LCT_SpellData[93434] = {
-	class = "HUNTER",
-	pet = true,
-	knockback = true,
-	cooldown = 90
-}
+--]]
 -- Spirit Mend
 LCT_SpellData[90361] = {
 	class = "HUNTER",
