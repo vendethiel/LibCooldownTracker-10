@@ -88,14 +88,14 @@ LCT_SpellData[10326] = {
 }
 -- Paladin/talents
 -- Beacon of Insight
-LCT_SpellData[152262] = {
+LCT_SpellData[157007] = {
 	class = "PALADIN",
 	specID = { 65 },
 	heal = true,
-	cooldown = 60
+	cooldown = 15
 }
 -- Seraphim
-LCT_SpellData[157007] = {
+LCT_SpellData[152262] = {
 	class = "PALADIN",
 	specID = { 66, 70 },
 	offensive = true,
