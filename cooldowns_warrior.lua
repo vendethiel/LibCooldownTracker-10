@@ -64,7 +64,7 @@ LCT_SpellData[23920] = {
 }
 -- Warrior/talents
 -- Siegebreaker
-LCT_SpellData[1762989] = {
+LCT_SpellData[176289] = {
 	class = "WARRIOR",
 	talent = true,
 	specID = { 71, 72 },

@@ -174,15 +174,6 @@ LCT_SpellData[47540] = {
 	duration = 2,
 	cooldown = 9,
 }
--- Inner Focus
-LCT_SpellData[89485] = {
-	class = "PRIEST",
-	specID = { 256 },
-	defensive = true,
-	cooldown_starts_on_aura_fade = true,
-	sets_cooldown = { spellid = 96267, cooldown = 45 },
-	cooldown = 45,
-}
 -- Pain Suppression
 LCT_SpellData[33206] = {
 	class = "PRIEST",

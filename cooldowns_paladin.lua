@@ -192,26 +192,11 @@ LCT_SpellData[31821] = {
 	cooldown = 180
 }
 -- Avenging Wrath
-LCT_SpellData[31882] = {
+LCT_SpellData[31842] = {
 	class = "PALADIN",
 	specID = { 65 },
 	defensive = true,
 	duration = 20,
-	cooldown = 180
-}
--- Divine Plea
-LCT_SpellData[54428] = {
-	class = "PALADIN",
-	specID = { 65 },
-	duration = 15,
-	cooldown = 60
-}
--- Guardian of Ancient Kings
-LCT_SpellData[86669] = {
-	class = "PALADIN",
-	specID = { 65 },
-	heal = true,
-	duration = 30,
 	cooldown = 180
 }
 -- Holy Shock
@@ -279,12 +264,4 @@ LCT_SpellData[879] = {
 	specID = { 70 },
 	offensive = true,
 	cooldown = 15
-}
--- Guardian of Ancient Kings
-LCT_SpellData[86698] = {
-	class = "PALADIN",
-	specID = { 70 },
-	offensive = true,
-	duration = 30,
-	cooldown = 180
 }

@@ -183,7 +183,6 @@ LCT_SpellData[112948] = {
 	class = "MAGE",
 	talent = true,
 	offensive = true,
-	cooldown = 10
 }
 -- Frostjaw
 LCT_SpellData[102051] = {
@@ -233,14 +232,6 @@ LCT_SpellData[1463] = {
 	duration = 8,
 	cooldown = 25
 }
--- Invocation
-LCT_SpellData[114003] = {
-	class = "MAGE",
-	talent = true,
-	defensive = true,
-	replaces = 12051,
-	cooldown = 10
-}
 -- Ring of Frost
 LCT_SpellData[113724] = {
 	class = "MAGE",
@@ -273,14 +264,6 @@ LCT_SpellData[12042] = {
 	offensive = true,
 	duration = 15,
 	cooldown = 90
-}
--- Symbiosis/Healing Touch
-LCT_SpellData[113074] = {
-	class = "MAGE",
-	specID = { 62, 63, 64 },
-	requires_aura = 110482,
-	heal = true,
-	cooldown = 10
 }
 
 -- Mage/Fire

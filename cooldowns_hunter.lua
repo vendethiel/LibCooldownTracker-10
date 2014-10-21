@@ -130,7 +130,7 @@ LCT_SpellData[131894] = {
 	talent = true,
 	offensive = true,
 	duration = 15,
-	cooldown = 120
+	cooldown = 60
 }
 --[[ Passive ability
 -- Blink Strike
