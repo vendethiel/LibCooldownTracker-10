@@ -209,6 +209,7 @@ LCT_SpellData[48982] = {
 	specID = { 250 },
 	defensive = true,
 	duration = 3,
+	charges = 2,
 	cooldown = 40
 }
 -- Soul Reaper

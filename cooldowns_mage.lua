@@ -178,12 +178,6 @@ LCT_SpellData[11958] = {
 	resets = { 45438, 157913, 31661, 122, 120, 157980 },
 	cooldown = 180
 }
--- Frost Bomb
-LCT_SpellData[112948] = {
-	class = "MAGE",
-	talent = true,
-	offensive = true,
-}
 -- Frostjaw
 LCT_SpellData[102051] = {
 	class = "MAGE",

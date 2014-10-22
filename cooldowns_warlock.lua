@@ -94,7 +94,7 @@ LCT_SpellData[108501] = {
 	class = "WARLOCK",
 	talent = true,
 	defensive = true,
-	cooldown = 30
+	cooldown = 120
 }
 -- Kil'jaeden's Cunning
 LCT_SpellData[108505] = {

@@ -180,6 +180,7 @@ LCT_SpellData[48505] = {
 	specID = { 102 },
 	offensive = true,
 	duration = 10,
+	charges = 3,
 	cooldown = 30
 }
 -- Starsurge
@@ -187,6 +188,7 @@ LCT_SpellData[78674] = {
 	class = "DRUID",
 	specID = { 102 },
 	offensive = true,
+	charges = 3,
 	cooldown = 30
 }
 
