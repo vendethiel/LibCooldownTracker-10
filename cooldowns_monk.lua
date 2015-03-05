@@ -7,18 +7,9 @@ LCT_SpellData[109132] = {
 	charges = 2,
 	cooldown = 20,
 }
--- Roll (Celerity)
-LCT_SpellData[121827] = {
-	class = "MONK",
-	talent = true,
-	replaces = 109132,
-	charges = 3,
-	cooldown = 15,
-}
 -- Chii Torpedo
 LCT_SpellData[115008] = 109132
--- Chii Torpedo (Celerity)
-LCT_SpellData[121828] = 121827
+
 -- Detox
 LCT_SpellData[115450] = {
 	class = "MONK",
@@ -69,6 +60,13 @@ LCT_SpellData[119996] = {
 	class = "MONK",
 	cooldown = 25,
 }
+-- Zen Meditation
+LCT_SpellData[115176] = {
+	class = "MONK",
+	defensive = true,
+	duration = 8,
+	cooldown = 180,
+}
 -- Nimble Brew
 LCT_SpellData[137562] = {
 	class = "MONK",
@@ -90,7 +88,7 @@ LCT_SpellData[115399] = {
 	class = "MONK",
 	talent = true,
 	charges = 2,
-	cooldown = 60
+	cooldown = 45
 }
 -- Chi Wave
 LCT_SpellData[115098] = {
@@ -151,33 +149,7 @@ LCT_SpellData[116841] = {
 	duration = 6,
 	cooldown = 30,
 }
--- Serenity
-LCT_SpellData[152173] = {
-	class = "MONK",
-	talent = true,
-	specID = { 268, 269 },
-	defensive = true,
-	duration = 10,
-	cooldown = 90
-}
--- Breath of the serpent
-LCT_SpellData[157535] = {
-	class = "MONK",
-	talent = true,
-	specID = { 270 },
-	defensive = true,
-	duration = 10,
-	cooldown = 90,
-}
--- Hurricane strike
-LCT_SpellData[152175] = {
-	class = "MONK",
-	talent = true,
-	specID = { 269 },
-	offensive = true,
-	duration = 2,
-	cooldown = 45,
-}
+
 -- Monk/Brewmaster
 -- Elusive Brew
 LCT_SpellData[115308] = {
@@ -202,22 +174,13 @@ LCT_SpellData[121253] = {
 	offensive = true,
 	cooldown = 8
 }
--- Summon Black Ox Statue
+-- Summon Black Ox
 LCT_SpellData[115315] = {
 	class = "MONK",
 	specID = { 268 },
 	cooldown = 10
 }
-
 -- Monk/Windwalker
--- Zen Meditation
-LCT_SpellData[115176] = {
-	class = "MONK",
-	specID = { 268, 269},
-	defensive = true,
-	duration = 8,
-	cooldown = 180,
-}
 -- Energizing Brew
 LCT_SpellData[115288] = {
 	class = "MONK",
@@ -239,6 +202,7 @@ LCT_SpellData[101545] = {
 	class = "MONK",
 	specID = { 269 },
 	cooldown = 25,
+
 }
 -- Rising Sun Kick
 LCT_SpellData[107428] = {
@@ -246,6 +210,7 @@ LCT_SpellData[107428] = {
 	specID = { 269 },
 	offensive = true,
 	cooldown = 8,
+
 }
 -- Touch of Karma
 LCT_SpellData[122470] = {
@@ -256,7 +221,6 @@ LCT_SpellData[122470] = {
 	duration = 10,
 	cooldown = 90
 }
-
 -- Monk/Mistweaver
 -- Life Cocoon
 LCT_SpellData[116849] = {
@@ -267,6 +231,7 @@ LCT_SpellData[116849] = {
 	cooldown = 120,
 }
 -- Renewing Misg
+-- TODO: 3 possible charges with Pool of Mists
 LCT_SpellData[115151] = {
 	class = "MONK",
 	specID = { 270 },
@@ -280,7 +245,7 @@ LCT_SpellData[115310] = {
 	mass_dispel = true,
 	cooldown = 180
 }
--- Summon Jade Serpent Statue
+-- Summon Jade Serpent
 LCT_SpellData[115313] = {
 	class = "MONK",
 	specID = { 270 },

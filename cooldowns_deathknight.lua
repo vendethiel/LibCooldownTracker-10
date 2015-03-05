@@ -30,7 +30,7 @@ LCT_SpellData[43265] = {
 LCT_SpellData[48792] = {
 	class = "DEATHKNIGHT",
 	defensive = true,
-	duration = 8,
+	duration = 12,
 	cooldown = 180
 }
 -- Anti-Magic Shell
@@ -39,12 +39,6 @@ LCT_SpellData[48707] = {
 	defensive = true,
 	duration = 5,
 	cooldown = 45
-}
--- Raise Ally
-LCT_SpellData[61999] = {
-	class = "DEATHKNIGHT",
-	res = true,
-	cooldown = 600
 }
 -- Empower Rune Weapon
 LCT_SpellData[47568] = {
@@ -151,25 +145,7 @@ LCT_SpellData[108200] = {
 	duration = 8,
 	cooldown = 60
 }
--- Breath of Sindragosa
-LCT_SpellData[152279] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	offensive = true,
-	heal = true,
-	-- Duration is function of runic power. 15 + 15/s
-	cooldown = 120
-}
--- Defile
-LCT_SpellData[152280] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	offensive = true,
-	defensive = true,
-	replaces = 43265,
-	duration = 10,
-	cooldown = 30
-}
+
 
 -- DK/250 - Blood
 -- Vampiric Blood
@@ -194,23 +170,16 @@ LCT_SpellData[49028] = {
 	specID = { 250 },
 	offensive = true,
 	defensive = true,
-	duration = 8,
+	duration = 12,
 	cooldown = 90
-}
--- Dark command
-LCT_SpellData[56222] = {
-	class ="DEATHKNIGHT",
-	specID = { 250 },
-	cooldown = 8
 }
 -- Rune Tap
 LCT_SpellData[48982] = {
 	class = "DEATHKNIGHT",
 	specID = { 250 },
-	defensive = true,
-	duration = 3,
+	heal = true,
 	charges = 2,
-	cooldown = 40
+	cooldown = 30
 }
 -- Soul Reaper
 LCT_SpellData[114866] = {
@@ -219,7 +188,6 @@ LCT_SpellData[114866] = {
 	offensive = true,
 	cooldown = 6
 }
-
 -- DK/251 - Frost
 -- Pillar of Frost
 LCT_SpellData[51271] = {
@@ -237,8 +205,13 @@ LCT_SpellData[130735] = {
 	offensive = true,
 	cooldown = 6
 }
-
 -- DK/252 - Unholy
+-- Raise Dead
+LCT_SpellData[46584] = {
+	class = "DEATHKNIGHT",
+	specID = { 252 },
+	cooldown = 60
+}
 -- Summon Gargoyle
 LCT_SpellData[49206] = {
 	class = "DEATHKNIGHT",
@@ -253,12 +226,6 @@ LCT_SpellData[130736] = {
 	specID = { 252 },
 	offensive = true,
 	cooldown = 6
-}
--- Raise dead
-LCT_SpellData[46584] = {
-	class = "DEATHKNIGHT",
-	specID = { 252 },
-	cooldown = 60
 }
 
 -- DK/pet

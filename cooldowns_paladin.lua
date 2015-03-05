@@ -1,5 +1,19 @@
 -- ================ PALADIN ================
 -- Paladin/baseline
+-- Avenging Wrath
+LCT_SpellData[31884] = {
+	class = "PALADIN",
+	offensive = true,
+	defensive = true,
+	duration = 20,
+	cooldown = 120
+}
+-- Blinding Light
+LCT_SpellData[115750] = {
+	class = "PALADIN",
+	cc = true,
+	cooldown = 120
+}
 -- Cleanse
 LCT_SpellData[4987] = {
 	class = "PALADIN",
@@ -7,11 +21,18 @@ LCT_SpellData[4987] = {
 	dispel = true,
 	cooldown = 8
 }
+-- Devotion Aura
+LCT_SpellData[31821] = {
+	class = "PALADIN",
+	defensive = true,
+	duration = 6,
+	cooldown = 180
+}
 -- Divine Protection
 LCT_SpellData[498] = {
 	class = "PALADIN",
 	defensive = true,
-	duration = 8,
+	duration = 10,
 	cooldown = 60
 }
 -- Divine Shield
@@ -83,31 +104,10 @@ LCT_SpellData[96231] = {
 -- Turn Evil
 LCT_SpellData[10326] = {
 	class = "PALADIN",
-	cc = true,
+	offensive = true,
 	cooldown = 15
 }
 -- Paladin/talents
--- Beacon of Insight
-LCT_SpellData[157007] = {
-	class = "PALADIN",
-	specID = { 65 },
-	heal = true,
-	cooldown = 15
-}
--- Seraphim
-LCT_SpellData[152262] = {
-	class = "PALADIN",
-	specID = { 66, 70 },
-	offensive = true,
-	cooldown = 30
-}
--- Blinding Light
-LCT_SpellData[115750] = {
-	class = "PALADIN",
-	talent = true,
-	cc = true,
-	cooldown = 120
-}
 -- Execution Sentence
 LCT_SpellData[114157] = {
 	class = "PALADIN",
@@ -125,7 +125,7 @@ LCT_SpellData[105593] = {
 	replaces = 853,
 	cooldown = 30
 }
--- Hand of Purity
+-- Hand of Purify
 LCT_SpellData[114039] = {
 	class = "PALADIN",
 	talent = true,
@@ -183,15 +183,7 @@ LCT_SpellData[85499] = {
 }
 
 -- Paladin/Holy
--- Devotion Aura
-LCT_SpellData[31821] = {
-	class = "PALADIN",
-	specID = { 65 },
-	defensive = true,
-	duration = 6,
-	cooldown = 180
-}
--- Avenging Wrath
+-- Divine Favor
 LCT_SpellData[31842] = {
 	class = "PALADIN",
 	specID = { 65 },
@@ -248,16 +240,7 @@ LCT_SpellData[119072] = {
 	offensive = true,
 	cooldown = 15
 }
-
 -- Paladin/Retribution
--- Avenging Wrath
-LCT_SpellData[31884] = {
-	class = "PALADIN",
-	specID = { 70 },
-	offensive = true,
-	duration = 20,
-	cooldown = 120
-}
 -- Exorcism
 LCT_SpellData[879] = {
 	class = "PALADIN",

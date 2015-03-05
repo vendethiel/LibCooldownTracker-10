@@ -5,7 +5,7 @@ LCT_SpellData[42292] = {
 	pvp_trinket = true,
 	icon_alliance = [[Interface\Icons\INV_Jewelry_TrinketPVP_01]],
 	icon_horde = [[Interface\Icons\INV_Jewelry_TrinketPVP_02]],
-	sets_cooldown = { spellid = 7744, cooldown = 30 }, -- WotF
+	sets_cooldown = { spellid = 7744, cooldown = 120 }, -- WotF
 	cooldown = 120,
 }
 -- Healthstone

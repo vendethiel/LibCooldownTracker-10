@@ -1,12 +1,5 @@
 -- ================ ROGUE ================
 -- Rogue/baseline
--- Preparation
-LCT_SpellData[14185] = {
-	class = "ROGUE",
-	defensive = true,
-	resets = { 2983, 1856, 31224, 5277, 51722 },
-	cooldown = 300
-}
 -- Blind
 LCT_SpellData[2094] = {
 	class = "ROGUE",
@@ -27,14 +20,6 @@ LCT_SpellData[5277] = {
 	duration = 10,
 	cooldown = 120
 }
---[[
--- Feint
-LCT_SpellData[1966] = {
-	class = "ROGUE",
-	defensive = true,
-	duration = 5,
-}
-]]
 -- Gouge
 LCT_SpellData[1776] = {
 	class = "ROGUE",
@@ -90,7 +75,6 @@ LCT_SpellData[79140] = {
 	duration = 20,
 	cooldown = 120
 }
-
 -- Rogue/Combat 260
 -- Adrenaline Rush
 LCT_SpellData[13750] = {
@@ -144,6 +128,14 @@ LCT_SpellData[74001] = {
 	duration = 20,
 	cooldown = 120
 }
+-- Preparation
+LCT_SpellData[14185] = {
+	class = "ROGUE",
+	talent = true,
+	defensive = true,
+	resets = { 2983, 1856, 31224, 5277 },
+	cooldown = 300
+}
 -- Shadowstep
 LCT_SpellData[36554] = {
 	class = "ROGUE",
@@ -152,14 +144,6 @@ LCT_SpellData[36554] = {
 	duration = 2,
 	cooldown = 20
 }
--- Death from above 
-LCT_SpellData[152150] = {
-	class = "ROGUE",
-	talent = true,
-	offensive = true,
-	cooldown = 20
-}
--- Marked for death
 LCT_SpellData[137619] = {
 	class = "ROGUE",
 	talent = true,

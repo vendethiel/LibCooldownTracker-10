@@ -13,17 +13,17 @@ LCT_SpellData[104773] = {
 	duration = 8,
 	cooldown = 180
 }
+-- Seed of Corruption
+LCT_SpellData[87385] = {
+	class = "WARLOCK",
+	offensive = true,
+	cooldown = 60
+}
 -- Demonic Circle: Teleport
 LCT_SpellData[48020] = {
 	class = "WARLOCK",
 	defensive = true,
 	cooldown = 30
-}
--- Demonic gateway
-LCT_SpellData[111771] = {
-	class = "WARLOCK",
-	defensive = true,
-	cooldown = 10,
 }
 
 -- Warlock/talent
@@ -96,37 +96,17 @@ LCT_SpellData[108501] = {
 	defensive = true,
 	cooldown = 120
 }
--- Kil'jaeden's Cunning
+-- Archimonde's Vengeance
 LCT_SpellData[108505] = {
 	class = "WARLOCK",
 	talent = true,
 	offensive = true,
+	defensive = true,
 	duration = 8,
-	cooldown = 60
+	cooldown = 120
 }
--- Mannoroth's fury
-LCT_SpellData[108508] = {
-	class = "WARLOCK",
-	talent = true,
-	offensive = true,
-	duration = 10,
-	cooldown = 60
-}
--- Cataclysm
-LCT_SpellData[152108] = {
-	class = "WARLOCK",
-	talent = true,
-	offensive = true,
-	cooldown = 60
-}
+
 -- Warlock/265 - Affliction
--- Seed of Corruption
-LCT_SpellData[87385] = {
-	class = "WARLOCK",
-	specID = { 265 },
-	offensive = true,
-	cooldown = 60
-}
 -- Dark Soul: Misery
 LCT_SpellData[113860] = {
 	class = "WARLOCK",
@@ -135,7 +115,6 @@ LCT_SpellData[113860] = {
 	duration = 20,
 	cooldown = 120
 }
-
 -- Warlock/266 - Demonology
 -- Demonic Leap
 LCT_SpellData[109151] = {
@@ -167,7 +146,7 @@ LCT_SpellData[80240] = {
 	specID = { 267 },
 	offensive = true,
 	duration = 15,
-	cooldown = 25 -- Will be 20 at lvl100
+	cooldown = 20
 }
 -- Flames of Xoroth
 LCT_SpellData[120451] = {
@@ -307,9 +286,6 @@ LCT_SpellData[6360] = {
 	knockback = true,
 	cooldown = 25
 }
-
--- Warlock/Voidlord
-
 -- Warlock/Voidwalker
 -- Shadow Bulwark
 LCT_SpellData[17767] = {

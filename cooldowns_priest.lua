@@ -37,7 +37,7 @@ LCT_SpellData[8122] = {
 	class = "PRIEST",
 	talent = true,
 	cc = true,
-	cooldown = 45,
+	cooldown = 30,
 }
 -- Void Tendrils
 LCT_SpellData[108920] = {
@@ -60,6 +60,15 @@ LCT_SpellData[121536] = {
 	talent = true,
 	charges = 3,
 	cooldown = 10
+}
+-- Mindbender
+LCT_SpellData[123040] = {
+	class = "PRIEST",
+	talent = true,
+	replaces = 34433,
+	offensive = true,
+	duration = 15,
+	cooldown = 60
 }
 -- Desperate Prayer
 LCT_SpellData[19236] = {
@@ -91,60 +100,26 @@ LCT_SpellData[10060] = {
 	duration = 20,
 	cooldown = 120
 }
--- Spirit Shell
-LCT_SpellData[109964] = {
-	class = "PRIEST",
-	talent = true,
-	specID = { 256 },
-	defensive = true,
-	duration = 15,
-	cooldown = 60
-}
 -- Cascade
 LCT_SpellData[121135] = {
 	class = "PRIEST",
 	talent = true,
-	specID = { 256, 257 },
-	heal = true,
-	cooldown = 25
-}
--- Cascade (SP)
-LCT_SpellData[127632] = {
-	class = "PRIEST",
-	talent = true,
-	specID = { 258 },
 	offensive = true,
+	heal = true,
 	cooldown = 25
 }
 -- Divine Star
 LCT_SpellData[110744] = {
 	class = "PRIEST",
 	talent = true,
-	specID = { 256, 257 },
-	heal = true,
-	cooldown = 15
-}
--- Divine Star (SP)
-LCT_SpellData[122121] = {
-	class = "PRIEST",
-	talent = true,
-	specID = { 258 },
 	offensive = true,
+	heal = true,
 	cooldown = 15
 }
 -- Halo
 LCT_SpellData[120517] = {
 	class = "PRIEST",
 	talent = true,
-	specID = { 256, 257 },
-	heal = true,
-	cooldown = 40
-}
--- Halo (SP)
-LCT_SpellData[120644] = {
-	class = "PRIEST",
-	talent = true,
-	specID = { 258 },
 	offensive = true,
 	heal = true,
 	cooldown = 40
@@ -190,6 +165,14 @@ LCT_SpellData[62618] = {
 	duration = 10,
 	cooldown = 180,
 }
+-- Spirit Shell
+LCT_SpellData[109964] = {
+	class = "PRIEST",
+	specID = { 256 },
+	defensive = true,
+	duration = 10,
+	cooldown = 60,
+}
 -- Purify
 LCT_SpellData[527] = {
 	class = "PRIEST",
@@ -198,7 +181,6 @@ LCT_SpellData[527] = {
 	cooldown_starts_on_dispel = true,
 	cooldown = 8,
 }
-
 -- Priest/Holy
 -- Guardian Spirit
 LCT_SpellData[47788] = {
@@ -231,12 +213,7 @@ LCT_SpellData[88625] = {
 	cooldown = 30
 }
 -- Holy Word: Serenity
-LCT_SpellData[88684] = {
-	class = "PRIEST",
-	specID = { 257 },
-	heal = true,
-	cooldown = 10
-}
+-- 88684 0 10
 -- Circle of Healing
 LCT_SpellData[34861] = {
 	class = "PRIEST",
@@ -264,7 +241,7 @@ LCT_SpellData[64044] = {
 -- Silence
 LCT_SpellData[15487] = {
 	class = "PRIEST",
-	specID = { 258, 256 },
+	specID = { 258 },
 	silence = true,
 	cooldown = 45
 }
