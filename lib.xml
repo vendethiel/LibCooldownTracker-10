@@ -2,6 +2,7 @@
 ..\FrameXML\UI.xsd">
 	<Script file="cooldowns_spelldata.lua"/>
 	<Script file="cooldowns_deathknight.lua"/>
+	<Script file="cooldowns_demonhunter.lua"/>
 	<Script file="cooldowns_druid.lua"/>
 	<Script file="cooldowns_hunter.lua"/>
 	<Script file="cooldowns_mage.lua"/>

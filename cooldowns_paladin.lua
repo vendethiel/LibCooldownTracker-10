@@ -3,16 +3,37 @@
 -- Avenging Wrath
 LCT_SpellData[31884] = {
 	class = "PALADIN",
+	specID = { 66, 70 },
 	offensive = true,
 	defensive = true,
 	duration = 20,
 	cooldown = 120
 }
+-- Templar's verdict
+-- V: not a CD, require 3 HoPo
+--LCT_SpellData[85256] = {
+--	class = "PALADIN",
+--	specID = { 70 },
+--	offensive = true,
+--	defensive = true,
+--	duration = 20,
+--	cooldown = 120
+--}
+-- Eye for an eye
+LCT_SpellData[205191] = {
+	class = "PALADIN",
+	specID = { 70 },
+	defensive = true,
+	duration = 10,
+	cooldown = 60
+}
+
 -- Blinding Light
 LCT_SpellData[115750] = {
 	class = "PALADIN",
 	cc = true,
-	cooldown = 120
+	talent = true,
+	cooldown = 90
 }
 -- Cleanse
 LCT_SpellData[4987] = {
@@ -21,9 +42,10 @@ LCT_SpellData[4987] = {
 	dispel = true,
 	cooldown = 8
 }
--- Devotion Aura
+-- V: legion: Devotion Aura => Aura Mastery
 LCT_SpellData[31821] = {
 	class = "PALADIN",
+	specID = { 65 },
 	defensive = true,
 	duration = 6,
 	cooldown = 180
@@ -31,8 +53,9 @@ LCT_SpellData[31821] = {
 -- Divine Protection
 LCT_SpellData[498] = {
 	class = "PALADIN",
+	specID = { 66 },
 	defensive = true,
-	duration = 10,
+	duration = 8,
 	cooldown = 60
 }
 -- Divine Shield
@@ -101,46 +124,15 @@ LCT_SpellData[96231] = {
 	interrupt = true,
 	cooldown = 15
 }
--- Turn Evil
-LCT_SpellData[10326] = {
-	class = "PALADIN",
-	offensive = true,
-	cooldown = 15
-}
--- Paladin/talents
--- Execution Sentence
-LCT_SpellData[114157] = {
-	class = "PALADIN",
-	talent = true,
-	offensive = true,
-	heal = true, -- todo: check spellids for off/heal
-	duration = 10,
-	cooldown = 60
-}
--- Fist of Justice
-LCT_SpellData[105593] = {
-	class = "PALADIN",
-	talent = true,
-	stun = true,
-	replaces = 853,
-	cooldown = 30
-}
--- Hand of Purify
-LCT_SpellData[114039] = {
-	class = "PALADIN",
-	talent = true,
-	defensive = true,
-	duration = 6,
-	cooldown = 30
-}
 -- Holy Avenger
 LCT_SpellData[105809] = {
 	class = "PALADIN",
+	specID = { 65 },
 	talent = true,
 	offensive = true,
 	defensive = true,
-	duration = 18,
-	cooldown = 120
+	duration = 20,
+	cooldown = 90
 }
 -- Holy Prism
 LCT_SpellData[114165] = {
@@ -167,13 +159,13 @@ LCT_SpellData[20066] = {
 	cooldown = 15
 }
 -- Sacred Shield
-LCT_SpellData[20925] = {
-	class = "PALADIN",
-	talent = true,
-	defensive = true,
-	duration = 30,
-	cooldown = 6
-}
+--LCT_SpellData[20925] = {
+--	class = "PALADIN",
+--	talent = true,
+--	defensive = true,
+--	duration = 30,
+--	cooldown = 6
+--}
 -- Speed of Light
 LCT_SpellData[85499] = {
 	class = "PALADIN",
@@ -183,7 +175,7 @@ LCT_SpellData[85499] = {
 }
 
 -- Paladin/Holy
--- Divine Favor
+-- V: legion renamed, Divine Favor => Avenging Wrath (holy)
 LCT_SpellData[31842] = {
 	class = "PALADIN",
 	specID = { 65 },
@@ -232,19 +224,4 @@ LCT_SpellData[86659] = {
 	duration = 12,
 	defensive = true,
 	cooldown = 180
-}
--- Holy Wrath
-LCT_SpellData[119072] = {
-	class = "PALADIN",
-	specID = { 66 },
-	offensive = true,
-	cooldown = 15
-}
--- Paladin/Retribution
--- Exorcism
-LCT_SpellData[879] = {
-	class = "PALADIN",
-	specID = { 70 },
-	offensive = true,
-	cooldown = 15
 }

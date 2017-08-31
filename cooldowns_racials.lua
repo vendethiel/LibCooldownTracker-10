@@ -1,6 +1,4 @@
 -- Racials
--- Every Man for Himself (Human)
-LCT_SpellData[59752] = 42292
 -- Gift of the Naaru (Draenei)
 LCT_SpellData[59544] = {
 	race = "Draenei",
@@ -8,6 +6,27 @@ LCT_SpellData[59544] = {
 	duration = 5,
 	cooldown = 180,
 }
+set_trinkets = {
+	-- Gladiator's Medallion
+	{ spellid = 208683, cooldown = 30 },
+	-- Honorable Medallion
+	{ spellid = 195710, cooldown = 30 },
+	-- Adaptation
+	{ spellid = 214027, cooldown = 30 },
+}
+-- Every Man For Himself
+LCT_SpellData[59752] = {
+	race = "Human",
+	sets_cooldowns = set_trinkets,
+	cooldown = 120
+}
+-- Will of the Forsaken (Undead)
+LCT_SpellData[7744] = {
+	race = "Scourge",
+	sets_cooldowns = set_trinkets, -- PvP trinket
+	cooldown = 120,
+}
+
 LCT_SpellData[28880] = 59544
 LCT_SpellData[59542] = 59544
 LCT_SpellData[59543] = 59544
@@ -41,12 +60,6 @@ LCT_SpellData[20577] = {
 	race = "Scourge",
 	heal = true,
 	duration = 10,
-	cooldown = 120,
-}
--- Will of the Forsaken (Undead)
-LCT_SpellData[7744] = {
-	race = "Scourge",
-	sets_cooldown = { spellid = 42292, cooldown = 30 }, -- PvP trinket
 	cooldown = 120,
 }
 -- Darkflight (Worgen)

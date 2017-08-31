@@ -1,23 +1,27 @@
 -- ================ PRIEST ================
 -- Priest/baseline
--- Fear Ward
-LCT_SpellData[6346] = {
-	class = "PRIEST",
-	defensive = true,
-	cooldown = 180
-}
 -- Prayer of Mending
 LCT_SpellData[33076] = {
 	class = "PRIEST",
+	specID = { 257 },
 	heal = true,
 	cooldown = 10
 }
 -- Shadowfiend
 LCT_SpellData[34433] = {
 	class = "PRIEST",
+	specID = { 258 },
 	offensive = true,
 	duration = 12,
 	cooldown = 180,
+}
+-- Rapture
+LCT_SpellData[73325] = {
+	class = "PRIEST",
+	specID = { 256 },
+	defensive = true,
+	duration = 8,
+	cooldown = 120,
 }
 -- Leap of Faith
 LCT_SpellData[73325] = {
@@ -35,16 +39,18 @@ LCT_SpellData[32375] = {
 -- Psychic Scream
 LCT_SpellData[8122] = {
 	class = "PRIEST",
-	talent = true,
 	cc = true,
-	cooldown = 30,
+	specID = { 256, 258 },
+	cooldown = 30, -- V: consider all disc priests use the fear CD talent... Unless one uses shining force...
 }
--- Void Tendrils
-LCT_SpellData[108920] = {
+-- Shining Force
+LCT_SpellData[204263] = {
 	class = "PRIEST",
-	talent = true,
 	cc = true,
-	cooldown = 30
+	talent = true,
+	specID = { 256, 258 },
+	cooldown = 60,
+	--sets_cooldown_of = { [8122] = 60 } i.e. if you have shining force than psychic scream is 60s... unimplemented ofc
 }
 -- Phantasm
 LCT_SpellData[114239] = {
@@ -64,11 +70,20 @@ LCT_SpellData[121536] = {
 -- Mindbender
 LCT_SpellData[123040] = {
 	class = "PRIEST",
+	specID = { 258 },
 	talent = true,
 	replaces = 34433,
 	offensive = true,
 	duration = 15,
 	cooldown = 60
+}
+-- Void Shift
+LCT_SpellData[123040] = {
+	class = "PRIEST",
+	specID = { 258 },
+	talent = true,
+	defensive = true,
+	cooldown = 300
 }
 -- Desperate Prayer
 LCT_SpellData[19236] = {
@@ -77,36 +92,32 @@ LCT_SpellData[19236] = {
 	defensive = true,
 	cooldown = 120
 }
--- Spectral Guise
-LCT_SpellData[112833] = {
-	class = "PRIEST",
-	talent = true,
-	defensive = true,
-	duration = 6,
-	cooldown = 30
-}
--- Angelic Bulwark
-LCT_SpellData[108945] = {
-	class = "PRIEST",
-	talent = true,
-	defensive = true,
-	cooldown = 90
-}
 -- Power Infusion
 LCT_SpellData[10060] = {
 	class = "PRIEST",
+	specID = { 256, 258 },
 	talent = true,
 	offensive = true,
 	duration = 20,
 	cooldown = 120
 }
--- Cascade
-LCT_SpellData[121135] = {
+-- Dark Archangel
+LCT_SpellData[197871] = {
 	class = "PRIEST",
+	specID = { 256 },
 	talent = true,
 	offensive = true,
-	heal = true,
-	cooldown = 25
+	duration = 8,
+	cooldown = 60
+}
+-- Archangel
+LCT_SpellData[197862] = {
+	class = "PRIEST",
+	specID = { 256 },
+	talent = true,
+	offensive = true,
+	duration = 15,
+	cooldown = 60
 }
 -- Divine Star
 LCT_SpellData[110744] = {
@@ -133,14 +144,6 @@ LCT_SpellData[14914] = {
 	offensive = true,
 	cooldown = 10
 }
--- Archangel
-LCT_SpellData[81700] = {
-	class = "PRIEST",
-	specID = { 256 },
-	heal = true,
-	duration = 18,
-	cooldown = 30
-}
 -- Penance
 LCT_SpellData[47540] = {
 	class = "PRIEST",
@@ -155,7 +158,7 @@ LCT_SpellData[33206] = {
 	specID = { 256 },
 	defensive = true,
 	duration = 8,
-	cooldown = 180,
+	cooldown = 240,
 }
 -- Power Word: Barrier
 LCT_SpellData[62618] = {
@@ -188,13 +191,14 @@ LCT_SpellData[47788] = {
 	specID = { 257 },
 	defensive = true,
 	duration = 10,
-	cooldown = 180,
+	cooldown = 240,
 }
--- Lightwell
-LCT_SpellData[724] = {
+-- Apotheosis
+LCT_SpellData[200183] = {
 	class = "PRIEST",
 	specID = { 257 },
-	heal = true,
+	defensive = true,
+	duration = 12,
 	cooldown = 180,
 }
 -- Divine Hymn
@@ -210,7 +214,15 @@ LCT_SpellData[88625] = {
 	class = "PRIEST",
 	specID = { 257 },
 	cc = true,
-	cooldown = 30
+	cooldown = 60
+}
+-- Symbol of hope
+LCT_SpellData[64901] = {
+	class = "PRIEST",
+	specID = { 257 },
+	defensive = true,
+	duration = 12,
+	cooldown = 360
 }
 -- Holy Word: Serenity
 -- 88684 0 10
@@ -231,12 +243,13 @@ LCT_SpellData[47585] = {
 	duration = 6,
 	cooldown = 120
 }
--- Psychic Horror
-LCT_SpellData[64044] = {
+-- Dispersion
+LCT_SpellData[15286] = {
 	class = "PRIEST",
 	specID = { 258 },
-	cc = true,
-	cooldown = 45
+	defensive = true,
+	duration = 6,
+	cooldown = 120
 }
 -- Silence
 LCT_SpellData[15487] = {
@@ -244,4 +257,10 @@ LCT_SpellData[15487] = {
 	specID = { 258 },
 	silence = true,
 	cooldown = 45
+}
+-- Void torrent
+LCT_SpellData[205065] = {
+	class = "PRIEST",
+	specID = { 258 },
+	cooldown = 60
 }

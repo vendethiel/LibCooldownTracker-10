@@ -1,13 +1,44 @@
--- Items
--- PvP Trinket
-LCT_SpellData[42292] = {
-	item = true,
-	pvp_trinket = true,
-	icon_alliance = [[Interface\Icons\INV_Jewelry_TrinketPVP_01]],
-	icon_horde = [[Interface\Icons\INV_Jewelry_TrinketPVP_02]],
-	sets_cooldown = { spellid = 7744, cooldown = 120 }, -- WotF
-	cooldown = 120,
+-- used to be Items. Now PVP trinekts
+
+-- TODO: currently only sets WoTF, should set EMFH(human) as well
+
+set_wotf_emfh = {
+	-- WOTF
+	{ spellid = 7744, cooldown = 30 },
+	-- EMFH
+	{ spellid = 59752, cooldown = 30 },
 }
+
+-- Honorable Medallion
+LCT_SpellData[195710] = {
+	pvp_trinket = true,
+	replaces = 208683, -- V: that's a big lie :D
+	talent = true,
+	sets_cooldowns = set_wotf_emfh,
+	cooldown = 180
+}
+-- Gladiator's Medallion
+LCT_SpellData[208683] = {
+	pvp_trinket = true,
+	sets_cooldowns = set_wotf_emfh,
+	cooldown = 120
+}
+-- Adaptation
+LCT_SpellData[214027] = {
+	pvp_trinket = true,
+	talent = true,
+	replaces = 208683,
+	sets_cooldowns = set_wotf_emfh,
+	cooldown = 60
+}
+-- Relentless
+LCT_SpellData[196029] = {
+	pvp_trinket = true,
+	talent = true,
+	replaces = 208683,
+	--sets_cooldown = { spellid = 7744, cooldown = 30 }
+}
+
 -- Healthstone
 LCT_SpellData[6262] = {
 	item = true,

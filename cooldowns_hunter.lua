@@ -1,4 +1,9 @@
 -- ================ HUNTER ================
+-- Specs:
+-- 253 BM
+-- 254 MM
+-- 255 Survival
+
 -- Hunter/baseline
 -- Concussive Shot
 LCT_SpellData[5116] = {
@@ -10,19 +15,21 @@ LCT_SpellData[5116] = {
 LCT_SpellData[781] = {
 	class = "HUNTER",
 	defensive = true,
-	cooldown = 20
+	cooldown = 30
+}
+-- Counter Shot
+LCT_SpellData[147362] = {
+	class = "HUNTER",
+	interrupt = true,
+	cooldown = 24,
+	specID = { 253, 254 }, -- BM, MM
 }
 -- Freezing Trap
-LCT_SpellData[1499] = {
+-- V: legion id 1499 => 187650
+LCT_SpellData[187650] = {
 	class = "HUNTER",
 	cc = true,
 	cooldown = 30
-}
--- Kill Shot
-LCT_SpellData[53351] = {
-	class = "HUNTER",
-	offensive = true,
-	cooldown = 10
 }
 -- Explosive Trap
 LCT_SpellData[13813] = {
@@ -42,12 +49,6 @@ LCT_SpellData[13809] = {
 	cc = true,
 	cooldown = 30
 }
--- Snake Trap
-LCT_SpellData[34600] = {
-	class = "HUNTER",
-	offensive = true,
-	cooldown = 30
-}
 -- Master's Call
 LCT_SpellData[53271] = {
 	class = "HUNTER",
@@ -55,27 +56,14 @@ LCT_SpellData[53271] = {
 	duration = 4,
 	cooldown = 45
 }
--- Deterrence
-LCT_SpellData[19263] = {
+-- Aspect of Turtle. old: Deterrence
+-- V: legion id 19263 => 186265
+LCT_SpellData[186265] = {
 	class = "HUNTER",
 	defensive = true,
-	duration = 5,
+	duration = 8,
 	charges = 2,
 	cooldown = 180
-}
--- Camouflage
-LCT_SpellData[51753] = {
-	class = "HUNTER",
-	defensive = true,
-	duration = 6,
-	cooldown = 60
-}
--- Stampede
-LCT_SpellData[121818] = {
-	class = "HUNTER",
-	offensive = true,
-	duration = 20,
-	cooldown = 300
 }
 
 -- Hunter/talent
@@ -96,17 +84,17 @@ LCT_SpellData[19386] = {
 -- Exhilaration
 LCT_SpellData[109304] = {
 	class = "HUNTER",
-	talent = true,
 	heal = true,
 	cooldown = 120
 }
 -- Dire Beast
+-- V: legion changed CD
 LCT_SpellData[120679] = {
 	class = "HUNTER",
 	talent = true,
 	offensive = true,
-	duration = 15,
-	cooldown = 30
+	duration = 8,
+	cooldown = 12
 }
 -- Fervor
 LCT_SpellData[82726] = {
@@ -131,13 +119,6 @@ LCT_SpellData[130392] = {
 	offensive = true,
 	cooldown = 20
 }
--- Lynx Rush
-LCT_SpellData[120697] = {
-	class = "HUNTER",
-	talent = true,
-	offensive = true,
-	cooldown = 90
-}
 -- Barrage
 LCT_SpellData[120360] = {
 	class = "HUNTER",
@@ -145,22 +126,6 @@ LCT_SpellData[120360] = {
 	offensive = true,
 	duration = 3,
 	cooldown = 20
-}
--- Glaive Toss
-LCT_SpellData[117050] = {
-	class = "HUNTER",
-	talent = true,
-	offensive = true,
-	cc = true,
-	cooldown = 15
-}
--- Powershot
-LCT_SpellData[109259] = {
-	class = "HUNTER",
-	talent = true,
-	offensive = true,
-	knockback = true,
-	cooldown = 45
 }
 -- Intimidation
 LCT_SpellData[19577] = {
@@ -202,22 +167,6 @@ LCT_SpellData[53209] = {
 	offensive = true,
 	cooldown = 9
 }
--- Hunter/255 - Survival
--- Explosive Shot
-LCT_SpellData[53301] = {
-	class = "HUNTER",
-	specID = { 255 },
-	offensive = true,
-	cooldown = 6
-}
--- Black Arrow
-LCT_SpellData[3674] = {
-	class = "HUNTER",
-	specID = { 255 },
-	offensive = true,
-	cooldown = 24
-}
-
 -- Pet/Ferocity
 -- Heart of the Phoenix
 LCT_SpellData[55709] = {
@@ -341,4 +290,44 @@ LCT_SpellData[90361] = {
 	pet = true,
 	heal = true,
 	cooldown = 30
+}
+
+-- Aspect of the wild
+LCT_SpellData[90361] = {
+	class = "HUNTER",
+	specID = { 253 },
+	offensive = true,
+	duration = 10,
+	cooldown = 120
+}
+-- Stampede
+LCT_SpellData[201430] = {
+	class = "HUNTER",
+	specID = { 253 },
+	offensive = true,
+	duration = 12,
+	cooldown = 180
+}
+-- Trueshot
+LCT_SpellData[193526] = {
+	class = "HUNTER",
+	specID = { 254 },
+	offensive = true,
+	duration = 15,
+	cooldown = 180
+}
+-- Aspect of the eagle
+LCT_SpellData[186289] = {
+	class = "HUNTER",
+	specID = { 255 },
+	offensive = true,
+	duration = 10,
+	cooldown = 120
+}
+-- Caltrops
+LCT_SpellData[194277] = {
+	class = "HUNTER",
+	specID = { 255 },
+	defensive = true,
+	cooldown = 15
 }

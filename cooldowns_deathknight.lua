@@ -30,15 +30,16 @@ LCT_SpellData[43265] = {
 LCT_SpellData[48792] = {
 	class = "DEATHKNIGHT",
 	defensive = true,
-	duration = 12,
+	duration = 8,
 	cooldown = 180
 }
 -- Anti-Magic Shell
+-- V: changed duration
 LCT_SpellData[48707] = {
 	class = "DEATHKNIGHT",
 	defensive = true,
 	duration = 5,
-	cooldown = 45
+	cooldown = 60
 }
 -- Empower Rune Weapon
 LCT_SpellData[47568] = {
@@ -87,7 +88,7 @@ LCT_SpellData[51052] = {
 	class = "DEATHKNIGHT",
 	talent = true,
 	defensive = true,
-	duration = 3,
+	duration = 10,
 	cooldown = 120
 }
 -- Lichborne
@@ -105,14 +106,6 @@ LCT_SpellData[108194] = {
 	talent = true,
 	stun = true,
 	silence = true,
-	cooldown = 30
-}
--- Death's Advance
-LCT_SpellData[96268] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	defensive = true,
-	duration = 6,
 	cooldown = 30
 }
 -- Death Pact
@@ -137,15 +130,6 @@ LCT_SpellData[108199] = {
 	cc = true,
 	cooldown = 60
 }
--- Remorseless Winter
-LCT_SpellData[108200] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	stun = true,
-	duration = 8,
-	cooldown = 60
-}
-
 
 -- DK/250 - Blood
 -- Vampiric Blood
@@ -155,14 +139,7 @@ LCT_SpellData[55233] = {
 	heal = true,
 	defensive = true,
 	duration = 10,
-	cooldown = 60
-}
--- Bone Shield
-LCT_SpellData[49222] = {
-	class = "DEATHKNIGHT",
-	specID = { 250 },
-	defensive = true,
-	cooldown = 60
+	cooldown = 90
 }
 -- Dancing Rune Weapon
 LCT_SpellData[49028] = {
@@ -173,21 +150,6 @@ LCT_SpellData[49028] = {
 	duration = 12,
 	cooldown = 90
 }
--- Rune Tap
-LCT_SpellData[48982] = {
-	class = "DEATHKNIGHT",
-	specID = { 250 },
-	heal = true,
-	charges = 2,
-	cooldown = 30
-}
--- Soul Reaper
-LCT_SpellData[114866] = {
-	class = "DEATHKNIGHT",
-	specID = { 250 },
-	offensive = true,
-	cooldown = 6
-}
 -- DK/251 - Frost
 -- Pillar of Frost
 LCT_SpellData[51271] = {
@@ -197,13 +159,6 @@ LCT_SpellData[51271] = {
 	defensive = true,
 	duration = 20,
 	cooldown = 60
-}
--- Soul Reaper
-LCT_SpellData[130735] = {
-	class = "DEATHKNIGHT",
-	specID = { 251 },
-	offensive = true,
-	cooldown = 6
 }
 -- DK/252 - Unholy
 -- Raise Dead
@@ -217,7 +172,7 @@ LCT_SpellData[49206] = {
 	class = "DEATHKNIGHT",
 	specID = { 252 },
 	offensive = true,
-	duration = 30,
+	duration = 40,
 	cooldown = 180
 }
 -- Soul Reaper
@@ -283,4 +238,44 @@ LCT_SpellData[91802] = {
 	interrupt = true,
 	cc = true,
 	cooldown = 30
+}
+-- V: added in legion
+-- Wraith Walk
+LCT_SpellData[212552] = {
+	class = "DEATHKNIGHT",
+	offensive = true,
+	duration = 3,
+	cooldown = 45
+}
+-- Artifact - Sindragosa's Fury
+LCT_SpellData[190778] = {
+	class = "DEATHKNIGHT",
+	specID = { 251 },
+	offensive = true,
+	duration = 10,
+	cooldown = 300
+}
+-- Obliteration
+LCT_SpellData[207256] = {
+	class = "DEATHKNIGHT",
+	specID = { 251 },
+	offensive = true,
+	duration = 8,
+	cooldown = 90
+}
+-- Breath of Sindragosa
+-- V: note: continues until power is exhausted (??)
+LCT_SpellData[152279] = {
+	class = "DEATHKNIGHT",
+	specID = { 251 },
+	offensive = true,
+	duration = 10,
+	cooldown = 120
+}
+-- Corpse shield
+LCT_SpellData[49206] = {
+	class = "DEATHKNIGHT",
+	specID = { 252 },
+	defensive = true,
+	cooldown = 60
 }

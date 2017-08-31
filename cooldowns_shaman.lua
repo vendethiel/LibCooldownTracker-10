@@ -1,32 +1,14 @@
 -- ================ SHAMAN ================
+
+-- V: todo, blood list(?)
+
 -- Shaman/baseline
--- Ascendance
-LCT_SpellData[114049] = {
-	class = "SHAMAN",
-	offensive = true,
-	defensive = true,
-	duration = 15,
-	cooldown = 180
-}
--- Capacitor Totem
-LCT_SpellData[108269] = {
-	class = "SHAMAN",
-	stun = true,
-	duration = 5,
-	cooldown = 45
-}
 -- Cleanse Spirit
 LCT_SpellData[51886] = {
 	class = "SHAMAN",
 	dispel = true,
 	cooldown_starts_on_dispel = true,
 	cooldown = 8
-}
--- Earth Elemental Totem
-LCT_SpellData[2062] = {
-	class = "SHAMAN",
-	duration = 60,
-	cooldown = 300
 }
 -- Earth Shock
 LCT_SpellData[8042] = {
@@ -40,32 +22,6 @@ LCT_SpellData[2484] = {
 	cc = true,
 	duration = 20,
 	cooldown = 30
-}
--- Fire Elemental Totem
-LCT_SpellData[2894] = {
-	class = "SHAMAN",
-	duration = 60,
-	offensive = true,
-	cooldown = 300
-}
--- Flame Shock
-LCT_SpellData[8050] = {
-	class = "SHAMAN",
-	offensive = true,
-	cooldown = 6
-}
--- Frost Shock
-LCT_SpellData[8056] = {
-	class = "SHAMAN",
-	cc = true,
-	cooldown = 6
-}
--- Grounding Totem
-LCT_SpellData[8177] = {
-	class = "SHAMAN",
-	defensive = true,
-	duration = 15,
-	cooldown = 25
 }
 -- Healing Rain
 LCT_SpellData[73920] = {
@@ -96,6 +52,7 @@ LCT_SpellData[73899] = {
 -- Spiritwalker's Grace
 LCT_SpellData[79206] = {
 	class = "SHAMAN",
+	specID = { 264 },
 	duration = 15,
 	cooldown = 120
 }
@@ -104,18 +61,6 @@ LCT_SpellData[115356] = {
 	class = "SHAMAN",
 	offensive = true,
 	cooldown = 8
-}
--- Tremor Totem
-LCT_SpellData[8143] = {
-	class = "SHAMAN",
-	defensive = true,
-	duration = 6,
-	cooldown = 60
-}
--- Unleash Elements
-LCT_SpellData[73680] = {
-	class = "SHAMAN",
-	cooldown = 15
 }
 -- Unleash Life
 LCT_SpellData[73685] = {
@@ -140,27 +85,13 @@ LCT_SpellData[108281] = {
 	duration = 10,
 	cooldown = 120
 }
--- Ancestral Swiftness
-LCT_SpellData[16188] = {
-	class = "SHAMAN",
-	talent = true,
-	cooldown_starts_on_aura_fade = true,
-	cooldown = 90
-}
 -- Astral Shift
 LCT_SpellData[108271] = {
 	class = "SHAMAN",
 	talent = true,
 	defensive = true,
-	duration = 6,
+	duration = 8,
 	cooldown = 90
-}
--- Call of the Elements
-LCT_SpellData[108285] = {
-	class = "SHAMAN",
-	talent = true,
-	-- rests=... = true, TODO: this
-	cooldown = 180
 }
 -- Earthgrab Totem
 LCT_SpellData[51485] = {
@@ -180,6 +111,7 @@ LCT_SpellData[117014] = {
 -- Elemental Mastery
 LCT_SpellData[16166] = {
 	class = "SHAMAN",
+	specID = { 262 },
 	talent = true,
 	offensive = true,
 	duration = 20,
@@ -188,24 +120,18 @@ LCT_SpellData[16166] = {
 -- Healing Tide Totem
 LCT_SpellData[108280] = {
 	class = "SHAMAN",
-	talent = true,
+	specID = { 264 },
 	heal = true,
 	duration = 10,
 	cooldown = 180
 }
 -- Stone Bulwark Totem
-LCT_SpellData[108270] = {
+LCT_SpellData[198838] = {
 	class = "SHAMAN",
+	specID = { 264 },
 	talent = true,
 	defensive = true,
-	duration = 30,
 	cooldown = 60
-}
--- Totem Projection
-LCT_SpellData[108287] = {
-	class = "SHAMAN",
-	talent = true,
-	cooldown = 10
 }
 -- Windwalk Totem
 LCT_SpellData[108273] = {
@@ -224,7 +150,21 @@ LCT_SpellData[61882] = {
 	duration = 10,
 	cooldown = 10
 }
--- Lave Burst
+-- Fire Elemental
+LCT_SpellData[198067] = {
+	class = "SHAMAN",
+	specID = { 262 },
+	cooldown = 300,
+}
+-- Ascendance (elemental)
+LCT_SpellData[114050] = {
+	class = "SHAMAN",
+	specID = { 262 },
+	talent = true,
+	duration = 15,
+	cooldown = 180,
+}
+-- Lava Burst
 LCT_SpellData[51505] = {
 	class = "SHAMAN",
 	specID = { 262 },
@@ -239,6 +179,13 @@ LCT_SpellData[51490] = {
 	cc = true,
 	cooldown = 45
 }
+-- Earth Elemental
+LCT_SpellData[198103] = {
+	class = "SHAMAN",
+	specID = { 262 },
+	defensive = true,
+	cooldown = 300
+}
 -- Shaman/Enhancement
 -- Feral Spirit
 LCT_SpellData[51533] = {
@@ -246,8 +193,16 @@ LCT_SpellData[51533] = {
 	specID = { 263 },
 	offensive = true,
 	heal = true,
-	duration = 30,
+	duration = 15,
 	cooldown = 120
+}
+-- Ascendance (enhancement)
+LCT_SpellData[114051] = {
+	class = "SHAMAN",
+	specID = { 263 },
+	talent = true,
+	offensive = true,
+	cooldown = 180
 }
 -- Lava Lash
 LCT_SpellData[60103] = {
@@ -256,20 +211,12 @@ LCT_SpellData[60103] = {
 	offensive = true,
 	cooldown = 10
 }
--- Shamanistic Rage
-LCT_SpellData[30823] = {
-	class = "SHAMAN",
-	specID = { 262, 263 },
-	defensive = true,
-	duration = 15,
-	cooldown = 60
-}
 -- Spirit Walk
 LCT_SpellData[58875] = {
 	class = "SHAMAN",
 	specID = { 263 },
 	defensive = true,
-	duration = 15,
+	duration = 8,
 	cooldown = 60
 }
 -- Stormstrike
@@ -301,7 +248,8 @@ LCT_SpellData[61295] = {
 LCT_SpellData[98008] = {
 	class = "SHAMAN",
 	specID = { 264 },
+	talent = true,
 	defensive = true,
-	duration = 6,
+	duration = 6, -- V: technically it's 20s
 	cooldown = 180
 }

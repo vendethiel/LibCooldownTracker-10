@@ -16,7 +16,7 @@ LCT_SpellData[120] = {
 LCT_SpellData[2139] = {
 	class = "MAGE",
 	interrupt = true,
-	silence = true, -- with glyph
+	--silence = true, V: not since legion
 	cooldown = 24,
 }
 -- Evocation
@@ -24,13 +24,7 @@ LCT_SpellData[12051] = {
 	class = "MAGE",
 	defensive = true,
 	duration = 6,
-	cooldown = 120
-}
--- Fire Blast
-LCT_SpellData[2136] = {
-	class = "MAGE",
-	offensive = true,
-	cooldown = 8
+	cooldown = 182
 }
 -- Flamestrike
 LCT_SpellData[2120] = {
@@ -51,31 +45,25 @@ LCT_SpellData[45438] = {
 	defensive = true,
 	immune = true,
 	duration = 10,
-	cooldown = 300
-}
--- Invisibility
-LCT_SpellData[66] = {
-	class = "MAGE",
-	defensive = true,
-	duration = 3,
-	cooldown = 300
+	cooldown = 240
 }
 -- Mirror Image
 LCT_SpellData[55342] = {
 	class = "MAGE",
 	offensive = true,
+	talent = true,
 	duration = 40,
 	cooldown = 120
 }
--- Remove Curse
-LCT_SpellData[475] = {
+-- Temporal Shield
+LCT_SpellData[198111] = {
 	class = "MAGE",
-	dispel = true,
-	cooldown_starts_on_dispel = true,
-	cooldown = 8
+	defensive = true,
+	talent = true,
+	duration = 6,
+	cooldown = 45
 }
 
---[[
 -- Time Warp
 LCT_SpellData[80353] = {
 	class = "MAGE",
@@ -83,59 +71,46 @@ LCT_SpellData[80353] = {
 	duration = 40,
 	cooldown = 300
 }
-]]
 -- Mage/talents
--- Alter Time
-LCT_SpellData[108978] = {
-	class = "MAGE",
-	defensive = true,
-	duration = 10,
-	cooldown = 60
-}
--- Blazing Speed
-LCT_SpellData[108843] = {
-	class = "MAGE",
-	talent = true,
-	defensive = true,
-	duration = 1.5,
-	cooldown = 25
-}
 -- Cauterize
 LCT_SpellData[86949] = {
 	class = "MAGE",
-	talent = true,
+	specID = { 63 },
 	defensive = true,
 	duration = 6,
-	cooldown = 120
+	cooldown = 300
 }
 -- Cold Snap
-LCT_SpellData[11958] = {
+-- V: changed ID in legion, 11958 -> 235219
+LCT_SpellData[235219] = {
 	class = "MAGE",
-	talent = true,
-	resets = { 45438, 122, 120 },
-	cooldown = 180
+	specID = { 64 },
+	resets = { 45438, 11426, 122, 120 }, -- ice block, ice barrier, frost nova, cone of cold
+	cooldown = 300
 }
--- Frostjaw
-LCT_SpellData[102051] = {
-	class = "MAGE",
-	talent = true,
-	silence = true,
-	cc = true,
-	cooldown = 20
-}
--- Greater Invisibility
+-- Greater Invisibility (arcane)
 LCT_SpellData[110959] = {
 	class = "MAGE",
-	talent = true,
+	specID = { 62 },
 	defensive = true,
-	replaces = 66,
+	--talent = true,
+	--replaces = 66, -- V: invisibility doesn't exist baseline anymore
 	duration = 20,
-	cooldown = 90
+	cooldown = 120
+}
+-- Invisibility (fire & frost)
+LCT_SpellData[110959] = {
+	class = "MAGE",
+	specID = { 63, 64 },
+	defensive = true,
+	--replaces = 66, -- V: invisibility doesn't exist baseline anymore
+	duration = 20,
+	cooldown = 300
 }
 -- Ice Barrier
 LCT_SpellData[11426] = {
 	class = "MAGE",
-	talent = true,
+	specID = { 64 },
 	defensive = true,
 	duration = 60,
 	cooldown = 25
@@ -149,12 +124,12 @@ LCT_SpellData[108839] = {
 	cooldown = 20
 }
 -- Ice Ward
-LCT_SpellData[111264] = {
-	class = "MAGE",
-	talent = true,
-	cc = true,
-	cooldown = 20
-}
+--LCT_SpellData[111264] = {
+--	class = "MAGE",
+--	talent = true,
+--	cc = true,
+--	cooldown = 20
+--}
 -- Incanter's Ward
 LCT_SpellData[1463] = {
 	class = "MAGE",
@@ -162,14 +137,6 @@ LCT_SpellData[1463] = {
 	defensive = true,
 	duration = 8,
 	cooldown = 25
-}
--- Presence of Mind
-LCT_SpellData[12043] = {
-	class = "MAGE",
-	talent = true,
-	offensive = true,
-	cooldown_starts_on_aura_fade = true,
-	cooldown = 90
 }
 -- Ring of Frost
 LCT_SpellData[113724] = {
@@ -179,31 +146,32 @@ LCT_SpellData[113724] = {
 	duration = 10,
 	cooldown = 45
 }
--- Temporal Shield
-LCT_SpellData[115610] = {
-	class = "MAGE",
-	talent = true,
-	defensive = true,
-	duration = 4,
-	cooldown = 25
-}
 -- Mage/Arcane
 -- Arcane Power
 LCT_SpellData[12042] = {
 	class = "MAGE",
 	specID = { 62 },
 	offensive = true,
-	duration = 15,
+	duration = 10,
 	cooldown = 90
 }
+-- Mark of Aluneth
+LCT_SpellData[224968] = {
+	class = "MAGE",
+	specID = { 62 },
+	offensive = true,
+	cooldown = 60
+}
+
 -- Mage/Fire
 -- Combustion
-LCT_SpellData[11129] = {
+--V: changed in legion, 11129 => 190319
+LCT_SpellData[190319] = {
 	class = "MAGE",
 	specID = { 63 },
-	stun = true,
 	offensive = true,
-	cooldown = 45
+	duration = 10,
+	cooldown = 120
 }
 -- Dragon's Breath
 LCT_SpellData[31661] = {
@@ -214,13 +182,6 @@ LCT_SpellData[31661] = {
 }
 
 -- Mage/Frost
--- Deep Freeze
-LCT_SpellData[44572] = {
-	class = "MAGE",
-	specID = { 64 },
-	stun = true,
-	cooldown = 30
-}
 -- Frozen Orb
 LCT_SpellData[84714] = {
 	class = "MAGE",

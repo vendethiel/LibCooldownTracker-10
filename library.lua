@@ -36,8 +36,9 @@ end
 
 -- lookup tables
 local class_spelldata = {}
-local item_spelldata = {}
 local race_spelldata = {}
+local item_spelldata = {}
+local pvp_spelldata = {}
 
 -- generate lookup tables
 do
@@ -80,6 +81,9 @@ do
 				end
 				if spelldata.item then
 					item_spelldata[spellid] = spelldata
+				end
+				if spelldata.pvp_trinket then
+					pvp_spelldata[spellid] = spelldata
 				end
 			end
 		end
@@ -130,7 +134,7 @@ local timer_frame
 
 local function Timer_OnUpdate()
 	local t1 = timers[1]
-	if GetTime() >= t1.time then
+	if t1 and GetTime() >= t1.time then
 		tremove(timers, 1)
 		t1.func(unpack(t1.args))
 		if #timers == 0 then
@@ -162,8 +166,28 @@ local function ClearTimers()
 	timers = {}
 end
 
+local function GetCooldownTime(spelldata, unit)
+	local time = spelldata.cooldown
+	-- V: note - this thing ties it to GladiusEx, but no choice :(
+	if GladiusEx and GladiusEx.buttons[unit] and spelldata.cooldown_overload then
+		local button = GladiusEx.buttons[unit]
+		local overloads = spelldata.cooldown_overload
+		if button.specID and overloads[button.specID] then
+			return overloads[button.specID]
+		end
+		local class = GladiusEx.buttons[unit].class or select(2, UnitClass(unit))
+		if class and overloads[class] then
+			return overloads[class]
+		end
+	end
+	return time
+end
+
 local function AddCharge(unit, spellid)
 	local tps = lib.tracked_players[unit][spellid]
+	if not tps then
+		return
+	end
 	tps.charges = tps.charges + 1
 	lib.callbacks:Fire("LCT_CooldownUsed", unit, spellid)
 
@@ -172,7 +196,7 @@ local function AddCharge(unit, spellid)
 		local now = GetTime()
 		local spelldata = SpellData[spellid]
 		tps.cooldown_start = now
-		tps.cooldown_end = now + spelldata.cooldown
+		tps.cooldown_end = now + GetCooldownTime(spelldata, unit)
 		tps.charge_timer = SetTimer(tps.cooldown_end, AddCharge, unit, spellid)
 	else
 		tps.charge_timer = false
@@ -294,25 +318,35 @@ local function CooldownEvent(event, unit, spellid)
 		if cooldown_start then
 			-- if the spell has charges and the cooldown is already in progress, it does not need to be reset
 			if not tps.charges or not tps.cooldown_end or tps.cooldown_end <= now then
-				tps.cooldown_start = spelldata.cooldown and now
-				tps.cooldown_end = spelldata.cooldown and (now + spelldata.cooldown)
+				local cooldown_time = GetCooldownTime(spelldata, unit)
+				tps.cooldown_start = cooldown_time and now
+				tps.cooldown_end = cooldown_time and (now + cooldown_time)
 
 				-- set charge timer
 				if tps.charges and not tps.charge_timer then
 					tps.charge_timer = SetTimer(tps.cooldown_end, AddCharge, unit, spellid)
 				end
 
-				-- set other cooldowns
+				-- V: set other cooldown(s)
+				local sets_cooldowns = {}
 				if spelldata.sets_cooldown then
-					local cspellid = spelldata.sets_cooldown.spellid
+					sets_cooldowns = {spelldata.sets_cooldown}
+				end
+				if spelldata.sets_cooldowns then
+					sets_cooldowns = spelldata.sets_cooldowns
+				end
+
+				for i = 1, #sets_cooldowns do
+					local cd = sets_cooldowns[i]
+					local cspellid = cd.spellid
 					local cspelldata = SpellData[cspellid]
-					if (tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.glyph) then
+					if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.glyph)) then
 						if not tpu[cspellid] then
 							tpu[cspellid] = {}
 						end
-						if not tpu[cspellid].cooldown_end or (tpu[cspellid].cooldown_end < (now + spelldata.sets_cooldown.cooldown)) then
+						if not tpu[cspellid].cooldown_end or (tpu[cspellid].cooldown_end < (now + cd.cooldown)) then
 							tpu[cspellid].cooldown_start = now
-							tpu[cspellid].cooldown_end = now + spelldata.sets_cooldown.cooldown
+							tpu[cspellid].cooldown_end = now + cd.cooldown
 							tpu[cspellid].used_start = tpu[cspellid].used_start or 0
 							tpu[cspellid].used_end = tpu[cspellid].used_end or 0
 						end
@@ -330,6 +364,8 @@ local function enable()
 	lib.frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 	lib.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 	lib.frame:RegisterEvent("UNIT_NAME_UPDATE")
+	lib.frame:RegisterEvent("ARENA_CROWD_CONTROL_SPELL_UPDATE")
+	lib.frame:RegisterEvent("ARENA_COOLDOWNS_UPDATE")
 
 	lib.tracked_players = {}
 	lib.guid_to_unitid = {}
@@ -404,6 +440,23 @@ function lib:GetUnitCooldownInfo(unitid, spellid)
 	return tpu and tpu[spellid]
 end
 
+function lib:SetUnitTrinket(unit, spellid)
+	if not spellid then
+		return
+	end
+	if not lib.tracked_players[unit] then
+		lib.tracked_players[unit] = {}
+	end
+	local spell = lib.tracked_players[unit][spellid]
+	if not spell then
+		lib.tracked_players[unit][spellid] = {
+			detected = true
+		}
+	elseif not spell.detected then
+		spell.detected = true
+	end
+end
+
 --- Returns the raw data of all the cooldowns. See the cooldowns_*.lua data files for more details about its structure.
 function lib:GetCooldownsData()
 	return SpellData
@@ -439,9 +492,11 @@ local function CooldownIterator(state, spellid)
 				return spellid, spelldata
 			end
 
-			if spelldata.item then
-				-- return item
-				return spellid, spelldata
+			if spelldata.item or spelldata.pvp_trinket then
+				-- return item or pvp trinket
+				if (spelldata.race and spelldata.race == state.race) or not spelldata.race then
+					return spellid, spelldata
+				end
 			end
 		end
 	end
@@ -483,7 +538,23 @@ local function FastCooldownIterator(state, spellid)
 	end
 
 	-- item
-	if state.item and state.data_source then
+	if state.item then
+		if state.data_source then
+			spellid, spelldata = CooldownIterator(state, spellid)
+		end
+
+		if spellid then
+			return spellid, spelldata
+		else
+			-- do pvp next
+			state.data_source = pvp_spelldata
+			state.item = nil
+			spellid = nil
+		end
+	end
+
+	-- pvp
+	if state.pvp and state.data_source then
 		spellid, spelldata = CooldownIterator(state, spellid)
 		return spellid, spelldata
 	end
@@ -499,6 +570,7 @@ function lib:IterateCooldowns(class, specID, race)
 	state.specID = specID
 	state.race = race or ""
 	state.item = true
+	state.pvp = true
 
 	if class then
 		state.data_source = class_spelldata[state.class]
@@ -545,4 +617,22 @@ end
 
 function events:UNIT_NAME_UPDATE(event, unit)
 	UpdateGUID(unit)
+end
+
+function events:ARENA_CROWD_CONTROL_SPELL_UPDATE(event, unit, spellID)
+	-- V: sometimes we receive such an event for "nameplateX" or "focus"
+	if string.sub(unit, 1, 5) ~= "arena" then return end
+	
+	lib:SetUnitTrinket(unit, spellID)
+	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellid)
+end
+
+function events:ARENA_COOLDOWNS_UPDATE(event, unit)
+	C_PvP.RequestCrowdControlSpell(unit)
+	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
+	-- V: the "duration ~= 30s" hack is because when using WOTF/EMFH, blizzard
+	--    also updates the actual trinket... but we discard duration
+	if spellID and duration ~= 30000 then
+		CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID)
+	end
 end

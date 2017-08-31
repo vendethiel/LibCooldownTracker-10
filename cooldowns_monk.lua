@@ -1,4 +1,8 @@
 -- ================ MONK ================
+-- Spec
+-- 268 brewmaster
+-- 267 windwalker
+-- 270 mistweaver
 -- Monk/baseline
 
 -- Roll
@@ -7,7 +11,7 @@ LCT_SpellData[109132] = {
 	charges = 2,
 	cooldown = 20,
 }
--- Chii Torpedo
+-- Chi Torpedo
 LCT_SpellData[115008] = 109132
 
 -- Detox
@@ -17,19 +21,13 @@ LCT_SpellData[115450] = {
 	cooldown_starts_on_dispel = true,
 	cooldown = 8,
 }
--- Expel Harm
-LCT_SpellData[115072] = {
-	class = "MONK",
-	heal = true,
-	offensive = true,
-	cooldown = 15,
-}
 -- Fortifying Brew
 LCT_SpellData[115203] = {
 	class = "MONK",
+	specID = { 268 },
 	defensive = true,
-	duration = 20,
-	cooldown = 180,
+	duration = 15,
+	cooldown = 420,
 }
 -- Paralysis
 LCT_SpellData[115078] = {
@@ -47,6 +45,14 @@ LCT_SpellData[116705] = {
 -- Touch of Death
 LCT_SpellData[115080] = {
 	class = "MONK",
+	specID = { 269 },
+	offensive = true,
+	cooldown = 120,
+}
+-- Storm, Earth, and Fire
+LCT_SpellData[137639] = {
+	class = "MONK",
+	specID = { 269 },
 	offensive = true,
 	cooldown = 90,
 }
@@ -63,25 +69,17 @@ LCT_SpellData[119996] = {
 -- Zen Meditation
 LCT_SpellData[115176] = {
 	class = "MONK",
+	specID = { 268 },
 	defensive = true,
 	duration = 8,
-	cooldown = 180,
+	cooldown = 300,
 }
--- Nimble Brew
-LCT_SpellData[137562] = {
+-- Exploding Keg
+LCT_SpellData[214326] = {
 	class = "MONK",
-	defensive = true,
-	duration = 6,
-	cooldown = 120,
-}
-
--- Monk/talents
--- Charging Ox Wave
-LCT_SpellData[119392] = {
-	class = "MONK",
-	talent = true,
-	stun = true,
-	cooldown = 30,
+	specID = { 268 },
+	offensive = true,
+	cooldown = 75,
 }
 -- Chi Brew
 LCT_SpellData[115399] = {
@@ -96,28 +94,55 @@ LCT_SpellData[115098] = {
 	talent = true,
 	cooldown = 15
 }
--- Dampen Harm
+-- Dampen Harm (mistweaver &windwalker)
 LCT_SpellData[122278] = {
 	class = "MONK",
+	specID = { 270, 269 },
 	talent = true,
 	defensive = true,
-	duration = 45,
-	cooldown = 90,
+	duration = 10,
+	cooldown = 120,
 }
--- Diffuse Magic
+-- Diffuse Magic (mistweaver & windwalker)
 LCT_SpellData[122783] = {
 	class = "MONK",
+	specID = { 270, 269 },
 	talent = true,
 	defensive = true,
 	duration = 6,
 	cooldown = 90
 }
--- Invoke Xuen, the White
+-- Zen Moment
+LCT_SpellData[201325] = {
+	class = "MONK",
+	specID = { 269 },
+	defensive = true,
+	duration = 10,
+	cooldown = 45
+}
+-- Invoke Xuen, the White Tiger
 LCT_SpellData[123904] = {
 	class = "MONK",
+	specID = { 269 },
 	talent = true,
 	duration = 45,
 	cooldown = 180
+}
+-- Grapple Weapon
+LCT_SpellData[233759] = {
+	class = "MONK",
+	specID = { 269 },
+	disarm = true, -- V: TODO disarms
+	cooldown = 60
+}
+-- Serenity
+LCT_SpellData[152173] = {
+	class = "MONK",
+	specID = { 269 },
+	talent = true,
+	offensive = true,
+	duration = 8,
+	cooldown = 90
 }
 -- Leg Sweep
 LCT_SpellData[119381] = {
@@ -158,14 +183,7 @@ LCT_SpellData[115308] = {
 	defensive = true,
 	duration = 3,
 	cooldown = 6,
-}
--- Guard
-LCT_SpellData[115295] = {
-	class = "MONK",
-	specID = { 268 },
-	defensive = true,
-	duration = 30,
-	cooldown = 30
+	charges = 3,
 }
 -- Keg Smash
 LCT_SpellData[121253] = {
@@ -228,7 +246,7 @@ LCT_SpellData[116849] = {
 	specID = { 270 },
 	heal = true,
 	duration = 12,
-	cooldown = 120,
+	cooldown = 90, -- NOTE: without Chrysalis (PVP talent), it's 180 sec
 }
 -- Renewing Misg
 -- TODO: 3 possible charges with Pool of Mists
@@ -259,4 +277,22 @@ LCT_SpellData[116680] = {
 	heal = true,
 	duration = 30,
 	cooldown = 45
+}
+-- Invoke Chi-Ji, red crane
+LCT_SpellData[198664] = {
+	class = "MONK",
+	specID = { 270 },
+	talent = true,
+	heal = true,
+	duration = 45,
+	cooldown = 180
+}
+-- Mana Tea
+LCT_SpellData[197908] = {
+	class = "MONK",
+	specID = { 270 },
+	talent = true,
+	heal = true,
+	duration = 10,
+	cooldown = 90
 }

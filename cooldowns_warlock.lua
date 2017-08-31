@@ -13,11 +13,12 @@ LCT_SpellData[104773] = {
 	duration = 8,
 	cooldown = 180
 }
--- Seed of Corruption
-LCT_SpellData[87385] = {
+-- Nether Ward
+LCT_SpellData[212295] = {
 	class = "WARLOCK",
-	offensive = true,
-	cooldown = 60
+	defensive = true,
+	duration = 5,
+	cooldown = 45
 }
 -- Demonic Circle: Teleport
 LCT_SpellData[48020] = {
@@ -27,15 +28,6 @@ LCT_SpellData[48020] = {
 }
 
 -- Warlock/talent
--- Dark Regeneration
-LCT_SpellData[108359] = {
-	class = "WARLOCK",
-	talent = true,
-	defensive = true,
-	heal = true,
-	duration = 12,
-	cooldown = 120
-}
 -- Howl of Terror
 LCT_SpellData[5484] = {
 	class = "WARLOCK",
@@ -58,36 +50,13 @@ LCT_SpellData[30283] = {
 	stun = true,
 	cooldown = 30
 }
--- Dark Bargain
-LCT_SpellData[110913] = {
-	class = "WARLOCK",
-	talent = true,
-	defensive = true,
-	duration = 8,
-	cooldown = 180
-}
--- Sacrificial Pact
+-- Dark Pact
 LCT_SpellData[108416] = {
 	class = "WARLOCK",
 	talent = true,
 	defensive = true,
 	duration = 20,
 	cooldown = 60
-}
--- Blood Horror
-LCT_SpellData[111397] = {
-	class = "WARLOCK",
-	talent = true,
-	cc = true,
-	duration = 60,
-	cooldown = 60
-}
--- Unbound Will
-LCT_SpellData[108482] = {
-	class = "WARLOCK",
-	talent = true,
-	dispel = true,
-	cooldown = 120
 }
 -- Grimoire of Service
 LCT_SpellData[108501] = {
@@ -96,40 +65,18 @@ LCT_SpellData[108501] = {
 	defensive = true,
 	cooldown = 120
 }
--- Archimonde's Vengeance
-LCT_SpellData[108505] = {
-	class = "WARLOCK",
-	talent = true,
-	offensive = true,
-	defensive = true,
-	duration = 8,
-	cooldown = 120
-}
 
 -- Warlock/265 - Affliction
--- Dark Soul: Misery
-LCT_SpellData[113860] = {
+-- Soul Harvest
+LCT_SpellData[196098] = {
 	class = "WARLOCK",
 	specID = { 265 },
+	talent = true,
 	offensive = true,
-	duration = 20,
+	duration = 12, -- V: technically, this is 12+(4*target of curse), but we can't really fake that.
 	cooldown = 120
 }
 -- Warlock/266 - Demonology
--- Demonic Leap
-LCT_SpellData[109151] = {
-	class = "WARLOCK",
-	specID = { 266 },
-	cooldown = 10
-}
--- Dark Soul: Knowledge
-LCT_SpellData[113861] = {
-	class = "WARLOCK",
-	specID = { 266 },
-	offensive = true,
-	duration = 20,
-	cooldown = 120
-}
 -- Hand of Gul'dan
 LCT_SpellData[105174] = {
 	class = "WARLOCK",
@@ -138,6 +85,25 @@ LCT_SpellData[105174] = {
 	charges = 2,
 	cooldown = 15
 }
+-- Call Fel Lord
+LCT_SpellData[212459] = {
+	class = "WARLOCK",
+	specID = { 266 },
+	talent = true,
+	offensive = true,
+	duration = 30,
+	cooldown = 120
+}
+-- Call Observer
+LCT_SpellData[201996] = {
+	class = "WARLOCK",
+	specID = { 266 },
+	talent = true,
+	offensive = true,
+	duration = 20,
+	cooldown = 120
+}
+
 
 -- Warlock/267 - Destruction
 -- Havoc
@@ -148,21 +114,13 @@ LCT_SpellData[80240] = {
 	duration = 15,
 	cooldown = 20
 }
--- Flames of Xoroth
-LCT_SpellData[120451] = {
+-- Cataclysm
+LCT_SpellData[152108] = {
 	class = "WARLOCK",
 	specID = { 267 },
+	talent = true,
 	offensive = true,
-	defensive = true,
-	cooldown = 60
-}
--- Dark Soul: Instability
-LCT_SpellData[113858] = {
-	class = "WARLOCK",
-	specID = { 267 },
-	offensive = true,
-	duration = 20,
-	cooldown = 120
+	cooldown = 45
 }
 -- Conflagrate
 LCT_SpellData[17962] = {
@@ -217,12 +175,12 @@ LCT_SpellData[132409] = 19647
 
 -- Warlock/Observer
 -- Clone Magic
-LCT_SpellData[115284] = {
-	class = "WARLOCK",
-	pet = true,
-	purge = true,
-	cooldown = 15
-}
+--LCT_SpellData[115284] = {
+--	class = "WARLOCK",
+--	pet = true,
+--	purge = true,
+--	cooldown = 15
+--}
 -- Optical Blast
 LCT_SpellData[115781] = {
 	class = "WARLOCK",
