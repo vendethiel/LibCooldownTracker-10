@@ -299,6 +299,24 @@ local function CooldownEvent(event, unit, spellid)
 				end
 			end
 
+			if spelldata.restore_charges then
+				for i = 1, #spelldata.restore_charges do
+					local respellid = spelldata.restore_charges[i]
+					local respelldata = SpellData[respellid]
+					if not tpu[respellid] then
+						-- V: if we have to *add* the cooldown, just use the max number of charges
+						--    also, use charges by default, not only optional charges (not sure if the spell only has optional charges)
+						tpu[respellid] = {
+							charges = respelldata.charges or respelldata.opt_charges,
+							max_charges = respelldata.charges or respelldata.opt_charges,
+						}
+					else
+						tpu[respellid].charges = tpu[respellid].charges + 1
+					end
+					tpu[respellid].charges_detected = true
+				end
+			end
+
 			-- reset other cooldowns (Cold Snap, Preparation)
 			if spelldata.resets then
 				for i = 1, #spelldata.resets do

@@ -11,7 +11,11 @@ LCT_SpellData[104773] = {
 	class = "WARLOCK",
 	defensive = true,
 	duration = 8,
-	cooldown = 180
+	cooldown = 180,
+	cooldown_overload = {
+		[266] = 140, -- Demonology
+		[267] = 60, -- Destruction
+	},
 }
 -- Nether Ward
 LCT_SpellData[212295] = {

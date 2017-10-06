@@ -9,16 +9,6 @@ LCT_SpellData[31884] = {
 	duration = 20,
 	cooldown = 120
 }
--- Templar's verdict
--- V: not a CD, require 3 HoPo
---LCT_SpellData[85256] = {
---	class = "PALADIN",
---	specID = { 70 },
---	offensive = true,
---	defensive = true,
---	duration = 20,
---	cooldown = 120
---}
 -- Eye for an eye
 LCT_SpellData[205191] = {
 	class = "PALADIN",
@@ -63,7 +53,11 @@ LCT_SpellData[642] = {
 	class = "PALADIN",
 	immune = true,
 	duration = 8,
-	cooldown = 300
+	cooldown = 300,
+	cooldown_overload = {
+		[70] = 240, -- ret
+		[65] = 210, -- holy
+	},
 }
 -- Hammer of Justice
 LCT_SpellData[853] = {
@@ -84,7 +78,10 @@ LCT_SpellData[1044] = {
 	opt_charges = 2,
 	opt_charges_linked = { 1022, 6940 },
 	duration = 6,
-	cooldown = 25
+	cooldown = 25,
+	cooldown_overload = {
+		[70] = 20, -- ret
+	}
 }
 -- Hand of Protection
 LCT_SpellData[1022] = {
@@ -93,7 +90,11 @@ LCT_SpellData[1022] = {
 	opt_charges = 2,
 	opt_charges_linked = { 1044, 6940 },
 	duration = 10,
-	cooldown = 300
+	cooldown = 300,
+	cooldown_overload = {
+		[70] = 180, -- ret
+		[65] = 240, -- holy
+	},
 }
 -- Hand of Sacrifice
 LCT_SpellData[6940] = {
@@ -110,17 +111,10 @@ LCT_SpellData[20271] = {
 	offensive = true,
 	cooldown = 6
 }
--- Lay on Hands
---[[
-LCT_SpellData[633] = {
-	class = "PALADIN",
-	heal = true -- todo: available on arenas?
-	cooldown = 600
-}
-]]
 -- Rebuke
 LCT_SpellData[96231] = {
 	class = "PALADIN",
+	specID = { 66, 70 },
 	interrupt = true,
 	cooldown = 15
 }
@@ -158,14 +152,6 @@ LCT_SpellData[20066] = {
 	cc = true,
 	cooldown = 15
 }
--- Sacred Shield
---LCT_SpellData[20925] = {
---	class = "PALADIN",
---	talent = true,
---	defensive = true,
---	duration = 30,
---	cooldown = 6
---}
 -- Speed of Light
 LCT_SpellData[85499] = {
 	class = "PALADIN",

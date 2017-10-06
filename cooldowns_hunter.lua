@@ -29,7 +29,10 @@ LCT_SpellData[147362] = {
 LCT_SpellData[187650] = {
 	class = "HUNTER",
 	cc = true,
-	cooldown = 30
+	cooldown = 30,
+	cooldown_overload = {
+		[255] = 24, -- Survival
+	}
 }
 -- Explosive Trap
 LCT_SpellData[13813] = {
@@ -63,7 +66,10 @@ LCT_SpellData[186265] = {
 	defensive = true,
 	duration = 8,
 	charges = 2,
-	cooldown = 180
+	cooldown = 180,
+	cooldown_overload = {
+		[255] = 144, -- Survival
+	}
 }
 
 -- Hunter/talent

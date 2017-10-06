@@ -6,6 +6,32 @@ LCT_SpellData[1953] = {
 	defensive = true,
 	cooldown = 15
 }
+-- Shimmer
+LCT_SpellData[212653] = {
+	class = "MAGE",
+	defensive = true,
+	talent = true,
+	charges = 2,
+	cooldown = 15,
+	replaces = 1953
+}
+-- Displacement when Blink (Arcane)
+LCT_SpellData[195676] = {
+	class = "MAGE",
+	specID = { 62 },
+	defensive = true,
+	cooldown = 30,
+	resets = { 1953 }
+}
+-- Displacement when Shimmer (Arcane)
+LCT_SpellData[212801] = {
+	class = "MAGE",
+	specID = { 62 },
+	defensive = true,
+	cooldown = 30,
+	replaces = 195676,
+	restore_charges = { 212653 },
+}
 -- Cone of Cold
 LCT_SpellData[120] = {
 	class = "MAGE",
@@ -22,6 +48,7 @@ LCT_SpellData[2139] = {
 -- Evocation
 LCT_SpellData[12051] = {
 	class = "MAGE",
+	specID = { 62 },
 	defensive = true,
 	duration = 6,
 	cooldown = 182
@@ -123,13 +150,6 @@ LCT_SpellData[108839] = {
 	duration = 15,
 	cooldown = 20
 }
--- Ice Ward
---LCT_SpellData[111264] = {
---	class = "MAGE",
---	talent = true,
---	cc = true,
---	cooldown = 20
---}
 -- Incanter's Ward
 LCT_SpellData[1463] = {
 	class = "MAGE",

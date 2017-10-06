@@ -52,6 +52,15 @@ LCT_SpellData[204263] = {
 	cooldown = 60,
 	--sets_cooldown_of = { [8122] = 60 } i.e. if you have shining force than psychic scream is 60s... unimplemented ofc
 }
+-- Mind Bomb
+LCT_SpellData[205369] = {
+	class = "PRIEST",
+	cc = true,
+	talent = true,
+	specID = { 258 },
+	cooldown = 30,
+	replaces = 8122
+}
 -- Phantasm
 LCT_SpellData[114239] = {
 	class = "PRIEST",

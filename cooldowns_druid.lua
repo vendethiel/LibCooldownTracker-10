@@ -51,7 +51,7 @@ LCT_SpellData[99] = {
 LCT_SpellData[102280] = {
 	class = "DRUID",
 	specID = { 102, 103, 105 },
-	--talent = true,
+	talent = true,
 	cooldown = 30
 }
 -- Wild Charge
@@ -169,14 +169,6 @@ LCT_SpellData[48438] = {
 	cooldown = 8
 }
 
--- V: legion
--- Full Moon
---NOT ACTUALLY A CD --LCT_SpellData[202771] = {
---	class = "DRUID",
---	specID = { 102 },
---	heal = true,
---	cooldown = 8
---}
 -- Incarnation (balance)
 LCT_SpellData[102560] = {
 	class = "DRUID",
@@ -218,15 +210,6 @@ LCT_SpellData[22842] = {
 	cooldown = 24,
 	charges = 2
 }
--- Mark of Ursol
--- V: was in the post, but apparently doesn't exist?
---LCT_SpellData[192083] = {
---	class = "DRUID",
---	specID = { 104 },
---	defensive = true,
---	cooldown = 1, -- V: technically 0.5
---	duration = 6
---}
 
 -- Incarnation (feral)
 LCT_SpellData[102543] = {
@@ -258,6 +241,7 @@ LCT_SpellData[61336] = {
 LCT_SpellData[33891] = {
 	class = "DRUID",
 	specID = { 105 },
+	talent = true,
 	defensive = true,
 	cooldown = 180,
 }
@@ -274,3 +258,12 @@ LCT_SpellData[29166] = {
 	specID = { 105 },
 	cooldown = 180,
 }
+
+-- Skull Bash
+LCT_SpellData[106839] = {
+	class = "DRUID",
+	specID = { 103 },
+	interrupt = true,
+	cooldown = 15,
+}
+LCT_SpellData[93985] = 106839
