@@ -1,7 +1,7 @@
 -- ================ MONK ================
 -- Spec
+-- 269 windwalker
 -- 268 brewmaster
--- 267 windwalker
 -- 270 mistweaver
 -- Monk/baseline
 
@@ -13,7 +13,6 @@ LCT_SpellData[109132] = {
 }
 -- Chi Torpedo
 LCT_SpellData[115008] = 109132
-
 -- Detox
 LCT_SpellData[115450] = {
 	class = "MONK",
@@ -38,6 +37,7 @@ LCT_SpellData[115078] = {
 -- Spear Hand Strike
 LCT_SpellData[116705] = {
 	class = "MONK",
+	specID = { 269, 268 },
 	interrupt = true,
 	silence = true,
 	cooldown = 15,

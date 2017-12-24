@@ -1,8 +1,7 @@
 --- V: DH ----
 
--- Specs:
--- Havoc 577
--- Vengeance 581
+local SPEC_DH_HAVOC     = 577
+local SPEC_DH_VENGEANCE = 581
 
 -- Blur
 LCT_SpellData[198589] = {
@@ -19,10 +18,11 @@ LCT_SpellData[183752] = {
 	cooldown = 15
 }
 
+-- DH/Havoc
 -- Metamorphosis (Havoc)
 LCT_SpellData[191427] = {
 	class = "DEMONHUNTER",
-	specID = { 577 },
+	specID = { SPEC_DH_HAVOC },
 	offensive = true,
 	duration = 30,
 	cooldown = 300
@@ -30,7 +30,7 @@ LCT_SpellData[191427] = {
 -- Netherwalk
 LCT_SpellData[196555] = {
 	class = "DEMONHUNTER",
-	specID = { 577 },
+	specID = { SPEC_DH_HAVOC },
 	defensive = true,
 	duration = 5,
 	cooldown = 120
@@ -38,24 +38,25 @@ LCT_SpellData[196555] = {
 -- Darkness
 LCT_SpellData[196718] = {
 	class = "DEMONHUNTER",
-	specID = { 577 },
+	specID = { SPEC_DH_HAVOC },
 	defensive = true,
 	duration = 8,
 	cooldown = 180
 }
 
+-- DH/Vengeance
 -- Metamorphosis (Vengeance)
 LCT_SpellData[187827] = {
 	class = "DEMONHUNTER",
-	specID = { 581 },
-	defensive = true,
+	specID = { SPEC_DH_VENGEANCE },
+	offensive = true,
 	duration = 15,
 	cooldown = 180
 }
 -- Empower Wards
 LCT_SpellData[218256] = {
 	class = "DEMONHUNTER",
-	specID = { 581 },
+	specID = { SPEC_DH_VENGEANCE },
 	defensive = true,
 	duration = 6,
 	cooldown = 20

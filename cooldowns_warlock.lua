@@ -1,4 +1,9 @@
 -- ================ WARLOCK ================
+
+local SPEC_WARLOCK_AFFLICTION  = 265
+local SPEC_WARLOCK_DEMONOLOGY  = 266
+local SPEC_WARLOCK_DESTRUCTION = 267
+
 -- Warlock/baseline
 -- Soulstone
 LCT_SpellData[20707] = {
@@ -13,8 +18,8 @@ LCT_SpellData[104773] = {
 	duration = 8,
 	cooldown = 180,
 	cooldown_overload = {
-		[266] = 140, -- Demonology
-		[267] = 60, -- Destruction
+		[SPEC_WARLOCK_DEMONOLOGY] = 140,
+		[SPEC_WARLOCK_DESTRUCTION] = 60,
 	},
 }
 -- Nether Ward
@@ -74,17 +79,18 @@ LCT_SpellData[108501] = {
 -- Soul Harvest
 LCT_SpellData[196098] = {
 	class = "WARLOCK",
-	specID = { 265 },
+	specID = { SPEC_WARLOCK_AFFLICTION },
 	talent = true,
 	offensive = true,
 	duration = 12, -- V: technically, this is 12+(4*target of curse), but we can't really fake that.
 	cooldown = 120
 }
--- Warlock/266 - Demonology
+
+-- Warlock/Demonology
 -- Hand of Gul'dan
 LCT_SpellData[105174] = {
 	class = "WARLOCK",
-	specID = { 266 },
+	specID = { SPEC_WARLOCK_DEMONOLOGY },
 	offensive = true,
 	charges = 2,
 	cooldown = 15
@@ -92,7 +98,7 @@ LCT_SpellData[105174] = {
 -- Call Fel Lord
 LCT_SpellData[212459] = {
 	class = "WARLOCK",
-	specID = { 266 },
+	specID = { SPEC_WARLOCK_DEMONOLOGY },
 	talent = true,
 	offensive = true,
 	duration = 30,
@@ -101,19 +107,18 @@ LCT_SpellData[212459] = {
 -- Call Observer
 LCT_SpellData[201996] = {
 	class = "WARLOCK",
-	specID = { 266 },
+	specID = { SPEC_WARLOCK_DEMONOLOGY },
 	talent = true,
 	offensive = true,
 	duration = 20,
 	cooldown = 120
 }
 
-
--- Warlock/267 - Destruction
+-- Warlock/Destruction
 -- Havoc
 LCT_SpellData[80240] = {
 	class = "WARLOCK",
-	specID = { 267 },
+	specID = { SPEC_WARLOCK_DESTRUCTION },
 	offensive = true,
 	duration = 15,
 	cooldown = 20
@@ -121,7 +126,7 @@ LCT_SpellData[80240] = {
 -- Cataclysm
 LCT_SpellData[152108] = {
 	class = "WARLOCK",
-	specID = { 267 },
+	specID = { SPEC_WARLOCK_DESTRUCTION },
 	talent = true,
 	offensive = true,
 	cooldown = 45
@@ -129,7 +134,7 @@ LCT_SpellData[152108] = {
 -- Conflagrate
 LCT_SpellData[17962] = {
 	class = "WARLOCK",
-	specID = { 267 },
+	specID = { SPEC_WARLOCK_DESTRUCTION },
 	offensive = true,
 	charges = 2,
 	cooldown = 12
@@ -177,14 +182,7 @@ LCT_SpellData[19647] = {
 LCT_SpellData[119910] = 19647
 LCT_SpellData[132409] = 19647
 
--- Warlock/Observer
--- Clone Magic
---LCT_SpellData[115284] = {
---	class = "WARLOCK",
---	pet = true,
---	purge = true,
---	cooldown = 15
---}
+-- Warlock/Pet/Observer
 -- Optical Blast
 LCT_SpellData[115781] = {
 	class = "WARLOCK",
@@ -195,8 +193,7 @@ LCT_SpellData[115781] = {
 }
 LCT_SpellData[119911] = 115781
 
-
--- Warlock/Fel Imp
+-- Warlock/Pet/Fel Imp
 -- Sear Magic
 LCT_SpellData[115276] = {
 	class = "WARLOCK",
@@ -205,7 +202,7 @@ LCT_SpellData[115276] = {
 	cooldown = 30
 }
 
--- Warlock/Imp
+-- Warlock/Pet/Imp
 -- Cauterize Master
 LCT_SpellData[119899] = {
 	class = "WARLOCK",
@@ -229,7 +226,7 @@ LCT_SpellData[89808] = {
 	cooldown = 10
 }
 
--- Warlock/Shivarra
+-- Warlock/Pet/Shivarra
 -- Fellash
 LCT_SpellData[115770] = {
 	class = "WARLOCK",
@@ -239,7 +236,7 @@ LCT_SpellData[115770] = {
 	cooldown = 25
 }
 
--- Warlock/Succubus
+-- Warlock/Pet/Succubus
 -- Whiplash
 LCT_SpellData[6360] = {
 	class = "WARLOCK",
@@ -248,7 +245,8 @@ LCT_SpellData[6360] = {
 	knockback = true,
 	cooldown = 25
 }
--- Warlock/Voidwalker
+
+-- Warlock/Pet/Voidwalker
 -- Shadow Bulwark
 LCT_SpellData[17767] = {
 	class = "WARLOCK",

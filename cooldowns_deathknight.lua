@@ -1,5 +1,9 @@
 -- ================ DK ================
 
+local SPEC_DK_BLOOD  = 250
+local SPEC_DK_FROST  = 251
+local SPEC_DK_UNHOLY = 252
+
 -- DK/baseline
 -- Death Grip
 LCT_SpellData[49576] = {
@@ -41,12 +45,6 @@ LCT_SpellData[48707] = {
 	duration = 5,
 	cooldown = 60
 }
--- Empower Rune Weapon
-LCT_SpellData[47568] = {
-	class = "DEATHKNIGHT",
-	offensive = true,
-	cooldown = 300
-}
 -- Army of the Dead
 LCT_SpellData[42650] = {
 	class = "DEATHKNIGHT",
@@ -54,19 +52,20 @@ LCT_SpellData[42650] = {
 	duration = 40,
 	cooldown = 600
 }
--- Outbreak
-LCT_SpellData[77575] = {
-	class = "DEATHKNIGHT",
-	offensive = true,
-	cooldown = 60
-}
 -- Dark Simulacrum
 LCT_SpellData[77606] = {
 	class = "DEATHKNIGHT",
+	talent = true,
 	duration = 8,
 	cooldown = 60
 }
-
+-- Wraith Walk
+LCT_SpellData[212552] = {
+	class = "DEATHKNIGHT",
+	offensive = true,
+	duration = 3,
+	cooldown = 45
+}
 
 -- DK/talent
 -- Plague Leech
@@ -131,11 +130,11 @@ LCT_SpellData[108199] = {
 	cooldown = 60
 }
 
--- DK/250 - Blood
+-- DK/Blood
 -- Vampiric Blood
 LCT_SpellData[55233] = {
 	class = "DEATHKNIGHT",
-	specID = { 250 },
+	specID = { SPEC_DK_BLOOD },
 	heal = true,
 	defensive = true,
 	duration = 10,
@@ -144,43 +143,84 @@ LCT_SpellData[55233] = {
 -- Dancing Rune Weapon
 LCT_SpellData[49028] = {
 	class = "DEATHKNIGHT",
-	specID = { 250 },
+	specID = { SPEC_DK_BLOOD },
 	offensive = true,
 	defensive = true,
 	duration = 12,
 	cooldown = 90
 }
--- DK/251 - Frost
+
+-- DK/Frost
 -- Pillar of Frost
 LCT_SpellData[51271] = {
 	class = "DEATHKNIGHT",
-	specID = { 251 },
+	specID = { SPEC_DK_FROST },
 	offensive = true,
 	defensive = true,
 	duration = 20,
 	cooldown = 60
 }
--- DK/252 - Unholy
+-- Empower Rune Weapon
+LCT_SpellData[47568] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST },
+	offensive = true,
+	cooldown = 300
+}
+-- Artifact - Sindragosa's Fury
+LCT_SpellData[190778] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST },
+	offensive = true,
+	duration = 10,
+	cooldown = 300
+}
+-- Obliteration
+LCT_SpellData[207256] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST },
+	offensive = true,
+	duration = 8,
+	cooldown = 90
+}
+-- Breath of Sindragosa
+-- V: note: continues until power is exhausted (??)
+LCT_SpellData[152279] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST },
+	offensive = true,
+	duration = 10,
+	cooldown = 120
+}
+
+-- DK/Unholy
 -- Raise Dead
 LCT_SpellData[46584] = {
 	class = "DEATHKNIGHT",
-	specID = { 252 },
+	specID = { SPEC_DK_UNHOLY },
 	cooldown = 60
 }
 -- Summon Gargoyle
 LCT_SpellData[49206] = {
 	class = "DEATHKNIGHT",
-	specID = { 252 },
+	specID = { SPEC_DK_UNHOLY },
 	offensive = true,
 	duration = 40,
 	cooldown = 180
 }
--- Soul Reaper
-LCT_SpellData[130736] = {
+-- Outbreak
+LCT_SpellData[77575] = {
 	class = "DEATHKNIGHT",
-	specID = { 252 },
+	specID = { SPEC_DK_UNHOLY },
 	offensive = true,
-	cooldown = 6
+	cooldown = 60
+}
+-- Corpse shield
+LCT_SpellData[49206] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_UNHOLY },
+	defensive = true,
+	cooldown = 60
 }
 
 -- DK/pet
@@ -238,44 +278,4 @@ LCT_SpellData[91802] = {
 	interrupt = true,
 	cc = true,
 	cooldown = 30
-}
--- V: added in legion
--- Wraith Walk
-LCT_SpellData[212552] = {
-	class = "DEATHKNIGHT",
-	offensive = true,
-	duration = 3,
-	cooldown = 45
-}
--- Artifact - Sindragosa's Fury
-LCT_SpellData[190778] = {
-	class = "DEATHKNIGHT",
-	specID = { 251 },
-	offensive = true,
-	duration = 10,
-	cooldown = 300
-}
--- Obliteration
-LCT_SpellData[207256] = {
-	class = "DEATHKNIGHT",
-	specID = { 251 },
-	offensive = true,
-	duration = 8,
-	cooldown = 90
-}
--- Breath of Sindragosa
--- V: note: continues until power is exhausted (??)
-LCT_SpellData[152279] = {
-	class = "DEATHKNIGHT",
-	specID = { 251 },
-	offensive = true,
-	duration = 10,
-	cooldown = 120
-}
--- Corpse shield
-LCT_SpellData[49206] = {
-	class = "DEATHKNIGHT",
-	specID = { 252 },
-	defensive = true,
-	cooldown = 60
 }

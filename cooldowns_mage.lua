@@ -15,23 +15,6 @@ LCT_SpellData[212653] = {
 	cooldown = 15,
 	replaces = 1953
 }
--- Displacement when Blink (Arcane)
-LCT_SpellData[195676] = {
-	class = "MAGE",
-	specID = { 62 },
-	defensive = true,
-	cooldown = 30,
-	resets = { 1953 }
-}
--- Displacement when Shimmer (Arcane)
-LCT_SpellData[212801] = {
-	class = "MAGE",
-	specID = { 62 },
-	defensive = true,
-	cooldown = 30,
-	replaces = 195676,
-	restore_charges = { 212653 },
-}
 -- Cone of Cold
 LCT_SpellData[120] = {
 	class = "MAGE",
@@ -52,13 +35,6 @@ LCT_SpellData[12051] = {
 	defensive = true,
 	duration = 6,
 	cooldown = 182
-}
--- Flamestrike
-LCT_SpellData[2120] = {
-	class = "MAGE",
-	offensive = true,
-	duration = 8,
-	cooldown = 12
 }
 -- Frost Nova
 LCT_SpellData[122] = {
@@ -107,30 +83,19 @@ LCT_SpellData[86949] = {
 	duration = 6,
 	cooldown = 300
 }
--- Cold Snap
--- V: changed ID in legion, 11958 -> 235219
-LCT_SpellData[235219] = {
-	class = "MAGE",
-	specID = { 64 },
-	resets = { 45438, 11426, 122, 120 }, -- ice block, ice barrier, frost nova, cone of cold
-	cooldown = 300
-}
 -- Greater Invisibility (arcane)
 LCT_SpellData[110959] = {
 	class = "MAGE",
 	specID = { 62 },
 	defensive = true,
-	--talent = true,
-	--replaces = 66, -- V: invisibility doesn't exist baseline anymore
 	duration = 20,
 	cooldown = 120
 }
 -- Invisibility (fire & frost)
-LCT_SpellData[110959] = {
+LCT_SpellData[66] = {
 	class = "MAGE",
 	specID = { 63, 64 },
 	defensive = true,
-	--replaces = 66, -- V: invisibility doesn't exist baseline anymore
 	duration = 20,
 	cooldown = 300
 }
@@ -166,6 +131,7 @@ LCT_SpellData[113724] = {
 	duration = 10,
 	cooldown = 45
 }
+
 -- Mage/Arcane
 -- Arcane Power
 LCT_SpellData[12042] = {
@@ -181,6 +147,23 @@ LCT_SpellData[224968] = {
 	specID = { 62 },
 	offensive = true,
 	cooldown = 60
+}
+-- Displacement when Blink (Arcane)
+LCT_SpellData[195676] = {
+	class = "MAGE",
+	specID = { 62 },
+	defensive = true,
+	cooldown = 30,
+	resets = { 1953 }
+}
+-- Displacement when Shimmer (Arcane)
+LCT_SpellData[212801] = {
+	class = "MAGE",
+	specID = { 62 },
+	defensive = true,
+	cooldown = 30,
+	replaces = 195676,
+	restore_charges = { 212653 },
 }
 
 -- Mage/Fire
@@ -199,6 +182,14 @@ LCT_SpellData[31661] = {
 	specID = { 63 },
 	cc = true,
 	cooldown = 20
+}
+-- Flamestrike
+LCT_SpellData[2120] = {
+	class = "MAGE",
+	specID = { 63 },
+	offensive = true,
+	duration = 8,
+	cooldown = 12
 }
 
 -- Mage/Frost
@@ -221,7 +212,16 @@ LCT_SpellData[12472] = {
 -- Summon Water Elemental
 LCT_SpellData[31687] = {
 	class = "MAGE",
+	talent = true,
 	specID = { 64 },
 	offensive = true,
 	cooldown = 60
+}
+-- Cold Snap
+-- V: changed ID in legion, 11958 -> 235219
+LCT_SpellData[235219] = {
+	class = "MAGE",
+	specID = { 64 },
+	resets = { 45438, 11426, 122, 120 }, -- ice block, ice barrier, frost nova, cone of cold
+	cooldown = 300
 }
