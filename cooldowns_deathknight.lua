@@ -17,12 +17,6 @@ LCT_SpellData[47528] = {
 	interrupt = true,
 	cooldown = 15
 }
--- Strangulate
-LCT_SpellData[47476] = {
-	class = "DEATHKNIGHT",
-	silence = true,
-	cooldown = 60
-}
 -- Death and Decay
 LCT_SpellData[43265] = {
 	class = "DEATHKNIGHT",
@@ -105,7 +99,7 @@ LCT_SpellData[108194] = {
 	talent = true,
 	stun = true,
 	silence = true,
-	cooldown = 30
+	cooldown = 45
 }
 -- Death Pact
 LCT_SpellData[48743] = {
@@ -148,6 +142,15 @@ LCT_SpellData[49028] = {
 	defensive = true,
 	duration = 12,
 	cooldown = 90
+}
+-- DK/Blood/talents
+-- Strangulate
+LCT_SpellData[47476] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_BLOOD },
+	talent = true,
+	silence = true,
+	cooldown = 60
 }
 
 -- DK/Frost

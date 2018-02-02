@@ -32,6 +32,7 @@ LCT_SpellData[212295] = {
 -- Demonic Circle: Teleport
 LCT_SpellData[48020] = {
 	class = "WARLOCK",
+	talent = true,
 	defensive = true,
 	cooldown = 30
 }

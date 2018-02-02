@@ -18,6 +18,14 @@ LCT_SpellData[183752] = {
 	cooldown = 15
 }
 
+-- DH/talents
+-- Inverse magic
+LCT_SpellData[205604] = {
+	class = "DEMONHUNTER",
+	talent = true,
+	cooldown = 60,
+}
+
 -- DH/Havoc
 -- Metamorphosis (Havoc)
 LCT_SpellData[191427] = {

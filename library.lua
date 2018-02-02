@@ -14,6 +14,10 @@
 
 local version = 10
 local lib = LibStub:NewLibrary("LibCooldownTracker-1.0", version)
+local LGIST = LibStub:GetLibrary("LibGroupInSpecT-1.1")
+local fn = LibStub("LibFunctional-1.0")
+
+local keys, map, filter = fn.keys, fn.map, fn.filter
 
 if not lib then return end
 
@@ -192,7 +196,7 @@ local function AddCharge(unit, spellid)
 	lib.callbacks:Fire("LCT_CooldownUsed", unit, spellid)
 
 	-- schedule another timer if there are more charges in cooldown
-	if tps.charges < tps.max_charges then
+	if tps.max_charges and tps.charges < tps.max_charges then
 		local now = GetTime()
 		local spelldata = SpellData[spellid]
 		tps.cooldown_start = now
@@ -276,12 +280,15 @@ local function CooldownEvent(event, unit, spellid)
 			tps.used_start = now
 			tps.used_end = spelldata.duration and (now + spelldata.duration)
 
+			-- is the cooldown still in progress?
+			local on_cd = tps.cooldown_end and (tps.cooldown_end - 2) > now
+
 			-- remove charge
 			if tps.charges then
 				tps.charges = tps.charges - 1
-				-- if cooldown is still in progress and the spell can optionally have charges (with a glyph or talent),
+				-- if cooldown is still in progress and the spell can optionally have charges (with a talent),
 				--  then it must have charges
-				if not tps.charges_detected and tps.cooldown_end and (tps.cooldown_end - 2) > now then
+				if not tps.charges_detected and on_cd then
 					tps.charges_detected = true
 					if spelldata.opt_charges_linked then
 						for i = 1, #spelldata.opt_charges_linked do
@@ -297,6 +304,8 @@ local function CooldownEvent(event, unit, spellid)
 						end
 					end
 				end
+			elseif on_cd then
+				-- tpu[lspellid].cooldown = spelldata.optional_lower_cooldown
 			end
 
 			if spelldata.restore_charges then
@@ -311,7 +320,7 @@ local function CooldownEvent(event, unit, spellid)
 							max_charges = respelldata.charges or respelldata.opt_charges,
 						}
 					else
-						tpu[respellid].charges = tpu[respellid].charges + 1
+						tpu[respellid].charges = (tpu[respellid].charges or 0) + 1
 					end
 					tpu[respellid].charges_detected = true
 				end
@@ -391,10 +400,60 @@ local function enable()
 	for unitid in pairs(lib.registered_units) do
 		UpdateGUID(unitid)
 	end
+
+	LGIST.RegisterCallback(lib, "GroupInSpecT_Update")
 end
 
 local function disable()
 	lib.frame:UnregisterAllEvents()
+end
+
+-- Removes all the talent spells from a tracked unit
+function lib:ClearTalents(unit)
+	local tpu = lib.tracked_players[unit]
+	if not tpu then return end
+
+	-- find out which detected spells are talents, and un-detect them
+	local remove_spells = filter(keys(tpu), function (k)
+		local spell = SpellData[k]
+		return tpu[k].detected and type(spell) == "table" and spell.talent
+	end)
+	for i = 1, #remove_spells do
+		tpu[remove_spells[i]] = nil
+	end
+end
+
+local function GetPartyUnit(unit, guid)
+	if unit == "player" then return unit end
+	if string.sub(unit, 1, 5) == "party" then return unit end
+	if string.sub(unit, 1, 4) == "raid" then
+		-- XXX: this is a very ugly for, replace it with *something else*
+		for i = 1, GetNumGroupMembers() do
+			if UnitGUID("party"..i) == guid then return "party"..i end
+		end
+	end
+end
+
+function lib:GroupInSpecT_Update(event, guid, raw_unit, info)
+	local unit = GetPartyUnit(raw_unit, guid)
+	if not unit then return end
+
+	local tpu = lib.tracked_players[unit]
+	if not tpu then lib.tracked_players[unit] = {} end
+
+	lib:ClearTalents(unit)
+
+	-- we didn't detect any talent. wait for follow-up message.
+	if not next(info.talents) then
+		return
+	end
+
+	for talentId, talent in pairs(info.talents) do
+		-- XXX only detect spells if SpellData[talent.spell_id]?
+		lib:DetectSpell(unit, talent.spell_id)
+
+		-- TODO have some kind of LCT_TalentData so that we can detect charges and other stuff
+	end
 end
 
 function lib.callbacks:OnUsed(target, event)
@@ -459,6 +518,10 @@ function lib:GetUnitCooldownInfo(unitid, spellid)
 end
 
 function lib:SetUnitTrinket(unit, spellid)
+	lib:DetectSpell(unit, spellid)
+end
+
+function lib:DetectSpell(unit, spellid)
 	if not spellid then
 		return
 	end
@@ -473,6 +536,7 @@ function lib:SetUnitTrinket(unit, spellid)
 	elseif not spell.detected then
 		spell.detected = true
 	end
+	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellid)
 end
 
 --- Returns the raw data of all the cooldowns. See the cooldowns_*.lua data files for more details about its structure.
@@ -649,7 +713,7 @@ function events:ARENA_COOLDOWNS_UPDATE(event, unit)
 	C_PvP.RequestCrowdControlSpell(unit)
 	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
 	-- V: the "duration ~= 30s" hack is because when using WOTF/EMFH, blizzard
-	--    also updates the actual trinket... but we discard duration
+	--    also updates the actual trinket... but we discard duration in CooldownEvent so we'd set a 2min cd
 	if spellID and duration ~= 30000 then
 		CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID)
 	end
