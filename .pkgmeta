@@ -8,7 +8,7 @@ externals:
     libs/CallbackHandler-1.0:
         url: svn://svn.wowace.com/wow/callbackhandler/mainline/trunk/CallbackHandler-1.0
         tag: latest
-	libs/LibGroupInSpecT-1.1:
-		url: svn://svn.wowace.com/wow/libgroupinspect/mainline/trunk
-	libs/LibFunctional-1.0:
-		url: git://git.wowace.com/wow/libfunctional-1-0/mainline.git
+    libs/LibGroupInSpecT-1.1:
+        url: svn://svn.wowace.com/wow/libgroupinspect/mainline/trunk
+    libs/LibFunctional-1.0:
+        url: git://git.wowace.com/wow/libfunctional-1-0/mainline.git
