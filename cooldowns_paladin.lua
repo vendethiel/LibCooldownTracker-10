@@ -125,14 +125,14 @@ LCT_SpellData[105809] = {
 }
 
 -- Paladin/Holy
--- V: legion renamed, Divine Favor => Avenging Wrath (holy)
-LCT_SpellData[31842] = {
-	class = "PALADIN",
-	specID = { SPEC_PALADIN_HOLY },
-	defensive = true,
-	duration = 20,
-	cooldown = 180
-}
+-- V: removed in Bfa. legion renamed, Divine Favor => Avenging Wrath (holy)
+--LCT_SpellData[31842] = {
+--	class = "PALADIN",
+--	specID = { SPEC_PALADIN_HOLY },
+--	defensive = true,
+--	duration = 20,
+--	cooldown = 180
+--}
 -- Cleanse
 LCT_SpellData[4987] = {
 	class = "PALADIN",

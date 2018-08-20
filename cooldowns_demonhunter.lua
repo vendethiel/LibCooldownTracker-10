@@ -61,11 +61,11 @@ LCT_SpellData[187827] = {
 	duration = 15,
 	cooldown = 180
 }
--- Empower Wards
-LCT_SpellData[218256] = {
-	class = "DEMONHUNTER",
-	specID = { SPEC_DH_VENGEANCE },
-	defensive = true,
-	duration = 6,
-	cooldown = 20
-}
+-- V: removed in Bfa. Empower Wards
+--LCT_SpellData[218256] = {
+--	class = "DEMONHUNTER",
+--	specID = { SPEC_DH_VENGEANCE },
+--	defensive = true,
+--	duration = 6,
+--	cooldown = 20
+--}

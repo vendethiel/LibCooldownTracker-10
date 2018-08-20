@@ -158,14 +158,14 @@ LCT_SpellData[19574] = {
 	cooldown = 60
 }
 -- Hunter/254 - Marksmanship
--- Rapid Fire
-LCT_SpellData[3045] = {
-	class = "HUNTER",
-	specID = { 254 },
-	offensive = true,
-	duration = 15,
-	cooldown = 120
-}
+-- V: removed in Bfa. Rapid Fire
+--LCT_SpellData[3045] = {
+--	class = "HUNTER",
+--	specID = { 254 },
+--	offensive = true,
+--	duration = 15,
+--	cooldown = 120
+--}
 -- Chimera Shot
 LCT_SpellData[53209] = {
 	class = "HUNTER",
@@ -230,14 +230,14 @@ LCT_SpellData[53490] = {
 	duration = 12,
 	cooldown = 180
 }
--- Reflective Armor Plating
-LCT_SpellData[137798] = {
-	class = "HUNTER",
-	pet = true,
-	defensive = true,
-	duration = 6,
-	cooldown = 30
-}
+-- V: removed in Bfa. Reflective Armor Plating
+--LCT_SpellData[137798] = {
+--	class = "HUNTER",
+--	pet = true,
+--	defensive = true,
+--	duration = 6,
+--	cooldown = 30
+--}
 -- Shell Shield
 LCT_SpellData[26064] = {
 	class = "HUNTER",
@@ -268,13 +268,13 @@ LCT_SpellData[90339] = {
 	duration = 12,
 	cooldown = 60
 }
--- Eternal Guardian
-LCT_SpellData[126393] = {
-	class = "HUNTER",
-	pet = true,
-	res = true,
-	cooldown = 600
-}
+-- V: removed in Bfa. Eternal Guardian
+--LCT_SpellData[126393] = {
+--	class = "HUNTER",
+--	pet = true,
+--	res = true,
+--	cooldown = 600
+--}
 -- Frost Breath
 LCT_SpellData[54644] = {
 	class = "HUNTER",

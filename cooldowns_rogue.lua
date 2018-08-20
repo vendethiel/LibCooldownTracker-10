@@ -105,9 +105,9 @@ LCT_SpellData[185313] = {
 	class = "ROGUE",
 	specID = { 261 },
 	offensive = true,
-	duration = 4,
+	duration = 6,
 	cooldown = 60,
-	charges = 2
+	charges = 3
 }
 -- Shadow Blades
 LCT_SpellData[121471] = {

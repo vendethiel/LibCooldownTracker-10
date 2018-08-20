@@ -19,12 +19,12 @@ LCT_SpellData[6544] = {
 	class = "WARRIOR",
 	cooldown = 45
 }
--- Intervene
-LCT_SpellData[3411] = {
-	class = "WARRIOR",
-	defensive = true,
-	cooldown = 30
-}
+-- V: removed in Bfa. Intervene
+--LCT_SpellData[3411] = {
+--	class = "WARRIOR",
+--	defensive = true,
+--	cooldown = 30
+--}
 -- Pummel
 LCT_SpellData[6552] = {
 	class = "WARRIOR",
@@ -72,13 +72,13 @@ LCT_SpellData[236077] = {
 	duration = 4
 }
 -- Warrior/talents
--- Staggering Shout
-LCT_SpellData[107566] = {
-	class = "WARRIOR",
-	talent = true,
-	cc = true,
-	cooldown = 40
-}
+-- V: removed in BfA. Staggering Shout
+--LCT_SpellData[107566] = {
+--	class = "WARRIOR",
+--	talent = true,
+--	cc = true,
+--	cooldown = 40
+--}
 -- Sharpen Blade
 LCT_SpellData[198817] = {
 	class = "WARRIOR",
@@ -279,12 +279,12 @@ LCT_SpellData[203524] = {
 	cooldown = 15,
 	replaces = 3411
 }
--- Mass Spell Reflection
-LCT_SpellData[114028] = {
-	class = "WARRIOR",
-	specID = { 73 },
-	talent = true,
-	defensive = true,
-	duration = 5,
-	cooldown = 30
-}
+-- V: removed in Bfa. Mass Spell Reflection
+--LCT_SpellData[114028] = {
+--	class = "WARRIOR",
+--	specID = { 73 },
+--	talent = true,
+--	defensive = true,
+--	duration = 5,
+--	cooldown = 30
+--}

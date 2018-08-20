@@ -84,15 +84,15 @@ LCT_SpellData[51052] = {
 	duration = 10,
 	cooldown = 120
 }
--- Lichborne
-LCT_SpellData[49039] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	offensive = true,
-	defensive = true,
-	duration = 10,
-	cooldown = 120
-}
+-- V: removed in Bfa. Lichborne
+--LCT_SpellData[49039] = {
+--	class = "DEATHKNIGHT",
+--	talent = true,
+--	offensive = true,
+--	defensive = true,
+--	duration = 10,
+--	cooldown = 120
+--}
 -- Asphyxiate
 LCT_SpellData[108194] = {
 	class = "DEATHKNIGHT",

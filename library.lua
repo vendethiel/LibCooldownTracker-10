@@ -676,11 +676,11 @@ function events:PLAYER_ENTERING_WORLD()
 	end
 end
 
-function events:UNIT_SPELLCAST_SUCCEEDED(event, unit, spellName, rank, lineID, spellId)
+function events:UNIT_SPELLCAST_SUCCEEDED(event, unit, lineID, spellId)
 	CooldownEvent(event, unit, spellId)
 end
 
-function events:COMBAT_LOG_EVENT_UNFILTERED(_, timestamp, event, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellId, spellName, spellSchool)
+function events:CombatLogEvent(_, timestamp, event, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellId, spellName, spellSchool, auraType)
 	-- check unit
 	local unit = lib.guid_to_unitid[sourceGUID]
 	if not unit then return end
@@ -695,6 +695,10 @@ function events:COMBAT_LOG_EVENT_UNFILTERED(_, timestamp, event, hideCaster, sou
 	   event == "SPELL_CAST_SUCCESS" then
 		CooldownEvent(event, unit, spellId)
 	end
+end
+
+function events:COMBAT_LOG_EVENT_UNFILTERED(event)
+	events:CombatLogEvent(event, CombatLogGetCurrentEventInfo())
 end
 
 function events:UNIT_NAME_UPDATE(event, unit)
