@@ -18,7 +18,7 @@ set_trinkets = {
 LCT_SpellData[59752] = {
 	race = "Human",
 	sets_cooldowns = set_trinkets,
-	cooldown = 120
+	cooldown = 180
 }
 -- Will of the Forsaken (Undead)
 LCT_SpellData[7744] = {
@@ -37,7 +37,6 @@ LCT_SpellData[121093] = 59544
 -- Arcane Torrent (Blood Elf)
 LCT_SpellData[28730] = {
 	race = "BloodElf",
-	silence = true,
 	cooldown = 120,
 }
 LCT_SpellData[50613] = 28730

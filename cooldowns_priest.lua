@@ -7,6 +7,13 @@ LCT_SpellData[33076] = {
 	heal = true,
 	cooldown = 10
 }
+-- Symbol of hope
+LCT_SpellData[64901] = {
+	class = "PRIEST",
+	defensive = true,
+	duration = 12,
+	cooldown = 300
+}
 -- Shadowfiend
 LCT_SpellData[34433] = {
 	class = "PRIEST",
@@ -21,7 +28,7 @@ LCT_SpellData[73325] = {
 	specID = { 256 },
 	defensive = true,
 	duration = 8,
-	cooldown = 120,
+	cooldown = 90,
 }
 -- Leap of Faith
 LCT_SpellData[73325] = {
@@ -33,15 +40,15 @@ LCT_SpellData[73325] = {
 LCT_SpellData[32375] = {
 	class = "PRIEST",
 	mass_dispel = true,
-	cooldown = 15
+	cooldown = 45
 }
 -- Priest/talents
 -- Psychic Scream
 LCT_SpellData[8122] = {
 	class = "PRIEST",
 	cc = true,
-	specID = { 256, 258 },
-	cooldown = 30, -- V: consider all disc priests use the fear CD talent... Unless one uses shining force...
+	cooldown = 60,
+	opt_lower_cooldown = 30,
 }
 -- Shining Force
 LCT_SpellData[204263] = {
@@ -50,7 +57,6 @@ LCT_SpellData[204263] = {
 	talent = true,
 	specID = { 256, 258 },
 	cooldown = 60,
-	--sets_cooldown_of = { [8122] = 60 } i.e. if you have shining force than psychic scream is 60s... unimplemented ofc
 }
 -- Mind Bomb
 LCT_SpellData[205369] = {
@@ -167,7 +173,15 @@ LCT_SpellData[33206] = {
 	specID = { 256 },
 	defensive = true,
 	duration = 8,
-	cooldown = 240,
+	cooldown = 180,
+}
+-- Power Word: Radiance
+LCT_SpellData[194509] = {
+	class = "PRIEST",
+	specID = { 256 },
+	defensive = true,
+	cooldown = 20,
+	charges = 2,
 }
 -- Power Word: Barrier
 LCT_SpellData[62618] = {
@@ -176,6 +190,7 @@ LCT_SpellData[62618] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 180,
+	opt_lower_cooldown = 120, -- with 197590 Dome of Light
 }
 -- Spirit Shell
 LCT_SpellData[109964] = {
@@ -193,6 +208,7 @@ LCT_SpellData[527] = {
 	cooldown_starts_on_dispel = true,
 	cooldown = 8,
 }
+
 -- Priest/Holy
 -- Guardian Spirit
 LCT_SpellData[47788] = {
@@ -200,7 +216,7 @@ LCT_SpellData[47788] = {
 	specID = { 257 },
 	defensive = true,
 	duration = 10,
-	cooldown = 240,
+	cooldown = 180,
 }
 -- Apotheosis
 LCT_SpellData[200183] = {
@@ -225,16 +241,6 @@ LCT_SpellData[88625] = {
 	cc = true,
 	cooldown = 60
 }
--- Symbol of hope
-LCT_SpellData[64901] = {
-	class = "PRIEST",
-	specID = { 257 },
-	defensive = true,
-	duration = 12,
-	cooldown = 360
-}
--- Holy Word: Serenity
--- 88684 0 10
 -- Circle of Healing
 LCT_SpellData[34861] = {
 	class = "PRIEST",
@@ -244,6 +250,13 @@ LCT_SpellData[34861] = {
 }
 
 -- Priest/Shadow
+-- Mind Blast
+LCT_SpellData[8092] = {
+	class = "PRIEST",
+	specID = { 258 },
+	offensive = true,
+	cooldown = 7.5,
+}
 -- Dispersion
 LCT_SpellData[47585] = {
 	class = "PRIEST",
@@ -252,7 +265,7 @@ LCT_SpellData[47585] = {
 	duration = 6,
 	cooldown = 120
 }
--- Dispersion
+-- Vampiric Embrace
 LCT_SpellData[15286] = {
 	class = "PRIEST",
 	specID = { 258 },
@@ -272,4 +285,22 @@ LCT_SpellData[205065] = {
 	class = "PRIEST",
 	specID = { 258 },
 	cooldown = 60
+}
+-- Priest/Shadow/talents
+-- Shadow Word: Death
+LCT_SpellData[32379] = {
+	class = "PRIEST",
+	specID = { 258 },
+	talent = true,
+	cooldown = 9,
+	charges = 2
+}
+-- Shadow Word: Void
+LCT_SpellData[205351] = {
+	class = "PRIEST",
+	specID = { 258 },
+	offensive = true,
+	cooldown = 9,
+	replaces = 8092,
+	charges = 2,
 }

@@ -11,6 +11,12 @@ LCT_SpellData[49576] = {
 	offensive = true,
 	cooldown = 25
 }
+-- Death's Advance
+LCT_SpellData[48265] = {
+	class = "DEATHKNIGHT",
+	cooldown = 45,
+	duration = 8,
+}
 -- Mind Freeze
 LCT_SpellData[47528] = {
 	class = "DEATHKNIGHT",
@@ -32,7 +38,6 @@ LCT_SpellData[48792] = {
 	cooldown = 180
 }
 -- Anti-Magic Shell
--- V: changed duration
 LCT_SpellData[48707] = {
 	class = "DEATHKNIGHT",
 	defensive = true,
@@ -44,7 +49,7 @@ LCT_SpellData[42650] = {
 	class = "DEATHKNIGHT",
 	offensive = true,
 	duration = 40,
-	cooldown = 600
+	cooldown = 480
 }
 -- Dark Simulacrum
 LCT_SpellData[77606] = {
@@ -58,7 +63,7 @@ LCT_SpellData[212552] = {
 	class = "DEATHKNIGHT",
 	offensive = true,
 	duration = 3,
-	cooldown = 45
+	cooldown = 60
 }
 
 -- DK/talent
@@ -69,13 +74,6 @@ LCT_SpellData[123693] = {
 	offensive = true,
 	cooldown = 25
 }
--- Unholy Blight
-LCT_SpellData[115989] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	offensive = true,
-	cooldown = 90
-}
 -- Anti-Magic Zone
 LCT_SpellData[51052] = {
 	class = "DEATHKNIGHT",
@@ -84,18 +82,10 @@ LCT_SpellData[51052] = {
 	duration = 10,
 	cooldown = 120
 }
--- V: removed in Bfa. Lichborne
---LCT_SpellData[49039] = {
---	class = "DEATHKNIGHT",
---	talent = true,
---	offensive = true,
---	defensive = true,
---	duration = 10,
---	cooldown = 120
---}
 -- Asphyxiate
 LCT_SpellData[108194] = {
 	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST, SPEC_DK_UNHOLY },
 	talent = true,
 	stun = true,
 	silence = true,
@@ -104,6 +94,7 @@ LCT_SpellData[108194] = {
 -- Death Pact
 LCT_SpellData[48743] = {
 	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST, SPEC_DK_UNHOLY },
 	talent = true,
 	heal = true,
 	cooldown = 120
@@ -141,7 +132,7 @@ LCT_SpellData[49028] = {
 	offensive = true,
 	defensive = true,
 	duration = 12,
-	cooldown = 90
+	cooldown = 120
 }
 -- DK/Blood/talents
 -- Strangulate
@@ -152,6 +143,28 @@ LCT_SpellData[47476] = {
 	silence = true,
 	cooldown = 60
 }
+-- Rune Strike
+LCT_SpellData[210764] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_BLOOD },
+	talent = true,
+	cooldown = 60 -- reduced by 1s every rune used
+}
+-- Consumption
+LCT_SpellData[274156] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_BLOOD },
+	talent = true,
+	cooldown = 45
+}
+-- Mark of Blood
+LCT_SpellData[206940] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_BLOOD },
+	talent = true,
+	cooldown = 6
+}
+
 
 -- DK/Frost
 -- Pillar of Frost
@@ -161,22 +174,14 @@ LCT_SpellData[51271] = {
 	offensive = true,
 	defensive = true,
 	duration = 20,
-	cooldown = 60
+	cooldown = 45
 }
 -- Empower Rune Weapon
 LCT_SpellData[47568] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_FROST },
 	offensive = true,
-	cooldown = 300
-}
--- Artifact - Sindragosa's Fury
-LCT_SpellData[190778] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_FROST },
-	offensive = true,
-	duration = 10,
-	cooldown = 300
+	cooldown = 120
 }
 -- Obliteration
 LCT_SpellData[207256] = {
@@ -187,7 +192,7 @@ LCT_SpellData[207256] = {
 	cooldown = 90
 }
 -- Breath of Sindragosa
--- V: note: continues until power is exhausted (??)
+-- V: note: continues until power is exhausted, no way to model this
 LCT_SpellData[152279] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_FROST },
@@ -195,20 +200,38 @@ LCT_SpellData[152279] = {
 	duration = 10,
 	cooldown = 120
 }
+-- DK/Frost/talents
+-- Glacial Advance
+LCT_SpellData[194913] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST },
+	offensive = true,
+	talent = true,
+	cooldown = 6
+}
+-- Frostwyrm's Fury
+LCT_SpellData[279302] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST },
+	offensive = true,
+	talent = true,
+	duration = 10,
+	cooldown = 180
+}
 
 -- DK/Unholy
 -- Raise Dead
 LCT_SpellData[46584] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_UNHOLY },
-	cooldown = 60
+	cooldown = 30
 }
 -- Summon Gargoyle
 LCT_SpellData[49206] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_UNHOLY },
 	offensive = true,
-	duration = 40,
+	duration = 30,
 	cooldown = 180
 }
 -- Outbreak
@@ -224,6 +247,35 @@ LCT_SpellData[49206] = {
 	specID = { SPEC_DK_UNHOLY },
 	defensive = true,
 	cooldown = 60
+}
+-- DK/Unholy/talents
+-- Unholy Blight
+LCT_SpellData[115989] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_UNHOLY },
+	talent = true,
+	offensive = true,
+	duration = 6,
+	cooldown = 45
+}
+-- Defile
+LCT_SpellData[152280] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_UNHOLY },
+	talent = true,
+	offensive = true,
+	replaces = 43265,
+	duration = 10,
+	cooldown = 20
+}
+-- Unholy Frenzy
+LCT_SpellData[207289] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_UNHOLY },
+	talent = true,
+	offensive = true,
+	duration = 12,
+	cooldown = 75
 }
 
 -- DK/pet

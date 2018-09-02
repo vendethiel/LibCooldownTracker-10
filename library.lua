@@ -170,8 +170,10 @@ local function ClearTimers()
 	timers = {}
 end
 
-local function GetCooldownTime(spelldata, unit)
+local function GetCooldownTime(spellid, unit)
+	local spelldata = SpellData[spellid]
 	local time = spelldata.cooldown
+
 	-- V: note - this thing ties it to GladiusEx, but no choice :(
 	if GladiusEx and GladiusEx.buttons[unit] and spelldata.cooldown_overload then
 		local button = GladiusEx.buttons[unit]
@@ -184,6 +186,12 @@ local function GetCooldownTime(spelldata, unit)
 			return overloads[class]
 		end
 	end
+
+	local tps = lib.tracked_players[unit][spellid]
+	if tps and tps.cooldown then
+		time = tps.cooldown
+	end
+	
 	return time
 end
 
@@ -200,7 +208,7 @@ local function AddCharge(unit, spellid)
 		local now = GetTime()
 		local spelldata = SpellData[spellid]
 		tps.cooldown_start = now
-		tps.cooldown_end = now + GetCooldownTime(spelldata, unit)
+		tps.cooldown_end = now + GetCooldownTime(spellid, unit)
 		tps.charge_timer = SetTimer(tps.cooldown_end, AddCharge, unit, spellid)
 	else
 		tps.charge_timer = false
@@ -282,30 +290,34 @@ local function CooldownEvent(event, unit, spellid)
 
 			-- is the cooldown still in progress?
 			local on_cd = tps.cooldown_end and (tps.cooldown_end - 2) > now
+			local opt_lower_cd = spelldata.opt_lower_cooldown or tps.cooldown or spelldata.cooldown
 
 			-- remove charge
 			if tps.charges then
-				tps.charges = tps.charges - 1
-				-- if cooldown is still in progress and the spell can optionally have charges (with a talent),
-				--  then it must have charges
-				if not tps.charges_detected and on_cd then
-					tps.charges_detected = true
-					if spelldata.opt_charges_linked then
-						for i = 1, #spelldata.opt_charges_linked do
-							local lspellid = spelldata.opt_charges_linked[i]
-							local lspelldata = SpellData[lspellid]
-							if not tpu[lspellid] then
-								tpu[lspellid] = {
-									charges = lspelldata.opt_charges,
-									max_charges = lspelldata.opt_charges,
-								}
+				if tps.charges > 0 then
+					tps.charges = tps.charges - 1
+					-- if cooldown is still in progress and the spell can optionally have charges (with a talent),
+					--  then it must have charges
+					if not tps.charges_detected and on_cd then
+						tps.charges_detected = true
+						if spelldata.opt_charges_linked then
+							for i = 1, #spelldata.opt_charges_linked do
+								local lspellid = spelldata.opt_charges_linked[i]
+								local lspelldata = SpellData[lspellid]
+								if not tpu[lspellid] then
+									tpu[lspellid] = {
+										charges = lspelldata.opt_charges,
+										max_charges = lspelldata.opt_charges,
+									}
+								end
+								tpu[lspellid].charges_detected = true
 							end
-							tpu[lspellid].charges_detected = true
 						end
+					else
+						-- We'd go into negative charges. Instead fix our timer
+						tps.cooldown = opt_lower_cd
 					end
 				end
-			elseif on_cd then
-				-- tpu[lspellid].cooldown = spelldata.optional_lower_cooldown
 			end
 
 			if spelldata.restore_charges then
@@ -345,7 +357,7 @@ local function CooldownEvent(event, unit, spellid)
 		if cooldown_start then
 			-- if the spell has charges and the cooldown is already in progress, it does not need to be reset
 			if not tps.charges or not tps.cooldown_end or tps.cooldown_end <= now then
-				local cooldown_time = GetCooldownTime(spelldata, unit)
+				local cooldown_time = GetCooldownTime(spellid, unit)
 				tps.cooldown_start = cooldown_time and now
 				tps.cooldown_end = cooldown_time and (now + cooldown_time)
 

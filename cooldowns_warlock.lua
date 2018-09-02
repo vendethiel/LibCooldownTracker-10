@@ -11,17 +11,6 @@ LCT_SpellData[20707] = {
 	res = true,
 	cooldown = 600
 }
--- Unending Resolve
-LCT_SpellData[104773] = {
-	class = "WARLOCK",
-	defensive = true,
-	duration = 8,
-	cooldown = 180,
-	cooldown_overload = {
-		[SPEC_WARLOCK_DEMONOLOGY] = 140,
-		[SPEC_WARLOCK_DESTRUCTION] = 60,
-	},
-}
 -- Nether Ward
 LCT_SpellData[212295] = {
 	class = "WARLOCK",
@@ -36,8 +25,30 @@ LCT_SpellData[48020] = {
 	defensive = true,
 	cooldown = 30
 }
+-- Life Tap
+LCT_SpellData[1454] = {
+	class = "WARLOCK",
+	cooldown = 30
+}
+-- Unending Resolve
+LCT_SpellData[104773] = {
+	class = "WARLOCK",
+	defensive = true,
+	duration = 8,
+	cooldown = 180,
+	cooldown_overload = {
+		[SPEC_WARLOCK_DEMONOLOGY] = 140,
+		[SPEC_WARLOCK_DESTRUCTION] = 60,
+	},
+}
+-- Shadowfury
+LCT_SpellData[30283] = {
+	class = "WARLOCK",
+	stun = true,
+	cooldown = 60
+}
 
--- Warlock/talent
+-- Warlock/talents
 -- Howl of Terror
 LCT_SpellData[5484] = {
 	class = "WARLOCK",
@@ -52,13 +63,6 @@ LCT_SpellData[6789] = {
 	cc = true,
 	heal = true,
 	cooldown = 45
-}
--- Shadowfury
-LCT_SpellData[30283] = {
-	class = "WARLOCK",
-	talent = true,
-	stun = true,
-	cooldown = 30
 }
 -- Dark Pact
 LCT_SpellData[108416] = {
@@ -75,8 +79,21 @@ LCT_SpellData[108501] = {
 	defensive = true,
 	cooldown = 120
 }
+-- Curse of Fragility
+LCT_SpellData[199954] = {
+	class = "WARLOCK",
+	talent = true,
+	cooldown = 45
+}
+-- Nether Ward
+LCT_SpellData[212295] = {
+	class = "WARLOCK",
+	talent = true,
+	defensive = true,
+	cooldown = 45
+}
 
--- Warlock/265 - Affliction
+-- Warlock/Affliction
 -- Soul Harvest
 LCT_SpellData[196098] = {
 	class = "WARLOCK",
@@ -85,6 +102,21 @@ LCT_SpellData[196098] = {
 	offensive = true,
 	duration = 12, -- V: technically, this is 12+(4*target of curse), but we can't really fake that.
 	cooldown = 120
+}
+-- Warlock/Affliction/talents
+-- Phantom Singularity
+LCT_SpellData[205179] = {
+	class = "WARLOCK",
+	specID = { SPEC_WARLOCK_AFFLICTION },
+	talent = true,
+	cooldown = 45
+}
+-- Soulshatter
+LCT_SpellData[212356] = {
+	class = "WARLOCK",
+	specID = { SPEC_WARLOCK_AFFLICTION },
+	talent = true,
+	cooldown = 60
 }
 
 -- Warlock/Demonology
@@ -96,6 +128,22 @@ LCT_SpellData[105174] = {
 	charges = 2,
 	cooldown = 15
 }
+-- Grimoire: Felguard
+LCT_SpellData[111898] = {
+	class = "WARLOCK",
+	specID = { SPEC_WARLOCK_DEMONOLOGY },
+	offensive = true,
+	cooldown = 120
+}
+-- Call Dreadstalkers
+LCT_SpellData[104316] = {
+	class = "WARLOCK",
+	specID = { SPEC_WARLOCK_DEMONOLOGY },
+	offensive = true,
+	duration = 12,
+	cooldown = 20
+}
+-- Warlock/Demonology/talents
 -- Call Fel Lord
 LCT_SpellData[212459] = {
 	class = "WARLOCK",
@@ -103,7 +151,7 @@ LCT_SpellData[212459] = {
 	talent = true,
 	offensive = true,
 	duration = 30,
-	cooldown = 120
+	cooldown = 90
 }
 -- Call Observer
 LCT_SpellData[201996] = {
@@ -112,18 +160,26 @@ LCT_SpellData[201996] = {
 	talent = true,
 	offensive = true,
 	duration = 20,
-	cooldown = 120
+	cooldown = 90
 }
-
 -- Warlock/Destruction
 -- Havoc
 LCT_SpellData[80240] = {
 	class = "WARLOCK",
 	specID = { SPEC_WARLOCK_DESTRUCTION },
 	offensive = true,
-	duration = 15,
-	cooldown = 20
+	duration = 10,
+	cooldown = 30
 }
+-- Conflagrate
+LCT_SpellData[17962] = {
+	class = "WARLOCK",
+	specID = { SPEC_WARLOCK_DESTRUCTION },
+	offensive = true,
+	charges = 2,
+	cooldown = 12
+}
+-- Warlock/Destruction/talents
 -- Cataclysm
 LCT_SpellData[152108] = {
 	class = "WARLOCK",
@@ -132,12 +188,11 @@ LCT_SpellData[152108] = {
 	offensive = true,
 	cooldown = 45
 }
--- Conflagrate
-LCT_SpellData[17962] = {
+-- Shadowburn
+LCT_SpellData[17877] = {
 	class = "WARLOCK",
 	specID = { SPEC_WARLOCK_DESTRUCTION },
 	offensive = true,
-	charges = 2,
 	cooldown = 12
 }
 

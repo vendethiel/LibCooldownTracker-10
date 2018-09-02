@@ -89,12 +89,12 @@ LCT_SpellData[51485] = {
 	duration = 20,
 	cooldown = 30
 }
--- Lightning Surge Totem
+-- Capacitator Totem
 LCT_SpellData[192058] = {
 	class = "SHAMAN",
 	talent = true,
 	duration = 2,
-	cooldown = 45
+	cooldown = 60
 }
 -- Voodoo Totem
 LCT_SpellData[196935] = {
@@ -146,14 +146,20 @@ LCT_SpellData[61882] = {
 LCT_SpellData[198067] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ELEMENTAL },
-	cooldown = 300,
+	cooldown = 150,
 }
 -- Earth Shock
 LCT_SpellData[8042] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ELEMENTAL },
 	offensive = true,
-	cooldown = 6
+	cooldown = 6,
+}
+-- Stormkeeper
+LCT_SpellData[191634] = {
+	class = "SHAMAN",
+	specID = { SPEC_SHAMAN_ELEMENTAL },
+	cooldown = 60,
 }
 -- Lava Burst
 LCT_SpellData[51505] = {
@@ -184,7 +190,7 @@ LCT_SpellData[205495] = {
 	cooldown = 60,
 	duration = 15,
 }
--- Shaman/Elemental/talent
+-- Shaman/Elemental/talents
 -- Elemental Blast
 LCT_SpellData[117014] = {
 	class = "SHAMAN",
@@ -199,7 +205,6 @@ LCT_SpellData[16166] = {
 	specID = { SPEC_SHAMAN_ELEMENTAL },
 	talent = true,
 	offensive = true,
-	duration = 20,
 	cooldown = 120
 }
 -- Ascendance (elemental)
@@ -278,9 +283,9 @@ LCT_SpellData[17364] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	offensive = true,
-	cooldown = 8
+	cooldown = 9
 }
--- Shaman/Enhancement/Talent
+-- Shaman/Enhancement/talents
 -- Ascendance (enhancement)
 LCT_SpellData[114051] = {
 	class = "SHAMAN",
@@ -380,7 +385,8 @@ LCT_SpellData[79206] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_RESTORATION },
 	duration = 15,
-	cooldown = 120
+	cooldown = 120,
+	opt_lower_cooldown = 60
 }
 -- Healing Tide Totem
 LCT_SpellData[108280] = {
@@ -390,14 +396,14 @@ LCT_SpellData[108280] = {
 	duration = 10,
 	cooldown = 180
 }
--- Gift of the Queen
+-- Downpour
 LCT_SpellData[207778] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_RESTORATION },
 	heal = true,
 	talent = true,
 	duration = 6,
-	cooldown = 45
+	cooldown = 5 -- this is impossible to calculate
 }
 -- Shaman/Restoration/talents
 -- Ancestral Protection Totem

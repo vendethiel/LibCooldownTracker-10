@@ -1,4 +1,9 @@
 -- ================ HUNTER ================
+
+local SPEC_HUNTER_BM   = 253
+local SPEC_HUNTER_MM   = 254
+local SPEC_HUNTER_SURV = 255
+
 -- Specs:
 -- 253 BM
 -- 254 MM
@@ -9,30 +14,13 @@
 LCT_SpellData[5116] = {
 	class = "HUNTER",
 	cc = true,
-	cooldown = 5
+	cooldown = 8
 }
 -- Disengage
 LCT_SpellData[781] = {
 	class = "HUNTER",
 	defensive = true,
 	cooldown = 30
-}
--- Counter Shot
-LCT_SpellData[147362] = {
-	class = "HUNTER",
-	interrupt = true,
-	cooldown = 24,
-	specID = { 253, 254 }, -- BM, MM
-}
--- Freezing Trap
--- V: legion id 1499 => 187650
-LCT_SpellData[187650] = {
-	class = "HUNTER",
-	cc = true,
-	cooldown = 30,
-	cooldown_overload = {
-		[255] = 24, -- Survival
-	}
 }
 -- Explosive Trap
 LCT_SpellData[13813] = {
@@ -59,8 +47,41 @@ LCT_SpellData[53271] = {
 	duration = 4,
 	cooldown = 45
 }
--- Aspect of Turtle. old: Deterrence
--- V: legion id 19263 => 186265
+-- Exhilaration
+LCT_SpellData[109304] = {
+	class = "HUNTER",
+	heal = true,
+	cooldown = 120
+}
+-- Tranquilizing Shot
+LCT_SpellData[19801] = {
+	class = "HUNTER",
+	cooldown = 10
+}
+-- Intimidation
+LCT_SpellData[19577] = {
+	class = "HUNTER",
+	stun = true,
+	cooldown = 60,
+	specID = { SPEC_HUNTER_BM, SPEC_HUNTER_SURV },
+}
+-- Counter Shot
+LCT_SpellData[147362] = {
+	class = "HUNTER",
+	interrupt = true,
+	cooldown = 24,
+	specID = { SPEC_HUNTER_BM, SPEC_HUNTER_MM },
+}
+-- Freezing Trap
+LCT_SpellData[187650] = {
+	class = "HUNTER",
+	cc = true,
+	cooldown = 30,
+	cooldown_overload = {
+		[SPEC_HUNTER_SURV] = 24, -- Survival
+	}
+}
+-- Aspect of Turtle
 LCT_SpellData[186265] = {
 	class = "HUNTER",
 	defensive = true,
@@ -68,39 +89,43 @@ LCT_SpellData[186265] = {
 	charges = 2,
 	cooldown = 180,
 	cooldown_overload = {
-		[255] = 144, -- Survival
+		[SPEC_HUNTER_SURV] = 144, -- Survival
 	}
 }
 
--- Hunter/talent
+-- Hunter/talents
 -- Binding Shot
 LCT_SpellData[109248] = {
 	class = "HUNTER",
 	talent = true,
-	cc = true,
 	cooldown = 45
 }
--- Wyvern Sting
-LCT_SpellData[19386] = {
+-- Camouflage
+LCT_SpellData[199483] = {
 	class = "HUNTER",
 	talent = true,
-	cc = true,
-	cooldown = 45
+	cooldown = 60
 }
--- Exhilaration
-LCT_SpellData[109304] = {
+-- Steel Trap
+LCT_SpellData[162488] = {
 	class = "HUNTER",
-	heal = true,
-	cooldown = 120
+	talent = true,
+	cooldown = 30
+}
+-- Spitting Cobra
+LCT_SpellData[194407] = {
+	class = "HUNTER",
+	talent = true,
+	cooldown = 90,
+	duration = 20
 }
 -- Dire Beast
--- V: legion changed CD
 LCT_SpellData[120679] = {
 	class = "HUNTER",
 	talent = true,
 	offensive = true,
 	duration = 8,
-	cooldown = 12
+	cooldown = 20
 }
 -- Fervor
 LCT_SpellData[82726] = {
@@ -129,50 +154,136 @@ LCT_SpellData[130392] = {
 LCT_SpellData[120360] = {
 	class = "HUNTER",
 	talent = true,
+	specID = { SPEC_HUNTER_BM, SPEC_HUNTER_MM },
 	offensive = true,
 	duration = 3,
 	cooldown = 20
 }
--- Intimidation
-LCT_SpellData[19577] = {
-	class = "HUNTER",
-	talent = true,
-	stun = true,
-	cooldown = 60
-}
 
--- Hunter/253 - Beast Mastery
+-- Hunter/Beast Mastery
+-- Barbed Shot
+LCT_SpellData[217200] = {
+	class = "HUNTER",
+	offensive = true,
+	cooldown = 12,
+	charges = 2
+}
+-- Chimaera Shot
+LCT_SpellData[53209] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_BM },
+	offensive = true,
+	cooldown = 15
+}
 -- Kill Command
 LCT_SpellData[34026] = {
 	class = "HUNTER",
-	specID = { 253 },
+	specID = { SPEC_HUNTER_BM },
 	offensive = true,
-	cooldown = 6
+	cooldown = 6,
+	opt_charges = 2
 }
 -- Bestial Wrath
 LCT_SpellData[19574] = {
 	class = "HUNTER",
-	specID = { 253 },
+	specID = { SPEC_HUNTER_BM },
 	offensive = true,
 	duration = 10,
-	cooldown = 60
+	cooldown = 90
 }
--- Hunter/254 - Marksmanship
--- V: removed in Bfa. Rapid Fire
---LCT_SpellData[3045] = {
---	class = "HUNTER",
---	specID = { 254 },
---	offensive = true,
---	duration = 15,
---	cooldown = 120
---}
--- Chimera Shot
-LCT_SpellData[53209] = {
+-- Aspect of the wild
+LCT_SpellData[90361] = {
 	class = "HUNTER",
-	specID = { 254 },
+	specID = { SPEC_HUNTER_BM },
 	offensive = true,
-	cooldown = 9
+	duration = 10,
+	cooldown = 120
 }
+-- Stampede
+LCT_SpellData[201430] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_BM },
+	offensive = true,
+	duration = 12,
+	cooldown = 180
+}
+
+-- Hunter/Marksmanship
+-- Aimed Shot
+LCT_SpellData[19434] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_MM },
+	offensive = true,
+	cooldown = 12
+}
+-- Trueshot
+LCT_SpellData[193526] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_MM },
+	offensive = true,
+	duration = 15,
+	cooldown = 180
+}
+
+-- Hunter/Survival
+-- Aspect of the eagle
+LCT_SpellData[186289] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	offensive = true,
+	duration = 10,
+	cooldown = 120
+}
+-- Caltrops
+LCT_SpellData[194277] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	defensive = true,
+	cooldown = 15
+}
+-- Carve
+LCT_SpellData[187708] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	offensive = true,
+	cooldown = 6
+}
+-- Butchery
+LCT_SpellData[212436] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	offensive = true,
+	cooldown = 18,
+	opt_charges = 2
+}
+-- Hunter/Survival/talents
+-- Butchery
+LCT_SpellData[212436] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	talent = true,
+	offensive = true,
+	cooldown = 9,
+	replaces = 187708, -- Carve
+}
+-- Flanking Strike
+LCT_SpellData[269751] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	talent = true,
+	offensive = true,
+	cooldown = 40,
+}
+-- Chakrams
+LCT_SpellData[259391] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	talent = true,
+	offensive = true,
+	cooldown = 20,
+}
+
+-- Pet
 -- Pet/Ferocity
 -- Heart of the Phoenix
 LCT_SpellData[55709] = {
@@ -188,7 +299,6 @@ LCT_SpellData[61684] = {
 	duration = 16,
 	cooldown = 32
 }
-
 -- Pet/Tenacity
 -- Last Stand
 LCT_SpellData[53478] = {
@@ -212,7 +322,6 @@ LCT_SpellData[63900] = {
 	offensive = true,
 	cooldown = 10
 }
-
 -- Pet/Cunning
 -- Roar of Sacrifice
 LCT_SpellData[53480] = {
@@ -230,14 +339,6 @@ LCT_SpellData[53490] = {
 	duration = 12,
 	cooldown = 180
 }
--- V: removed in Bfa. Reflective Armor Plating
---LCT_SpellData[137798] = {
---	class = "HUNTER",
---	pet = true,
---	defensive = true,
---	duration = 6,
---	cooldown = 30
---}
 -- Shell Shield
 LCT_SpellData[26064] = {
 	class = "HUNTER",
@@ -268,13 +369,6 @@ LCT_SpellData[90339] = {
 	duration = 12,
 	cooldown = 60
 }
--- V: removed in Bfa. Eternal Guardian
---LCT_SpellData[126393] = {
---	class = "HUNTER",
---	pet = true,
---	res = true,
---	cooldown = 600
---}
 -- Frost Breath
 LCT_SpellData[54644] = {
 	class = "HUNTER",
@@ -296,44 +390,4 @@ LCT_SpellData[90361] = {
 	pet = true,
 	heal = true,
 	cooldown = 30
-}
-
--- Aspect of the wild
-LCT_SpellData[90361] = {
-	class = "HUNTER",
-	specID = { 253 },
-	offensive = true,
-	duration = 10,
-	cooldown = 120
-}
--- Stampede
-LCT_SpellData[201430] = {
-	class = "HUNTER",
-	specID = { 253 },
-	offensive = true,
-	duration = 12,
-	cooldown = 180
-}
--- Trueshot
-LCT_SpellData[193526] = {
-	class = "HUNTER",
-	specID = { 254 },
-	offensive = true,
-	duration = 15,
-	cooldown = 180
-}
--- Aspect of the eagle
-LCT_SpellData[186289] = {
-	class = "HUNTER",
-	specID = { 255 },
-	offensive = true,
-	duration = 10,
-	cooldown = 120
-}
--- Caltrops
-LCT_SpellData[194277] = {
-	class = "HUNTER",
-	specID = { 255 },
-	defensive = true,
-	cooldown = 15
 }
