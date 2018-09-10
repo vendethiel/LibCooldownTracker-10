@@ -13,13 +13,6 @@ LCT_SpellData[109132] = {
 }
 -- Chi Torpedo
 LCT_SpellData[115008] = 109132
--- Detox
-LCT_SpellData[115450] = {
-	class = "MONK",
-	dispel = true,
-	cooldown_starts_on_dispel = true,
-	cooldown = 8,
-}
 -- Paralysis
 LCT_SpellData[115078] = {
 	class = "MONK",
@@ -116,6 +109,15 @@ LCT_SpellData[116847] = {
 	talent = true,
 	offensive = true,
 	cooldown = 6,
+}
+-- Monk/mixed
+-- Detox (WW/BM)
+LCT_SpellData[218164] = {
+	class = "MONK",
+	specID = { SPEC_MONK_WINDWALKER, SPEC_MONK_BREWMASTER },
+	dispel = true,
+	cooldown_starts_on_dispel = true,
+	cooldown = 8,
 }
 
 -- Monk/Brewmaster
@@ -283,6 +285,14 @@ LCT_SpellData[152173] = {
 }
 
 -- Monk/Mistweaver
+-- Detox (MW)
+LCT_SpellData[115450] = {
+	class = "MONK",
+	specID = { SPEC_MONK_MISTWEAVER },
+	dispel = true,
+	cooldown_starts_on_dispel = true,
+	cooldown = 8,
+}
 -- Life Cocoon
 LCT_SpellData[116849] = {
 	class = "MONK",

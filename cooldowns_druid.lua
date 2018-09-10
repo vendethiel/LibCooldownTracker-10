@@ -164,7 +164,7 @@ LCT_SpellData[22570] = {
 -- Skull Bash
 LCT_SpellData[106839] = {
 	class = "DRUID",
-	specID = { SPEC_DRUID_FERAL },
+	specID = { SPEC_DRUID_FERAL, SPEC_DRUID_GUARDIAN },
 	interrupt = true,
 	cooldown = 15,
 }
@@ -237,7 +237,8 @@ LCT_SpellData[102342] = {
 	specID = { SPEC_DRUID_RESTO },
 	defensive = true,
 	duration = 12,
-	cooldown = 60
+	cooldown = 60,
+	opt_lower_cooldown = 45, -- 197061 Stonebark
 }
 -- Nature's Cure
 LCT_SpellData[88423] = {

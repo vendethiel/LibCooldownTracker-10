@@ -145,6 +145,15 @@ LCT_SpellData[212801] = {
 	replaces = 195676,
 	restore_charges = { 212653 },
 }
+-- Mage/Arcane/talents
+-- Mass Invisibility
+LCT_SpellData[198158] = {
+	class = "MAGE",
+	specID = { SPEC_MAGE_ARCANE },
+	talent = true,
+	duration = 5,
+	cooldown = 60
+}
 
 -- Mage/Fire
 -- Combustion

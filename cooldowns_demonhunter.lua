@@ -26,14 +26,14 @@ LCT_SpellData[217832] = {
 LCT_SpellData[198013] = {
 	class = "DEMONHUNTER",
 	cooldown = 30,
-	-- duration = 2s or 4s, depending on talent
+	duration = 4,
+	opt_lower_cooldown = 4, -- depending on talent
 }
 -- Blade Dance
 LCT_SpellData[188499] = {
 	class = "DEMONHUNTER",
 	cooldown = 9
 }
-
 -- DH/talents
 -- Inverse magic
 LCT_SpellData[205604] = {
@@ -87,7 +87,15 @@ LCT_SpellData[258920] = {
 LCT_SpellData[258860] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_HAVOC },
+	talent = true,
 	cooldown = 20,
+}
+-- Rain From Above
+LCT_SpellData[206803] = {
+	class = "DEMONHUNTER",
+	specID = { SPEC_DH_HAVOC },
+	talent = true,
+	cooldown = 60,
 }
 
 -- DH/Vengeance

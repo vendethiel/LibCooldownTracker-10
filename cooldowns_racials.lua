@@ -119,3 +119,28 @@ LCT_SpellData[26297] = {
 	duration = 10,
 	cooldown = 180
 }
+-- Arcane Pulse (Nightborne)
+LCT_SpellData[260364] = {
+	race = "Nightborne",
+	offensive = true,
+	duration = 12,
+	cooldown = 180
+}
+-- Bull Rush (HighmountainTauren)
+LCT_SpellData[255654] = {
+	race = "HighmountainTauren",
+	offensive = true,
+	cooldown = 120
+}
+-- Forge of Light (LightforgedDraenei)
+LCT_SpellData[255647] = {
+	race = "LightforgedDraenei",
+	offensive = true,
+	duration = 3,
+	cooldown = 150, -- 2.5min
+}
+-- Spatial Rift (VoidElf)
+LCT_SpellData[256948] = {
+	race = "VoidElf",
+	cooldown = 180,
+}

@@ -4,7 +4,8 @@
 LCT_SpellData[2094] = {
 	class = "ROGUE",
 	cc = true,
-	cooldown = 60
+	cooldown = 120,
+	opt_lower_cooldown = 90, -- talent
 }
 -- Cloak of Shadows
 LCT_SpellData[31224] = {
@@ -140,11 +141,20 @@ LCT_SpellData[1776] = {
 	cooldown = 15
 }
 -- Rogue/Outlaw/talents
--- 196937
+-- Ghostly Strike
 LCT_SpellData[196937] = {
 	class = "ROGUE",
 	specID = { 260 },
+	talent = true,
 	cooldown = 35
+}
+-- Killing Spree
+LCT_SpellData[51690] = {
+	class = "ROGUE",
+	specID = { 260 },
+	talent = true,
+	offensive = true,
+	cooldown = 120
 }
 
 -- Rogue/Subtlety 261

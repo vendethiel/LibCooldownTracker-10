@@ -66,7 +66,7 @@ LCT_SpellData[212552] = {
 	cooldown = 60
 }
 
--- DK/talent
+-- DK/talents
 -- Plague Leech
 LCT_SpellData[123693] = {
 	class = "DEATHKNIGHT",
@@ -80,23 +80,6 @@ LCT_SpellData[51052] = {
 	talent = true,
 	defensive = true,
 	duration = 10,
-	cooldown = 120
-}
--- Asphyxiate
-LCT_SpellData[108194] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_FROST, SPEC_DK_UNHOLY },
-	talent = true,
-	stun = true,
-	silence = true,
-	cooldown = 45
-}
--- Death Pact
-LCT_SpellData[48743] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_FROST, SPEC_DK_UNHOLY },
-	talent = true,
-	heal = true,
 	cooldown = 120
 }
 -- Desecrated Ground
@@ -113,6 +96,24 @@ LCT_SpellData[108199] = {
 	talent = true,
 	cc = true,
 	cooldown = 60
+}
+-- DK/mixed/talents
+-- Asphyxiate
+LCT_SpellData[108194] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST, SPEC_DK_UNHOLY },
+	talent = true,
+	stun = true,
+	silence = true,
+	cooldown = 45
+}
+-- Death Pact
+LCT_SpellData[48743] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST, SPEC_DK_UNHOLY },
+	talent = true,
+	heal = true,
+	cooldown = 120
 }
 
 -- DK/Blood
@@ -165,7 +166,6 @@ LCT_SpellData[206940] = {
 	cooldown = 6
 }
 
-
 -- DK/Frost
 -- Pillar of Frost
 LCT_SpellData[51271] = {
@@ -217,6 +217,13 @@ LCT_SpellData[279302] = {
 	talent = true,
 	duration = 10,
 	cooldown = 180
+}
+-- Blinding Sleet
+LCT_SpellData[207167] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_FROST },
+	talent = true,
+	cooldown = 60
 }
 
 -- DK/Unholy

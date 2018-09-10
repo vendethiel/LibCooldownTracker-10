@@ -48,7 +48,6 @@ LCT_SpellData[8122] = {
 	class = "PRIEST",
 	cc = true,
 	cooldown = 60,
-	opt_lower_cooldown = 30,
 }
 -- Shining Force
 LCT_SpellData[204263] = {
