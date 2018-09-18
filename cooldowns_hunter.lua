@@ -266,6 +266,13 @@ LCT_SpellData[212436] = {
 	cooldown = 9,
 	replaces = 187708, -- Carve
 }
+-- Muzzle
+LCT_SpellData[187707] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	interrupt = true,
+	cooldown = 15,
+}
 -- Flanking Strike
 LCT_SpellData[269751] = {
 	class = "HUNTER",

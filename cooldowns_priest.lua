@@ -207,6 +207,15 @@ LCT_SpellData[527] = {
 	cooldown_starts_on_dispel = true,
 	cooldown = 8,
 }
+-- Priest/Discipline/talents
+-- Premonition
+LCT_SpellData[209780] = {
+	class = "PRIEST",
+	specID = { 256 },
+	talent = true,
+	defensive = true,
+	cooldown = 12,
+}
 
 -- Priest/Holy
 -- Guardian Spirit
