@@ -10,11 +10,16 @@ local SPEC_HUNTER_SURV = 255
 -- 255 Survival
 
 -- Hunter/baseline
--- Concussive Shot
-LCT_SpellData[5116] = {
+-- Misdirection
+LCT_SpellData[34477] = {
 	class = "HUNTER",
-	cc = true,
-	cooldown = 8
+	cooldown = 30
+}
+-- Aspect of the Cheetah
+LCT_SpellData[186257] = {
+	class = "HUNTER",
+	duration = 12, -- 3s 90% then 9s 30%
+	cooldown = 180
 }
 -- Disengage
 LCT_SpellData[781] = {
@@ -22,17 +27,17 @@ LCT_SpellData[781] = {
 	defensive = true,
 	cooldown = 30
 }
--- Explosive Trap
-LCT_SpellData[13813] = {
-	class = "HUNTER",
-	offensive = true,
-	cooldown = 30
-}
 -- Flare
 LCT_SpellData[1543] = {
 	class = "HUNTER",
 	none = true,
 	cooldown = 20
+}
+-- Tar Trap
+LCT_SpellData[187698] = {
+	class = "HUNTER",
+	cc = true,
+	cooldown = 30
 }
 -- Ice Trap
 LCT_SpellData[13809] = {
@@ -53,10 +58,54 @@ LCT_SpellData[109304] = {
 	heal = true,
 	cooldown = 120
 }
--- Tranquilizing Shot
-LCT_SpellData[19801] = {
+-- Freezing Trap
+LCT_SpellData[187650] = {
 	class = "HUNTER",
-	cooldown = 10
+	cc = true,
+	cooldown = 30,
+	cooldown_overload = {
+		[SPEC_HUNTER_SURV] = 24, -- Survival
+	}
+}
+-- Aspect of Turtle
+LCT_SpellData[186265] = {
+	class = "HUNTER",
+	defensive = true,
+	duration = 8,
+	cooldown = 180
+}
+-- Feign Death
+LCT_SpellData[5384] = {
+  class = "HUNTER",
+  defensive = true,
+  cooldown = 30
+}
+-- Spider Sting
+LCT_SpellData[202914] = {
+  class = "HUNTER",
+  talent = true,
+  silence = true,
+  cooldown = 45
+}
+-- Viper Sting
+LCT_SpellData[202797] = {
+  class = "HUNTER",
+  talent = true,
+  cooldown = 45
+}
+-- Spirit Mend
+LCT_SpellData[90361] = {
+	class = "HUNTER",
+	cooldown = 30,
+	duration = 10,
+}
+-- Hunter/mixed
+-- Concussive Shot
+LCT_SpellData[5116] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_BM, SPEC_HUNTER_MM },
+	cc = true,
+	cooldown = 5
 }
 -- Intimidation
 LCT_SpellData[19577] = {
@@ -72,68 +121,39 @@ LCT_SpellData[147362] = {
 	cooldown = 24,
 	specID = { SPEC_HUNTER_BM, SPEC_HUNTER_MM },
 }
--- Freezing Trap
-LCT_SpellData[187650] = {
-	class = "HUNTER",
-	cc = true,
-	cooldown = 30,
-	cooldown_overload = {
-		[SPEC_HUNTER_SURV] = 24, -- Survival
-	}
-}
--- Aspect of Turtle
-LCT_SpellData[186265] = {
-	class = "HUNTER",
-	defensive = true,
-	duration = 8,
-	charges = 2,
-	cooldown = 180,
-	cooldown_overload = {
-		[SPEC_HUNTER_SURV] = 144, -- Survival
-	}
-}
-
 -- Hunter/talents
+-- Roar of Sacrifice
+LCT_SpellData[53480] = {
+	class = "HUNTER",
+	talent = true,
+	defensive = true,
+	duration = 12,
+	cooldown = 60
+}
+-- Scorpid Sting
+LCT_SpellData[202900] = {
+	class = "HUNTER",
+	talent = true,
+	defensive = true,
+	cooldown = 24
+}
 -- Binding Shot
 LCT_SpellData[109248] = {
 	class = "HUNTER",
 	talent = true,
 	cooldown = 45
 }
+-- Hi-Explosive Trap
+LCT_SpellData[236776] = {
+	class = "HUNTER",
+	talent = true,
+	cooldown = 40
+}
 -- Camouflage
 LCT_SpellData[199483] = {
 	class = "HUNTER",
 	talent = true,
 	cooldown = 60
-}
--- Steel Trap
-LCT_SpellData[162488] = {
-	class = "HUNTER",
-	talent = true,
-	cooldown = 30
-}
--- Spitting Cobra
-LCT_SpellData[194407] = {
-	class = "HUNTER",
-	talent = true,
-	cooldown = 90,
-	duration = 20
-}
--- Dire Beast
-LCT_SpellData[120679] = {
-	class = "HUNTER",
-	talent = true,
-	offensive = true,
-	duration = 8,
-	cooldown = 20
-}
--- Fervor
-LCT_SpellData[82726] = {
-	class = "HUNTER",
-	talent = true,
-	offensive = true,
-	duration = 10,
-	cooldown = 30
 }
 -- A Murder of Crows
 LCT_SpellData[131894] = {
@@ -142,13 +162,6 @@ LCT_SpellData[131894] = {
 	offensive = true,
 	duration = 15,
 	cooldown = 60
-}
--- Blink Strike
-LCT_SpellData[130392] = {
-	class = "HUNTER",
-	talent = true,
-	offensive = true,
-	cooldown = 20
 }
 -- Barrage
 LCT_SpellData[120360] = {
@@ -164,24 +177,17 @@ LCT_SpellData[120360] = {
 -- Barbed Shot
 LCT_SpellData[217200] = {
 	class = "HUNTER",
+	specID = { SPEC_HUNTER_BM },
 	offensive = true,
 	cooldown = 12,
 	charges = 2
-}
--- Chimaera Shot
-LCT_SpellData[53209] = {
-	class = "HUNTER",
-	specID = { SPEC_HUNTER_BM },
-	offensive = true,
-	cooldown = 15
 }
 -- Kill Command
 LCT_SpellData[34026] = {
 	class = "HUNTER",
 	specID = { SPEC_HUNTER_BM },
 	offensive = true,
-	cooldown = 6,
-	opt_charges = 2
+	cooldown = 7.5,
 }
 -- Bestial Wrath
 LCT_SpellData[19574] = {
@@ -192,11 +198,11 @@ LCT_SpellData[19574] = {
 	cooldown = 90
 }
 -- Aspect of the wild
-LCT_SpellData[90361] = {
+LCT_SpellData[193530] = {
 	class = "HUNTER",
 	specID = { SPEC_HUNTER_BM },
 	offensive = true,
-	duration = 10,
+	duration = 20,
 	cooldown = 120
 }
 -- Stampede
@@ -207,6 +213,60 @@ LCT_SpellData[201430] = {
 	duration = 12,
 	cooldown = 180
 }
+-- Hunter/Beast Mastery/talents
+-- Dire Beast
+LCT_SpellData[120679] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_BM },
+	talent = true,
+	offensive = true,
+	duration = 8,
+	cooldown = 20
+}
+-- Dire Beast: Hawk
+LCT_SpellData[208652] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_BM },
+	talent = true,
+	offensive = true,
+	duration = 10,
+	cooldown = 30
+}
+-- Chimaera Shot
+LCT_SpellData[53209] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_BM },
+	talent = true,
+	offensive = true,
+	cooldown = 15
+}
+-- Spitting Cobra
+LCT_SpellData[194407] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_BM },
+	talent = true,
+	cooldown = 90,
+	duration = 20
+}
+-- Dire Beast: Basilisk
+LCT_SpellData[205691] = {
+  class = "HUNTER",
+  specID = { SPEC_HUNTER_BM },
+  talent = true,
+  offensive = true,
+  duration = 30,
+  cooldown = 120
+}
+-- Misdirection
+LCT_SpellData[205691] = {
+  class = "HUNTER",
+  specID = { SPEC_HUNTER_BM },
+  talent = true,
+  defensive = true,
+  duration = 3,
+  cooldown = 45,
+  replaces = 34477 -- Misdirection
+}
 
 -- Hunter/Marksmanship
 -- Aimed Shot
@@ -216,6 +276,13 @@ LCT_SpellData[19434] = {
 	offensive = true,
 	cooldown = 12
 }
+-- Bursting Shot
+LCT_SpellData[186387] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_MM },
+	offensive = true,
+	cooldown = 30
+}
 -- Trueshot
 LCT_SpellData[193526] = {
 	class = "HUNTER",
@@ -224,6 +291,37 @@ LCT_SpellData[193526] = {
 	duration = 15,
 	cooldown = 180
 }
+-- Rapid Fire
+LCT_SpellData[257044] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_MM },
+	offensive = true,
+	cooldown = 20
+}
+-- Scatter Shot
+LCT_SpellData[213691] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_MM },
+	cc = true,
+	cooldown = 30
+}
+-- Hunter/Marksmanship/talents
+-- Trueshot
+LCT_SpellData[212431] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_MM },
+	talent = true,
+	offensive = true,
+	cooldown = 30
+}
+-- Piercing Shot
+LCT_SpellData[198670] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_MM },
+	talent = true,
+	offensive = true,
+	cooldown = 30
+}
 
 -- Hunter/Survival
 -- Aspect of the eagle
@@ -231,8 +329,23 @@ LCT_SpellData[186289] = {
 	class = "HUNTER",
 	specID = { SPEC_HUNTER_SURV },
 	offensive = true,
-	duration = 10,
+	duration = 15,
+	cooldown = 90
+}
+-- Coordinated Assault
+LCT_SpellData[266779] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	offensive = true,
+	duration = 20,
 	cooldown = 120
+}
+-- Harpoon
+LCT_SpellData[190925] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	cc = true,
+	cooldown = 30
 }
 -- Caltrops
 LCT_SpellData[194277] = {
@@ -256,6 +369,34 @@ LCT_SpellData[212436] = {
 	cooldown = 18,
 	opt_charges = 2
 }
+-- Harpoon
+LCT_SpellData[190925] = {
+  class = "HUNTER",
+  specID = { SPEC_HUNTER_SURV },
+  offensive = true,
+  cooldown = 30
+}
+-- Muzzle
+LCT_SpellData[187707] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	interrupt = true,
+	cooldown = 15,
+}
+-- Steel Trap
+LCT_SpellData[162488] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	talent = true,
+	cooldown = 30
+}
+-- Wildfire Bomb
+LCT_SpellData[259495] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	offensive = true,
+	cooldown = 18
+}
 -- Hunter/Survival/talents
 -- Butchery
 LCT_SpellData[212436] = {
@@ -266,12 +407,21 @@ LCT_SpellData[212436] = {
 	cooldown = 9,
 	replaces = 187708, -- Carve
 }
--- Muzzle
-LCT_SpellData[187707] = {
+-- Mending Bandage
+LCT_SpellData[212640] = {
 	class = "HUNTER",
 	specID = { SPEC_HUNTER_SURV },
-	interrupt = true,
-	cooldown = 15,
+	talent = true,
+	defensive = true,
+	cooldown = 25,
+}
+-- Tracker's Net
+LCT_SpellData[212638] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_SURV },
+	talent = true,
+	cc = true,
+	cooldown = 25,
 }
 -- Flanking Strike
 LCT_SpellData[269751] = {
@@ -330,14 +480,6 @@ LCT_SpellData[63900] = {
 	cooldown = 10
 }
 -- Pet/Cunning
--- Roar of Sacrifice
-LCT_SpellData[53480] = {
-	class = "HUNTER",
-	pet = true,
-	defensive = true,
-	duration = 12,
-	cooldown = 60
-}
 -- Bullheaded
 LCT_SpellData[53490] = {
 	class = "HUNTER",

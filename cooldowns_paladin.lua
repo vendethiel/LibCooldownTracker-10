@@ -12,11 +12,16 @@ LCT_SpellData[853] = {
 	cooldown = 60,
 	opt_lower_cooldown = 25, -- This is an approximation. Technically: Fist of Justice talent=-10s/Judgement.
 }
--- Judgement
-LCT_SpellData[20271] = {
+-- Divine Steed
+LCT_SpellData[190784] = {
 	class = "PALADIN",
-	offensive = true,
-	cooldown = 6
+	duration = 3,
+	cooldown = 45
+}
+-- Lay on Hands
+LCT_SpellData[633] = {
+	class = "PALADIN",
+	cooldown = 600
 }
 -- Avenging Wrath
 LCT_SpellData[31884] = {
@@ -25,6 +30,11 @@ LCT_SpellData[31884] = {
 	defensive = true,
 	duration = 20,
 	cooldown = 120,
+}
+-- Hand of Reckoning
+LCT_SpellData[62124] = {
+	class = "PALADIN",
+	cooldown = 8,
 }
 -- Crusader Strike
 LCT_SpellData[35395] = {
@@ -75,6 +85,14 @@ LCT_SpellData[96231] = {
 	interrupt = true,
 	cooldown = 15
 }
+-- Divine Protection
+LCT_SpellData[498] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_PROTECTION, SPEC_PALADIN_HOLY },
+	defensive = true,
+	duration = 8,
+	cooldown = 60
+}
 -- Paladin/talents
 -- Repentance
 LCT_SpellData[20066] = {
@@ -87,6 +105,7 @@ LCT_SpellData[20066] = {
 LCT_SpellData[114165] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_HOLY },
+	talent = true,
 	heal = true,
 	cooldown = 20
 }
@@ -133,17 +152,41 @@ LCT_SpellData[20473] = {
 	specID = { SPEC_PALADIN_HOLY },
 	offensive = true,
 	heal = true,
-	cooldown = 6
+	cooldown = 9
 }
--- V: legion: Devotion Aura => Aura Mastery
+-- Aura Mastery
 LCT_SpellData[31821] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_HOLY },
 	defensive = true,
-	duration = 6,
+	duration = 8,
 	cooldown = 180
 }
+-- Judgement (Holy)
+LCT_SpellData[275773] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_HOLY },
+	offensive = true,
+	cooldown = 12
+}
 -- Paladin/Holy/talents
+-- Beacon of Virtue
+LCT_SpellData[200025] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_HOLY },
+	talent = true,
+	cooldown = 15,
+	-- replaces = 53563 -- Beacon of Light (no CD)
+}
+-- Rule of Law
+LCT_SpellData[214202] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_HOLY },
+	talent = true,
+	charges = 2,
+	duration = 10,
+	cooldown = 30,
+}
 -- Holy Avenger
 LCT_SpellData[105809] = {
 	class = "PALADIN",
@@ -153,6 +196,20 @@ LCT_SpellData[105809] = {
 	defensive = true,
 	duration = 20,
 	cooldown = 90
+}
+-- Divine Favor
+LCT_SpellData[210294] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_HOLY },
+	talent = true,
+	cooldown = 45
+}
+-- Bestow Faith
+LCT_SpellData[223306] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_HOLY },
+	talent = true,
+	cooldown = 12
 }
 -- Avenging Crusader
 LCT_SpellData[216331] = {
@@ -202,17 +259,9 @@ LCT_SpellData[26573] = {
 LCT_SpellData[86659] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_PROTECTION },
-	duration = 12,
-	defensive = true,
-	cooldown = 180
-}
--- Divine Protection
-LCT_SpellData[498] = {
-	class = "PALADIN",
-	specID = { SPEC_PALADIN_PROTECTION },
-	defensive = true,
 	duration = 8,
-	cooldown = 60
+	defensive = true,
+	cooldown = 300
 }
 -- Hammer of the Righteous
 LCT_SpellData[53595] = {
@@ -230,13 +279,44 @@ LCT_SpellData[53600] = {
 	charges = 3
 }
 -- Paladin/Protection/talents
+-- Inquisition
+LCT_SpellData[207028] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_PROTECTION },
+	talent = true,
+	cooldown = 20,
+	replaces = 62124, -- Hand of Reckoning
+}
+-- Seraphim
+LCT_SpellData[152262] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_PROTECTION },
+	talent = true,
+	cooldown = 45,
+	-- TODO consumes charges of Shield of the Righteous
+}
 -- Blessing of Spellwarding
 LCT_SpellData[204018] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_PROTECTION },
 	talent = true,
 	cooldown = 180,
-	replaces = 1022,
+	replaces = 1022, -- Blessing of Protection
+}
+-- Guardian of the Forgotten Queen
+LCT_SpellData[228049] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_PROTECTION },
+	talent = true,
+	cooldown = 180,
+	replaces = 86659, -- Guardian of Ancient Kings
+}
+-- Aegis of Light
+LCT_SpellData[204150] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_PROTECTION },
+	talent = true,
+	cooldown = 180,
 }
 -- Blessed Hammer
 LCT_SpellData[204019] = {
@@ -257,13 +337,19 @@ LCT_SpellData[213652] = {
 }
 
 -- Paladin/Retribution
--- Eye for an eye
-LCT_SpellData[205191] = {
+-- Judgement (Ret)
+LCT_SpellData[20271] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_RETRIBUTION },
-	defensive = true,
-	duration = 10,
-	cooldown = 60
+	offensive = true,
+	cooldown = 6
+}
+-- Blade of Justice
+LCT_SpellData[184575] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	offensive = true,
+	cooldown = 10.5
 }
 -- Consecration (Retribution)
 LCT_SpellData[205228] = {
@@ -271,4 +357,78 @@ LCT_SpellData[205228] = {
 	specID = { SPEC_PALADIN_RETRIBUTION },
 	offensive = true,
 	cooldown = 20
+}
+-- Hand of Hindrance
+LCT_SpellData[183218] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	offensive = true,
+	duration = 10,
+	cooldown = 30
+}
+-- Shield of Vengeance
+LCT_SpellData[184662] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	defensive = true,
+	duration = 15,
+	cooldown = 120
+}
+-- Paladin/Retribution/talents
+-- Eye for an eye
+LCT_SpellData[205191] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	talent = true,
+	defensive = true,
+	duration = 10,
+	cooldown = 60
+}
+-- Wake of Ashes
+LCT_SpellData[255937] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	talent = true,
+	cooldown = 45
+}
+-- Word of Glory
+LCT_SpellData[210191] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	heal = true,
+	charges = 2,
+	cooldown = 45
+}
+-- Blessing of Sanctuary
+LCT_SpellData[210256] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	talent = true,
+	defensive = true,
+	duration = 5,
+	cooldown = 45
+}
+-- Crusade
+LCT_SpellData[210256] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	talent = true,
+	offensive = true,
+	cooldown = 120,
+	replaces = 31884, -- Avenging Wrath
+}
+-- Execution Sentence
+LCT_SpellData[267798] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	talent = true,
+	offensive = true,
+	cooldown = 30
+}
+-- Hammer of Reckoning
+LCT_SpellData[247675] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	talent = true,
+	cooldown = 60
 }
