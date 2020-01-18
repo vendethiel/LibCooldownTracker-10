@@ -39,7 +39,7 @@ LCT_SpellData[22812] = {
 	specID = { SPEC_DRUID_BALANCE, SPEC_DRUID_GUARDIAN, SPEC_DRUID_RESTO },
 	defensive = true,
 	duration = 12,
-	cooldown = 60
+	cooldown = 45
 }
 -- Innervate
 LCT_SpellData[29166] = {
@@ -331,7 +331,7 @@ LCT_SpellData[102342] = {
 	specID = { SPEC_DRUID_RESTO },
 	defensive = true,
 	duration = 12,
-	cooldown = 60,
+	cooldown = 45,
 }
 -- Nature's Cure
 LCT_SpellData[88423] = {
