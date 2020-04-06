@@ -215,7 +215,7 @@ local function AddCharge(unit, spellid)
 	end
 end
 
-local function CooldownEvent(event, unit, spellid)
+local function CooldownEvent(event, unit, spellid, duration)
 	local spelldata = SpellData[spellid]
 	if not spelldata then return end
 
@@ -223,6 +223,7 @@ local function CooldownEvent(event, unit, spellid)
 		spellid = spelldata
 		spelldata = SpellData[spelldata]
 	end
+	duration = duration or spelldata.duration
 
 	if lib:IsUnitRegistered(unit) then
 		local now = GetTime()
@@ -286,7 +287,7 @@ local function CooldownEvent(event, unit, spellid)
 		-- apply actions
 		if used_start then
 			tps.used_start = now
-			tps.used_end = spelldata.duration and (now + spelldata.duration)
+			tps.used_end = duration and (now + duration)
 
 			-- is the cooldown still in progress?
 			local on_cd = tps.cooldown_end and (tps.cooldown_end - 2) > now
@@ -379,7 +380,7 @@ local function CooldownEvent(event, unit, spellid)
 					local cd = sets_cooldowns[i]
 					local cspellid = cd.spellid
 					local cspelldata = SpellData[cspellid]
-					if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.glyph)) then
+					if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.azerite)) then
 						if not tpu[cspellid] then
 							tpu[cspellid] = {}
 						end
@@ -428,7 +429,7 @@ function lib:ClearTalents(unit)
 	-- find out which detected spells are talents, and un-detect them
 	local remove_spells = filter(keys(tpu), function (k)
 		local spell = SpellData[k]
-		return tpu[k].detected and type(spell) == "table" and spell.talent
+		return tpu[k].detected and type(spell) == "table" and (spell.talent or spell.azerite)
 	end)
 	for i = 1, #remove_spells do
 		tpu[remove_spells[i]] = nil
@@ -730,7 +731,9 @@ function events:ARENA_COOLDOWNS_UPDATE(event, unit)
 	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
 	-- V: the "duration ~= 30s" hack is because when using WOTF/EMFH, blizzard
 	--    also updates the actual trinket... but we discard duration in CooldownEvent so we'd set a 2min cd
-	if spellID and duration ~= 30000 then
-		CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID)
+	if spellID then
+		-- Calculate the actual cooldown. Blizz sends us a startTime in the past.
+		local diffTime = GetTime() - (startTime / 1000)
+		CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID, (duration / 1000) - diffTime)
 	end
 end

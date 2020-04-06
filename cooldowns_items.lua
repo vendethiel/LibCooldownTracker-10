@@ -1,12 +1,10 @@
--- used to be Items. Now PVP trinekts
-
--- TODO: currently only sets WoTF, should set EMFH(human) as well
+-- used to be Items. Now PvP trinkets
 
 set_wotf_emfh = {
 	-- WOTF
-	{ spellid = 7744, cooldown = 30 },
+	{ spellid = 7744, cooldown = 90 },
 	-- EMFH
-	{ spellid = 59752, cooldown = 30 },
+	{ spellid = 59752, cooldown = 90 },
 }
 
 -- Honorable Medallion
