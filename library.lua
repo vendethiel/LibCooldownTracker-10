@@ -727,13 +727,18 @@ function events:ARENA_CROWD_CONTROL_SPELL_UPDATE(event, unit, spellID)
 end
 
 function events:ARENA_COOLDOWNS_UPDATE(event, unit)
-	C_PvP.RequestCrowdControlSpell(unit)
+	if string.sub(unit, 1, 5) ~= "arena" then return end
+
 	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
-	-- V: the "duration ~= 30s" hack is because when using WOTF/EMFH, blizzard
-	--    also updates the actual trinket... but we discard duration in CooldownEvent so we'd set a 2min cd
-	if spellID then
-		-- Calculate the actual cooldown. Blizz sends us a startTime in the past.
-		local diffTime = GetTime() - (startTime / 1000)
-		CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID, (duration / 1000) - diffTime)
-	end
+	C_PvP.RequestCrowdControlSpell(unit)
+	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellID)
+  -- print("unit = " .. unit .. ", spellId = " .. (spellID or "nil") .. ", start = " .. (startTime or "nil") .. ", duration = " .. (duration or "nil"))
+  if not spellID or not startTime or not duration then
+    return
+  end
+
+  -- Calculate the actual cooldown. Blizz sends us a startTime in the past.
+  local diffTime = GetTime() - (startTime / 1000)
+  -- print("trinket: time = " .. GetTime() .. ", duration = " .. duration .. ", start = " .. (startTime / 1000) .. "; time left = " .. (duration / 1000) - diffTime)
+  CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID, (duration / 1000) - diffTime)
 end
