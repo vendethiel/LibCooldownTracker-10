@@ -215,7 +215,7 @@ local function AddCharge(unit, spellid)
 	end
 end
 
-local function CooldownEvent(event, unit, spellid, duration)
+local function CooldownEvent(event, unit, spellid, override_duration, override_now)
 	local spelldata = SpellData[spellid]
 	if not spelldata then return end
 
@@ -223,10 +223,10 @@ local function CooldownEvent(event, unit, spellid, duration)
 		spellid = spelldata
 		spelldata = SpellData[spelldata]
 	end
-	duration = duration or spelldata.duration
+	local duration = override_duration or spelldata.duration
 
 	if lib:IsUnitRegistered(unit) then
-		local now = GetTime()
+		local now = override_now or GetTime()
 
 		if not lib.tracked_players[unit] then
 			lib.tracked_players[unit] = {}
@@ -737,8 +737,5 @@ function events:ARENA_COOLDOWNS_UPDATE(event, unit)
     return
   end
 
-  -- Calculate the actual cooldown. Blizz sends us a startTime in the past.
-  local diffTime = GetTime() - (startTime / 1000)
-  -- print("trinket: time = " .. GetTime() .. ", duration = " .. duration .. ", start = " .. (startTime / 1000) .. "; time left = " .. (duration / 1000) - diffTime)
-  CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID, (duration / 1000) - diffTime)
+  CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID, duration / 1000, startTime / 1000)
 end

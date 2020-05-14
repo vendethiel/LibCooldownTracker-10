@@ -52,7 +52,7 @@ LCT_SpellData[32375] = {
 LCT_SpellData[8122] = {
 	class = "PRIEST",
 	cc = true,
-	cooldown = 60,
+	cooldown = 30, -- Technically 60, but most priests play with -30s talent.
 }
 -- Priest/mixed
 -- Purify
@@ -300,7 +300,7 @@ LCT_SpellData[2050] = {
 -- Greater Fade
 LCT_SpellData[213602] = {
 	class = "PRIEST",
-	specID = { SPEC_PRIEST_HOLY },
+	specID = { SPEC_PRIEST_HOLY, SPEC_PRIEST_SHADOW },
 	talent = true,
 	defensive = true,
 	cooldown = 45,

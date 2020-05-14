@@ -9,8 +9,8 @@ local SPEC_PALADIN_RETRIBUTION = 70
 LCT_SpellData[853] = {
 	class = "PALADIN",
 	stun = true,
-	cooldown = 60,
-	opt_lower_cooldown = 25, -- This is an approximation. Technically: Fist of Justice talent=-10s/Judgement.
+	cooldown = 25,
+	--opt_lower_cooldown = 25, -- This is an approximation. Technically: Fist of Justice talent=-10s/Judgement.
 }
 -- Divine Steed
 LCT_SpellData[190784] = {

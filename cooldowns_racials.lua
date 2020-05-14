@@ -144,3 +144,8 @@ LCT_SpellData[256948] = {
 	race = "VoidElf",
 	cooldown = 180,
 }
+-- Fireblood (DarkIronDward)
+LCT_SpellData[265221] = {
+	race = "DarkIronDwarf",
+	cooldown = 120,
+}

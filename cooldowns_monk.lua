@@ -374,7 +374,7 @@ LCT_SpellData[116849] = {
 	specID = { SPEC_MONK_MISTWEAVER },
 	heal = true,
 	duration = 12,
-	cooldown = 120,
+	cooldown = 75, -- Technically 120, but most monks play with -45s talent.
 }
 -- Renewing Mist
 LCT_SpellData[115151] = {
