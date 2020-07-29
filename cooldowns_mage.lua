@@ -64,6 +64,13 @@ LCT_SpellData[198111] = {
 	duration = 6,
 	cooldown = 45
 }
+-- Kleptomania
+LCT_SpellData[198100] = {
+	class = "MAGE",
+	defensive = true,
+	talent = true,
+	cooldown = 30
+}
 -- Ring of Frost
 LCT_SpellData[113724] = {
 	class = "MAGE",
