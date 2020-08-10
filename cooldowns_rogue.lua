@@ -7,6 +7,13 @@ local SPEC_ROGUE_OUTLAW = 260
 local SPEC_ROGUE_SUB = 261
 
 -- Rogue/baseline
+-- Shroud of Concealment
+LCT_SpellData[114018] = {
+	class = "PRIEST",
+	defensive = true,
+	duration = 15,
+	cooldown = 360
+}
 -- Cloak of Shadows
 LCT_SpellData[31224] = {
 	class = "ROGUE",

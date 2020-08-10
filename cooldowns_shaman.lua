@@ -153,14 +153,6 @@ LCT_SpellData[117014] = {
 	offensive = true,
 	cooldown = 12
 }
--- Elemental Mastery
-LCT_SpellData[16166] = {
-	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_ELEMENTAL },
-	talent = true,
-	offensive = true,
-	cooldown = 120
-}
 -- Ascendance (elemental)
 LCT_SpellData[114050] = {
 	class = "SHAMAN",

@@ -20,13 +20,6 @@ LCT_SpellData[586] = {
 	duration = 10,
 	cooldown = 30
 }
--- Shroud of Concealment
-LCT_SpellData[114018] = {
-	class = "PRIEST",
-	defensive = true,
-	duration = 15,
-	cooldown = 300
-}
 -- Rapture
 LCT_SpellData[73325] = {
 	class = "PRIEST",

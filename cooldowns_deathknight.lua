@@ -295,6 +295,15 @@ LCT_SpellData[63560] = {
 	cooldown = 60
 }
 -- DK/Unholy/talents
+-- Raise Abomination
+LCT_SpellData[288853] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_UNHOLY },
+	talent = true,
+	offensive = true,
+	cooldown = 90,
+  duration = 25
+}
 -- Summon Gargoyle
 LCT_SpellData[49206] = {
 	class = "DEATHKNIGHT",
