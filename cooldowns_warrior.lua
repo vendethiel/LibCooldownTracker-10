@@ -92,14 +92,6 @@ LCT_SpellData[118000] = {
 	duration = 6,
 	cooldown = 35,
 }
--- Mass Reflection
-LCT_SpellData[216890] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_ARMS, SPEC_WARRIOR_FURY },
-	talent = true,
-	duration = 3,
-	cooldown = 25,
-}
 
 -- Warrior/Arms
 -- Overpower

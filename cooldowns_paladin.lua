@@ -232,13 +232,6 @@ LCT_SpellData[31850] = {
 	duration = 10,
 	cooldown = 180
 }
--- Light of the Protector
-LCT_SpellData[184092] = {
-	class = "PALADIN",
-	specID = { SPEC_PALADIN_PROTECTION },
-	heal = true,
-	cooldown = 17
-}
 -- Avenger's Shield
 LCT_SpellData[31935] = {
 	class = "PALADIN",
@@ -311,13 +304,6 @@ LCT_SpellData[228049] = {
 	cooldown = 180,
 	replaces = 86659, -- Guardian of Ancient Kings
 }
--- Aegis of Light
-LCT_SpellData[204150] = {
-	class = "PALADIN",
-	specID = { SPEC_PALADIN_PROTECTION },
-	talent = true,
-	cooldown = 180,
-}
 -- Blessed Hammer
 LCT_SpellData[204019] = {
 	class = "PALADIN",
@@ -325,15 +311,6 @@ LCT_SpellData[204019] = {
 	cooldown = 4.5,
 	charges = 3,
 	replaces = 53595,
-}
--- Hand of the Protector
-LCT_SpellData[213652] = {
-	class = "PALADIN",
-	specID = { SPEC_PALADIN_PROTECTION },
-	talent = true,
-	heal = true,
-	cooldown = 15,
-	replaces = 184092,
 }
 
 -- Paladin/Retribution
@@ -389,14 +366,6 @@ LCT_SpellData[255937] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_RETRIBUTION },
 	talent = true,
-	cooldown = 45
-}
--- Word of Glory
-LCT_SpellData[210191] = {
-	class = "PALADIN",
-	specID = { SPEC_PALADIN_RETRIBUTION },
-	heal = true,
-	charges = 2,
 	cooldown = 45
 }
 -- Blessing of Sanctuary

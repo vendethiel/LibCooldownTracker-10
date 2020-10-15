@@ -431,15 +431,6 @@ LCT_SpellData[196725] = {
 	heal = true,
 	cooldown = 9
 }
--- Invoke Chi-Ji, red crane
-LCT_SpellData[198664] = {
-	class = "MONK",
-	specID = { SPEC_MONK_MISTWEAVER },
-	talent = true,
-	heal = true,
-	duration = 45,
-	cooldown = 180
-}
 -- Mana Tea
 LCT_SpellData[197908] = {
 	class = "MONK",
@@ -448,14 +439,6 @@ LCT_SpellData[197908] = {
 	heal = true,
 	duration = 10,
 	cooldown = 90
-}
--- Way of the Crane
-LCT_SpellData[216113] = {
-	class = "MONK",
-	specID = { SPEC_MONK_MISTWEAVER },
-	talent = true,
-	duration = 15,
-	cooldown = 60
 }
 -- Song of Chi-Ji
 LCT_SpellData[198898] = {

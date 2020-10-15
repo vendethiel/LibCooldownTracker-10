@@ -176,13 +176,6 @@ LCT_SpellData[209780] = {
 	defensive = true,
 	cooldown = 12,
 }
--- Shadow Covenant
-LCT_SpellData[204065] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_DISC },
-	talent = true,
-	cooldown = 12,
-}
 -- Schism
 LCT_SpellData[214621] = {
 	class = "PRIEST",
@@ -417,14 +410,6 @@ LCT_SpellData[108968] = {
 	specID = { SPEC_PRIEST_SHADOW },
 	talent = true,
 	cooldown = 300
-}
--- Dark Ascension
-LCT_SpellData[280711] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_SHADOW },
-	talent = true,
-	offensive = true,
-	cooldown = 60,
 }
 -- Psyfiend
 LCT_SpellData[211522] = {

@@ -283,14 +283,6 @@ LCT_SpellData[186387] = {
 	offensive = true,
 	cooldown = 30
 }
--- Trueshot
-LCT_SpellData[193526] = {
-	class = "HUNTER",
-	specID = { SPEC_HUNTER_MM },
-	offensive = true,
-	duration = 15,
-	cooldown = 180
-}
 -- Rapid Fire
 LCT_SpellData[257044] = {
 	class = "HUNTER",

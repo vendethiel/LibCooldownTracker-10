@@ -341,15 +341,6 @@ LCT_SpellData[207289] = {
 	duration = 12,
 	cooldown = 75
 }
--- Soul Reaper
-LCT_SpellData[130736] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_UNHOLY },
-	talent = true,
-	offensive = true,
-	duration = 8,
-	cooldown = 45
-}
 
 -- DK/pet
 -- Gnaw

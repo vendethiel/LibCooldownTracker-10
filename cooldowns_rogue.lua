@@ -110,13 +110,6 @@ LCT_SpellData[269513] = {
 	offensive = true,
 	cooldown = 30
 }
--- Shiv
-LCT_SpellData[248744] = {
-	class = "ROGUE",
-	talent = true,
-	offensive = true,
-	cooldown = 12
-}
 
 -- Rogue/Assassination
 -- Vendetta
