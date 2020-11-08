@@ -386,14 +386,6 @@ LCT_SpellData[210256] = {
 	cooldown = 120,
 	replaces = 31884, -- Avenging Wrath
 }
--- Execution Sentence
-LCT_SpellData[267798] = {
-	class = "PALADIN",
-	specID = { SPEC_PALADIN_RETRIBUTION },
-	talent = true,
-	offensive = true,
-	cooldown = 30
-}
 -- Hammer of Reckoning
 LCT_SpellData[247675] = {
 	class = "PALADIN",

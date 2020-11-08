@@ -7,31 +7,23 @@ set_wotf_emfh = {
 	{ spellid = 59752, cooldown = 90 },
 }
 
--- Honorable Medallion
-LCT_SpellData[195710] = {
-	pvp_trinket = true,
-	replaces = 208683, -- V: that's a big lie :D
-	talent = true,
-	sets_cooldowns = set_wotf_emfh,
-	cooldown = 180
-}
 -- Gladiator's Medallion
-LCT_SpellData[208683] = {
-	pvp_trinket = true,
+LCT_SpellData[336126] = {
+  pvp_trinket = true,
+  talent = true,
 	sets_cooldowns = set_wotf_emfh,
-	cooldown = 120
+	cooldown = 120,
 }
 -- Adaptation
-LCT_SpellData[214027] = {
-	pvp_trinket = true,
+LCT_SpellData[336135] = {
+  pvp_trinket = true,
 	talent = true,
-	replaces = 208683,
 	sets_cooldowns = set_wotf_emfh,
 	cooldown = 60
 }
 -- Relentless
-LCT_SpellData[196029] = {
-	pvp_trinket = true,
+LCT_SpellData[336128] = {
+  pvp_trinket = true,
 	talent = true,
 	replaces = 208683,
 	--sets_cooldown = { spellid = 7744, cooldown = 30 }

@@ -405,7 +405,7 @@ local function enable()
 	lib.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 	lib.frame:RegisterEvent("UNIT_NAME_UPDATE")
 	lib.frame:RegisterEvent("ARENA_CROWD_CONTROL_SPELL_UPDATE")
-	lib.frame:RegisterEvent("ARENA_COOLDOWNS_UPDATE")
+	lib.frame:RegisterEvent("ARENA_OPPONENT_UPDATE")
 
 	lib.tracked_players = {}
 	lib.guid_to_unitid = {}
@@ -528,10 +528,6 @@ end
 function lib:GetUnitCooldownInfo(unitid, spellid)
 	local tpu = lib.tracked_players[unitid]
 	return tpu and tpu[spellid]
-end
-
-function lib:SetUnitTrinket(unit, spellid)
-	lib:DetectSpell(unit, spellid)
 end
 
 function lib:DetectSpell(unit, spellid)
@@ -720,22 +716,18 @@ end
 
 function events:ARENA_CROWD_CONTROL_SPELL_UPDATE(event, unit, spellID)
 	-- V: sometimes we receive such an event for "nameplateX" or "focus"
+  --print("unit = " .. unit .. ", spellId = " .. (spellID or "nil"))
 	if string.sub(unit, 1, 5) ~= "arena" then return end
 	
-	lib:SetUnitTrinket(unit, spellID)
+  if not spellID then
+    return
+  end
+  lib:DetectSpell(unit, spellID)
 	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellid)
 end
 
-function events:ARENA_COOLDOWNS_UPDATE(event, unit)
-	if string.sub(unit, 1, 5) ~= "arena" then return end
-
-	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
-	C_PvP.RequestCrowdControlSpell(unit)
-	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellID)
-  -- print("unit = " .. unit .. ", spellId = " .. (spellID or "nil") .. ", start = " .. (startTime or "nil") .. ", duration = " .. (duration or "nil"))
-  if not spellID or not startTime or not duration then
-    return
+function events:ARENA_OPPONENT_UPDATE(event, unit, unitEvent)
+  if unitEvent == "seen" then
+    C_PvP.RequestCrowdControlSpell(unit)
   end
-
-  CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID, duration / 1000, startTime / 1000)
 end
