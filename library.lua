@@ -405,6 +405,7 @@ local function enable()
 	lib.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 	lib.frame:RegisterEvent("UNIT_NAME_UPDATE")
 	lib.frame:RegisterEvent("ARENA_CROWD_CONTROL_SPELL_UPDATE")
+	lib.frame:RegisterEvent("ARENA_COOLDOWNS_UPDATE")
 	lib.frame:RegisterEvent("ARENA_OPPONENT_UPDATE")
 
 	lib.tracked_players = {}
@@ -729,5 +730,24 @@ end
 function events:ARENA_OPPONENT_UPDATE(event, unit, unitEvent)
   if unitEvent == "seen" then
     C_PvP.RequestCrowdControlSpell(unit)
+  end
+end
+
+function events:ARENA_COOLDOWNS_UPDATE(event, unit)
+	if string.sub(unit, 1, 5) ~= "arena" then return end
+  --print("unit = " .. unit .. ", spellId = " .. (spellID or "nil") .. ", start = " .. (startTime or "nil") .. ", duration = " .. (duration or "nil"))
+
+	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
+  if not spellID then
+    C_PvP.RequestCrowdControlSpell(unit)
+    return
+  end
+  lib:DetectSpell(unit, spellID)
+	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellID)
+  --print("unit = " .. unit .. ", spellId = " .. (spellID or "nil") .. ", start = " .. (startTime or "nil") .. ", duration = " .. (duration or "nil"))
+  if not spellID then return end
+
+  if not startTime or not duration then
+    return
   end
 end
