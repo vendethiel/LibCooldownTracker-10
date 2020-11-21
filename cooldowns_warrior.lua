@@ -5,6 +5,20 @@ local SPEC_WARRIOR_FURY = 72
 local SPEC_WARRIOR_PROT = 73
 
 -- Warrior/baseline
+-- Spell Reflection
+LCT_SpellData[23920] = {
+	class = "WARRIOR",
+	defensive = true,
+	duration = 5,
+	cooldown = 25
+}
+-- Intervene
+LCT_SpellData[3411] = {
+	class = "WARRIOR",
+	defensive = true,
+	duration = 6,
+	cooldown = 30
+}
 -- Berserker Rage
 LCT_SpellData[18499] = {
 	class = "WARRIOR",
@@ -298,26 +312,12 @@ LCT_SpellData[871] = {
 	duration = 8,
 	cooldown = 240
 }
--- Spell Reflection
-LCT_SpellData[23920] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_PROT },
-	defensive = true,
-	duration = 5,
-	cooldown = 25
-}
 -- Shockwave
 LCT_SpellData[46968] = {
 	class = "WARRIOR",
 	specID = { SPEC_WARRIOR_PROT },
 	stun = true,
 	cooldown = 40
-}
--- Intercept
-LCT_SpellData[198304] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_PROT },
-	cooldown = 20
 }
 -- Revenge
 LCT_SpellData[6572] = {
@@ -332,13 +332,6 @@ LCT_SpellData[198912] = {
 	specID = { SPEC_WARRIOR_PROT },
 	talent = true,
 	cooldown = 10,
-}
--- Intercept
-LCT_SpellData[203524] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_PROT },
-	talent = true,
-	cooldown = 15,
 }
 -- Bodyguard
 LCT_SpellData[213871] = {
