@@ -418,14 +418,6 @@ LCT_SpellData[211522] = {
 	talent = true,
 	cooldown = 45,
 }
--- Dark Void
-LCT_SpellData[263346] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_SHADOW },
-	talent = true,
-	offensive = true,
-	cooldown = 30,
-}
 -- Shadow Word: Void
 LCT_SpellData[205351] = {
 	class = "PRIEST",
