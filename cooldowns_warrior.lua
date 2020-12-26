@@ -5,6 +5,12 @@ local SPEC_WARRIOR_FURY = 72
 local SPEC_WARRIOR_PROT = 73
 
 -- Warrior/baseline
+-- Ignore Pain
+LCT_SpellData[190456] = {
+	class = "WARRIOR",
+	defensive = true,
+	cooldown = 12
+}
 -- Spell Reflection
 LCT_SpellData[23920] = {
 	class = "WARRIOR",
