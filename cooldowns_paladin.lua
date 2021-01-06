@@ -91,7 +91,8 @@ LCT_SpellData[498] = {
 	specID = { SPEC_PALADIN_PROTECTION, SPEC_PALADIN_HOLY },
 	defensive = true,
 	duration = 8,
-	cooldown = 60
+	cooldown = 60,
+  opt_lower_cooldown = 42
 }
 -- Paladin/talents
 -- Repentance
@@ -378,7 +379,7 @@ LCT_SpellData[210256] = {
 	cooldown = 45
 }
 -- Crusade
-LCT_SpellData[210256] = {
+LCT_SpellData[231895] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_RETRIBUTION },
 	talent = true,

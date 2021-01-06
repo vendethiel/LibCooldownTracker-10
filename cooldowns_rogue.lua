@@ -9,7 +9,7 @@ local SPEC_ROGUE_SUB = 261
 -- Rogue/baseline
 -- Shroud of Concealment
 LCT_SpellData[114018] = {
-	class = "PRIEST",
+	class = "ROGUE",
 	defensive = true,
 	duration = 15,
 	cooldown = 360

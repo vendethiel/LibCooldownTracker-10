@@ -199,7 +199,7 @@ LCT_SpellData[51271] = {
 	offensive = true,
 	defensive = true,
 	duration = 20,
-	cooldown = 45
+	cooldown = 60
 }
 -- Empower Rune Weapon
 LCT_SpellData[47568] = {
