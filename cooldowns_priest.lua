@@ -40,12 +40,19 @@ LCT_SpellData[32375] = {
 	mass_dispel = true,
 	cooldown = 45
 }
--- Priest/talents
 -- Psychic Scream
 LCT_SpellData[8122] = {
 	class = "PRIEST",
 	cc = true,
 	cooldown = 30, -- Technically 60, but most priests play with -30s talent.
+}
+-- Priest/talents
+-- Thoughtsteal
+LCT_SpellData[316262] = {
+	class = "PRIEST",
+  talent = true,
+  duration = 20,
+	cooldown = 90
 }
 -- Priest/mixed
 -- Purify
