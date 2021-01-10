@@ -129,6 +129,13 @@ LCT_SpellData[205495] = {
 	duration = 15,
 }
 -- Shaman/Elemental/talents
+-- Echoing Shock
+LCT_SpellData[320125] = {
+	class = "SHAMAN",
+	specID = { SPEC_SHAMAN_ELEMENTAL },
+	talent = true,
+	cooldown = 30,
+}
 -- Stormkeeper
 LCT_SpellData[191634] = {
 	class = "SHAMAN",
