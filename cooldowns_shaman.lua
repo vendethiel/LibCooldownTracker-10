@@ -58,12 +58,6 @@ LCT_SpellData[204336] = {
 	duration = 3,
 	cooldown = 30
 }
--- Static Charge
-LCT_SpellData[265046] = {
-	class = "SHAMAN",
-	talent = true,
-	cooldown = 60
-}
 -- Astral Shift
 LCT_SpellData[108271] = {
 	class = "SHAMAN",
