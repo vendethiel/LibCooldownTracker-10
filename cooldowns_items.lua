@@ -36,3 +36,12 @@ LCT_SpellData[6262] = {
 	heal = true,
 	cooldown = 60
 }
+
+-- Shadowlands / Castle Nathria
+-- Skulkers Wing
+LCT_SpellData[184016] = {
+	item = true,
+	talent = true, -- hack to prevent it being displayed before being detected
+	offensive = true,
+	cooldown = 90
+}
