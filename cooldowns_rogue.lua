@@ -84,7 +84,7 @@ LCT_SpellData[5277] = {
 LCT_SpellData[36554] = {
 	class = "ROGUE",
 	specID = { SPEC_ROGUE_ASSA, SPEC_ROGUE_SUB },
-	cooldown = 20,
+	cooldown = 30,
 	opt_charges = 2, -- note: subs always have 2 charges of this; but code doesn't handle such cases (yet?)
 }
 -- Rogue/talents
