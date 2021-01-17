@@ -115,13 +115,6 @@ LCT_SpellData[198103] = {
 	defensive = true,
 	cooldown = 300
 }
--- Stormkeeper
-LCT_SpellData[205495] = {
-	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_ELEMENTAL },
-	cooldown = 60,
-	duration = 15,
-}
 -- Shaman/Elemental/talents
 -- Echoing Shock
 LCT_SpellData[320125] = {
@@ -136,6 +129,7 @@ LCT_SpellData[191634] = {
 	specID = { SPEC_SHAMAN_ELEMENTAL },
 	talent = true,
 	cooldown = 60,
+	duration = 15
 }
 -- Ancestral Guidance
 LCT_SpellData[108281] = {
