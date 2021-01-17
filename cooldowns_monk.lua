@@ -256,6 +256,7 @@ LCT_SpellData[137639] = {
 	class = "MONK",
 	specID = { SPEC_MONK_WINDWALKER },
 	offensive = true,
+	charges = 2,
 	cooldown = 90,
 }
 -- Energizing Elixir
