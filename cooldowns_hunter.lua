@@ -532,3 +532,12 @@ LCT_SpellData[90361] = {
 	heal = true,
 	cooldown = 30
 }
+-- Hunter / Shadowlands Covenants
+-- Resonating Arrow
+LCT_SpellData[308491] = {
+	class = "HUNTER",
+	talent = true,
+	offensive = true,
+	duration = 10,
+	cooldown = 60
+}
