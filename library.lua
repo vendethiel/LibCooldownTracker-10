@@ -43,6 +43,20 @@ local class_spelldata = {}
 local race_spelldata = {}
 local item_spelldata = {}
 local pvp_spelldata = {}
+local covenant_spelldata = {}
+
+local by_covenant_by_class = {
+  ["KYRIAN"] = {},
+  ["NIGHTFAE"] = {},
+  ["NECROLORD"] = {},
+  ["VENTHYR"] = {},
+}
+local major_covenant_spell = {
+  ["KYRIAN"] = true,
+  ["NIGHTFAE"] = true,
+  ["NECROLORD"] = true,
+  ["VENTHYR"] = true,
+}
 
 -- generate lookup tables
 do
@@ -89,6 +103,28 @@ do
 				if spelldata.pvp_trinket then
 					pvp_spelldata[spellid] = spelldata
 				end
+        if spelldata.covenant then
+          if spelldata.class then
+            if by_covenant_by_class[spelldata.covenant] then
+              if by_covenant_by_class[spelldata.covenant][spelldata.class] then
+              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: duplicate spell for covenant: " .. spelldata.covenant .. " and class: " .. spelldata.class)
+              else
+                by_covenant_by_class[spelldata.covenant][spelldata.class] = spellid
+              end
+            else
+              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: invalid covenant1: " .. spelldata.covenant)
+            end
+          else
+            if major_covenant_spell[spelldata.covenant] == true then
+              major_covenant_spell[spelldata.covenant] = spellid
+              covenant_spelldata[spellid] = spelldata
+            elseif major_covenant_spell[spelldata.covenant] then
+              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: duplicate major covenant spell: " .. spellid)
+            else
+              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: invalid covenant2: " .. spelldata.covenant)
+            end
+          end
+        end
 			end
 		end
 	end
@@ -280,7 +316,7 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
       if event == "SPELL_AURA_APPLIED" then
         local n, _, _, _, duration = FindAuraById(spellid, unit)
         -- Some leeway... If the aura isn't present, pretend the spell has actually been used.
-        if not duration or math.abs(spelldata.cooldown_starts_on_aura_duration, duration) < 2 then
+        if not duration or duration >= spelldata.duration or spelldata.duration - duration < 2 then
           used_start = true
           cooldown_start = true
         end
@@ -301,8 +337,14 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
 		end
 
     -- Only detect the spell if it's actually used (i.e. not if it's just a random proc)
-    if not tpu[spellid].detected and (used_start or used_end or cooldown_start) then
-      tpu[spellid].detected = true
+    if used_start or used_end or cooldown_start then
+      if spelldata.covenant then
+        lib:DetectCovenant(unit, spelldata.covenant)
+      end
+
+      if not tpu[spellid].detected then
+        tpu[spellid].detected = true
+      end
     end
 
 		-- apply actions
@@ -552,6 +594,15 @@ function lib:GetUnitCooldownInfo(unitid, spellid)
 	return tpu and tpu[spellid]
 end
 
+function lib:DetectCovenant(unit, covenant)
+  local class = select(2, UnitClass(unit))
+  self:DetectSpell(unit, major_covenant_spell[covenant])
+  local class_spell = by_covenant_by_class[covenant][class]
+  if class_spell then -- This won't be necessary once we have all the data
+    self:DetectSpell(unit, class_spell)
+  end
+end
+
 function lib:DetectSpell(unit, spellid)
 	if not spellid then
 		return
@@ -606,11 +657,17 @@ local function CooldownIterator(state, spellid)
 			end
 
 			if spelldata.item or spelldata.pvp_trinket then
-				-- return item or pvp trinket
+				-- return item or pvp trinket or covenant
 				if (spelldata.race and spelldata.race == state.race) or not spelldata.race then
 					return spellid, spelldata
 				end
 			end
+
+      if spelldata.covenant then
+        if state.covenant == true or spelldata.covenant == state.covenant then
+					return spellid, spelldata
+        end
+      end
 		end
 	end
 end
@@ -667,9 +724,32 @@ local function FastCooldownIterator(state, spellid)
 	end
 
 	-- pvp
-	if state.pvp and state.data_source then
+	if state.pvp then
+		if state.data_source then
+			spellid, spelldata = CooldownIterator(state, spellid)
+		end
+		if spellid then
+			return spellid, spelldata
+		else
+			-- do covenant next
+			state.data_source = covenant_spelldata
+			state.pvp = nil
+			spellid = nil
+		end
+	end
+
+	if state.covenant then
 		spellid, spelldata = CooldownIterator(state, spellid)
-		return spellid, spelldata
+		if state.data_source then
+			spellid, spelldata = CooldownIterator(state, spellid)
+		end
+    if spellid then
+      return spellid, spelldata
+    else
+      state.data_source = nil
+      state.covenant = nil
+      spellid = nil
+    end
 	end
 end
 
@@ -684,6 +764,7 @@ function lib:IterateCooldowns(class, specID, race)
 	state.race = race or ""
 	state.item = true
 	state.pvp = true
+	state.covenant = true
 
 	if class then
 		state.data_source = class_spelldata[state.class]

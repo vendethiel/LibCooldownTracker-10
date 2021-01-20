@@ -37,11 +37,33 @@ LCT_SpellData[6262] = {
 	cooldown = 60
 }
 
--- Shadowlands / Castle Nathria
+-- Shadowlands/Castle Nathria
 -- Skulkers Wing
 LCT_SpellData[184016] = {
 	item = true,
 	talent = true, -- hack to prevent it being displayed before being detected
 	offensive = true,
 	cooldown = 90
+}
+
+-- Covenants/Major spells
+-- Purify Soul, effect of Phial of Serenity (do not track Summon Steward)
+LCT_SpellData[323436] = {
+  covenant = "KYRIAN",
+  cooldown = 180
+}
+-- Door of Shadows
+LCT_SpellData[300728] = {
+  covenant = "VENTHYR",
+  cooldown = 60
+}
+-- Fleshcraft
+LCT_SpellData[324631] = {
+  covenant = "NECROLORD",
+  cooldown = 120
+}
+-- Soulshape
+LCT_SpellData[310143] = {
+  covenant = "NIGHTFAE",
+  cooldown = 90,
 }

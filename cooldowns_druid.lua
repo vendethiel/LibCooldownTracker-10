@@ -123,6 +123,15 @@ LCT_SpellData[236696] = {
 	talent = true,
 	cooldown = 45
 }
+-- Druid/Covenants/Night Fae
+-- Convoke the Spirits
+LCT_SpellData[323764] = {
+	class = "DRUID",
+  covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 4,
+	cooldown = 120
+}
 
 -- Druid/Balance
 -- Solar Beam
@@ -394,24 +403,4 @@ LCT_SpellData[203651] = {
 	talent = true,
 	heal = true,
 	cooldown = 45
-}
-
--- Druid / Shadowlands Covenants
--- Convoke the Spirits
-LCT_SpellData[323764] = {
-	class = "DRUID",
-	specID = { SPEC_DRUID_FERAL, SPEC_DRUID_GUARDIAN, SPEC_DRUID_BALANCE },
-	talent = true,
-	offensive = true,
-	duration = 4,
-	cooldown = 120
-}
-
-LCT_SpellData[323764] = {
-	class = "DRUID",
-	specID = { SPEC_DRUID_RESTO },
-	talent = true,
-	heal = true,
-	duration = 4,
-	cooldown = 120
 }

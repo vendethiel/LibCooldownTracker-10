@@ -172,14 +172,13 @@ LCT_SpellData[120360] = {
 	duration = 3,
 	cooldown = 20
 }
-
--- Doubletap
-LCT_SpellData[260402] = {
+-- Hunter/Covenants/Kyrian
+-- Resonating Arrow
+LCT_SpellData[308491] = {
 	class = "HUNTER",
-	talent = true,
-	specID = { SPEC_HUNTER_MM },
+  covenant = "KYRIAN",
 	offensive = true,
-	duration = 3,
+	duration = 10,
 	cooldown = 60
 }
 
@@ -323,6 +322,15 @@ LCT_SpellData[198670] = {
 	talent = true,
 	offensive = true,
 	cooldown = 30
+}
+-- Doubletap
+LCT_SpellData[260402] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_MM },
+	talent = true,
+	offensive = true,
+	duration = 3,
+	cooldown = 60
 }
 
 -- Hunter/Survival
@@ -541,13 +549,4 @@ LCT_SpellData[90361] = {
 	pet = true,
 	heal = true,
 	cooldown = 30
-}
--- Hunter / Shadowlands Covenants
--- Resonating Arrow
-LCT_SpellData[308491] = {
-	class = "HUNTER",
-	talent = true,
-	offensive = true,
-	duration = 10,
-	cooldown = 60
 }

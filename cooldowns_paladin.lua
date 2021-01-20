@@ -28,9 +28,9 @@ LCT_SpellData[31884] = {
 	class = "PALADIN",
 	offensive = true,
 	defensive = true,
-	duration = 20,
+	duration = 25,
 	cooldown = 120,
-  cooldown_starts_on_aura_duration = 20,
+  cooldown_starts_on_aura_duration = true,
 }
 -- Hand of Reckoning
 LCT_SpellData[62124] = {
@@ -221,10 +221,10 @@ LCT_SpellData[216331] = {
 	talent = true,
 	offensive = true,
 	defensive = true,
-	duration = 20,
+	duration = 25,
 	cooldown = 120,
 	replaces = 31884,
-  cooldown_starts_on_aura_duration = 20,
+  cooldown_starts_on_aura_duration = true,
 }
 
 -- Paladin/Protection
@@ -390,7 +390,8 @@ LCT_SpellData[231895] = {
 	offensive = true,
 	cooldown = 120,
 	replaces = 31884, -- Avenging Wrath
-  cooldown_starts_on_aura_duration = 20,
+  duration = 25,
+  cooldown_starts_on_aura_duration = true,
 }
 -- Hammer of Reckoning
 LCT_SpellData[247675] = {
