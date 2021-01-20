@@ -195,6 +195,14 @@ local function GetCooldownTime(spellid, unit)
 	return time
 end
 
+local function AuraByIdPredicate(auraNameToFind, _, _, ...)
+  return auraNameToFind == select(10, ...)
+end
+local function FindAuraById(auraId, unit, filter)
+  return AuraUtil.FindAura(AuraByIdPredicate, unit, filter, auraId)
+end 
+
+
 local function AddCharge(unit, spellid)
 	local tps = lib.tracked_players[unit][spellid]
 	if not tps then
@@ -252,7 +260,6 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
 			tpu[spellid][event] = now
 		else
 			tpu[spellid] = {
-				detected = true,
 				charges = spelldata.charges or spelldata.opt_charges,
 				max_charges = spelldata.charges or spelldata.opt_charges,
 				charges_detected = spelldata.charges and true or false,
@@ -269,6 +276,15 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
 				used_start = true
 				cooldown_start = true
 			end
+    elseif spelldata.cooldown_starts_on_aura_duration then
+      if event == "SPELL_AURA_APPLIED" then
+        local n, _, _, _, duration = FindAuraById(spellid, unit)
+        -- Some leeway... If the aura isn't present, pretend the spell has actually been used.
+        if not duration or math.abs(spelldata.cooldown_starts_on_aura_duration, duration) < 2 then
+          used_start = true
+          cooldown_start = true
+        end
+      end
 		elseif spelldata.cooldown_starts_on_aura_fade then
 			if event == "UNIT_SPELLCAST_SUCCEEDED" or event == "SPELL_CAST_SUCCESS" or event == "SPELL_AURA_APPLIED" then
 				used_start = true
@@ -283,6 +299,11 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
 				used_end = true
 			end
 		end
+
+    -- Only detect the spell if it's actually used (i.e. not if it's just a random proc)
+    if not tpu[spellid].detected and (used_start or used_end or cooldown_start) then
+      tpu[spellid].detected = true
+    end
 
 		-- apply actions
 		if used_start then
@@ -326,7 +347,7 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
 					local respellid = spelldata.restore_charges[i]
 					local respelldata = SpellData[respellid]
 					if not tpu[respellid] then
-						-- V: if we have to *add* the cooldown, just use the max number of charges
+						-- V: if we have to *detect* the cooldown, just use the max number of charges
 						--    also, use charges by default, not only optional charges (not sure if the spell only has optional charges)
 						tpu[respellid] = {
 							charges = respelldata.charges or respelldata.opt_charges,

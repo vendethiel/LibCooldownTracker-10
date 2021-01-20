@@ -10,7 +10,7 @@ LCT_SpellData[853] = {
 	class = "PALADIN",
 	stun = true,
 	cooldown = 25,
-	--opt_lower_cooldown = 25, -- This is an approximation. Technically: Fist of Justice talent=-10s/Judgement.
+	--opt_lower_cooldown = 25, -- This is an approximation. Technically: Fist of Justice talent=-10s/3 HoPo.
 }
 -- Divine Steed
 LCT_SpellData[190784] = {
@@ -30,6 +30,7 @@ LCT_SpellData[31884] = {
 	defensive = true,
 	duration = 20,
 	cooldown = 120,
+  cooldown_starts_on_aura_duration = 20,
 }
 -- Hand of Reckoning
 LCT_SpellData[62124] = {
@@ -222,7 +223,8 @@ LCT_SpellData[216331] = {
 	defensive = true,
 	duration = 20,
 	cooldown = 120,
-	replaces = 31884
+	replaces = 31884,
+  cooldown_starts_on_aura_duration = 20,
 }
 
 -- Paladin/Protection
@@ -388,6 +390,7 @@ LCT_SpellData[231895] = {
 	offensive = true,
 	cooldown = 120,
 	replaces = 31884, -- Avenging Wrath
+  cooldown_starts_on_aura_duration = 20,
 }
 -- Hammer of Reckoning
 LCT_SpellData[247675] = {
