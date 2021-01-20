@@ -262,3 +262,12 @@ LCT_SpellData[263648] = {
 	cooldown = 30,
 	duration = 12,
 }
+
+-- Demon Hunter / Shadowlands Covenants
+-- The Hunt
+LCT_SpellData[323639] = {
+	class = "DEMONHUNTER",
+	talent = true,
+	offensive = true,
+	cooldown = 90,
+}

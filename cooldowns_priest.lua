@@ -13,6 +13,24 @@ LCT_SpellData[64901] = {
 	duration = 12,
 	cooldown = 300
 }
+
+-- Mindgames
+LCT_SpellData[323673] = {
+	class = "PRIEST",
+	talent = true,
+	defensive = false,
+	cooldown = 45,
+	duration = 5,
+}
+
+-- Power Infusion
+LCT_SpellData[10060] = {
+	class = "PRIEST",
+	offensive = true,
+	duration = 20,
+	cooldown = 120
+}
+
 -- Fade
 LCT_SpellData[586] = {
 	class = "PRIEST",
@@ -175,14 +193,7 @@ LCT_SpellData[47536] = {
 	cooldown = 90,
 }
 -- Priest/Discipline/talents
--- Premonition
-LCT_SpellData[209780] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_DISC },
-	talent = true,
-	defensive = true,
-	cooldown = 12,
-}
+
 -- Schism
 LCT_SpellData[214621] = {
 	class = "PRIEST",
@@ -215,14 +226,7 @@ LCT_SpellData[246287] = {
 	heal = true,
 	cooldown = 75,
 }
--- Luminous Barrier
-LCT_SpellData[271466] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_DISC },
-	talent = true,
-	cooldown = 180,
-	replaces = 62618 -- Power Word: Barrier
-}
+
 -- Mindbender (Disc)
 LCT_SpellData[123040] = {
 	class = "PRIEST",
@@ -452,3 +456,4 @@ LCT_SpellData[123040] = {
 	defensive = true,
 	cooldown = 300
 }
+

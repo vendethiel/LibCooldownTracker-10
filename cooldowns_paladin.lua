@@ -95,6 +95,7 @@ LCT_SpellData[498] = {
   opt_lower_cooldown = 42
 }
 -- Paladin/talents
+
 -- Repentance
 LCT_SpellData[20066] = {
 	class = "PALADIN",
@@ -284,9 +285,10 @@ LCT_SpellData[207028] = {
 -- Seraphim
 LCT_SpellData[152262] = {
 	class = "PALADIN",
-	specID = { SPEC_PALADIN_PROTECTION },
 	talent = true,
 	cooldown = 45,
+	duration = 15,
+	offensive = true
 	-- TODO consumes charges of Shield of the Righteous
 }
 -- Blessing of Spellwarding

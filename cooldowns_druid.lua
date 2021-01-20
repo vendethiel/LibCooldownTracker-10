@@ -139,7 +139,7 @@ LCT_SpellData[194223] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_BALANCE },
 	offensive = true,
-	duration = 15,
+	duration = 20,
 	cooldown = 180
 }
 -- Druid/Balance/talents
@@ -394,4 +394,24 @@ LCT_SpellData[203651] = {
 	talent = true,
 	heal = true,
 	cooldown = 45
+}
+
+-- Druid / Shadowlands Covenants
+-- Convoke the Spirits
+LCT_SpellData[323764] = {
+	class = "DRUID",
+	specID = { SPEC_DRUID_FERAL, SPEC_DRUID_GUARDIAN, SPEC_DRUID_BALANCE },
+	talent = true,
+	offensive = true,
+	duration = 4,
+	cooldown = 120
+}
+
+LCT_SpellData[323764] = {
+	class = "DRUID",
+	specID = { SPEC_DRUID_RESTO },
+	talent = true,
+	heal = true,
+	duration = 4,
+	cooldown = 120
 }

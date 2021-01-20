@@ -173,6 +173,16 @@ LCT_SpellData[120360] = {
 	cooldown = 20
 }
 
+-- Doubletap
+LCT_SpellData[260402] = {
+	class = "HUNTER",
+	talent = true,
+	specID = { SPEC_HUNTER_MM },
+	offensive = true,
+	duration = 3,
+	cooldown = 60
+}
+
 -- Hunter/Beast Mastery
 -- Barbed Shot
 LCT_SpellData[217200] = {
@@ -299,12 +309,12 @@ LCT_SpellData[213691] = {
 }
 -- Hunter/Marksmanship/talents
 -- Trueshot
-LCT_SpellData[212431] = {
+LCT_SpellData[288613] = {
 	class = "HUNTER",
 	specID = { SPEC_HUNTER_MM },
 	talent = true,
 	offensive = true,
-	cooldown = 30
+	cooldown = 120
 }
 -- Piercing Shot
 LCT_SpellData[198670] = {
@@ -531,4 +541,13 @@ LCT_SpellData[90361] = {
 	pet = true,
 	heal = true,
 	cooldown = 30
+}
+-- Hunter / Shadowlands Covenants
+-- Resonating Arrow
+LCT_SpellData[308491] = {
+	class = "HUNTER",
+	talent = true,
+	offensive = true,
+	duration = 10,
+	cooldown = 60
 }
