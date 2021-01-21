@@ -52,6 +52,12 @@ LCT_SpellData[73325] = {
 	defensive = true,
 	cooldown = 90,
 }
+-- Desperate Prayer
+LCT_SpellData[19236] = {
+	class = "PRIEST",
+	defensive = true,
+	cooldown = 120
+}
 -- Mass Dispel
 LCT_SpellData[32375] = {
 	class = "PRIEST",
@@ -98,14 +104,6 @@ LCT_SpellData[110744] = {
 	offensive = true,
 	heal = true,
 	cooldown = 15
-}
--- Desperate Prayer
-LCT_SpellData[19236] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_DISC, SPEC_PRIEST_HOLY },
-	talent = true,
-	defensive = true,
-	cooldown = 120
 }
 -- Angelic Feather
 LCT_SpellData[121536] = {
