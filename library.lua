@@ -336,12 +336,14 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
 			end
 		end
 
+    -- Detect covenant on cast
+    -- XXX store the player's covenant somewhere?
+    if spelldata.covenant then
+      lib:DetectCovenant(unit, spelldata.covenant)
+    end
+
     -- Only detect the spell if it's actually used (i.e. not if it's just a random proc)
     if used_start or used_end or cooldown_start then
-      if spelldata.covenant then
-        lib:DetectCovenant(unit, spelldata.covenant)
-      end
-
       if not tpu[spellid].detected then
         tpu[spellid].detected = true
       end
@@ -776,10 +778,11 @@ function lib:IterateCooldowns(class, specID, race)
 end
 
 function events:PLAYER_ENTERING_WORLD()
-	local instanceType = select(2, IsInInstance())
+	local isInInstance = IsInInstance()
 
-	-- reset cooldowns when joining an arena
-	if instanceType == "arena" then
+	-- reset cooldowns if we're entering an instance
+  -- this might be incorrect (only bgs & arenas reset cooldowns), but is important to reset covenant/talents when zoning in
+	if isInInstance then
 		ClearTimers()
 		for unit in pairs(lib.tracked_players) do
 			lib.tracked_players[unit] = nil
