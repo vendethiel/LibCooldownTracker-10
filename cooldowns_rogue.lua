@@ -318,7 +318,6 @@ LCT_SpellData[328547] = {
 	class = "ROGUE",
 	covenant = "NECROLORD",
 	offensive = true,
-	duration = 10,			-- this figure is a wild stab in the dark, needs testing in PvP
 	charges = 3,
 	cooldown = 30
 }
