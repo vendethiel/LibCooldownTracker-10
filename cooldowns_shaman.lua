@@ -401,3 +401,38 @@ LCT_SpellData[197995] = {
 	talent = true,
 	cooldown = 20
 }
+
+-- Covenant Abilities
+-- Vesper Totem
+LCT_SpellData[324386] = {
+	class = "SHAMAN",
+	covenant = "KYRIAN",
+	offensive = true,
+	duration = 30,
+	cooldown = 60
+}
+
+-- Chain Harvest
+LCT_SpellData[320674] = {
+	class = "SHAMAN",
+	covenant = "VENTHYR",
+	offensive = true,
+	cooldown = 90
+}
+
+-- Primordial Wave
+LCT_SpellData[326059] = {
+	class = "SHAMAN",
+	covenant = "NECROLORD",
+	offensive = true,
+	cooldown = 45
+}
+
+-- Fae Transfusion
+LCT_SpellData[328923] = {
+	class = "SHAMAN",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 3,
+	cooldown = 120
+}

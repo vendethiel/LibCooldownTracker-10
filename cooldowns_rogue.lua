@@ -294,3 +294,39 @@ LCT_SpellData[277925] = {
 	talent = true,
 	cooldown = 60
 }
+
+-- Covenant Abilities
+-- Echoing Reprimand
+LCT_SpellData[323547] = {
+	class = "ROGUE",
+	covenant = "KYRIAN",
+	offensive = true,
+	cooldown = 45
+}
+
+-- Flagellation
+LCT_SpellData[323654] = {
+	class = "ROGUE",
+	covenant = "VENTHYR",
+	offensive = true,
+	duration = 20,
+	cooldown = 90
+}
+
+-- Serrated Bone Spike
+LCT_SpellData[328547] = {
+	class = "ROGUE",
+	covenant = "NECROLORD",
+	offensive = true,
+	charges = 3,
+	cooldown = 30
+}
+
+-- Sepsis
+LCT_SpellData[328305] = {
+	class = "ROGUE",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 10,
+	cooldown = 90
+}

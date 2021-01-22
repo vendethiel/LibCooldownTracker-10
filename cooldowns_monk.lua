@@ -449,3 +449,40 @@ LCT_SpellData[198898] = {
 	cc = true,
 	cooldown = 30,
 }
+
+-- Covenant Abilities
+-- Weapons of Order
+LCT_SpellData[310454] = {
+	class = "MONK",
+  	covenant = "KYRIAN",
+	offensive = true,
+	duration = 30,
+	cooldown = 120
+}
+
+-- Fallen Order
+LCT_SpellData[326860] = {
+	class = "MONK",
+	covenant = "VENTHYR",
+	offensive = true,
+	duration = 24,
+	cooldown = 180
+}
+
+-- Bonedust Brew
+LCT_SpellData[325216] = {
+	class = "MONK",
+	covenant = "NECROLORD",
+	offensive = true,
+	duration = 10,
+	cooldown = 60
+}
+
+-- Faeline Stomp
+LCT_SpellData[327104] = {
+	class = "MONK",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 30,
+	cooldown = 30
+}

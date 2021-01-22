@@ -400,3 +400,38 @@ LCT_SpellData[247675] = {
 	talent = true,
 	cooldown = 60
 }
+
+-- Covenant Abilities
+-- Divine Toll
+LCT_SpellData[304971] = {
+	class = "PALADIN",
+  	covenant = "KYRIAN",
+	offensive = true,
+	cooldown = 60
+}
+
+-- Ashen Hollow
+LCT_SpellData[316958] = {
+	class = "PALADIN",
+	covenant = "VENTHYR",
+	offensive = true,
+	duration = 30,
+	cooldown = 240
+}
+
+-- Vanquishers Hammer
+LCT_SpellData[328204] = {
+	class = "PALADIN",
+	covenant = "NECROLORD",
+	offensive = true,
+	cooldown = 30
+}
+
+-- Blessing of the Seasons
+LCT_SpellData[328278] = {
+	class = "PALADIN",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 30,
+	cooldown = 45
+}

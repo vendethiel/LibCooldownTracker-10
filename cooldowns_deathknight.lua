@@ -398,3 +398,40 @@ LCT_SpellData[91802] = {
 	cc = true,
 	cooldown = 30
 }
+
+-- Covenant Abilities
+-- Shackle the Unworthy
+LCT_SpellData[312202] = {
+	class = "DEATHKNIGHT",
+	covenant = "KYRIAN",
+	offensive = true,
+	duration = 14,
+	cooldown = 60
+}
+
+-- Swarming Mist
+LCT_SpellData[311648] = {
+	class = "DEATHKNIGHT",
+	covenant = "VENTYHR",
+	offensive = true,
+	duration = 8,
+	cooldown = 60
+}
+
+-- Abomination Limb (aka Slappyhands)
+LCT_SpellData[315443] = {
+	class = "DEATHKNIGHT",
+	covenant = "NECROLORD",
+	offensive = true,
+	duration = 12,
+	cooldown = 120
+}
+
+-- Death's Due
+LCT_SpellData[324128] = {
+	class = "DEATHKNIGHT",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 10,
+	cooldown = 30
+}

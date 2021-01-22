@@ -372,3 +372,39 @@ LCT_SpellData[205800] = {
 	cooldown = 20,
 	replaces = 355, -- Taunt
 }
+
+-- Covenant Abilities
+-- Spear of Bastion
+LCT_SpellData[307865] = {
+	class = "WARRIOR",
+	covenant = "KYRIAN",
+	offensive = true,
+	duration = 4,
+	cooldown = 60
+}
+
+-- Condemn
+LCT_SpellData[317349] = {
+	class = "WARRIOR",
+	covenant = "VENTHYR",
+	offensive = true,
+	cooldown = 6
+}
+
+-- Conquerors Banner
+LCT_SpellData[324143] = {
+	class = "WARRIOR",
+	covenant = "NECROLORD",
+	offensive = true,
+	duration = 20,
+	cooldown = 180
+}
+
+-- Ancient Aftershock
+LCT_SpellData[325886] = {
+	class = "WARRIOR",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 12,
+	cooldown = 90
+}

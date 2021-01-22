@@ -123,15 +123,6 @@ LCT_SpellData[236696] = {
 	talent = true,
 	cooldown = 45
 }
--- Druid/Covenants/Night Fae
--- Convoke the Spirits
-LCT_SpellData[323764] = {
-	class = "DRUID",
-  covenant = "NIGHTFAE",
-	offensive = true,
-	duration = 4,
-	cooldown = 120
-}
 
 -- Druid/Balance
 -- Solar Beam
@@ -403,4 +394,41 @@ LCT_SpellData[203651] = {
 	talent = true,
 	heal = true,
 	cooldown = 45
+}
+
+-- Covenant Abilities
+-- Kindred Spirits
+LCT_SpellData[326434] = {
+	class = "DRUID",
+	covenant = "KYRIAN",
+	offensive = true,		-- varies by spec
+	duration = 10,
+	cooldown = 60
+}
+
+-- Ravenous Frenzy
+LCT_SpellData[323546] = {
+	class = "DRUID",
+	covenant = "VENTHYR",
+	offensive = true,
+	duration = 20,
+	cooldown = 180
+}
+
+-- Adaptive Swarm
+LCT_SpellData[325727] = {
+	class = "DRUID",
+	covenant = "NECROLORD",
+	offensive = true,		-- alternates as it moves...
+	duration = 12,
+	cooldown = 25
+}
+
+-- Convoke the Spirits
+LCT_SpellData[323764] = {
+	class = "DRUID",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 4,
+	cooldown = 120
 }

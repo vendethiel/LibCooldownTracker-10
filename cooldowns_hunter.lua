@@ -172,15 +172,6 @@ LCT_SpellData[120360] = {
 	duration = 3,
 	cooldown = 20
 }
--- Hunter/Covenants/Kyrian
--- Resonating Arrow
-LCT_SpellData[308491] = {
-	class = "HUNTER",
-  covenant = "KYRIAN",
-	offensive = true,
-	duration = 10,
-	cooldown = 60
-}
 
 -- Hunter/Beast Mastery
 -- Barbed Shot
@@ -549,4 +540,41 @@ LCT_SpellData[90361] = {
 	pet = true,
 	heal = true,
 	cooldown = 30
+}
+
+-- Covenant Abilities
+-- Resonating Arrow
+LCT_SpellData[308491] = {
+	class = "HUNTER",
+  	covenant = "KYRIAN",
+	offensive = true,
+	duration = 10,
+	cooldown = 60
+}
+
+-- Flayed Shot
+LCT_SpellData[324149] = {
+	class = "HUNTER",
+	covenant = "VENTHYR",
+	offensive = true,
+	duration = 14,
+	cooldown = 30
+}
+
+-- Death Chakram
+LCT_SpellData[325028] = {
+	class = "HUNTER",
+	covenant = "NECROLORD",
+	offensive = true,
+	duration = 5,
+	cooldown = 45
+}
+
+-- Wild Spirits
+LCT_SpellData[328231] = {
+	class = "HUNTER",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 15,
+	cooldown = 120
 }
