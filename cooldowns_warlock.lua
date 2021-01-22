@@ -473,3 +473,38 @@ LCT_SpellData[115831] = {
 	duration = 6,
 	cooldown = 45
 }
+
+-- Covenant Abilities
+-- Scouring Tithe
+LCT_SpellData[312321] = {
+	class = "WARLOCK",
+	covenant = "KYRIAN",
+	offensive = true,
+	duration = 18,
+	cooldown = 40
+}
+
+-- Impending Catastrophe
+LCT_SpellData[321792] = {
+	class = "WARLOCK",
+	covenant = "VENTHYR",
+	offensive = true,
+	cooldown = 60
+}
+
+-- Decimating Bolt
+LCT_SpellData[325289] = {
+	class = "WARLOCK",
+	covenant = "NECROLORD",
+	offensive = true,
+	cooldown = 45
+}
+
+-- Soul Rot
+LCT_SpellData[325640] = {
+	class = "WARLOCK",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 8,
+	cooldown = 60
+}
