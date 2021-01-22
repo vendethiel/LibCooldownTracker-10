@@ -355,3 +355,40 @@ LCT_SpellData[33395] = {
 	pet = true,
 	cooldown = 25
 }
+
+-- Covenant Abilities
+-- Radiant Spark
+LCT_SpellData[307443] = {
+	class = "MAGE",
+  	covenant = "KYRIAN",
+	offensive = true,
+	duration = 10,
+	cooldown = 30
+}
+
+-- Mirrors of Torment
+LCT_SpellData[314793] = {
+	class = "MAGE",
+	covenant = "VENTHYR",
+	offensive = true,
+	duration = 25,
+	cooldown = 90
+}
+
+-- Deathborne
+LCT_SpellData[324220] = {
+	class = "MAGE",
+	covenant = "NECROLORD",
+	offensive = true,
+	duration = 20,
+	cooldown = 180
+}
+
+-- Shifting Power
+LCT_SpellData[314791] = {
+	class = "MAGE",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 4,
+	cooldown = 60
+}

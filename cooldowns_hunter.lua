@@ -565,7 +565,7 @@ LCT_SpellData[324149] = {
 LCT_SpellData[325028] = {
 	class = "HUNTER",
 	covenant = "NECROLORD",
-	offensive = true,		-- alternates as it moves...
+	offensive = true,
 	duration = 5,
 	cooldown = 45
 }
