@@ -14,15 +14,6 @@ LCT_SpellData[64901] = {
 	cooldown = 300
 }
 
--- Mindgames
-LCT_SpellData[323673] = {
-	class = "PRIEST",
-	talent = true,
-	defensive = false,
-	cooldown = 45,
-	duration = 5,
-}
-
 -- Power Infusion
 LCT_SpellData[10060] = {
 	class = "PRIEST",
@@ -455,3 +446,38 @@ LCT_SpellData[123040] = {
 	cooldown = 300
 }
 
+-- Covenant Abilities
+-- Boon of the Ascended
+LCT_SpellData[325013] = {
+	class = "PRIEST",
+  	covenant = "KYRIAN",
+	offensive = true,
+	duration = 10,
+	cooldown = 180
+}
+
+-- Mindgames
+LCT_SpellData[323673] = {
+	class = "PRIEST",
+	covenant = "VENTHYR",
+	offensive = true,
+	duration = 5,
+	cooldown = 45
+}
+
+-- Unholy Nova
+LCT_SpellData[324724] = {
+	class = "PRIEST",
+	covenant = "NECROLORD",
+	offensive = true,
+	cooldown = 60
+}
+
+-- Fae Guardians
+LCT_SpellData[327661] = {
+	class = "PRIEST",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 20,
+	cooldown = 90
+}
