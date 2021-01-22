@@ -171,14 +171,6 @@ LCT_SpellData[206803] = {
 	talent = true,
 	cooldown = 60,
 }
--- DH/Covenants/Kyrian
--- The Hunt
-LCT_SpellData[323639] = {
-	class = "DEMONHUNTER",
-  covenant = "KYRIAN",
-	offensive = true,
-	cooldown = 90,
-}
 
 -- DH/Vengeance
 -- Sigil of Misery
@@ -269,4 +261,41 @@ LCT_SpellData[263648] = {
 	defensive = true,
 	cooldown = 30,
 	duration = 12,
+}
+
+-- Covenant Abilities
+-- Elysian Decree
+LCT_SpellData[306830] = {
+	class = "DEMONHUNTER",
+	covenant = "KYRIAN",
+	offensive = true,
+	duration = 2,
+	cooldown = 60
+}
+
+-- Sinful Brand
+LCT_SpellData[317009] = {
+	class = "DEMONHUNTER",
+	covenant = "VENTHYR",
+	offensive = true,
+	duration = 8,
+	cooldown = 60
+}
+
+-- Fodder to the Flame
+LCT_SpellData[329554] = {
+	class = "DEMONHUNTER",
+	covenant = "NECROLORD",
+	offensive = true,
+	duration = 25,
+	cooldown = 120
+}
+
+-- The Hunt
+LCT_SpellData[323639] = {
+	class = "DEMONHUNTER",
+	covenant = "NIGHTFAE",
+	offensive = true,
+	duration = 2,
+	cooldown = 90
 }
