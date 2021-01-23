@@ -412,7 +412,7 @@ LCT_SpellData[312202] = {
 -- Swarming Mist
 LCT_SpellData[311648] = {
 	class = "DEATHKNIGHT",
-	covenant = "VENTYHR",
+	covenant = "VENTHYR",
 	offensive = true,
 	duration = 8,
 	cooldown = 60
