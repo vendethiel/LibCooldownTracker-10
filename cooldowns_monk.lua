@@ -159,7 +159,7 @@ LCT_SpellData[115203] = {
 	specID = { SPEC_MONK_MISTWEAVER, SPEC_MONK_WINDWALKER },
 	defensive = true,
 	duration = 15,
-	cooldown = 120,
+	cooldown = 180,
 }
 -- Breath of Fire
 LCT_SpellData[115181] = {

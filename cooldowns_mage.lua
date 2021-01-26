@@ -71,7 +71,8 @@ LCT_SpellData[342245] = {
 	specID = { SPEC_MAGE_ARCANE },
 	defensive = true,
 	duration = 10,
-	cooldown = 60
+	cooldown = 60,
+	opt_lower_cooldown = 30, -- with 342249 Master of Time
 }
 
 -- Mage/talents
