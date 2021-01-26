@@ -145,13 +145,21 @@ LCT_SpellData[119582] = {
 	cooldown = 15,
 	charges = 3, -- TODO shared with Ironskin Brew
 }
--- Fortifying Brew
+-- Fortifying Brew (Brewmaster)
 LCT_SpellData[115203] = {
 	class = "MONK",
 	specID = { SPEC_MONK_BREWMASTER },
 	defensive = true,
 	duration = 15,
-	cooldown = 420,
+	cooldown = 360,
+}
+-- Fortifying Brew (Mistweaver/Windwalker)
+LCT_SpellData[115203] = {
+	class = "MONK",
+	specID = { SPEC_MONK_MISTWEAVER, SPEC_MONK_WINDWALKER },
+	defensive = true,
+	duration = 15,
+	cooldown = 180,
 }
 -- Breath of Fire
 LCT_SpellData[115181] = {
@@ -319,14 +327,6 @@ LCT_SpellData[261947] = {
 	talent = true,
 	cooldown = 30,
 }
--- Fortifying Brew
-LCT_SpellData[201318] = {
-	class = "MONK",
-	specID = { SPEC_MONK_WINDWALKER },
-	talent = true,
-	defensive = true,
-	cooldown = 90,
-}
 -- Invoke Xuen, the White Tiger
 LCT_SpellData[123904] = {
 	class = "MONK",
@@ -360,14 +360,6 @@ LCT_SpellData[191837] = {
 	class = "MONK",
 	specID = { SPEC_MONK_MISTWEAVER },
 	cooldown = 12,
-}
--- Fortifying Brew
-LCT_SpellData[243435] = {
-	class = "MONK",
-	specID = { SPEC_MONK_MISTWEAVER },
-	defensive = true,
-	duration = 15,
-	cooldown = 90,
 }
 -- Life Cocoon
 LCT_SpellData[116849] = {

@@ -99,7 +99,7 @@ LCT_SpellData[196555] = {
 	talent = true,
 	defensive = true,
 	duration = 5,
-	cooldown = 120
+	cooldown = 180
 }
 -- Immolation Aura
 LCT_SpellData[258920] = {

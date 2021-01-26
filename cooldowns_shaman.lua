@@ -311,7 +311,6 @@ LCT_SpellData[61295] = {
 LCT_SpellData[98008] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_RESTORATION },
-	talent = true,
 	defensive = true,
 	duration = 6, -- V: technically it's 20s
 	cooldown = 180
