@@ -49,10 +49,7 @@ LCT_SpellData[642] = {
 	immune = true,
 	duration = 8,
 	cooldown = 300,
-	cooldown_overload = {
-		[SPEC_PALADIN_RETRIBUTION] = 240,
-		[SPEC_PALADIN_HOLY]        = 210,
-	},
+	opt_lower_cooldown = 210, -- with 114154 Unbreakable Spirit
 }
 -- Hand of Freedom
 LCT_SpellData[1044] = {
@@ -93,7 +90,7 @@ LCT_SpellData[498] = {
 	defensive = true,
 	duration = 8,
 	cooldown = 60,
-  opt_lower_cooldown = 42
+	opt_lower_cooldown = 42, -- with 114154 Unbreakable Spirit
 }
 -- Paladin/talents
 
@@ -143,9 +140,6 @@ LCT_SpellData[4987] = {
 LCT_SpellData[6940] = {
 	class = "PALADIN",
 	defensive = true,
-	specID = { SPEC_PALADIN_HOLY },
-	opt_charges = 2,
-	opt_charges_linked = { 1044, 1022, 204018 },
 	duration = 12,
 	cooldown = 120
 }

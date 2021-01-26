@@ -55,6 +55,25 @@ LCT_SpellData[80353] = {
 	duration = 40,
 	cooldown = 300
 }
+
+-- Mage/mixed
+-- Alter Time (fire & frost)
+LCT_SpellData[108978] = {
+	class = "MAGE",
+	specID = { SPEC_MAGE_FIRE, SPEC_MAGE_FROST },
+	defensive = true,
+	duration = 10,
+	cooldown = 60
+}
+-- Alter Time (arcane)
+LCT_SpellData[342245] = {
+	class = "MAGE",
+	specID = { SPEC_MAGE_ARCANE },
+	defensive = true,
+	duration = 10,
+	cooldown = 60
+}
+
 -- Mage/talents
 -- Temporal Shield
 LCT_SpellData[198111] = {

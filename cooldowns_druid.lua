@@ -30,17 +30,16 @@ LCT_SpellData[77761] = {
 	duration = 8,
 	cooldown = 120
 }
+-- Barkskin
+LCT_SpellData[22812] = {
+	class = "DRUID",
+	defensive = true,
+	duration = 12,
+	cooldown = 60
+}
 LCT_SpellData[77764] = 77761
 LCT_SpellData[106898] = 77761
 -- Druid/mixed
--- Barkskin (except feral)
-LCT_SpellData[22812] = {
-	class = "DRUID",
-	specID = { SPEC_DRUID_BALANCE, SPEC_DRUID_GUARDIAN, SPEC_DRUID_RESTO },
-	defensive = true,
-	duration = 12,
-	cooldown = 45
-}
 -- Innervate
 LCT_SpellData[29166] = {
 	class = "DRUID",
@@ -102,7 +101,7 @@ LCT_SpellData[61336] = {
 }
 -- Druid/talents/mixed
 -- Thorns
-LCT_SpellData[22812] = {
+LCT_SpellData[305497] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_BALANCE, SPEC_DRUID_FERAL, SPEC_DRUID_RESTO },
 	talent = true,
@@ -115,13 +114,6 @@ LCT_SpellData[108238] = {
 	talent = true,
 	heal = true,
 	cooldown = 120
-}
--- Thorns
-LCT_SpellData[236696] = {
-	class = "DRUID",
-	specID = { SPEC_DRUID_BALANCE, SPEC_DRUID_FERAL, SPEC_DRUID_RESTO },
-	talent = true,
-	cooldown = 45
 }
 
 -- Druid/Balance
@@ -331,7 +323,7 @@ LCT_SpellData[102342] = {
 	specID = { SPEC_DRUID_RESTO },
 	defensive = true,
 	duration = 12,
-	cooldown = 45,
+	cooldown = 90,
 }
 -- Nature's Cure
 LCT_SpellData[88423] = {
@@ -369,6 +361,12 @@ LCT_SpellData[740] = {
 	specID = { SPEC_DRUID_RESTO },
 	defensive = true,
 	cooldown = 180,
+}
+-- Nature's Swiftness
+LCT_SpellData[132158] = {
+	class = "DRUID",
+	specID = { SPEC_DRUID_RESTO },
+	cooldown = 60,
 }
 -- Druid/Restoration/talents
 -- Cenarion Ward

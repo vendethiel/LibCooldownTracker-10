@@ -36,11 +36,7 @@ LCT_SpellData[104773] = {
 	class = "WARLOCK",
 	defensive = true,
 	duration = 8,
-	cooldown = 180,
-	cooldown_overload = {
-		[SPEC_WARLOCK_DEMONOLOGY] = 140,
-		[SPEC_WARLOCK_DESTRUCTION] = 60,
-	},
+	cooldown = 180
 }
 -- Warlock/talents
 -- Mortal Coil
