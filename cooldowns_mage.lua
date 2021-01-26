@@ -45,7 +45,6 @@ LCT_SpellData[55342] = {
 	class = "MAGE",
 	offensive = true,
 	talent = true,
-	duration = 40,
 	cooldown = 120
 }
 -- Time Warp
@@ -279,7 +278,6 @@ LCT_SpellData[11426] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FROST },
 	defensive = true,
-	duration = 60,
 	cooldown = 25
 }
 -- Frozen Orb
@@ -380,7 +378,7 @@ LCT_SpellData[33395] = {
 -- Radiant Spark
 LCT_SpellData[307443] = {
 	class = "MAGE",
-  	covenant = "KYRIAN",
+  covenant = "KYRIAN",
 	offensive = true,
 	duration = 10,
 	cooldown = 30

@@ -2,9 +2,9 @@
 
 set_wotf_emfh = {
 	-- WOTF
-	{ spellid = 7744, cooldown = 90 },
+	{ spellid = 7744, cooldown = 30 },
 	-- EMFH
-	{ spellid = 59752, cooldown = 90 },
+	{ spellid = 59752, cooldown = 30 },
 }
 
 -- Gladiator's Medallion
