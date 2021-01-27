@@ -70,11 +70,7 @@ LCT_SpellData[1022] = {
 	opt_charges = 2,
 	opt_charges_linked = { 1044, 6940 },
 	duration = 10,
-	cooldown = 300,
-	cooldown_overload = {
-		[SPEC_PALADIN_RETRIBUTION] = 180, -- ret
-		[SPEC_PALADIN_HOLY] = 240, -- holy
-	},
+	cooldown = 300
 }
 -- Rebuke
 LCT_SpellData[96231] = {
