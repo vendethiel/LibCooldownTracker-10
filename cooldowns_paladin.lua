@@ -28,7 +28,7 @@ LCT_SpellData[31884] = {
 	class = "PALADIN",
 	offensive = true,
 	defensive = true,
-	duration = 25,
+	duration = 20,
 	cooldown = 120,
   cooldown_starts_on_aura_duration = true,
 }

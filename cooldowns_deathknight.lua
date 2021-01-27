@@ -199,7 +199,7 @@ LCT_SpellData[51271] = {
 	specID = { SPEC_DK_FROST },
 	offensive = true,
 	defensive = true,
-	duration = 20,
+	duration = 12,
 	cooldown = 60
 }
 -- Empower Rune Weapon
@@ -239,9 +239,9 @@ LCT_SpellData[279302] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_FROST },
 	offensive = true,
-	talent = true,
 	duration = 10,
-	cooldown = 180
+	cooldown = 180,
+	opt_lower_cooldown = 90, -- Absolute Zero legendary, always all frost DKs play this
 }
 -- Blinding Sleet
 LCT_SpellData[207167] = {
@@ -249,13 +249,6 @@ LCT_SpellData[207167] = {
 	specID = { SPEC_DK_FROST },
 	talent = true,
 	cooldown = 60
-}
--- Chill Streak
-LCT_SpellData[207167] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_FROST },
-	talent = true,
-	cooldown = 45
 }
 -- Horn of Winter
 LCT_SpellData[57330] = {

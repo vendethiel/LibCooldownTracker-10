@@ -139,7 +139,7 @@ LCT_SpellData[118038] = {
 	specID = { SPEC_WARRIOR_ARMS },
 	defensive = true,
 	duration = 8,
-	cooldown = 180
+	cooldown = 120
 }
 -- Colossus Smash
 LCT_SpellData[167105] = {
