@@ -43,6 +43,14 @@ LCT_SpellData[48707] = {
 	duration = 5,
 	cooldown = 60
 }
+-- Anti-Magic Zone
+LCT_SpellData[51052] = {
+	class = "DEATHKNIGHT",
+	defensive = true,
+	duration = 10,
+	cooldown = 120
+}
+
 -- DK/mixed
 -- Death and Decay
 LCT_SpellData[43265] = {
@@ -69,14 +77,7 @@ LCT_SpellData[77606] = {
 	duration = 8,
 	cooldown = 25
 }
--- Anti-Magic Zone
-LCT_SpellData[51052] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	defensive = true,
-	duration = 10,
-	cooldown = 120
-}
+
 -- DK/mixed/talents
 -- Asphyxiate
 LCT_SpellData[108194] = {
