@@ -28,7 +28,7 @@ LCT_SpellData[31884] = {
 	class = "PALADIN",
 	offensive = true,
 	defensive = true,
-	duration = 25,
+	duration = 20,
 	cooldown = 120,
   cooldown_starts_on_aura_duration = true,
 }
@@ -70,11 +70,7 @@ LCT_SpellData[1022] = {
 	opt_charges = 2,
 	opt_charges_linked = { 1044, 6940 },
 	duration = 10,
-	cooldown = 300,
-	cooldown_overload = {
-		[SPEC_PALADIN_RETRIBUTION] = 180, -- ret
-		[SPEC_PALADIN_HOLY] = 240, -- holy
-	},
+	cooldown = 300
 }
 -- Rebuke
 LCT_SpellData[96231] = {
@@ -350,6 +346,13 @@ LCT_SpellData[184662] = {
 	duration = 15,
 	cooldown = 120
 }
+-- Wake of Ashes
+LCT_SpellData[255937] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	cooldown = 45
+}
+
 -- Paladin/Retribution/talents
 -- Eye for an eye
 LCT_SpellData[205191] = {
@@ -359,13 +362,6 @@ LCT_SpellData[205191] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 60
-}
--- Wake of Ashes
-LCT_SpellData[255937] = {
-	class = "PALADIN",
-	specID = { SPEC_PALADIN_RETRIBUTION },
-	talent = true,
-	cooldown = 45
 }
 -- Blessing of Sanctuary
 LCT_SpellData[210256] = {
@@ -389,6 +385,13 @@ LCT_SpellData[231895] = {
 }
 -- Hammer of Reckoning
 LCT_SpellData[247675] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	talent = true,
+	cooldown = 60
+}
+-- Final Reckoning
+LCT_SpellData[343721] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_RETRIBUTION },
 	talent = true,

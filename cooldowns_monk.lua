@@ -32,12 +32,20 @@ LCT_SpellData[119381] = {
 	class = "MONK",
 	stun = true,
 	cooldown = 60,
+	opt_lower_cooldown = 50, -- with Tiger Tail Sweep
 }
 -- Provoke
 LCT_SpellData[115546] = {
 	class = "MONK",
 	cooldown = 8
 }
+-- Touch of Death
+LCT_SpellData[322109] = {
+	class = "MONK",
+	offensive = true,
+	cooldown = 180,
+}
+
 -- Monk/mixed
 -- Detox
 LCT_SpellData[218164] = {
@@ -98,7 +106,7 @@ LCT_SpellData[116844] = {
 	class = "MONK",
 	talent = true,
 	defensive = true,
-	duration = 8,
+	duration = 5,
 	cooldown = 45,
 }
 -- Monk/mixed/talents
@@ -252,13 +260,6 @@ LCT_SpellData[202162] = {
 }
 
 -- Monk/Windwalker
--- Touch of Death
-LCT_SpellData[115080] = {
-	class = "MONK",
-	specID = { SPEC_MONK_WINDWALKER },
-	offensive = true,
-	cooldown = 120,
-}
 -- Storm, Earth, and Fire
 LCT_SpellData[137639] = {
 	class = "MONK",
@@ -304,7 +305,6 @@ LCT_SpellData[122470] = {
 	duration = 10,
 	cooldown = 90
 }
--- Mond/Windwalker/talents
 -- Rushing Jade Wind (WW)
 LCT_SpellData[261715] = {
 	class = "MONK",
@@ -331,7 +331,6 @@ LCT_SpellData[261947] = {
 LCT_SpellData[123904] = {
 	class = "MONK",
 	specID = { SPEC_MONK_WINDWALKER },
-	talent = true,
 	duration = 20,
 	cooldown = 120,
 }

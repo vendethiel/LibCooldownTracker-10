@@ -43,6 +43,14 @@ LCT_SpellData[48707] = {
 	duration = 5,
 	cooldown = 60
 }
+-- Anti-Magic Zone
+LCT_SpellData[51052] = {
+	class = "DEATHKNIGHT",
+	defensive = true,
+	duration = 10,
+	cooldown = 120
+}
+
 -- DK/mixed
 -- Death and Decay
 LCT_SpellData[43265] = {
@@ -69,14 +77,7 @@ LCT_SpellData[77606] = {
 	duration = 8,
 	cooldown = 25
 }
--- Anti-Magic Zone
-LCT_SpellData[51052] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	defensive = true,
-	duration = 10,
-	cooldown = 120
-}
+
 -- DK/mixed/talents
 -- Asphyxiate
 LCT_SpellData[108194] = {
@@ -198,7 +199,7 @@ LCT_SpellData[51271] = {
 	specID = { SPEC_DK_FROST },
 	offensive = true,
 	defensive = true,
-	duration = 20,
+	duration = 12,
 	cooldown = 60
 }
 -- Empower Rune Weapon
@@ -238,9 +239,9 @@ LCT_SpellData[279302] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_FROST },
 	offensive = true,
-	talent = true,
 	duration = 10,
-	cooldown = 180
+	cooldown = 180,
+	opt_lower_cooldown = 90, -- Absolute Zero legendary, almost all high level frost DKs play this. TODO: if the meta stays this way, make 90s cooldown a baseline.
 }
 -- Blinding Sleet
 LCT_SpellData[207167] = {
@@ -249,19 +250,19 @@ LCT_SpellData[207167] = {
 	talent = true,
 	cooldown = 60
 }
--- Chill Streak
-LCT_SpellData[207167] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_FROST },
-	talent = true,
-	cooldown = 45
-}
 -- Horn of Winter
 LCT_SpellData[57330] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_FROST },
 	talent = true,
 	cooldown = 45
+}
+-- Chill Streak	
+LCT_SpellData[305392] = {	
+	class = "DEATHKNIGHT",	
+	specID = { SPEC_DK_FROST },	
+	talent = true,	
+	cooldown = 45	
 }
 
 -- DK/Unholy

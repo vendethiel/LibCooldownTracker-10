@@ -206,6 +206,7 @@ LCT_SpellData[106951] = {
 LCT_SpellData[102543] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_FERAL },
+	talent = true,
 	offensive = true,
 	cooldown = 180,
 	duration = 30,
