@@ -346,6 +346,13 @@ LCT_SpellData[184662] = {
 	duration = 15,
 	cooldown = 120
 }
+-- Wake of Ashes
+LCT_SpellData[255937] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	cooldown = 45
+}
+
 -- Paladin/Retribution/talents
 -- Eye for an eye
 LCT_SpellData[205191] = {
@@ -355,13 +362,6 @@ LCT_SpellData[205191] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 60
-}
--- Wake of Ashes
-LCT_SpellData[255937] = {
-	class = "PALADIN",
-	specID = { SPEC_PALADIN_RETRIBUTION },
-	talent = true,
-	cooldown = 45
 }
 -- Blessing of Sanctuary
 LCT_SpellData[210256] = {
@@ -388,6 +388,14 @@ LCT_SpellData[247675] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_RETRIBUTION },
 	talent = true,
+	cooldown = 60
+}
+-- Final Reckoning
+LCT_SpellData[343721] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+	talent = true,
+	duration = 8,
 	cooldown = 60
 }
 
