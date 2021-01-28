@@ -45,7 +45,6 @@ LCT_SpellData[322109] = {
 	offensive = true,
 	cooldown = 180,
 }
-
 -- Monk/mixed
 -- Detox
 LCT_SpellData[218164] = {
@@ -312,6 +311,14 @@ LCT_SpellData[261715] = {
 	talent = true,
 	cooldown = 6
 }
+-- Invoke Xuen, the White Tiger
+LCT_SpellData[123904] = {
+	class = "MONK",
+	specID = { SPEC_MONK_WINDWALKER },
+	duration = 20,
+	cooldown = 120,
+}
+-- Mond/Windwalker/talents
 -- Whirling Dragon Punch
 LCT_SpellData[152175] = {
 	class = "MONK",
@@ -326,13 +333,6 @@ LCT_SpellData[261947] = {
 	specID = { SPEC_MONK_WINDWALKER },
 	talent = true,
 	cooldown = 30,
-}
--- Invoke Xuen, the White Tiger
-LCT_SpellData[123904] = {
-	class = "MONK",
-	specID = { SPEC_MONK_WINDWALKER },
-	duration = 20,
-	cooldown = 120,
 }
 -- Serenity
 LCT_SpellData[152173] = {
