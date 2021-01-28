@@ -241,7 +241,7 @@ LCT_SpellData[279302] = {
 	offensive = true,
 	duration = 10,
 	cooldown = 180,
-	opt_lower_cooldown = 90, -- Absolute Zero legendary, almost all frost DKs play this
+	opt_lower_cooldown = 90, -- Absolute Zero legendary, almost all high level frost DKs play this. TODO: if the meta stays this way, make 90s cooldown a baseline.
 }
 -- Blinding Sleet
 LCT_SpellData[207167] = {

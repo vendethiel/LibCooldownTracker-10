@@ -305,7 +305,6 @@ LCT_SpellData[122470] = {
 	duration = 10,
 	cooldown = 90
 }
--- Mond/Windwalker/talents
 -- Rushing Jade Wind (WW)
 LCT_SpellData[261715] = {
 	class = "MONK",
