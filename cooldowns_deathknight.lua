@@ -257,6 +257,13 @@ LCT_SpellData[57330] = {
 	talent = true,
 	cooldown = 45
 }
+-- Chill Streak	
+LCT_SpellData[305392] = {	
+	class = "DEATHKNIGHT",	
+	specID = { SPEC_DK_FROST },	
+	talent = true,	
+	cooldown = 45	
+}
 
 -- DK/Unholy
 -- Raise Dead
