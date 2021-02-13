@@ -258,8 +258,8 @@ LCT_SpellData[204366] = {
 	talent = true,
 	cooldown = 45,
 }
--- Bloodlust
-LCT_SpellData[2825] = {
+-- Shamanism
+LCT_SpellData[193876] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	talent = true,

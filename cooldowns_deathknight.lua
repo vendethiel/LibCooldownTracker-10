@@ -50,6 +50,13 @@ LCT_SpellData[51052] = {
 	duration = 10,
 	cooldown = 120
 }
+-- Lichborne
+LCT_SpellData[49039] = {
+	class = "DEATHKNIGHT",
+	defensive = true,
+	duration = 10,
+	cooldown = 120
+}
 
 -- DK/mixed
 -- Death and Decay
