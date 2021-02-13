@@ -273,6 +273,14 @@ LCT_SpellData[188089] = {
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	cooldown = 20,
 }
+-- Doom Winds
+LCT_SpellData[335902] = {
+	class = "SHAMAN",
+	talent = true,
+	specID = { SPEC_SHAMAN_ENHANCEMENT },
+	duration = 12,
+	cooldown = 60,
+}
 
 -- Shaman/Restoration
 -- Healing Stream Totem
