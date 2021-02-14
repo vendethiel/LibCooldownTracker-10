@@ -297,15 +297,17 @@ LCT_SpellData[213691] = {
 	cc = true,
 	cooldown = 30
 }
--- Hunter/Marksmanship/talents
 -- Trueshot
 LCT_SpellData[288613] = {
 	class = "HUNTER",
 	specID = { SPEC_HUNTER_MM },
-	talent = true,
 	offensive = true,
+	duration = 15,
+	opt_lower_cooldown = 100,
 	cooldown = 120
 }
+
+-- Hunter/Marksmanship/talents
 -- Piercing Shot
 LCT_SpellData[198670] = {
 	class = "HUNTER",
