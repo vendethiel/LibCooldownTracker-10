@@ -282,7 +282,7 @@ LCT_SpellData[188089] = {
 	cooldown = 20,
 }
 -- Doom Winds
-LCT_SpellData[335902] = {
+LCT_SpellData[335903] = {
 	class = "SHAMAN",
 	talent = true,
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
