@@ -259,7 +259,7 @@ LCT_SpellData[204366] = {
 	cooldown = 45,
 }
 -- Shamanism (Alliance)
-LCT_SpellData[32182] = {
+LCT_SpellData[204362] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	talent = true,
@@ -267,7 +267,7 @@ LCT_SpellData[32182] = {
 	duration = 10
 }
 -- Shamanism (Horde)
-LCT_SpellData[2825] = {
+LCT_SpellData[204361] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	talent = true,
