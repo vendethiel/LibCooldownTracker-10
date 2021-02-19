@@ -258,8 +258,16 @@ LCT_SpellData[204366] = {
 	talent = true,
 	cooldown = 45,
 }
--- Bloodlust
-LCT_SpellData[2825] = {
+-- Shamanism (Alliance)
+LCT_SpellData[204362] = {
+	class = "SHAMAN",
+	specID = { SPEC_SHAMAN_ENHANCEMENT },
+	talent = true,
+	cooldown = 60,
+	duration = 10
+}
+-- Shamanism (Horde)
+LCT_SpellData[204361] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	talent = true,
@@ -272,6 +280,14 @@ LCT_SpellData[188089] = {
 	talent = true,
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	cooldown = 20,
+}
+-- Doom Winds
+LCT_SpellData[335903] = {
+	class = "SHAMAN",
+	talent = true,
+	specID = { SPEC_SHAMAN_ENHANCEMENT },
+	duration = 12,
+	cooldown = 60,
 }
 
 -- Shaman/Restoration

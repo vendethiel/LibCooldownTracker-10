@@ -34,7 +34,8 @@ LCT_SpellData[48792] = {
 	class = "DEATHKNIGHT",
 	defensive = true,
 	duration = 8,
-	cooldown = 180
+	cooldown = 180,
+	opt_lower_cooldown = 148 -- With conduit cooldown reduction, season 1 max is 32 sec, update in future seasons
 }
 -- Anti-Magic Shell
 LCT_SpellData[48707] = {
@@ -45,6 +46,13 @@ LCT_SpellData[48707] = {
 }
 -- Anti-Magic Zone
 LCT_SpellData[51052] = {
+	class = "DEATHKNIGHT",
+	defensive = true,
+	duration = 10,
+	cooldown = 120
+}
+-- Lichborne
+LCT_SpellData[49039] = {
 	class = "DEATHKNIGHT",
 	defensive = true,
 	duration = 10,

@@ -346,7 +346,8 @@ LCT_SpellData[47585] = {
 	specID = { SPEC_PRIEST_SHADOW },
 	defensive = true,
 	duration = 6,
-	cooldown = 120
+	cooldown = 120,
+	opt_lower_cooldown = 90
 }
 -- Vampiric Embrace
 LCT_SpellData[15286] = {
