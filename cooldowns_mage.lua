@@ -5,6 +5,13 @@ local SPEC_MAGE_FIRE = 63
 local SPEC_MAGE_FROST = 64
 
 -- Mage/baseline
+-- Fireball
+LCT_SpellData[133] = {
+	class = "MAGE",
+	reduces = {
+		{ spellid = 190319, duration = 3 }
+	}
+}
 -- Blink
 LCT_SpellData[1953] = {
 	class = "MAGE",

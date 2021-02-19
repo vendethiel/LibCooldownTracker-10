@@ -89,6 +89,16 @@ LCT_SpellData[498] = {
 	opt_lower_cooldown = 42, -- with 114154 Unbreakable Spirit
 }
 -- Paladin/talents
+-- Paladin/legendaries
+-- Reign of Endless Kings
+-- XXX does this work
+LCT_SpellData[337850] = {
+	class = "PALADIN",
+	talaent = true, -- utter lie
+	defensive = true,
+	duration = 4,
+	cooldown = 45,
+}
 
 -- Repentance
 LCT_SpellData[20066] = {
@@ -163,6 +173,14 @@ LCT_SpellData[275773] = {
 	cooldown = 12
 }
 -- Paladin/Holy/talents
+-- Ultimate Sacrifice's Hand of Sacrifice
+LCT_SpellData[199448] = {
+	class = "PALADIN",
+	defensive = true,
+	duration = 12,
+	cooldown = 120,
+  replaces = 6940 -- normal Hand of Sacrifice
+}
 -- Beacon of Virtue
 LCT_SpellData[200025] = {
 	class = "PALADIN",

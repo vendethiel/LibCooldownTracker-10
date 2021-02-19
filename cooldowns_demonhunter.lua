@@ -171,6 +171,14 @@ LCT_SpellData[206803] = {
 	talent = true,
 	cooldown = 60,
 }
+-- Imprison (Detainment)
+LCT_SpellData[221527] = {
+    class = "DEMONHUNTER",
+    cc = true,
+    talent = true,
+    replaces = 217832,
+    cooldown = 60
+}
 
 -- DH/Vengeance
 -- Sigil of Misery
