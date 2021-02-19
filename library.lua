@@ -267,7 +267,7 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
 		spellid = spelldata
 		spelldata = SpellData[spelldata]
 	end
-	local duration = override_duration or spelldata.duration
+	local duration = spelldata.duration --XXX override_duration or spelldata.duration
 
 	if lib:IsUnitRegistered(unit) then
 		local now = override_now or GetTime()
