@@ -5,6 +5,13 @@ local SPEC_PRIEST_HOLY = 257
 local SPEC_PRIEST_SHADOW = 258
 
 -- Priest/baseline
+-- Shadow Word: Death
+LCT_SpellData[32379] = {
+	class = "PRIEST",
+	talent = true,
+	cooldown = 9,
+	charges = 1
+}
 -- Symbol of hope
 LCT_SpellData[64901] = {
 	class = "PRIEST",
@@ -13,13 +20,13 @@ LCT_SpellData[64901] = {
 	duration = 12,
 	cooldown = 300
 }
-
 -- Power Infusion
 LCT_SpellData[10060] = {
 	class = "PRIEST",
 	offensive = true,
 	duration = 20,
-	cooldown = 120
+	cooldown = 120,
+  opt_charges = 2,
 }
 
 -- Fade
@@ -381,14 +388,6 @@ LCT_SpellData[200174] = {
 	duration = 15,
 	cooldown = 60,
 	replaces = 34433, -- Shadowfiend
-}
--- Shadow Word: Death
-LCT_SpellData[32379] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_SHADOW },
-	talent = true,
-	cooldown = 9,
-	charges = 2
 }
 -- Psychic Horror
 LCT_SpellData[64044] = {
