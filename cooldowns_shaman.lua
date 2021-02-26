@@ -226,6 +226,7 @@ LCT_SpellData[114051] = {
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	talent = true,
 	offensive = true,
+	duration = 15,
 	cooldown = 180
 }
 -- Feral Lunge
