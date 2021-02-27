@@ -48,6 +48,7 @@ LCT_SpellData[73325] = {
 	class = "PRIEST",
 	defensive = true,
 	cooldown = 90,
+  opt_charges = 2,
 }
 -- Desperate Prayer
 LCT_SpellData[19236] = {
