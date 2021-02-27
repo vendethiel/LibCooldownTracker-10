@@ -26,7 +26,6 @@ LCT_SpellData[10060] = {
 	offensive = true,
 	duration = 20,
 	cooldown = 120,
-  opt_charges = 2,
 }
 
 -- Fade
@@ -84,6 +83,7 @@ LCT_SpellData[527] = {
 	dispel = true,
 	cooldown_starts_on_dispel = true,
 	cooldown = 8,
+	opt_charges = 2 -- With PVP talent, disc only
 }
 -- Shadowfiend
 LCT_SpellData[34433] = {

@@ -238,16 +238,15 @@ LCT_SpellData[108853] = {
 	offensive = true,
 	cooldown = 12
 }
--- Mage/Fire/talents
 -- Cauterize
 LCT_SpellData[86949] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE },
-	talent = true,
 	defensive = true,
 	duration = 6,
 	cooldown = 300
 }
+-- Mage/Fire/talents
 -- Blast Wave
 LCT_SpellData[157981] = {
 	class = "MAGE",

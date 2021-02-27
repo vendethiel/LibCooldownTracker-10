@@ -89,10 +89,9 @@ LCT_SpellData[36554] = {
 }
 -- Rogue/talents
 -- Smoke Bomb
-LCT_SpellData[76577] = {
+LCT_SpellData[212182] = {
 	class = "ROGUE",
 	talent = true,
-	defensive = true,
 	duration = 5,
 	cooldown = 180
 }
