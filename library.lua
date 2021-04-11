@@ -846,20 +846,19 @@ function events:ARENA_OPPONENT_UPDATE(event, unit, unitEvent)
 end
 
 function events:ARENA_COOLDOWNS_UPDATE(event, unit)
-	if string.sub(unit, 1, 5) ~= "arena" then return end
-  --print("unit = " .. unit .. ", spellId = " .. (spellID or "nil") .. ", start = " .. (startTime or "nil") .. ", duration = " .. (duration or "nil"))
+
+	if string.sub(unit, 1, 5) ~= "arena" then 
+		return 
+	end
 
 	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
-  if not spellID then
-    C_PvP.RequestCrowdControlSpell(unit)
-    return
-  end
-  lib:DetectSpell(unit, spellID)
-	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellID)
-  --print("unit = " .. unit .. ", spellId = " .. (spellID or "nil") .. ", start = " .. (startTime or "nil") .. ", duration = " .. (duration or "nil"))
-  if not spellID then return end
 
-  if not startTime or not duration then
-    return
-  end
+  	if not spellID then
+    	C_PvP.RequestCrowdControlSpell(unit)
+    	return
+  	end
+
+  	lib:DetectSpell(unit, spellID)
+  	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellID)
+  	--print("unit = " .. unit .. ", spellId = " .. (spellID or "nil") .. ", start = " .. (startTime or "nil") .. ", duration = " .. (duration or "nil"))
 end
