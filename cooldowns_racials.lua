@@ -6,7 +6,15 @@ LCT_SpellData[59544] = {
 	duration = 5,
 	cooldown = 180,
 }
-set_trinkets = {
+
+set_trinkets_emfh = {
+	-- Gladiator's Medallion
+	{ spellid = 336126, cooldown = 90 },
+	-- Adaptation
+	{ spellid = 336135, cooldown = 30 },
+}
+
+set_trinkets_wotf = {
 	-- Gladiator's Medallion
 	{ spellid = 336126, cooldown = 30 },
 	-- Adaptation
@@ -15,13 +23,13 @@ set_trinkets = {
 -- Every Man For Himself
 LCT_SpellData[59752] = {
 	race = "Human",
-	sets_cooldowns = set_trinkets,
+	sets_cooldowns = set_trinkets_emfh,
 	cooldown = 180
 }
 -- Will of the Forsaken (Undead)
 LCT_SpellData[7744] = {
 	race = "Scourge",
-	sets_cooldowns = set_trinkets, -- PvP trinket
+	sets_cooldowns = set_trinkets_wotf, -- PvP trinket
 	cooldown = 120,
 }
 
