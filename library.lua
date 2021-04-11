@@ -862,5 +862,4 @@ function events:ARENA_COOLDOWNS_UPDATE(event, unit)
   if not startTime or not duration then
     return
   end
-  CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID, duration / 1000, startTime / 1000)
 end
