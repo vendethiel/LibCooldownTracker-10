@@ -4,13 +4,19 @@ local SPEC_PRIEST_DISC = 256
 local SPEC_PRIEST_HOLY = 257
 local SPEC_PRIEST_SHADOW = 258
 
+-- Smite
+LCT_SpellData[585] = {
+  class = "PRIEST",
+  reduce = { spellid = 88625, duration = 4 } -- Chastise
+}
+
 -- Priest/baseline
 -- Shadow Word: Death
 LCT_SpellData[32379] = {
 	class = "PRIEST",
 	talent = true,
-	cooldown = 9,
-	charges = 1
+	cooldown = 18,
+	opt_lower_cooldown = 9, -- Kiss of Death legendary
 }
 -- Symbol of hope
 LCT_SpellData[64901] = {
@@ -179,7 +185,7 @@ LCT_SpellData[62618] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 180,
-	opt_lower_cooldown = 120, -- with 197590 Dome of Light
+	opt_lower_cooldown = 90, -- with 197590 Dome of Light
 }
 -- Rapture
 LCT_SpellData[47536] = {
@@ -199,7 +205,7 @@ LCT_SpellData[214621] = {
 	offensive = true,
 	cooldown = 24,
 }
--- Spirit of the Redeemer
+-- Spirit of the Redemptor
 LCT_SpellData[214621] = {
 	class = "PRIEST",
 	specID = { SPEC_PRIEST_DISC },
@@ -258,6 +264,7 @@ LCT_SpellData[47788] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 180,
+  cooldown_on_full_aura_duration = 60,
 }
 -- Apotheosis
 LCT_SpellData[200183] = {
@@ -451,7 +458,7 @@ LCT_SpellData[123040] = {
 -- Boon of the Ascended
 LCT_SpellData[325013] = {
 	class = "PRIEST",
-  	covenant = "KYRIAN",
+  covenant = "KYRIAN",
 	offensive = true,
 	duration = 10,
 	cooldown = 180

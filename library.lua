@@ -259,7 +259,7 @@ local function AddCharge(unit, spellid)
 	end
 end
 
-local function CooldownEvent(event, unit, spellid, override_duration, override_now)
+local function CooldownEvent(event, unit, spellid)
 	local spelldata = SpellData[spellid]
 	if not spelldata then return end
 
@@ -267,63 +267,84 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
 		spellid = spelldata
 		spelldata = SpellData[spelldata]
 	end
-	local duration = spelldata.duration --XXX override_duration or spelldata.duration
+	local duration = spelldata.duration
 
 	if lib:IsUnitRegistered(unit) then
-		local now = override_now or GetTime()
+    local now = GetTime()
 
-		if not lib.tracked_players[unit] then
-			lib.tracked_players[unit] = {}
-		end
+    if not lib.tracked_players[unit] then
+      lib.tracked_players[unit] = {}
+    end
 
-		local tpu = lib.tracked_players[unit]
+    local tpu = lib.tracked_players[unit]
+    if spellid == 336135 then
+      print('adapt cast by ' .. unit)
+      return
+    end
 
-		if tpu[spellid] then
-			-- check if the same spell cast was detected recently
-			-- if so, we assume that the first detection time is more accurate and ignore this one
-			-- this can happen because we listen to both UNIT_SPELLCAST_SUCCEEDED and SPELL_CAST_SUCCESS from COMBAT_LOG_EVENT_UNFILTERED
-			-- and because both SPELL_CAST_SUCCESS and SPELL_AURA_APPLIED are considered events for cooldown uses
-			local margin = 1
-			if event == "UNIT_SPELLCAST_SUCCEEDED" or event == "SPELL_CAST_SUCCESS" or event == "SPELL_AURA_APPLIED" then
-				if (event ~= "UNIT_SPELLCAST_SUCCEEDED" and tpu[spellid]["UNIT_SPELLCAST_SUCCEEDED"] and (tpu[spellid]["UNIT_SPELLCAST_SUCCEEDED"] + margin) > now) or
-				   (event ~= "SPELL_AURA_APPLIED"       and tpu[spellid]["SPELL_AURA_APPLIED"]       and (tpu[spellid]["SPELL_AURA_APPLIED"]       + margin) > now) or
-				   (event ~= "SPELL_CAST_SUCCESS"       and tpu[spellid]["SPELL_CAST_SUCCESS"]       and (tpu[spellid]["SPELL_CAST_SUCCESS"]       + margin) > now) then
-					return
-				end
-			end
+    if tpu[spellid] then
+      -- check if the same spell cast was detected recently
+      -- if so, we assume that the first detection time is more accurate and ignore this one
+      -- this can happen because we listen to both UNIT_SPELLCAST_SUCCEEDED and SPELL_CAST_SUCCESS from COMBAT_LOG_EVENT_UNFILTERED
+      -- and because both SPELL_CAST_SUCCESS and SPELL_AURA_APPLIED are considered events for cooldown uses
+      local margin = 1
+      if event == "UNIT_SPELLCAST_SUCCEEDED" or event == "SPELL_CAST_SUCCESS" or event == "SPELL_AURA_APPLIED" then
+        if (event ~= "UNIT_SPELLCAST_SUCCEEDED" and tpu[spellid]["UNIT_SPELLCAST_SUCCEEDED"] and (tpu[spellid]["UNIT_SPELLCAST_SUCCEEDED"] + margin) > now) or
+          (event ~= "SPELL_AURA_APPLIED"       and tpu[spellid]["SPELL_AURA_APPLIED"]       and (tpu[spellid]["SPELL_AURA_APPLIED"]       + margin) > now) or
+          (event ~= "SPELL_CAST_SUCCESS"       and tpu[spellid]["SPELL_CAST_SUCCESS"]       and (tpu[spellid]["SPELL_CAST_SUCCESS"]       + margin) > now) then
+          return
+        end
+      end
 
-			-- register event time
-			tpu[spellid][event] = now
-		else
-			tpu[spellid] = {
-				charges = spelldata.charges or spelldata.opt_charges,
-				max_charges = spelldata.charges or spelldata.opt_charges,
-				charges_detected = spelldata.charges and true or false,
-				[event] = now,
-			}
-		end
-		local tps = tpu[spellid]
+      -- register event time
+      tpu[spellid][event] = now
+    else
+      tpu[spellid] = {
+        charges = spelldata.charges or spelldata.opt_charges,
+        max_charges = spelldata.charges or spelldata.opt_charges,
+        charges_detected = spelldata.charges and true or false,
+        [event] = now,
+      }
+    end
+    local tps = tpu[spellid]
 
-		-- find what actions are needed
-		local used_start, used_end, cooldown_start
+    -- Find out if casting this spell reduces any cooldown
+    local reduces = spelldata.reduces or spelldata.reduce and { spelldata.reduce }
+    if reduces then
+      for i = 1, #reduces do
+        local reduce = reduces[i]
+        
+        -- TODO checks like "if it's this spec ID, if this talent is detected (or not)"
 
-    if spelldata.reduces then
-      for i = 1, #spelldata.reduces do
-        local reduce = spelldata.reduces[i]
-        if tpu[reduce.spellid] and tpu[reduce.spellid].cooldown_start then
-          tpu[reduce.spellid].cooldown_end = tpu[reduce.spellid].cooldown_end - reduce.duration
-          if tpu[reduce.spellid].duration then
-            tpu[reduce.spellid].duration = tpu[reduce.spellid].duration - reduce.duration
+        local reduce_spellids = reduce.spellids or reduce.spellid and { reduce.spellid }
+        if reduce_spellids then
+          for each_spellid in pairs(reduce_spellids) do
+            if tpu[each_spellid] and tpu[each_spellid].cooldown_start then
+              tpu[each_spellid].cooldown_end = tpu[each_spellid].cooldown_end - reduce.duration
+            end
+          end
+        end
+
+        -- XXX Things like Shifting Powers work in ticks, TODO interrupts?
+        if reduce.all then
+          for each_tps in ipairs(tpu) do
+            if each_tps.cooldown_start then
+              each_tps.cooldown_end = each_tps.cooldown_end - reduce.duration
+            end
           end
         end
       end
     end
 
-		if spelldata.cooldown_starts_on_dispel then
-			if event == "SPELL_DISPEL" then
-				used_start = true
-				cooldown_start = true
-			end
+    -- find what actions are needed
+    local used_start, used_end, cooldown_start
+
+    local buff_was_full_duration = false
+    if spelldata.cooldown_starts_on_dispel then
+      if event == "SPELL_DISPEL" then
+        used_start = true
+        cooldown_start = true
+      end
     elseif spelldata.cooldown_starts_on_aura_duration then
       if event == "SPELL_AURA_APPLIED" then
         local n, _, _, _, aura_duration = FindAuraById(spellid, unit)
@@ -333,20 +354,22 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
           cooldown_start = true
         end
       end
-		elseif spelldata.cooldown_starts_on_aura_fade then
-			if event == "UNIT_SPELLCAST_SUCCEEDED" or event == "SPELL_CAST_SUCCESS" or event == "SPELL_AURA_APPLIED" then
-				used_start = true
-			elseif event == "SPELL_AURA_REMOVED" then
-				cooldown_start = true
-			end
-		else
-			if event == "UNIT_SPELLCAST_SUCCEEDED" or event == "SPELL_CAST_SUCCESS" or event == "SPELL_AURA_APPLIED" then
-				used_start = true
-				cooldown_start = true
-			elseif event == "SPELL_AURA_REMOVED" then
-				used_end = true
-			end
-		end
+    elseif spelldata.cooldown_starts_on_aura_fade then
+      if event == "UNIT_SPELLCAST_SUCCEEDED" or event == "SPELL_CAST_SUCCESS" or event == "SPELL_AURA_APPLIED" then
+        used_start = true
+      elseif event == "SPELL_AURA_REMOVED" then
+        cooldown_start = true
+      end
+    else
+      if event == "UNIT_SPELLCAST_SUCCEEDED" or event == "SPELL_CAST_SUCCESS" or event == "SPELL_AURA_APPLIED" then
+        used_start = true
+        cooldown_start = true
+      elseif event == "SPELL_AURA_REMOVED" then
+        used_end = true
+        local applied = tpu[spellid]["SPELL_AURA_APPLIED"]
+        buff_was_full_duration = applied and spelldata.duration and (now - applied) >= (spelldata.duration - 0.5) -- 0.5 for leeway
+      end
+    end
 
     -- Only detect the spell if it's actually used (i.e. not if it's just a random proc)
     if used_start or used_end or cooldown_start then
@@ -359,153 +382,157 @@ local function CooldownEvent(event, unit, spellid, override_duration, override_n
       end
     end
 
-		-- apply actions
-		if used_start then
-			tps.used_start = now
-			tps.used_end = duration and (now + duration)
+    -- apply actions
+    if used_start then
+      tps.used_start = now
+      tps.used_end = duration and (now + duration)
 
-			-- is the cooldown still in progress?
-			local on_cd = tps.cooldown_end and (tps.cooldown_end - 2) > now
-			local opt_lower_cd = spelldata.opt_lower_cooldown or tps.cooldown or spelldata.cooldown
+      -- is the cooldown still in progress?
+      local on_cd = tps.cooldown_end and (tps.cooldown_end - 2) > now
+      local opt_lower_cd = spelldata.opt_lower_cooldown or tps.cooldown or spelldata.cooldown
 
-			-- remove charge
-			if tps.charges then
-				if tps.charges > 0 then
-					tps.charges = tps.charges - 1
-					-- if cooldown is still in progress and the spell can optionally have charges (with a talent),
-					--  then it must have charges
-					if not tps.charges_detected and on_cd then
-						tps.charges_detected = true
-						if spelldata.opt_charges_linked then
-							for i = 1, #spelldata.opt_charges_linked do
-								local lspellid = spelldata.opt_charges_linked[i]
-								local lspelldata = SpellData[lspellid]
-								if not tpu[lspellid] then
-									tpu[lspellid] = {
-										charges = lspelldata.opt_charges,
-										max_charges = lspelldata.opt_charges,
-									}
-								end
-								tpu[lspellid].charges_detected = true
-							end
-						end
-					else
-						-- We'd go into negative charges. Instead fix our timer
-						tps.cooldown = opt_lower_cd
-					end
-				end
-			end
+      -- remove charge
+      if tps.charges then
+        if tps.charges > 0 then
+          tps.charges = tps.charges - 1
+          -- if cooldown is still in progress and the spell can optionally have charges (with a talent),
+          --  then it must have charges
+          if not tps.charges_detected and on_cd then
+            tps.charges_detected = true
+            if spelldata.opt_charges_linked then
+              for i = 1, #spelldata.opt_charges_linked do
+                local lspellid = spelldata.opt_charges_linked[i]
+                local lspelldata = SpellData[lspellid]
+                if not tpu[lspellid] then
+                  tpu[lspellid] = {
+                    charges = lspelldata.opt_charges,
+                    max_charges = lspelldata.opt_charges,
+                  }
+                end
+                tpu[lspellid].charges_detected = true
+              end
+            end
+          else
+            -- We'd go into negative charges. Instead fix our timer
+            tps.cooldown = opt_lower_cd
+          end
+        end
+      end
 
-			if spelldata.restore_charges then
-				for i = 1, #spelldata.restore_charges do
-					local respellid = spelldata.restore_charges[i]
-					local respelldata = SpellData[respellid]
-					if not tpu[respellid] then
-						-- V: if we have to *detect* the cooldown, just use the max number of charges
-						--    also, use charges by default, not only optional charges (not sure if the spell only has optional charges)
-						tpu[respellid] = {
-							charges = respelldata.charges or respelldata.opt_charges,
-							max_charges = respelldata.charges or respelldata.opt_charges,
-						}
-					else
-						tpu[respellid].charges = (tpu[respellid].charges or 0) + 1
-					end
-					tpu[respellid].charges_detected = true
-				end
-			end
+      if spelldata.restore_charges then
+        for i = 1, #spelldata.restore_charges do
+          local respellid = spelldata.restore_charges[i]
+          local respelldata = SpellData[respellid]
+          if not tpu[respellid] then
+            -- V: if we have to *detect* the cooldown, just use the max number of charges
+            --    also, use charges by default, not only optional charges (not sure if the spell only has optional charges)
+            tpu[respellid] = {
+              charges = respelldata.charges or respelldata.opt_charges,
+              max_charges = respelldata.charges or respelldata.opt_charges,
+            }
+          else
+            tpu[respellid].charges = (tpu[respellid].charges or 0) + 1
+          end
+          tpu[respellid].charges_detected = true
+        end
+      end
 
-			-- reset other cooldowns (Cold Snap, Preparation)
-			if spelldata.resets then
-				for i = 1, #spelldata.resets do
-					local rspellid = spelldata.resets[i]
-					if tpu[rspellid] then
-						tpu[rspellid].cooldown_start = 0
-						tpu[rspellid].cooldown_end = 0
-					end
-				end
-			end
-		end
+      -- reset other cooldowns (Cold Snap, Preparation)
+      if spelldata.resets then
+        for i = 1, #spelldata.resets do
+          local rspellid = spelldata.resets[i]
+          if tpu[rspellid] then
+            tpu[rspellid].cooldown_start = 0
+            tpu[rspellid].cooldown_end = 0
+          end
+        end
+      end
+    end
 
-		if used_end then
-			tps.used_end = now
-		end
+    if used_end then
+      tps.used_end = now
+      -- A spell might have a different cooldown if its buff stayed on for the whole duration (and didnt proc before) 
+      if tps.cooldown_end and buff_was_full_duration and spelldata.cooldown_on_full_aura_duration then
+        tps.cooldown_end = now + spelldata.cooldown_on_full_aura_duration
+      end
+    end
 
-		if cooldown_start then
-			-- if the spell has charges and the cooldown is already in progress, it does not need to be reset
-			if not tps.charges or not tps.cooldown_end or tps.cooldown_end <= now then
-				local cooldown_time = GetCooldownTime(spellid, unit)
-				tps.cooldown_start = cooldown_time and now
-				tps.cooldown_end = cooldown_time and (now + cooldown_time)
+    if cooldown_start then
+      -- if the spell has charges and the cooldown is already in progress, it does not need to be reset
+      if not tps.charges or not tps.cooldown_end or tps.cooldown_end <= now then
+        local cooldown_time = GetCooldownTime(spellid, unit)
+        tps.cooldown_start = cooldown_time and now
+        tps.cooldown_end = cooldown_time and (now + cooldown_time)
 
-				-- set charge timer
-				if tps.charges and not tps.charge_timer then
-					tps.charge_timer = SetTimer(tps.cooldown_end, AddCharge, unit, spellid)
-				end
+        -- set charge timer
+        if tps.charges and not tps.charge_timer then
+          tps.charge_timer = SetTimer(tps.cooldown_end, AddCharge, unit, spellid)
+        end
 
-				-- V: set other cooldown(s)
-				local sets_cooldowns = {}
-				if spelldata.sets_cooldown then
-					sets_cooldowns = {spelldata.sets_cooldown}
-				end
-				if spelldata.sets_cooldowns then
-					sets_cooldowns = spelldata.sets_cooldowns
-				end
+        -- V: set other cooldown(s)
+        local sets_cooldowns = {}
+        if spelldata.sets_cooldown then
+          sets_cooldowns = {spelldata.sets_cooldown}
+        end
+        if spelldata.sets_cooldowns then
+          sets_cooldowns = spelldata.sets_cooldowns
+        end
 
-				for i = 1, #sets_cooldowns do
-					local cd = sets_cooldowns[i]
-					local cspellid = cd.spellid
-					local cspelldata = SpellData[cspellid]
-					if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.azerite)) then
-						if not tpu[cspellid] then
-							tpu[cspellid] = {}
-						end
-						if not tpu[cspellid].cooldown_end or (tpu[cspellid].cooldown_end < (now + cd.cooldown)) then
-							tpu[cspellid].cooldown_start = now
-							tpu[cspellid].cooldown_end = now + cd.cooldown
-							tpu[cspellid].used_start = tpu[cspellid].used_start or 0
-							tpu[cspellid].used_end = tpu[cspellid].used_end or 0
-						end
-					end
-				end
-			end
-		end
+        for i = 1, #sets_cooldowns do
+          local cd = sets_cooldowns[i]
+          local cspellid = cd.spellid
+          local cspelldata = SpellData[cspellid]
+          if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.azerite)) then
+            if not tpu[cspellid] then
+              tpu[cspellid] = {}
+            end
+            if not tpu[cspellid].cooldown_end or (tpu[cspellid].cooldown_end < (now + cd.cooldown)) then
+              tpu[cspellid].cooldown_start = now
+              tpu[cspellid].cooldown_end = now + cd.cooldown
+              tpu[cspellid].used_start = tpu[cspellid].used_start or 0
+              tpu[cspellid].used_end = tpu[cspellid].used_end or 0
+            end
+          end
+        end
+      end
+    end
 
-		lib.callbacks:Fire("LCT_CooldownUsed", unit, spellid, used_start, used_end, cooldown_start)
-	end
+    lib.callbacks:Fire("LCT_CooldownUsed", unit, spellid, used_start, used_end, cooldown_start)
+  end
 end
 
 local function enable()
-	lib.frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-	lib.frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-	lib.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
-	lib.frame:RegisterEvent("UNIT_NAME_UPDATE")
-	lib.frame:RegisterEvent("ARENA_CROWD_CONTROL_SPELL_UPDATE")
-	lib.frame:RegisterEvent("ARENA_COOLDOWNS_UPDATE")
-	lib.frame:RegisterEvent("ARENA_OPPONENT_UPDATE")
+  lib.frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+  lib.frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+  lib.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+  lib.frame:RegisterEvent("UNIT_NAME_UPDATE")
+  lib.frame:RegisterEvent("ARENA_CROWD_CONTROL_SPELL_UPDATE")
+  lib.frame:RegisterEvent("ARENA_COOLDOWNS_UPDATE")
+  lib.frame:RegisterEvent("ARENA_OPPONENT_UPDATE")
 
-	lib.tracked_players = {}
-	lib.guid_to_unitid = {}
+  lib.tracked_players = {}
+  lib.guid_to_unitid = {}
 
-	for unitid in pairs(lib.registered_units) do
-		UpdateGUID(unitid)
-	end
+  for unitid in pairs(lib.registered_units) do
+    UpdateGUID(unitid)
+  end
 
-	LGIST.RegisterCallback(lib, "GroupInSpecT_Update")
+  LGIST.RegisterCallback(lib, "GroupInSpecT_Update")
 end
 
 local function disable()
-	lib.frame:UnregisterAllEvents()
+  lib.frame:UnregisterAllEvents()
 end
 
 -- Removes all the talent spells from a tracked unit
 function lib:ClearTalents(unit)
-	local tpu = lib.tracked_players[unit]
-	if not tpu then return end
+  local tpu = lib.tracked_players[unit]
+  if not tpu then return end
 
-	-- find out which detected spells are talents, and un-detect them
-	local remove_spells = filter(keys(tpu), function (k)
-		local spell = SpellData[k]
-		return tpu[k].detected and type(spell) == "table" and (spell.talent or spell.item)
+  -- find out which detected spells are talents, and un-detect them
+  local remove_spells = filter(keys(tpu), function (k)
+    local spell = SpellData[k]
+    return tpu[k].detected and type(spell) == "table" and (spell.talent or spell.item and spell.pvp_trinket)
 	end)
 	for i = 1, #remove_spells do
 		tpu[remove_spells[i]] = nil
@@ -599,7 +626,7 @@ end
 --     print(tracked.cooldown_end)
 --     print(tracked.used_start)
 --     print(tracked.used_end)
---     print(tracked.detected) -- use this to check if the unit has used this spell before (useful for detecting talents/glyphs)
+--     print(tracked.detected) -- use this to check if the unit has used this spell before (useful for detecting talents)
 -- end
 function lib:GetUnitCooldownInfo(unitid, spellid)
 	local tpu = lib.tracked_players[unitid]
@@ -849,18 +876,16 @@ function events:ARENA_COOLDOWNS_UPDATE(event, unit)
 	if string.sub(unit, 1, 5) ~= "arena" then return end
   --print("unit = " .. unit .. ", spellId = " .. (spellID or "nil") .. ", start = " .. (startTime or "nil") .. ", duration = " .. (duration or "nil"))
 
-	local spellID, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
-  if not spellID then
+	local spellid, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
+  if not spellid then
     C_PvP.RequestCrowdControlSpell(unit)
     return
   end
-  lib:DetectSpell(unit, spellID)
-	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellID)
-  --print("unit = " .. unit .. ", spellId = " .. (spellID or "nil") .. ", start = " .. (startTime or "nil") .. ", duration = " .. (duration or "nil"))
-  if not spellID then return end
+  lib:DetectSpell(unit, spellid)
+	lib.callbacks:Fire("LCT_CooldownDetected", unit, spellid)
+  if not startTime or not duration then return end
 
-  if not startTime or not duration then
-    return
-  end
-  CooldownEvent("UNIT_SPELLCAST_SUCCEEDED", unit, spellID, duration / 1000, startTime / 1000)
+  lib.tracked_players[unit][spellid].cooldown_start = (startTime / 1000)
+  lib.tracked_players[unit][spellid].cooldown_end = (startTime / 1000) + (duration / 1000)
+	lib.callbacks:Fire("LCT_CooldownUsed", unit, spellid)
 end

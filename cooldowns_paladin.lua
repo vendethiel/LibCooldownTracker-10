@@ -4,13 +4,38 @@ local SPEC_PALADIN_HOLY        = 65
 local SPEC_PALADIN_PROTECTION  = 66
 local SPEC_PALADIN_RETRIBUTION = 70
 
+local fist_of_justice = { spellid = 853, duration = 6 } -- HoJ
+
+-- Word of Glory
+LCT_SpellData[85673] = {
+	class = "PALADIN",
+  reduce = fist_of_justice
+}
+-- Templar's Verdict
+LCT_SpellData[85256] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+  reduce = fist_of_justice
+}
+-- Divine Storm
+LCT_SpellData[53385] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_RETRIBUTION },
+  reduce = fist_of_justice
+}
+-- Light of Dawn
+LCT_SpellData[85222] = {
+	class = "PALADIN",
+	specID = { SPEC_PALADIN_HOLY },
+  reduce = fist_of_justice
+}
+
 -- Paladin/baseline
 -- Hammer of Justice
 LCT_SpellData[853] = {
 	class = "PALADIN",
 	stun = true,
-	cooldown = 25,
-	--opt_lower_cooldown = 25, -- This is an approximation. Technically: Fist of Justice talent=-10s/3 HoPo.
+	cooldown = 60,
 }
 -- Divine Steed
 LCT_SpellData[190784] = {
@@ -59,9 +84,6 @@ LCT_SpellData[1044] = {
 	opt_charges_linked = { 1022, 204018 },
 	duration = 6,
 	cooldown = 25,
-	cooldown_overload = {
-		[SPEC_PALADIN_RETRIBUTION] = 20, -- ret
-	}
 }
 -- Blessing of Protection
 LCT_SpellData[1022] = {
@@ -91,10 +113,9 @@ LCT_SpellData[498] = {
 -- Paladin/talents
 -- Paladin/legendaries
 -- Reign of Endless Kings
--- XXX does this work
 LCT_SpellData[337850] = {
 	class = "PALADIN",
-	talaent = true, -- utter lie
+	talent = true, -- utter lie
 	defensive = true,
 	duration = 4,
 	cooldown = 45,

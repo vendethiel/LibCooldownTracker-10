@@ -383,14 +383,6 @@ LCT_SpellData[307865] = {
 	cooldown = 60
 }
 
--- Condemn
-LCT_SpellData[317349] = {
-	class = "WARRIOR",
-	covenant = "VENTHYR",
-	offensive = true,
-	cooldown = 6
-}
-
 -- Conquerors Banner
 LCT_SpellData[324143] = {
 	class = "WARRIOR",
