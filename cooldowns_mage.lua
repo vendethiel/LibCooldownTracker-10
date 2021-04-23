@@ -62,7 +62,7 @@ LCT_SpellData[80353] = {
 
 -- Mage/mixed
 -- Alter Time (fire & frost)
-LCT_SpellData[127140] = {
+LCT_SpellData[110909] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE, SPEC_MAGE_FROST },
 	defensive = true,
@@ -70,7 +70,7 @@ LCT_SpellData[127140] = {
 	cooldown = 60
 }
 -- Alter Time (arcane)
-LCT_SpellData[342247] = {
+LCT_SpellData[342246] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_ARCANE },
 	defensive = true,
