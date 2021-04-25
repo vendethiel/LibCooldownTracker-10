@@ -62,6 +62,7 @@ LCT_SpellData[80353] = {
 -- Mage/mixed
 -- Alter Time (fire & frost)
 LCT_SpellData[108978] = 110909
+LCT_SpellData[127140] = 110909
 LCT_SpellData[110909] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE, SPEC_MAGE_FROST },
@@ -71,6 +72,7 @@ LCT_SpellData[110909] = {
 }
 -- Alter Time (arcane)
 LCT_SpellData[342245] = 342246
+LCT_SpellData[342247] = 342246
 LCT_SpellData[342246] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_ARCANE },
