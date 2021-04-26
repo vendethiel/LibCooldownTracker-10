@@ -61,23 +61,19 @@ LCT_SpellData[80353] = {
 
 -- Mage/mixed
 -- Alter Time (fire & frost)
-LCT_SpellData[108978] = 110909
-LCT_SpellData[127140] = 110909
-LCT_SpellData[110909] = {
+LCT_SpellData[108978] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE, SPEC_MAGE_FROST },
 	defensive = true,
-	cooldown_starts_on_aura_fade = true,
+	duration = 10,
 	cooldown = 60
 }
 -- Alter Time (arcane)
-LCT_SpellData[342245] = 342246
-LCT_SpellData[342247] = 342246
-LCT_SpellData[342246] = {
+LCT_SpellData[342245] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_ARCANE },
 	defensive = true,
-	cooldown_starts_on_aura_fade = true,
+	duration = 10,
 	cooldown = 60,
 	opt_lower_cooldown = 30, -- with 342249 Master of Time
 }
@@ -240,8 +236,7 @@ LCT_SpellData[108853] = {
 	cooldown = 12
 }
 -- Cauterize
-LCT_SpellData[87024] = 87023
-LCT_SpellData[87023] = {
+LCT_SpellData[86949] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE },
 	defensive = true,
