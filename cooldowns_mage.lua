@@ -236,7 +236,7 @@ LCT_SpellData[108853] = {
 	cooldown = 12
 }
 -- Cauterize
-LCT_SpellData[87023] = {
+LCT_SpellData[86949] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE },
 	defensive = true,
