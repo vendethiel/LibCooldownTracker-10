@@ -98,6 +98,7 @@ LCT_SpellData[108503] = {
 -- Howl of Terror
 LCT_SpellData[5484] = {
 	class = "WARLOCK",
+	cc = true,
 	talent = true,
 	cooldown = 40
 }
