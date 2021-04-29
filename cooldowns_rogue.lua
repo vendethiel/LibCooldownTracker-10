@@ -68,7 +68,6 @@ LCT_SpellData[2094] = {
 -- Kidney Shot
 LCT_SpellData[408] = {
 	class = "ROGUE",
-	specID = { SPEC_ROGUE_ASSA, SPEC_ROGUE_SUB },
 	stun = true,
 	cooldown = 20
 }

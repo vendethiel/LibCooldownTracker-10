@@ -95,6 +95,12 @@ LCT_SpellData[108503] = {
 	talent = true,
 	cooldown = 30
 }
+-- Howl of Terror
+LCT_SpellData[5484] = {
+	class = "WARLOCK",
+	talent = true,
+	cooldown = 40
+}
 
 -- Warlock/Affliction
 -- Summon Darkglare

@@ -97,7 +97,6 @@ LCT_SpellData[61336] = {
 	defensive = true,
 	cooldown = 180,
 	duration = 6,
-	charges = 2
 }
 -- Druid/talents/mixed
 -- Thorns

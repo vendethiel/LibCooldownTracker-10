@@ -49,7 +49,6 @@ LCT_SpellData[45438] = {
 LCT_SpellData[55342] = {
 	class = "MAGE",
 	offensive = true,
-	talent = true,
 	cooldown = 120
 }
 -- Time Warp
