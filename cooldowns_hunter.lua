@@ -62,10 +62,7 @@ LCT_SpellData[109304] = {
 LCT_SpellData[187650] = {
 	class = "HUNTER",
 	cc = true,
-	cooldown = 30,
-	cooldown_overload = {
-		[SPEC_HUNTER_SURV] = 24, -- Survival
-	}
+	cooldown = 25
 }
 -- Aspect of Turtle
 LCT_SpellData[186265] = {

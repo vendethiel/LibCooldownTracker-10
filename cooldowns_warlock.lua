@@ -99,6 +99,7 @@ LCT_SpellData[108503] = {
 LCT_SpellData[5484] = {
 	class = "WARLOCK",
 	talent = true,
+	cc = true,
 	cooldown = 40
 }
 

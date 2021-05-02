@@ -37,6 +37,14 @@ LCT_SpellData[6262] = {
 	cooldown = 60
 }
 
+-- Gladiator's Emblem (BM trinket)
+LCT_SpellData[345231] = {
+	item = true,
+	talent = true,
+	duration = 20,
+	cooldown = 120
+}
+
 -- Shadowlands/Castle Nathria
 -- Skulkers Wing (Item ID 345019)
 -- XXX have a way to enter the item id here to show the item name instead of the item spell name?
