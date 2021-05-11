@@ -198,7 +198,7 @@ LCT_SpellData[275773] = {
 LCT_SpellData[199448] = {
 	class = "PALADIN",
 	defensive = true,
-	duration = 12,
+	duration = 6,
 	cooldown = 120,
   replaces = 6940 -- normal Hand of Sacrifice
 }
