@@ -256,6 +256,7 @@ LCT_SpellData[207167] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_FROST },
 	talent = true,
+	cc = true,
 	cooldown = 60
 }
 -- Horn of Winter

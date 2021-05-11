@@ -99,6 +99,7 @@ LCT_SpellData[108503] = {
 LCT_SpellData[5484] = {
 	class = "WARLOCK",
 	talent = true,
+	cc = true,
 	cooldown = 40
 }
 
@@ -140,7 +141,7 @@ LCT_SpellData[264106] = {
 	specID = { SPEC_WARLOCK_AFFLICTION },
 	talent = true,
 	offensive = true,
-	cooldown = 30
+	cooldown = 45
 }
 -- Haunt
 LCT_SpellData[48181] = {
