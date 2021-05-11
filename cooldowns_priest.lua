@@ -310,13 +310,6 @@ LCT_SpellData[213602] = {
 	cooldown = 45,
 	replaces = 586 -- Fade
 }
--- Inner Focus
-LCT_SpellData[196762] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_HOLY },
-	talent = true,
-	cooldown = 30
-}
 -- Ray of Hope
 LCT_SpellData[197268] = {
 	class = "PRIEST",
@@ -329,7 +322,6 @@ LCT_SpellData[197268] = {
 LCT_SpellData[34861] = {
 	class = "PRIEST",
 	specID = { SPEC_PRIEST_HOLY },
-	talent = true,
 	heal = true,
 	cooldown = 60
 }
