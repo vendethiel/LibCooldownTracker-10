@@ -251,6 +251,12 @@ LCT_SpellData[99] = {
 	specID = { SPEC_DRUID_GUARDIAN },
 	cooldown = 30
 }
+LCT_SpellData[99] = {
+	class = "DRUID",
+	specID = { SPEC_DRUID_BALANCE, SPEC_DRUID_FERAL, SPEC_DRUID_RESTO },
+	talent = true, -- with Guardian affinity
+	cooldown = 30
+}
 -- Frenzied Regeneration
 LCT_SpellData[22842] = {
 	class = "DRUID",

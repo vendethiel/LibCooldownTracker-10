@@ -72,9 +72,10 @@ LCT_SpellData[32375] = {
 LCT_SpellData[8122] = {
 	class = "PRIEST",
 	cc = true,
-	cooldown = 30, -- Technically 60, but most priests play with -30s talent.
+	cooldown = 60,
+	opt_lower_cooldown = 30, -- Some holy priests don't spec into chastise stun, and keep the 60s cd on fear.
 	cooldown_overload = {
-		[SPEC_PRIEST_SHADOW] = 60, -- Shadow priest doesn't have the -30s talent
+		[SPEC_PRIEST_DISC] = 60, -- Most disc priests play with -30s talent, therefore make it baseline.
 	}
 }
 -- Priest/talents
