@@ -245,12 +245,13 @@ LCT_SpellData[202028] = {
 }
 
 -- Druid/Guardian
--- Disorienting Roar
+-- Incapacitating Roar
 LCT_SpellData[99] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_GUARDIAN },
 	cooldown = 30
 }
+-- Incapacitating Roar
 LCT_SpellData[99] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_BALANCE, SPEC_DRUID_FERAL, SPEC_DRUID_RESTO },
