@@ -245,10 +245,11 @@ LCT_SpellData[202028] = {
 }
 
 -- Druid/Guardian
--- Disorienting Roar
+-- Incapacitating Roar
 LCT_SpellData[99] = {
 	class = "DRUID",
-	specID = { SPEC_DRUID_GUARDIAN },
+	specID = { SPEC_DRUID_GUARDIAN, SPEC_DRUID_BALANCE, SPEC_DRUID_FERAL, SPEC_DRUID_RESTO },
+	talent = true, -- Baseline for Guardian, but talent for other specs
 	cooldown = 30
 }
 -- Frenzied Regeneration

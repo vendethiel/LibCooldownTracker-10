@@ -75,7 +75,8 @@ LCT_SpellData[186265] = {
 LCT_SpellData[5384] = {
   class = "HUNTER",
   defensive = true,
-  cooldown = 30
+  cooldown = 30,
+  opt_lower_cooldown = 15 -- With "Craven Strategem" legendary
 }
 -- Spider Sting
 LCT_SpellData[202914] = {

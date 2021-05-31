@@ -304,6 +304,13 @@ LCT_SpellData[63560] = {
 	duration = 15,
 	cooldown = 60
 }
+-- Apocalypse
+LCT_SpellData[275699] = {
+	class = "DEATHKNIGHT",
+	specID = { SPEC_DK_UNHOLY },
+	offensive = true,
+	cooldown = 75
+}
 -- DK/Unholy/talents
 -- Raise Abomination
 LCT_SpellData[288853] = {

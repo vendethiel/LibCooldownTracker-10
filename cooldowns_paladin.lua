@@ -197,8 +197,10 @@ LCT_SpellData[275773] = {
 -- Ultimate Sacrifice's Hand of Sacrifice
 LCT_SpellData[199448] = {
 	class = "PALADIN",
+	specID = { SPEC_PALADIN_HOLY },
 	defensive = true,
-	duration = 12,
+	talent = true,
+	duration = 6,
 	cooldown = 120,
   replaces = 6940 -- normal Hand of Sacrifice
 }
