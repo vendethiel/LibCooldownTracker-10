@@ -1,4 +1,4 @@
-## Interface: 90005
+## Interface: 20501
 ## Title: Lib: CooldownTracker-1.0
 ## Notes: Library for tracking cooldowns of other players
 ## Author: Slaren
@@ -7,4 +7,4 @@
 libs\LibStub\LibStub.lua
 libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
 
-lib.xml
+lib-bcc.xml
