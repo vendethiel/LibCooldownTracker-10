@@ -157,13 +157,6 @@ LCT_SpellData[205179] = {
 	talent = true,
 	cooldown = 45
 }
--- Soulshatter
-LCT_SpellData[212356] = {
-	class = "WARLOCK",
-	specID = { SPEC_WARLOCK_AFFLICTION },
-	talent = true,
-	cooldown = 60
-}
 
 -- Warlock/Demonology
 -- Call Dreadstalkers
