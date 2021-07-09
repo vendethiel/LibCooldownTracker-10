@@ -199,8 +199,16 @@ LCT_SpellData[47536] = {
 	duration = 10,
 	cooldown = 90,
 }
--- Priest/Discipline/talents
 
+-- Priest/Discipline/talents
+-- Spirit Shell
+LCT_SpellData[109964] = {
+	class = "PRIEST",
+	specID = { SPEC_PRIEST_DISC },
+	talent = true,
+	defensive = true,
+	cooldown = 90,
+}
 -- Schism
 LCT_SpellData[214621] = {
 	class = "PRIEST",
@@ -319,7 +327,6 @@ LCT_SpellData[197268] = {
 	cooldown = 60
 }
 -- Holy Word: Sanctify
--- V: old Circle of Healing
 LCT_SpellData[34861] = {
 	class = "PRIEST",
 	specID = { SPEC_PRIEST_HOLY },

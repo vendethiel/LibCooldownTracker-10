@@ -98,7 +98,7 @@ LCT_SpellData[196555] = {
 	specID = { SPEC_DH_HAVOC },
 	talent = true,
 	defensive = true,
-	duration = 5,
+	duration = 6,
 	cooldown = 180
 }
 -- Immolation Aura

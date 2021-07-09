@@ -102,6 +102,13 @@ LCT_SpellData[5484] = {
 	cc = true,
 	cooldown = 40
 }
+-- Shadow Rift
+LCT_SpellData[353294] = {
+	class = "WARLOCK",
+	talent = true,
+	cooldown = 60,
+  duration = 2
+}
 
 -- Warlock/Affliction
 -- Summon Darkglare
@@ -134,6 +141,14 @@ LCT_SpellData[113860] = {
 	talent = true,
 	duration = 20,
 	cooldown = 120
+}
+-- Rapid Contagion
+LCT_SpellData[344566] = {
+	class = "WARLOCK",
+	specID = { SPEC_WARLOCK_AFFLICTION },
+	talent = true,
+	offensive = true,
+	cooldown = 30
 }
 -- Deathbolt
 LCT_SpellData[264106] = {
@@ -264,6 +279,14 @@ LCT_SpellData[201996] = {
 	duration = 20,
 	cooldown = 90
 }
+-- Fel Obelisk
+LCT_SpellData[353601] = {
+	class = "WARLOCK",
+	specID = { SPEC_WARLOCK_DEMONOLOGY },
+	talent = true,
+	offensive = true,
+	cooldown = 45
+}
 
 -- Warlock/Destruction
 -- Havoc
@@ -342,6 +365,13 @@ LCT_SpellData[17877] = {
 	charges = 2,
 	offensive = true,
 	cooldown = 12
+}
+-- Bonds of Fel
+LCT_SpellData[353753] = {
+	class = "WARLOCK",
+	specID = { SPEC_WARLOCK_DESTRUCTION },
+	talent = true,
+	cooldown = 30
 }
 
 -- Warlock/Felguard

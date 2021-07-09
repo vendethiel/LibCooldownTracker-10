@@ -260,7 +260,7 @@ LCT_SpellData[22842] = {
 	charges = 2,
 	cooldown = 36,
 }
--- Druid/guardian/talents
+-- Druid/Guardian/talents
 -- Incarnation (guardian)
 LCT_SpellData[102558] = {
 	class = "DRUID",
@@ -308,6 +308,14 @@ LCT_SpellData[201664] = {
 	specID = { SPEC_DRUID_GUARDIAN },
 	talent = true,
 	cooldown = 30
+}
+-- Emerald Slumber
+LCT_SpellData[329042] = {
+	class = "DRUID",
+	specID = { SPEC_DRUID_GUARDIAN },
+	talent = true,
+	cooldown = 120,
+  duration = 8
 }
 
 -- Druid/Restoration

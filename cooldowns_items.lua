@@ -54,3 +54,13 @@ LCT_SpellData[345019] = {
 	offensive = true,
 	cooldown = 90
 }
+
+-- Shadowlands/The Maw
+-- Unchained Gladiator's Shackles (Item ID 186980)
+-- Shackles of Malediction
+LCT_SpellData[356567] = {
+  item = true,
+	talent = true, -- hack to prevent it being displayed before being detected
+  offensive = true,
+  cooldown = 180
+}

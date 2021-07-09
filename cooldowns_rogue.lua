@@ -37,7 +37,7 @@ LCT_SpellData[2983] = {
 LCT_SpellData[1966] = {
 	class = "ROGUE",
 	defensive = true,
-	duration = 5,
+	duration = 6,
 	cooldown = 15
 }
 -- Crimson Vial
