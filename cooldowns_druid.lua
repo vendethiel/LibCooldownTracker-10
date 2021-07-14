@@ -261,7 +261,7 @@ LCT_SpellData[22842] = {
 	cooldown = 36,
 }
 -- Druid/Guardian/talents
--- Incarnation (guardian)
+-- Incarnation (Guardian)
 LCT_SpellData[102558] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_GUARDIAN },
