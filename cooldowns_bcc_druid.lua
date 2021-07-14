@@ -1,3 +1,5 @@
+-- ================ DRUID ================
+
 -- Hurricane
 LCT_SpellData[16914] = {
   cooldown = 60,
