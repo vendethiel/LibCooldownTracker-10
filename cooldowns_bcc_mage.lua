@@ -102,7 +102,7 @@ LCT_SpellData[11958] = {
   opt_lower_cooldown = 384,
   class = "MAGE",
   talent = true,
-  resets = {}, -- TODO
+  resets = { 122, 120, 12472, 11426, 31687, 45438 },
 }
 
 -- Dragon's Breath

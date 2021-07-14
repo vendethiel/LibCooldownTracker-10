@@ -68,7 +68,6 @@ LCT_SpellData[26889] = 1856
 LCT_SpellData[1857] = 1856
 
 -- Riposte
--- XXX Not too useful to track...
 LCT_SpellData[14251] = {
   cooldown = 6,
   class = "ROGUE",
@@ -122,7 +121,7 @@ LCT_SpellData[14185] = {
   cooldown = 600,
   class = "ROGUE",
   talent = true,
-  resets = {}, -- TODO
+  resets = { [5277, 2983, 1856, 14177, 36554 }, -- TODO
 }
 
 -- Kidney Shot

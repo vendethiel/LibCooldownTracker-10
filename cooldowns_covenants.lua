@@ -9,7 +9,8 @@ LCT_SpellData[323436] = {
 -- Door of Shadows
 LCT_SpellData[300728] = {
   covenant = "VENTHYR",
-  cooldown = 60
+  cooldown = 60,
+  opt_charges = 2
 }
 
 -- Fleshcraft

@@ -1,4 +1,5 @@
 -- Chastise
+-- TODO race = "",
 LCT_SpellData[44041] = {
   class = "PRIEST",
   cooldown = 30,

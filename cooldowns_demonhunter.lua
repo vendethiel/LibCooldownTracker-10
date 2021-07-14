@@ -1,8 +1,10 @@
---- V: DH ----
+-- ================ DEMON HUNTER ================
 
+-- Specs
 local SPEC_DH_HAVOC     = 577
 local SPEC_DH_VENGEANCE = 581
 
+-- Demon Hunter/baseline
 -- Disrupt
 LCT_SpellData[183752] = {
 	class = "DEMONHUNTER",
@@ -53,7 +55,7 @@ LCT_SpellData[191427] = {
 	cooldown = 240
 }
 -- DH/talents
--- Inverse magic
+-- Reverse Magic
 LCT_SpellData[205604] = {
 	class = "DEMONHUNTER",
 	talent = true,
