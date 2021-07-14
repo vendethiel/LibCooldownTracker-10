@@ -1,3 +1,5 @@
+-- ================ WARLOCK ================
+
 -- Conflagrate
 LCT_SpellData[17962] = {
   cooldown = 10,
