@@ -426,7 +426,6 @@ LCT_SpellData[323546] = {
 LCT_SpellData[325727] = {
 	class = "DRUID",
 	covenant = "NECROLORD",
-	offensive = true,		-- alternates as it moves...
 	duration = 12,
 	cooldown = 25
 }
