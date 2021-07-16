@@ -121,7 +121,7 @@ LCT_SpellData[14185] = {
   cooldown = 600,
   class = "ROGUE",
   talent = true,
-  resets = { [5277, 2983, 1856, 14177, 36554 }, -- TODO
+  resets = { 5277, 2983, 1856, 14177, 36554 }, -- TODO
 }
 
 -- Kidney Shot
