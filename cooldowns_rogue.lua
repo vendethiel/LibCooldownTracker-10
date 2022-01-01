@@ -308,7 +308,7 @@ LCT_SpellData[323654] = {
 	class = "ROGUE",
 	covenant = "VENTHYR",
 	offensive = true,
-	duration = 20,
+	duration = 12,
 	cooldown = 90
 }
 
