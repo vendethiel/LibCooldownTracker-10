@@ -306,6 +306,6 @@ LCT_SpellData[323639] = {
 	class = "DEMONHUNTER",
 	covenant = "NIGHTFAE",
 	offensive = true,
-	duration = 2,
+	duration = 5,
 	cooldown = 90
 }

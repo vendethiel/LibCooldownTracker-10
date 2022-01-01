@@ -258,8 +258,9 @@ LCT_SpellData[121471] = {
 	class = "ROGUE",
 	specID = { SPEC_ROGUE_SUB },
 	offensive = true,
-	duration = 15,
+	duration = 20,
 	cooldown = 180,
+	opt_lower_cooldown = 120, -- Thief's Bargain
 }
 -- Rogue/Subtetly/talents
 -- Cold Blood
