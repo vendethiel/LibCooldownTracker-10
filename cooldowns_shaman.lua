@@ -121,7 +121,7 @@ LCT_SpellData[320125] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ELEMENTAL },
 	talent = true,
-	duration = 2, -- Most likely used right before a damage spell, put 2sec duration for highlight
+	duration = 3, -- Most likely used right before a damage spell, put 3s duration for highlight
 	cooldown = 30,
 }
 -- Stormkeeper
