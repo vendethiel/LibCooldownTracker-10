@@ -4,6 +4,14 @@ local SPEC_HUNTER_BM   = 253
 local SPEC_HUNTER_MM   = 254
 local SPEC_HUNTER_SURV = 255
 
+local bestial_wrath = { spellid = 19574, duration = 12 } -- Bestial Wrath cooldown reduction
+
+-- Barbed Shot
+LCT_SpellData[217200] = {
+  class = "HUNTER",
+  reduce = bestial_wrath
+}
+
 -- Specs:
 -- 253 BM
 -- 254 MM
@@ -192,7 +200,7 @@ LCT_SpellData[19574] = {
 	class = "HUNTER",
 	specID = { SPEC_HUNTER_BM },
 	offensive = true,
-	duration = 10,
+	duration = 15,
 	cooldown = 90
 }
 -- Aspect of the wild

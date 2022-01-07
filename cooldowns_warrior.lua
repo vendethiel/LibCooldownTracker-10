@@ -145,6 +145,7 @@ LCT_SpellData[118038] = {
 LCT_SpellData[167105] = {
 	class = "WARRIOR",
 	specID = { SPEC_WARRIOR_ARMS },
+	duration = 10,
 	cooldown = 45,
 }
 -- Sweeping Strikes
@@ -161,6 +162,7 @@ LCT_SpellData[262161] = {
 	class = "WARRIOR",
 	specID = { SPEC_WARRIOR_ARMS },
 	talent = true,
+	duration = 10,
 	cooldown = 45,
 	replaces = 167105, -- Colossus Smash
 }

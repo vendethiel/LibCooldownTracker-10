@@ -436,5 +436,6 @@ LCT_SpellData[323764] = {
 	covenant = "NIGHTFAE",
 	offensive = true,
 	duration = 4,
-	cooldown = 120
+	cooldown = 120,
+	opt_lower_cooldown = 60, -- Legendary
 }

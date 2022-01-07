@@ -436,6 +436,7 @@ LCT_SpellData[343721] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_RETRIBUTION },
 	talent = true,
+	duration = 8,
 	cooldown = 60
 }
 

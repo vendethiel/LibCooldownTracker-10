@@ -265,6 +265,7 @@ LCT_SpellData[137639] = {
 	specID = { SPEC_MONK_WINDWALKER },
 	offensive = true,
 	charges = 2,
+	duration = 15,
 	cooldown = 90,
 }
 -- Energizing Elixir
@@ -315,7 +316,7 @@ LCT_SpellData[261715] = {
 LCT_SpellData[123904] = {
 	class = "MONK",
 	specID = { SPEC_MONK_WINDWALKER },
-	duration = 20,
+	duration = 24,
 	cooldown = 120,
 }
 -- Mond/Windwalker/talents

@@ -221,7 +221,8 @@ LCT_SpellData[47568] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_FROST },
 	offensive = true,
-	cooldown = 120
+	duration = 20,
+	cooldown = 105
 }
 -- Remorseless Winter
 LCT_SpellData[196770] = {
@@ -277,6 +278,7 @@ LCT_SpellData[305392] = {
 	class = "DEATHKNIGHT",	
 	specID = { SPEC_DK_FROST },	
 	talent = true,	
+	duration = 4,
 	cooldown = 45	
 }
 
