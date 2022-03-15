@@ -8,7 +8,8 @@ local SPEC_MAGE_FROST = 64
 -- Fireball
 LCT_SpellData[133] = {
 	class = "MAGE",
-	reduce = { spellid = 190319, duration = 3 } -- Combustion
+	reduce = { spellid = 190319, duration = 3 }, -- Combustion
+	hidden = true,
 }
 -- Blink
 LCT_SpellData[1953] = {

@@ -9,25 +9,29 @@ local fist_of_justice = { spellid = 853, duration = 6 } -- HoJ
 -- Word of Glory
 LCT_SpellData[85673] = {
 	class = "PALADIN",
-  reduce = fist_of_justice
+	reduce = fist_of_justice,
+	hidden = true
 }
 -- Templar's Verdict
 LCT_SpellData[85256] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_RETRIBUTION },
-  reduce = fist_of_justice
+	reduce = fist_of_justice,
+	hidden = true
 }
 -- Divine Storm
 LCT_SpellData[53385] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_RETRIBUTION },
-  reduce = fist_of_justice
+	reduce = fist_of_justice,
+	hidden = true
 }
 -- Light of Dawn
 LCT_SpellData[85222] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_HOLY },
-  reduce = fist_of_justice
+	reduce = fist_of_justice,
+	hidden = true
 }
 
 -- Paladin/baseline

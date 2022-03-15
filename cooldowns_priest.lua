@@ -6,8 +6,9 @@ local SPEC_PRIEST_SHADOW = 258
 
 -- Smite
 LCT_SpellData[585] = {
-  class = "PRIEST",
-  reduce = { spellid = 88625, duration = 4 } -- Chastise
+	class = "PRIEST",
+	reduce = { spellid = 88625, duration = 4 }, -- Chastise
+	hidden = true
 }
 
 -- Priest/baseline
@@ -364,8 +365,8 @@ LCT_SpellData[47585] = {
 	specID = { SPEC_PRIEST_SHADOW },
 	defensive = true,
 	duration = 6,
-	cooldown = 120,
-	opt_lower_cooldown = 90
+	cooldown = 90,
+	-- opt_lower_cooldown = 90 -- XXX figure out why this doesn't work
 }
 -- Vampiric Embrace
 LCT_SpellData[15286] = {

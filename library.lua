@@ -14,7 +14,8 @@
 
 local version = 10
 local lib = LibStub:NewLibrary("LibCooldownTracker-1.0", version)
-local LGIST = LibStub:GetLibrary("LibGroupInSpecT-1.1")
+local IsRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
+local LGIST = IsRetail and LibStub:GetLibrary("LibGroupInSpecT-1.1")
 local fn = LibStub("LibFunctional-1.0")
 
 local keys, map, filter = fn.keys, fn.map, fn.filter
@@ -69,7 +70,13 @@ do
 			else
 				-- add name and icon
 				spelldata.name = name
-				spelldata.icon = icon
+				if not spelldata.icon then
+					if type(spelldata.item) == 'number' then
+						spelldata.icon = GetItemIcon(spelldata.item)
+					else
+						spelldata.icon = icon
+					end
+				end
 
 				-- add required aura name
 				if spelldata.requires_aura then
@@ -232,10 +239,10 @@ local function GetCooldownTime(spellid, unit)
 end
 
 local function AuraByIdPredicate(auraNameToFind, _, _, ...)
-  return auraNameToFind == select(10, ...)
+	return auraNameToFind == select(10, ...)
 end
 local function FindAuraById(auraId, unit, filter)
-  return AuraUtil.FindAura(AuraByIdPredicate, unit, filter, auraId)
+	return AuraUtil.FindAura(AuraByIdPredicate, unit, filter, auraId)
 end 
 
 
@@ -277,8 +284,7 @@ local function CooldownEvent(event, unit, spellid)
     end
 
     local tpu = lib.tracked_players[unit]
-    if spellid == 336135 then
-      print('adapt cast by ' .. unit)
+    if spelldata.ignore_cooldown_event then
       return
     end
 
@@ -389,7 +395,8 @@ local function CooldownEvent(event, unit, spellid)
 
       -- is the cooldown still in progress?
       local on_cd = tps.cooldown_end and (tps.cooldown_end - 2) > now
-      local opt_lower_cd = spelldata.opt_lower_cooldown or tps.cooldown or spelldata.cooldown
+
+      local use_lower_cd = false
 
       -- remove charge
       if tps.charges then
@@ -413,10 +420,18 @@ local function CooldownEvent(event, unit, spellid)
               end
             end
           else
-            -- We'd go into negative charges. Instead fix our timer
-            tps.cooldown = opt_lower_cd
+            -- We'd go into negative charges. Adjust timer
+            use_lower_cd = true
           end
         end
+      else if on_cd then
+        -- No potential charges, yet the spell was cast while on CD? Adjust timer
+        use_lower_cd = true
+      end
+
+      -- Did we figure out we got our timer wrong?
+      if use_lower_cd and spelldata.opt_lower_cooldown then
+        tps.cooldown = spelldata.opt_lower_cooldown
       end
 
       if spelldata.restore_charges then
@@ -482,7 +497,7 @@ local function CooldownEvent(event, unit, spellid)
           local cd = sets_cooldowns[i]
           local cspellid = cd.spellid
           local cspelldata = SpellData[cspellid]
-          if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent and not cspelldata.azerite)) then
+          if cspelldata and ((tpu[cspellid] and tpu[cspellid].detected) or (not cspelldata.talent)) then
             if not tpu[cspellid] then
               tpu[cspellid] = {}
             end
@@ -517,7 +532,9 @@ local function enable()
     UpdateGUID(unitid)
   end
 
-  LGIST.RegisterCallback(lib, "GroupInSpecT_Update")
+  if LGIST then
+    LGIST.RegisterCallback(lib, "GroupInSpecT_Update")
+  end
 end
 
 local function disable()
@@ -529,7 +546,7 @@ function lib:ClearTalents(unit)
   local tpu = lib.tracked_players[unit]
   if not tpu then return end
 
-  -- find out which detected spells are talents, and un-detect them
+  -- find out which detected spells are talents/items/trinkets, and un-detect them
   local remove_spells = filter(keys(tpu), function (k)
     local spell = SpellData[k]
     return tpu[k].detected and type(spell) == "table" and (spell.talent or spell.item and spell.pvp_trinket)
