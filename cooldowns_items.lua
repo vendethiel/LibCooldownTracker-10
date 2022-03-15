@@ -47,15 +47,6 @@ LCT_SpellData[345231] = {
 	cooldown = 120
 }
 
--- Shadowlands/Castle Nathria
--- Skulkers Wing
-LCT_SpellData[345019] = {
-	item = 345019,
-	talent = true, -- hack to prevent it being displayed before being detected
-	offensive = true,
-	cooldown = 90
-}
-
 -- Shadowlands/The Maw
 -- Unchained Gladiator's Shackles
 -- Shackles of Malediction
@@ -70,7 +61,7 @@ LCT_SpellData[356567] = {
 -- Cosmic Gladiator's Fastidious Resolve
 -- Gladiator's Fastidious Resolve
 LCT_SpellData[363117] = {
-	item = 188524,
+	--item = 188524,
 	pvp_trinket = true,
 	talent = true,
 	offensive = true,
@@ -81,7 +72,7 @@ LCT_SpellData[363117] = {
 -- Cosmic Gladiator's Echoing Resolve
 -- Gladiator's Echoing Resolve
 LCT_SpellData[363121] = {
-	item = 188691,
+	--item = 188691,
 	pvp_trinket = true,
 	talent = true,
 	offensive = true,

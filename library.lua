@@ -424,7 +424,7 @@ local function CooldownEvent(event, unit, spellid)
             use_lower_cd = true
           end
         end
-      else if on_cd then
+      elseif on_cd then
         -- No potential charges, yet the spell was cast while on CD? Adjust timer
         use_lower_cd = true
       end
