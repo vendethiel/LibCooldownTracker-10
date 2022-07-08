@@ -166,7 +166,7 @@ LCT_SpellData[199754] = {
 	cooldown = 120
 }
 -- Between the Eyes
-LCT_SpellData[199804] = {
+LCT_SpellData[315341] = {
 	class = "ROGUE",
 	specID = { SPEC_ROGUE_OUTLAW },
 	cc = true,
