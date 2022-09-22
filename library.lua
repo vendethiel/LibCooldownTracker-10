@@ -518,6 +518,7 @@ end
 
 local function enable()
   lib.frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+  lib.frame:RegisterEvent("PVP_MATCH_ACTIVE")
   lib.frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
   lib.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
   lib.frame:RegisterEvent("UNIT_NAME_UPDATE")
@@ -826,6 +827,10 @@ function lib:IterateCooldowns(class, specID, race, covenant)
 		state.data_source = SpellData
 		return CooldownIterator, state
 	end
+end
+
+function events:PVP_MATCH_ACTIVE()
+  events:PLAYER_ENTERING_WORLD()
 end
 
 function events:PLAYER_ENTERING_WORLD()
