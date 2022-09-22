@@ -1,4 +1,4 @@
-## Interface: 90005
+## Interface: 90207
 ## Title: Lib: CooldownTracker-1.0
 ## Notes: Library for tracking cooldowns of other players
 ## Author: Slaren
