@@ -74,7 +74,6 @@ LCT_SpellData[408] = {
 -- Evasion
 LCT_SpellData[5277] = {
 	class = "ROGUE",
-	specID = { SPEC_ROGUE_ASSA, SPEC_ROGUE_SUB },
 	defensive = true,
 	duration = 10,
 	cooldown = 120

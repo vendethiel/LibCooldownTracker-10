@@ -181,7 +181,7 @@ LCT_SpellData[210714] = {
 	cooldown = 30,
 }
 -- Lightining Lasso
-LCT_SpellData[204437] = {
+LCT_SpellData[305483] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ELEMENTAL },
 	talent = true,

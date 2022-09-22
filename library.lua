@@ -128,7 +128,7 @@ do
             elseif major_covenant_spell[spelldata.covenant] then
               DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: duplicate major covenant spell: " .. spellid)
             else
-              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: invalid covenant2: " .. spelldata.covenant)
+              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: invalid covenant: " .. spelldata.covenant)
             end
           end
         end
