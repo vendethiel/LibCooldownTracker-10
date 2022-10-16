@@ -2,7 +2,7 @@
 LCT_SpellData[2094] = {
   class = "ROGUE",
   opt_lower_cooldown = 90,
-  cooldown = 180,
+  cooldown = 90,
 }
 
 -- Blade Flurry

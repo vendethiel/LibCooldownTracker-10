@@ -47,14 +47,14 @@ LCT_SpellData[586] = {
 -- Power Infusion
 LCT_SpellData[10060] = {
   class = "PRIEST",
-  cooldown = 180,
+  cooldown = 120,
   talent = true,
 }
 
 -- Desperate Prayer
 LCT_SpellData[48173] = {
   class = "PRIEST",
-  cooldown = 600,
+  cooldown = 120,
   talent = true,
 }
 LCT_SpellData[19236] = 48173
@@ -94,35 +94,9 @@ LCT_SpellData[8122] = {
   cooldown = 30,
   opt_lower_cooldown = 26,
 }
+LCT_SpellData[8124] = 8122
 LCT_SpellData[10888] = 8122
 LCT_SpellData[10890] = 8122
-LCT_SpellData[8124] = 8122
-
--- Vampiric Embrace
-LCT_SpellData[15286] = {
-  class = "PRIEST",
-  cooldown = 10,
-  talent = true,
-}
-
--- Devouring Plague
-LCT_SpellData[2944] = {
-  class = "PRIEST",
-  cooldown = 180,
-  talent = true,
-}
-LCT_SpellData[19276] = 2944
-LCT_SpellData[19277] = 2944
-LCT_SpellData[19278] = 2944
-LCT_SpellData[19279] = 2944
-LCT_SpellData[19280] = 2944
-LCT_SpellData[25467] = 2944
-
--- Consume Magic
-LCT_SpellData[32676] = {
-  class = "PRIEST",
-  cooldown = 120,
-}
 
 -- Mind Blast
 LCT_SpellData[8092] = {
@@ -130,22 +104,26 @@ LCT_SpellData[8092] = {
   cooldown = 8,
   opt_lower_cooldown = 5.5,
 }
-LCT_SpellData[10945] = 8092
-LCT_SpellData[10946] = 8092
-LCT_SpellData[10947] = 8092
-LCT_SpellData[25372] = 8092
-LCT_SpellData[25375] = 8092
 LCT_SpellData[8102] = 8092
 LCT_SpellData[8103] = 8092
 LCT_SpellData[8104] = 8092
 LCT_SpellData[8105] = 8092
 LCT_SpellData[8106] = 8092
+LCT_SpellData[10945] = 8092
+LCT_SpellData[10946] = 8092
+LCT_SpellData[10947] = 8092
+LCT_SpellData[25372] = 8092
+LCT_SpellData[25375] = 8092
+LCT_SpellData[48126] = 8092
+LCT_SpellData[48127] = 8092
 
 -- Prayer of Mending
 LCT_SpellData[33076] = {
   class = "PRIEST",
   cooldown = 10,
 }
+LCT_SpellData[48112] = 33076
+LCT_SpellData[48113] = 33076
 
 -- Inner Focus
 LCT_SpellData[14751] = {
@@ -157,7 +135,7 @@ LCT_SpellData[14751] = {
 -- Pain Suppression
 LCT_SpellData[33206] = {
   class = "PRIEST",
-  cooldown = 120,
+  cooldown = 180,
   talent = true,
 }
 
@@ -170,17 +148,35 @@ LCT_SpellData[6346] = {
 -- Lightwell
 LCT_SpellData[724] = {
   class = "PRIEST",
-  cooldown = 360,
+  cooldown = 180,
   talent = true,
 }
 LCT_SpellData[27870] = 724
 LCT_SpellData[27871] = 724
 LCT_SpellData[28275] = 724
+LCT_SpellData[48086] = 724
+LCT_SpellData[48087] = 724
 
--- Elune's Grace
-LCT_SpellData[2651] = {
+-- Penance
+LCT_SpellData[47540] = {
   class = "PRIEST",
-  cooldown = 180,
+  cooldown = 12,
+  talent = true,
+}
+LCT_SpellData[53005] = 47540
+LCT_SpellData[53006] = 47540
+LCT_SpellData[53007] = 47540
+
+-- Dispersion
+LCT_SpellData[47585] = {
+  class = "PRIEST",
+  cooldown = 120,
+  talent = true,
 }
 
-
+-- Guardian Spirit
+LCT_SpellData[47788] = {
+  class = "PRIEST",
+  cooldown = 180,
+  talent = true,
+}

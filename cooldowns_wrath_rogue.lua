@@ -2,7 +2,7 @@
 LCT_SpellData[2094] = {
   class = "ROGUE",
   opt_lower_cooldown = 90,
-  cooldown = 180,
+  cooldown = 120, -- Consider everyone is sub since we have no per-spec cooldown on classic
 }
 
 -- Blade Flurry
@@ -30,10 +30,6 @@ LCT_SpellData[1766] = {
   cooldown = 10,
   class = "ROGUE",
 }
-LCT_SpellData[1768] = 1766
-LCT_SpellData[1769] = 1766
-LCT_SpellData[38768] = 1766
-LCT_SpellData[1767] = 1766
 
 -- Distract
 LCT_SpellData[1725] = {
@@ -53,19 +49,18 @@ LCT_SpellData[26669] = 5277
 LCT_SpellData[2983] = {
   class = "ROGUE",
   opt_lower_cooldown = 210,
-  cooldown = 300,
+  cooldown = 180,
 }
-LCT_SpellData[11305] = 2983
 LCT_SpellData[8696] = 2983
+LCT_SpellData[11305] = 2983
 
 -- Vanish
 LCT_SpellData[1856] = {
   class = "ROGUE",
-  opt_lower_cooldown = 210,
-  cooldown = 300,
+  cooldown = 120,
 }
-LCT_SpellData[26889] = 1856
 LCT_SpellData[1857] = 1856
+LCT_SpellData[26889] = 1856
 
 -- Riposte
 LCT_SpellData[14251] = {
@@ -80,15 +75,18 @@ LCT_SpellData[1966] = {
   class = "ROGUE",
 }
 LCT_SpellData[6768] = 1966
-LCT_SpellData[25302] = 1966
-LCT_SpellData[11303] = 1966
 LCT_SpellData[8637] = 1966
+LCT_SpellData[11303] = 1966
+LCT_SpellData[25302] = 1966
 LCT_SpellData[27448] = 1966
+LCT_SpellData[48658] = 1966
+LCT_SpellData[48659] = 1966
 
 -- Ghostly Strike
 LCT_SpellData[14278] = {
   cooldown = 20,
   class = "ROGUE",
+  talent = true,
 }
 
 -- Stealth
@@ -97,13 +95,10 @@ LCT_SpellData[1784] = {
   opt_lower_cooldown = 5,
   cooldown = 10,
 }
-LCT_SpellData[1785] = 1784
-LCT_SpellData[1786] = 1784
-LCT_SpellData[1787] = 1784
 
 -- Adrenaline Rush
 LCT_SpellData[13750] = {
-  cooldown = 300,
+  cooldown = 180,
   class = "ROGUE",
   talent = true,
 }
@@ -121,7 +116,12 @@ LCT_SpellData[14185] = {
   cooldown = 600,
   class = "ROGUE",
   talent = true,
-  resets = { 5277, 2983, 1856, 14177, 36554 }, -- TODO
+  resets = {
+    -- Always reset
+    5277, 2983, 1856, 14177, 36554
+    -- Only reset with the glyph, but we consider everyone uses said glyph
+    1766, 13877, 51722
+  },
 }
 
 -- Kidney Shot
@@ -137,14 +137,29 @@ LCT_SpellData[1776] = {
   opt_lower_cooldown = 9,
   cooldown = 10,
 }
-LCT_SpellData[11286] = 1776
-LCT_SpellData[1777] = 1776
-LCT_SpellData[38764] = 1776
-LCT_SpellData[11285] = 1776
-LCT_SpellData[8629] = 1776
 
 -- Cloak of Shadows
 LCT_SpellData[31224] = {
   cooldown = 60,
   class = "ROGUE",
+}
+
+-- Shadow Dance
+LCT_SpellData[51713] = {
+  class = "ROGUE",
+  cooldown = 60,
+  talent = true,
+}
+
+-- Dismantle
+LCT_SpellData[51722] = {
+  class = "ROGUE",
+  cooldown = 60,
+}
+
+-- Killing Spree
+LCT_SpellData[51690] = {
+  class = "ROGUE",
+  cooldown = 120,
+  talent = true,
 }

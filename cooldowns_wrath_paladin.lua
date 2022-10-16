@@ -7,58 +7,45 @@ LCT_SpellData[1044] = {
 -- Divine Intervention
 LCT_SpellData[19752] = {
   class = "PALADIN",
-  cooldown = 3600,
+  cooldown = 600,
 }
 
 -- Crusader Strike
 LCT_SpellData[35395] = {
   class = "PALADIN",
-  cooldown = 6,
+  cooldown = 4,
 }
 
--- Turn Evil
-LCT_SpellData[10326] = {
-  class = "PALADIN",
-  cooldown = 30,
-}
-
--- Blessing of Sacrifice
+-- Hand of Sacrifice
 LCT_SpellData[6940] = {
   class = "PALADIN",
-  cooldown = 30,
+  cooldown = 120,
 }
-LCT_SpellData[20729] = 6940
-LCT_SpellData[27147] = 6940
-LCT_SpellData[27148] = 6940
 
 -- Lay on Hands
 LCT_SpellData[633] = {
   opt_lower_cooldown = 2400,
-  cooldown = 3600,
+  cooldown = 1200,
   class = "PALADIN",
 }
+LCT_SpellData[2800] = 633
 LCT_SpellData[10310] = 633
 LCT_SpellData[27154] = 633
-LCT_SpellData[2800] = 633
+LCT_SpellData[48788] = 633
 
 -- Exorcism
 LCT_SpellData[879] = {
   class = "PALADIN",
   cooldown = 15,
 }
+LCT_SpellData[5614] = 879
+LCT_SpellData[5615] = 879
 LCT_SpellData[10312] = 879
 LCT_SpellData[10313] = 879
 LCT_SpellData[10314] = 879
-LCT_SpellData[5614] = 879
-LCT_SpellData[5615] = 879
 LCT_SpellData[27138] = 879
-
--- Turn Undead
-LCT_SpellData[2878] = {
-  class = "PALADIN",
-  cooldown = 30,
-}
-LCT_SpellData[5627] = 2878
+LCT_SpellData[48800] = 879
+LCT_SpellData[48801] = 879
 
 -- Avenging Wrath
 LCT_SpellData[31884] = {
@@ -79,36 +66,39 @@ LCT_SpellData[853] = {
   cooldown = 60,
   class = "PALADIN",
 }
-LCT_SpellData[10308] = 853
 LCT_SpellData[5588] = 853
 LCT_SpellData[5589] = 853
+LCT_SpellData[10308] = 853
 
 -- Divine Shield
 LCT_SpellData[642] = {
   class = "PALADIN",
   cooldown = 300,
 }
-LCT_SpellData[1020] = 642
 
 -- Holy Shield
 LCT_SpellData[20925] = {
   class = "PALADIN",
-  cooldown = 10,
+  cooldown = 8,
   talent = true,
 }
 LCT_SpellData[20927] = 20925
 LCT_SpellData[20928] = 20925
 LCT_SpellData[27179] = 20925
+LCT_SpellData[48951] = 20925
+LCT_SpellData[48952] = 20925
 
 -- Avenger's Shield
 LCT_SpellData[31935] = {
   class = "PALADIN",
   cooldown = 30,
   talent = true,
-  detects = { 20925 } -- TODO
+  detects = { 20925 }
 }
 LCT_SpellData[32699] = 31935
 LCT_SpellData[32700] = 31935
+LCT_SpellData[48826] = 31935
+LCT_SpellData[48827] = 31935
 
 -- Judgement
 LCT_SpellData[20271] = {
@@ -127,6 +117,8 @@ LCT_SpellData[20923] = 26573
 LCT_SpellData[20924] = 26573
 LCT_SpellData[27173] = 26573
 LCT_SpellData[20116] = 26573
+LCT_SpellData[48818] = 26573
+LCT_SpellData[48819] = 26573
 
 -- Divine Favor
 LCT_SpellData[20216] = {
@@ -138,7 +130,7 @@ LCT_SpellData[20216] = {
 -- Righteous Defense
 LCT_SpellData[31789] = {
   class = "PALADIN",
-  cooldown = 15,
+  cooldown = 8,
 }
 
 -- Hammer of Wrath
@@ -149,6 +141,8 @@ LCT_SpellData[24275] = {
 LCT_SpellData[24239] = 24275
 LCT_SpellData[24274] = 24275
 LCT_SpellData[27180] = 24275
+LCT_SpellData[48805] = 24275
+LCT_SpellData[48806] = 24275
 
 -- Repentance
 LCT_SpellData[20066] = {
@@ -160,28 +154,32 @@ LCT_SpellData[20066] = {
 -- Divine Protection
 LCT_SpellData[498] = {
   class = "PALADIN",
-  cooldown = 300,
+  cooldown = 180,
 }
-LCT_SpellData[5573] = 498
 
 -- Holy Shock
 LCT_SpellData[20473] = {
   class = "PALADIN",
-  cooldown = 15,
+  cooldown = 6,
   talent = true,
+  detects = { 20216 }
 }
-LCT_SpellData[33072] = 20473
 LCT_SpellData[20929] = 20473
 LCT_SpellData[20930] = 20473
 LCT_SpellData[27174] = 20473
+LCT_SpellData[33072] = 20473
+LCT_SpellData[48824] = 20473
+LCT_SpellData[48825] = 20473
 
 -- Holy Wrath
 LCT_SpellData[2812] = {
   class = "PALADIN",
-  cooldown = 60,
+  cooldown = 30,
 }
 LCT_SpellData[10318] = 2812
 LCT_SpellData[27139] = 2812
+LCT_SpellData[48816] = 2812
+LCT_SpellData[48817] = 2812
 
 -- Blessing of Protection
 LCT_SpellData[1022] = {
@@ -189,5 +187,33 @@ LCT_SpellData[1022] = {
   cooldown = 300,
   class = "PALADIN",
 }
-LCT_SpellData[10278] = 1022
 LCT_SpellData[5599] = 1022
+LCT_SpellData[10278] = 1022
+
+-- Divine Storm
+LCT_SpellData[53385] = {
+  class = "PALADIN",
+  cooldown = 10,
+  talent = true,
+}
+
+-- Hammer of the Righteous
+LCT_SpellData[53595] = {
+  class = "PALADIN",
+  cooldown = 6,
+  talent = true,
+}
+
+-- Divine Plea
+LCT_SpellData[54428] = {
+  class = "PALADIN",
+  cooldown = 60,
+  talent = true,
+}
+
+-- Shield of Righteousness
+LCT_SpellData[53600] = {
+  class = "PALADIN",
+  cooldown = 6,
+}
+LCT_SpellData[61411] = 53600

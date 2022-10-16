@@ -12,12 +12,13 @@ LCT_SpellData[7744] = {
 	race = "Scourge",
 	duration = 3,
 	cooldown = 120,
+  -- TODO sets cd of
 }
--- Perception (Human)
-LCT_SpellData[20600] = {
+-- Will to Survive (Human)
+LCT_SpellData[59752] = {
 	race = "Human",
 	duration = 20,
-	cooldown = 180,
+	cooldown = 120,
 }
 -- Arcane Torrent (Blood Elf)
 LCT_SpellData[28730] = {
@@ -45,20 +46,20 @@ LCT_SpellData[20577] = {
 LCT_SpellData[20589] = {
 	race = "Gnome",
 	defensive = true,
-	cooldown = 106,
+	cooldown = 105,
 }
 -- Shadowmeld (Night Elf)
-LCT_SpellData[20580] = {
+LCT_SpellData[58984] = {
 	race = "NightElf",
 	defensive = true,
-	cooldown = 10,
+	cooldown = 120,
 }
 -- Stoneform (Dwarf)
 LCT_SpellData[20594] = {
 	race = "Dwarf",
 	defensive = true,
 	duration = 8,
-	cooldown = 180,
+	cooldown = 120,
 }
 -- War Stomp (Tauren)
 LCT_SpellData[20549] = {

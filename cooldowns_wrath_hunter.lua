@@ -3,12 +3,6 @@ LCT_SpellData[20736] = {
   class = "HUNTER",
   cooldown = 8,
 }
-LCT_SpellData[15629] = 20736
-LCT_SpellData[15630] = 20736
-LCT_SpellData[15631] = 20736
-LCT_SpellData[15632] = 20736
-LCT_SpellData[27020] = 20736
-LCT_SpellData[14274] = 20736
 
 -- Flare
 LCT_SpellData[1543] = {
@@ -25,11 +19,8 @@ LCT_SpellData[5384] = {
 -- Disengage
 LCT_SpellData[781] = {
   class = "HUNTER",
-  cooldown = 5,
+  cooldown = 25,
 }
-LCT_SpellData[27015] = 781
-LCT_SpellData[14272] = 781
-LCT_SpellData[14273] = 781
 
 -- Scatter Shot
 LCT_SpellData[19503] = {
@@ -39,34 +30,33 @@ LCT_SpellData[19503] = {
 }
 
 -- Dash
-LCT_SpellData[23099] = {
+LCT_SpellData[61684] = {
   class = "HUNTER",
-  cooldown = 30,
+  pet = true,
+  cooldown = 32,
 }
-LCT_SpellData[23110] = 23099
-LCT_SpellData[23109] = 23099
 
 -- Deterrence
 LCT_SpellData[19263] = {
   class = "HUNTER",
-  cooldown = 300,
-  talent = true,
+  cooldown = 90,
 }
 
 -- Scorpid Poison
 LCT_SpellData[24640] = {
   class = "HUNTER",
-  cooldown = 4,
+  cooldown = 10,
 }
 LCT_SpellData[24583] = 24640
 LCT_SpellData[24586] = 24640
 LCT_SpellData[27060] = 24640
 LCT_SpellData[24587] = 24640
+LCT_SpellData[55728] = 24640
 
 -- Tranquilizing Shot
 LCT_SpellData[19801] = {
   class = "HUNTER",
-  cooldown = 20,
+  cooldown = 8,
 }
 
 -- Bite
@@ -86,7 +76,7 @@ LCT_SpellData[17255] = 17253
 -- Aimed Shot
 LCT_SpellData[19434] = {
   class = "HUNTER",
-  cooldown = 6,
+  cooldown = 10,
 }
 LCT_SpellData[20900] = 19434
 LCT_SpellData[20902] = 19434
@@ -94,14 +84,14 @@ LCT_SpellData[20903] = 19434
 LCT_SpellData[20904] = 19434
 LCT_SpellData[27065] = 19434
 LCT_SpellData[20901] = 19434
+LCT_SpellData[49049] = 19434
+LCT_SpellData[49050] = 19434
 
 -- Dive
 LCT_SpellData[23145] = {
   class = "HUNTER",
-  cooldown = 30,
+  cooldown = 32,
 }
-LCT_SpellData[23147] = 23145
-LCT_SpellData[23148] = 23145
 
 -- Poison Spit
 LCT_SpellData[35387] = {
@@ -110,12 +100,15 @@ LCT_SpellData[35387] = {
 }
 LCT_SpellData[35389] = 35387
 LCT_SpellData[35392] = 35387
+LCT_SpellData[55555] = 35387
+LCT_SpellData[55556] = 35387
+LCT_SpellData[55557] = 35387
 
 -- Arcane Shot
 LCT_SpellData[3044] = {
-  opt_lower_cooldown = 5,
   class = "HUNTER",
   cooldown = 6,
+  opt_lower_cooldown = 5,
 }
 LCT_SpellData[27019] = 3044
 LCT_SpellData[14285] = 3044
@@ -125,6 +118,8 @@ LCT_SpellData[14281] = 3044
 LCT_SpellData[14284] = 3044
 LCT_SpellData[14286] = 3044
 LCT_SpellData[14287] = 3044
+LCT_SpellData[49044] = 3044
+LCT_SpellData[49045] = 3044
 
 -- Bestial Wrath
 LCT_SpellData[19574] = {
@@ -161,10 +156,12 @@ LCT_SpellData[14260] = 2973
 LCT_SpellData[14263] = 2973
 LCT_SpellData[14264] = 2973
 LCT_SpellData[14265] = 2973
+LCT_SpellData[48995] = 2973
+LCT_SpellData[48996] = 2973
 
 -- Concussive Shot
 LCT_SpellData[5116] = {
-  opt_lower_cooldown = 11,
+  opt_lower_cooldown = 12,
   class = "HUNTER",
   cooldown = 12,
 }
@@ -177,16 +174,20 @@ LCT_SpellData[19306] = {
 LCT_SpellData[20909] = 19306
 LCT_SpellData[20910] = 19306
 LCT_SpellData[27067] = 19306
+LCT_SpellData[48998] = 19306
+LCT_SpellData[48999] = 19306
 
 -- Wyvern Sting
 LCT_SpellData[19386] = {
   class = "HUNTER",
-  cooldown = 120,
+  cooldown = 60,
   talent = true,
 }
 LCT_SpellData[24132] = 19386
 LCT_SpellData[24133] = 19386
 LCT_SpellData[27068] = 19386
+LCT_SpellData[49011] = 19386
+LCT_SpellData[49012] = 19386
 
 -- Snake Trap
 LCT_SpellData[34600] = {
@@ -207,11 +208,12 @@ LCT_SpellData[14916] = 2649
 LCT_SpellData[14917] = 2649
 LCT_SpellData[27047] = 2649
 LCT_SpellData[14920] = 2649
+LCT_SpellData[61676] = 2649
 
 -- Misdirection
 LCT_SpellData[34477] = {
   class = "HUNTER",
-  cooldown = 120,
+  cooldown = 30,
 }
 
 -- Fire Breath
@@ -220,6 +222,10 @@ LCT_SpellData[34889] = {
   cooldown = 10,
 }
 LCT_SpellData[35323] = 34889
+LCT_SpellData[55482] = 34889
+LCT_SpellData[55483] = 34889
+LCT_SpellData[55484] = 34889
+LCT_SpellData[55485] = 34889
 
 -- Warp
 LCT_SpellData[35346] = {
@@ -230,9 +236,9 @@ LCT_SpellData[35346] = {
 -- Readiness
 LCT_SpellData[23989] = {
   class = "HUNTER",
-  cooldown = 300,
+  cooldown = 180,
   talent = true,
-  resets = {} -- TODO
+  resets = { 5116, 34026, 53271, 1513, 3044, 20736, 1543, 53351, 2643, 3045, 19801, 3034, 19263, 781, 13813, 5384, 60192, 1499, 13809, 13795, 34477, 1495, 2973, 34600, 19434, 53209, 34490, 19503 }
 }
 
 -- Silencing Shot
@@ -242,33 +248,17 @@ LCT_SpellData[34490] = {
   talent = true,
 }
 
--- Charge
-LCT_SpellData[7371] = {
-  class = "HUNTER",
-  cooldown = 25,
-}
-LCT_SpellData[27685] = 7371
-LCT_SpellData[26177] = 7371
-LCT_SpellData[26178] = 7371
-LCT_SpellData[26201] = 7371
-LCT_SpellData[26179] = 7371
-
 -- Cower
 LCT_SpellData[1742] = {
   class = "HUNTER",
-  cooldown = 5,
+  cooldown = 45,
 }
-LCT_SpellData[16697] = 1742
-LCT_SpellData[1753] = 1742
-LCT_SpellData[1754] = 1742
-LCT_SpellData[1755] = 1742
-LCT_SpellData[1756] = 1742
-LCT_SpellData[27048] = 1742
 
 -- Shell Shield
 LCT_SpellData[26064] = {
   class = "HUNTER",
   cooldown = 180,
+  pet = true,
 }
 
 -- Mongoose Bite
@@ -276,19 +266,17 @@ LCT_SpellData[1495] = {
   class = "HUNTER",
   cooldown = 5,
 }
-LCT_SpellData[36916] = 1495
 LCT_SpellData[14269] = 1495
 LCT_SpellData[14270] = 1495
 LCT_SpellData[14271] = 1495
+LCT_SpellData[36916] = 1495
+LCT_SpellData[53339] = 1495
 
 -- Viper Sting
 LCT_SpellData[3034] = {
   class = "HUNTER",
   cooldown = 15,
 }
-LCT_SpellData[27018] = 3034
-LCT_SpellData[14279] = 3034
-LCT_SpellData[14280] = 3034
 
 -- Freezing Trap
 LCT_SpellData[1499] = {
@@ -299,14 +287,11 @@ LCT_SpellData[1499] = {
 LCT_SpellData[14310] = 1499
 LCT_SpellData[14311] = 1499
 
--- Thunderstomp
+-- Pummel
 LCT_SpellData[26090] = {
   class = "HUNTER",
-  cooldown = 60,
+  cooldown = 30,
 }
-LCT_SpellData[26188] = 26090
-LCT_SpellData[27063] = 26090
-LCT_SpellData[26187] = 26090
 
 -- Immolation Trap
 LCT_SpellData[13795] = {
@@ -319,6 +304,8 @@ LCT_SpellData[14302] = 13795
 LCT_SpellData[14303] = 13795
 LCT_SpellData[14304] = 13795
 LCT_SpellData[14305] = 13795
+LCT_SpellData[49055] = 13795
+LCT_SpellData[49056] = 13795
 
 -- Rapid Fire
 LCT_SpellData[3045] = {
@@ -326,7 +313,6 @@ LCT_SpellData[3045] = {
   class = "HUNTER",
   cooldown = 300,
 }
-
 -- Volley
 LCT_SpellData[1510] = {
   class = "HUNTER",
@@ -335,6 +321,8 @@ LCT_SpellData[1510] = {
 LCT_SpellData[27022] = 1510
 LCT_SpellData[14294] = 1510
 LCT_SpellData[14295] = 1510
+LCT_SpellData[58431] = 1510
+LCT_SpellData[58434] = 1510
 
 -- Scare Beast
 LCT_SpellData[1513] = {
@@ -347,17 +335,19 @@ LCT_SpellData[14327] = 1513
 -- Kill Command
 LCT_SpellData[34026] = {
   class = "HUNTER",
-  cooldown = 5,
+  cooldown = 60,
 }
 
 -- Furious Howl
 LCT_SpellData[24604] = {
   class = "HUNTER",
-  cooldown = 10,
+  cooldown = 40,
 }
-LCT_SpellData[24597] = 24604
-LCT_SpellData[24603] = 24604
-LCT_SpellData[24605] = 24604
+LCT_SpellData[66491] = 24604
+LCT_SpellData[66492] = 24604
+LCT_SpellData[66493] = 24604
+LCT_SpellData[66494] = 24604
+LCT_SpellData[66495] = 24604
 
 -- Frost Trap
 LCT_SpellData[13809] = {
@@ -375,6 +365,8 @@ LCT_SpellData[13813] = {
 LCT_SpellData[27025] = 13813
 LCT_SpellData[14316] = 13813
 LCT_SpellData[14317] = 13813
+LCT_SpellData[49066] = 13813
+LCT_SpellData[49067] = 13813
 
 -- Multi-Shot
 LCT_SpellData[2643] = {
@@ -386,3 +378,39 @@ LCT_SpellData[25294] = 2643
 LCT_SpellData[14288] = 2643
 LCT_SpellData[14289] = 2643
 LCT_SpellData[14290] = 2643 
+LCT_SpellData[49047] = 2643 
+LCT_SpellData[49048] = 2643 
+
+-- Chimera Shot
+LCT_SpellData[53209] = {
+  class = "HUNTER",
+  cooldown = 10,
+  talent = true,
+}
+
+-- Black Arrow
+LCT_SpellData[3674] = {
+  class = "HUNTER",
+  cooldown = 30,
+  talent = true,
+}
+
+-- Explosive Shot
+LCT_SpellData[53301] = {
+  class = "HUNTER",
+  cooldown = 6,
+  talent = true,
+  detects = { 3674 },
+}
+
+-- Master's Call
+LCT_SpellData[53271] = {
+  class = "HUNTER",
+  cooldown = 60,
+}
+
+-- Freezing Arrow
+LCT_SpellData[60192] = {
+  class = "HUNTER",
+  cooldown = 30,
+}

@@ -441,11 +441,13 @@ local function CooldownEvent(event, unit, spellid)
           if not tpu[respellid] then
             -- V: if we have to *detect* the cooldown, just use the max number of charges
             --    also, use charges by default, not only optional charges (not sure if the spell only has optional charges)
+
             tpu[respellid] = {
               charges = respelldata.charges or respelldata.opt_charges,
               max_charges = respelldata.charges or respelldata.opt_charges,
             }
           else
+            -- TODO: might have to cancel some timers
             tpu[respellid].charges = (tpu[respellid].charges or 0) + 1
           end
           tpu[respellid].charges_detected = true
