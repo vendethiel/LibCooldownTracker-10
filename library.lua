@@ -520,13 +520,15 @@ end
 
 local function enable()
   lib.frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-  lib.frame:RegisterEvent("PVP_MATCH_ACTIVE")
   lib.frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
   lib.frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
   lib.frame:RegisterEvent("UNIT_NAME_UPDATE")
   lib.frame:RegisterEvent("ARENA_CROWD_CONTROL_SPELL_UPDATE")
   lib.frame:RegisterEvent("ARENA_COOLDOWNS_UPDATE")
   lib.frame:RegisterEvent("ARENA_OPPONENT_UPDATE")
+  if IsRetail then
+    lib.frame:RegisterEvent("PVP_MATCH_ACTIVE")
+  end
 
   lib.tracked_players = {}
   lib.guid_to_unitid = {}
