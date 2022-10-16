@@ -118,7 +118,7 @@ LCT_SpellData[14185] = {
   talent = true,
   resets = {
     -- Always reset
-    5277, 2983, 1856, 14177, 36554
+    5277, 2983, 1856, 14177, 36554,
     -- Only reset with the glyph, but we consider everyone uses said glyph
     1766, 13877, 51722
   },
