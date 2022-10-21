@@ -15,6 +15,7 @@ LCT_SpellData[16188] = {
   cooldown = 120,
   class = "SHAMAN",
   talent = true,
+	cooldown_starts_on_dispel = true,
 }
 
 -- Mana Tide Totem

@@ -29,6 +29,7 @@ LCT_SpellData[36554] = {
 LCT_SpellData[1766] = {
   cooldown = 10,
   class = "ROGUE",
+  interrupt = true,
 }
 
 -- Distract

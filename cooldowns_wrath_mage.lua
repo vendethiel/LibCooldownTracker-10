@@ -157,8 +157,9 @@ LCT_SpellData[12472] = {
 
 -- Counterspell
 LCT_SpellData[2139] = {
-  cooldown = 24,
   class = "MAGE",
+  cooldown = 24,
+  interrupt = true,
 }
 
 -- Blast Wave
@@ -207,7 +208,7 @@ LCT_SpellData[45438] = {
 
 -- Mana Sapphire
 LCT_SpellData[27103] = {
-  class = "Mage",
+  class = "MAGE",
 	item = true,
 	opt_charges = 3,
 	cooldown = 120
@@ -215,13 +216,13 @@ LCT_SpellData[27103] = {
 
 -- Mirror Image
 LCT_SpellData[55342] = {
-  class = "Mage",
+  class = "MAGE",
 	cooldown = 180
 }
 
 -- Deep Freeze
 LCT_SpellData[44572] = {
-  class = "Mage",
+  class = "MAGE",
 	cooldown = 30,
   talent = true,
 }

@@ -3,12 +3,13 @@ LCT_SpellData[12292] = {
   class = "WARRIOR",
   cooldown = 180,
   talent = true,
+  duration = 30,
 }
 
 -- Shield Block
 LCT_SpellData[2565] = {
   class = "WARRIOR",
-  cooldown = 5,
+  cooldown = 60,
 }
 
 -- Mortal Strike
@@ -17,23 +18,21 @@ LCT_SpellData[12294] = {
   cooldown = 5,
   talent = true,
 }
-LCT_SpellData[21552] = 12294
-LCT_SpellData[30330] = 12294
-LCT_SpellData[25248] = 12294
-LCT_SpellData[21553] = 12294
 LCT_SpellData[21551] = 12294
+LCT_SpellData[21552] = 12294
+LCT_SpellData[21553] = 12294
+LCT_SpellData[25248] = 12294
+LCT_SpellData[30330] = 12294
+LCT_SpellData[47485] = 12294
+LCT_SpellData[47486] = 12294
 
 -- Bloodthirst
 LCT_SpellData[23881] = {
   class = "WARRIOR",
-  cooldown = 6,
+  cooldown = 4,
   talent = true,
+  detects = { 12292 },
 }
-LCT_SpellData[23892] = 23881
-LCT_SpellData[23893] = 23881
-LCT_SpellData[30335] = 23881
-LCT_SpellData[25251] = 23881
-LCT_SpellData[23894] = 23881
 
 -- Intervene
 LCT_SpellData[3411] = {
@@ -44,7 +43,7 @@ LCT_SpellData[3411] = {
 -- Taunt
 LCT_SpellData[355] = {
   class = "WARRIOR",
-  cooldown = 10,
+  cooldown = 8,
 }
 
 -- Charge
@@ -65,25 +64,25 @@ LCT_SpellData[23920] = {
 LCT_SpellData[23922] = {
   class = "WARRIOR",
   cooldown = 6,
-  talent = true,
 }
 LCT_SpellData[23923] = 23922
 LCT_SpellData[23924] = 23922
+LCT_SpellData[25258] = 23922
 LCT_SpellData[23925] = 23922
 LCT_SpellData[30356] = 23922
-LCT_SpellData[25258] = 23922
+LCT_SpellData[47487] = 23922
+LCT_SpellData[47488] = 23922
 
 -- Intimidating Shout
 LCT_SpellData[5246] = {
   class = "WARRIOR",
-  cooldown = 180,
+  cooldown = 120,
 }
 
 -- Challenging Shout
 LCT_SpellData[1161] = {
-  cooldown = 600,
-  opt_lower_cooldown = 420,
   class = "WARRIOR",
+  cooldown = 180,
 }
 
 -- Whirlwind
@@ -95,7 +94,7 @@ LCT_SpellData[1680] = {
 -- Concussion Blow
 LCT_SpellData[12809] = {
   class = "WARRIOR",
-  cooldown = 45,
+  cooldown = 30,
   talent = true,
 }
 
@@ -103,12 +102,13 @@ LCT_SpellData[12809] = {
 LCT_SpellData[6552] = {
   class = "WARRIOR",
   cooldown = 10,
+  interrupt = true,
 }
-LCT_SpellData[29704] = 6552
-LCT_SpellData[6554] = 6552
 LCT_SpellData[72] = 6552
 LCT_SpellData[1671] = 6552
 LCT_SpellData[1672] = 6552
+LCT_SpellData[6554] = 6552
+LCT_SpellData[29704] = 6552
 
 -- Berserker Rage
 LCT_SpellData[18499] = {
@@ -128,63 +128,61 @@ LCT_SpellData[6572] = {
   class = "WARRIOR",
   cooldown = 5,
 }
+LCT_SpellData[6574] = 6572
 LCT_SpellData[7379] = 6572
 LCT_SpellData[11600] = 6572
 LCT_SpellData[11601] = 6572
-LCT_SpellData[30357] = 6572
-LCT_SpellData[6574] = 6572
 LCT_SpellData[25269] = 6572
 LCT_SpellData[25288] = 6572
+LCT_SpellData[30357] = 6572
+LCT_SpellData[57823] = 6572
 
 -- Last Stand
 LCT_SpellData[12975] = {
   class = "WARRIOR",
-  cooldown = 480,
+  cooldown = 180,
   talent = true,
+  duration = 20,
 }
 
 -- Recklessness
 LCT_SpellData[1719] = {
-  cooldown = 1800,
-  opt_lower_cooldown = 1200,
   class = "WARRIOR",
+  cooldown = 300,
 }
 
 -- Thunder Clap
 LCT_SpellData[6343] = {
   class = "WARRIOR",
-  cooldown = 4,
+  cooldown = 6,
 }
 LCT_SpellData[8198] = 6343
+LCT_SpellData[8205] = 6343
+LCT_SpellData[8204] = 6343
 LCT_SpellData[11580] = 6343
 LCT_SpellData[11581] = 6343
 LCT_SpellData[25264] = 6343
-LCT_SpellData[8205] = 6343
-LCT_SpellData[8204] = 6343
+LCT_SpellData[47501] = 6343
+LCT_SpellData[47502] = 6343
 
 -- Retaliation
 LCT_SpellData[20230] = {
-  cooldown = 1800,
-  opt_lower_cooldown = 1200,
   class = "WARRIOR",
+  cooldown = 300,
+  duration = 12,
 }
 
 -- Mocking Blow
 LCT_SpellData[694] = {
   class = "WARRIOR",
-  cooldown = 120,
+  cooldown = 60,
 }
-LCT_SpellData[20559] = 694
-LCT_SpellData[20560] = 694
-LCT_SpellData[25266] = 694
-LCT_SpellData[7402] = 694
-LCT_SpellData[7400] = 694
 
 -- Shield Wall
 LCT_SpellData[871] = {
-  cooldown = 1800,
-  opt_lower_cooldown = 1200,
   class = "WARRIOR",
+  cooldown = 300,
+  duration = 12,
 }
 
 -- Bloodrage
@@ -204,18 +202,36 @@ LCT_SpellData[20252] = {
   class = "WARRIOR",
   cooldown = 30,
 }
-LCT_SpellData[20616] = 20252
-LCT_SpellData[20617] = 20252
-LCT_SpellData[25272] = 20252
-LCT_SpellData[25275] = 20252
 
 -- Overpower
 LCT_SpellData[7384] = {
   class = "WARRIOR",
   cooldown = 5,
 }
-LCT_SpellData[11584] = 7384
-LCT_SpellData[11585] = 7384
-LCT_SpellData[7887] = 7384
 
+-- Shockwave
+LCT_SpellData[46968] = {
+  class = "WARRIOR",
+  cooldown = 20,
+  talent = true,
+}
+
+-- Bladestorm
+LCT_SpellData[46924] = {
+  class = "WARRIOR",
+  cooldown = 90,
+  talent = true,
+}
+
+-- Shattering Throw
+LCT_SpellData[64382] = {
+  class = "WARRIOR",
+  cooldown = 300,
+}
+
+-- Heroic Throw
+LCT_SpellData[57755] = {
+  class = "WARRIOR",
+  cooldown = 60,
+}
 

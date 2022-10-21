@@ -6,6 +6,7 @@
 -->
 	<Script file="cooldowns_spelldata.lua"/>
 	<Script file="cooldowns_wrath_druid.lua"/>
+	<Script file="cooldowns_wrath_deathknight.lua"/>
 	<Script file="cooldowns_wrath_hunter.lua"/>
 	<Script file="cooldowns_wrath_mage.lua"/>
 	<Script file="cooldowns_wrath_paladin.lua"/>

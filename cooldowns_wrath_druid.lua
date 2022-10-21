@@ -4,6 +4,7 @@
 LCT_SpellData[22812] = {
   cooldown = 60,
   class = "DRUID",
+  duration = 12,
 }
 
 -- Cower
@@ -22,6 +23,7 @@ LCT_SpellData[33831] = {
   cooldown = 180,
   class = "DRUID",
   talent = true,
+  duration = 30,
 }
 
 -- Nature's Grasp
@@ -40,28 +42,30 @@ LCT_SpellData[53312] = 16689
 
 -- Frenzied Regeneration
 LCT_SpellData[22842] = {
-  cooldown = 180,
   class = "DRUID",
+  cooldown = 180,
+  duration = 10,
 }
 
 -- Challenging Roar
 LCT_SpellData[5209] = {
-  cooldown = 180,
   class = "DRUID",
+  cooldown = 180,
+  duration = 6,
 }
 
 -- Bash
 LCT_SpellData[5211] = {
-  cooldown = 60,
   class = "DRUID",
+  cooldown = 60,
 }
 LCT_SpellData[6798] = 5211
 LCT_SpellData[8983] = 5211
 
 -- Prowl
 LCT_SpellData[5215] = {
-  cooldown = 10,
   class = "DRUID",
+  cooldown = 10,
 }
 LCT_SpellData[6783] = 5215
 LCT_SpellData[9913] = 5215
@@ -69,21 +73,22 @@ LCT_SpellData[48932] = 5215
 
 -- Enrage
 LCT_SpellData[5229] = {
-  cooldown = 60,
   class = "DRUID",
+  cooldown = 60,
+  duration = 10,
 }
 
 -- Swiftmend
 LCT_SpellData[18562] = {
-  cooldown = 15,
   class = "DRUID",
+  cooldown = 15,
   talent = true,
 }
 
 -- Growl
 LCT_SpellData[6795] = {
-  cooldown = 10,
   class = "DRUID",
+  cooldown = 10,
 }
 
 -- Dash
@@ -96,15 +101,15 @@ LCT_SpellData[33357] = 1850
 
 -- Feral Charge
 LCT_SpellData[16979] = {
-  cooldown = 15,
   class = "DRUID",
+  cooldown = 15,
   talent = true,
 }
 
 -- Rebirth
 LCT_SpellData[20484] = {
-  cooldown = 1200,
   class = "DRUID",
+  cooldown = 600,
 }
 LCT_SpellData[20739] = 20484
 LCT_SpellData[20742] = 20484
@@ -115,8 +120,8 @@ LCT_SpellData[48477] = 20484
 
 -- Mangle
 LCT_SpellData[33878] = {
-  cooldown = 6,
   class = "DRUID",
+  cooldown = 6,
 }
 LCT_SpellData[33986] = 33878
 LCT_SpellData[33987] = 33878
@@ -125,15 +130,16 @@ LCT_SpellData[48564] = 33878
 
 -- Faerie Fire (Feral)
 LCT_SpellData[16857] = {
-  cooldown = 6,
   class = "DRUID",
+  cooldown = 6,
 }
 
 -- Nature's Swiftness
 LCT_SpellData[17116] = {
-  cooldown = 180,
   class = "DRUID",
+  cooldown = 180,
   talent = true,
+	cooldown_starts_on_dispel = true,
 }
 
 -- Tranquility
@@ -178,4 +184,5 @@ LCT_SpellData[48505] = {
   cooldown = 180,
   class = "DRUID",
   talent = true,
+  duration = 10,
 }
