@@ -2,8 +2,11 @@
 LCT_SpellData[42292] = {
   pvp_trinket = true,
 	cooldown = 120,
+  sets_cooldown_of = {
+    -- WOTF
+    { spellid = 7744, cooldown = 45 },
+  }
 }
-LCT_SpellData[59752] = 42292
 
 -- Healthstone
 LCT_SpellData[11732] = {

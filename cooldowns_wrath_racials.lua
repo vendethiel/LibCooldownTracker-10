@@ -19,11 +19,16 @@ LCT_SpellData[59752] = {
 	race = "Human",
 	duration = 20,
 	cooldown = 120,
+  sets_cooldown_of = {
+    -- WOTF
+    { spellid = 7744, cooldown = 45 },
+  }
 }
 -- Arcane Torrent (Blood Elf)
 LCT_SpellData[28730] = {
 	race = "BloodElf",
 	cooldown = 120,
+  silence = true,
 }
 LCT_SpellData[25046] = 28730
 -- Blood Fury (Orc)
