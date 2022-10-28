@@ -1,11 +1,13 @@
 -- Gladiator's Medallion
 LCT_SpellData[42292] = {
-  pvp_trinket = true,
+	pvp_trinket = true,
 	cooldown = 120,
-  sets_cooldown_of = {
-    -- WOTF
-    { spellid = 7744, cooldown = 45 },
-  }
+	icon_alliance = [[Interface\Icons\INV_Jewelry_TrinketPVP_01]],
+	icon_horde = [[Interface\Icons\INV_Jewelry_TrinketPVP_02]],
+	sets_cooldown_of = {
+		-- WOTF
+		{ spellid = 7744, cooldown = 45 },
+	}
 }
 
 -- Healthstone
