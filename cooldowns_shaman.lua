@@ -198,13 +198,6 @@ LCT_SpellData[51533] = {
 	duration = 15,
 	cooldown = 120
 }
--- Flametongue
-LCT_SpellData[193796] = {
-	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_ENHANCEMENT },
-	offensive = true,
-	cooldown = 120
-}
 -- Spirit Walk
 LCT_SpellData[58875] = {
 	class = "SHAMAN",
@@ -275,13 +268,6 @@ LCT_SpellData[204361] = {
 	talent = true,
 	cooldown = 60,
 	duration = 10
-}
--- Earth Spike
-LCT_SpellData[188089] = {
-	class = "SHAMAN",
-	talent = true,
-	specID = { SPEC_SHAMAN_ENHANCEMENT },
-	cooldown = 20,
 }
 -- Doom Winds
 LCT_SpellData[335903] = {

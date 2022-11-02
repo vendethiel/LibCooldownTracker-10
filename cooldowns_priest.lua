@@ -311,15 +311,6 @@ LCT_SpellData[2050] = {
 	cooldown = 60
 }
 -- Priest/Holy/talents
--- Greater Fade
-LCT_SpellData[213602] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_HOLY, SPEC_PRIEST_SHADOW },
-	talent = true,
-	defensive = true,
-	cooldown = 45,
-	replaces = 586 -- Fade
-}
 -- Ray of Hope
 LCT_SpellData[197268] = {
 	class = "PRIEST",
@@ -408,13 +399,6 @@ LCT_SpellData[64044] = {
 	talent = true,
 	cc = true,
 	cooldown = 45
-}
--- Surrender to Madness
-LCT_SpellData[193223] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_SHADOW },
-	talent = true,
-	cooldown = 240
 }
 -- Void Shift
 LCT_SpellData[108968] = {
