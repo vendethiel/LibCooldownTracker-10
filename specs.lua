@@ -119,7 +119,15 @@ function lib:GetSpecializationInfoByID(specID)
 			name = "Restoration",
 			icon = 136052,
 		},
-		
+		-- evoker
+		[1467] = {
+			name = "Devastation",
+			icon = 4511811
+		},
+		[1468] = {
+			name = "Preservation",
+			icon = 4511812
+		}
 	}
 	return specs[specID].name, specs[specID].icon
 end

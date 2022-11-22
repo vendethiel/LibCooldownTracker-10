@@ -8,6 +8,7 @@
 	<Script file="cooldowns_deathknight.lua"/>
 	<Script file="cooldowns_demonhunter.lua"/>
 	<Script file="cooldowns_druid.lua"/>
+	<Script file="cooldowns_evoker.lua"/>
 	<Script file="cooldowns_hunter.lua"/>
 	<Script file="cooldowns_mage.lua"/>
 	<Script file="cooldowns_monk.lua"/>
