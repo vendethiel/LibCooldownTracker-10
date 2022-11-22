@@ -6,8 +6,8 @@ local SPEC_EVOKER_PRESERVATION = 1468
 -- Evoker/Baseline
 -- Fire Breath
 LCT_SpellData[357208] = {
-	class = "EVOKER",
-	cooldown = 30
+  class = "EVOKER",
+  cooldown = 30
 }
 
 -- Blessing of the Bronze
@@ -101,7 +101,7 @@ LCT_SpellData[365585] = {
   talent = true,
   cooldown = 8,
   dispel = true,
-	cooldown_starts_on_dispel = true
+  cooldown_starts_on_dispel = true
 }
 
 -- Cauterizing Flame
@@ -110,7 +110,7 @@ LCT_SpellData[374251] = {
   talent = true,
   cooldown = 60,
   dispel = true,
-	cooldown_starts_on_dispel = true,
+  cooldown_starts_on_dispel = true,
   heal = true,
 }
 
@@ -162,7 +162,7 @@ LCT_SpellData[370553] = {
 }
 
 -- Time Spiral
-LCT_SpellData[374698] = {
+LCT_SpellData[374968] = {
   class = "EVOKER",
   talent = true,
   cooldown = 120
@@ -186,7 +186,7 @@ LCT_SpellData[360823] = {
   talent = true,
   cooldown = 8,
   dispel = true,
-	cooldown_starts_on_dispel = true
+  cooldown_starts_on_dispel = true
 }
 
 -- Mass Return
@@ -319,7 +319,7 @@ LCT_SpellData[359816] = {
 }
 
 -- Emerald Communion
-LCT_SpellData[370060] = {
+LCT_SpellData[370960] = {
   class = "EVOKER",
   specID = { SPEC_EVOKER_PRESERVATION },
   talent = true,
@@ -370,8 +370,8 @@ LCT_SpellData[377509] = {
 -- Covenant Abilities
 -- Boon of the Covenants
 LCT_SpellData[387168] = {
-	class = "EVOKER",
-	offensive = true,
-	duration = 12,
-	cooldown = 120
+  class = "EVOKER",
+  offensive = true,
+  duration = 12,
+  cooldown = 120
 }
