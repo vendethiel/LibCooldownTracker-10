@@ -7,7 +7,9 @@ local SPEC_EVOKER_PRESERVATION = 1468
 -- Fire Breath
 LCT_SpellData[357208] = {
   class = "EVOKER",
-  cooldown = 30
+  cooldown = 30,
+  -- TODO: Fire Breath's CD is reduced when consuming essence bursts when
+  --       talented into 'Feed the Flames'
 }
 
 -- Blessing of the Bronze
@@ -19,7 +21,8 @@ LCT_SpellData[364342] = {
 -- Hover
 LCT_SpellData[358267] = {
   class = "EVOKER",
-  cooldown = 35
+  cooldown = 35,
+  opt_charges = 2 -- Hover gets two charges with the 'Aerial Mastery' talent
 }
 
 -- Living Flame
@@ -31,7 +34,8 @@ LCT_SpellData[361469] = {
 -- Deep Breath
 LCT_SpellData[357210] = {
   class = "EVOKER",
-  cooldown = 120
+  cooldown = 120,
+  opt_lower_cooldown = 60 -- Reduced by the 'Onyx Legacy' talent
 }
 
 -- Fury of the Aspects
@@ -69,15 +73,18 @@ LCT_SpellData[363916] = {
   talent = true,
   duration = 12,
   cooldown = 150,
-  defensive = true
+  defensive = true,
+  opt_charges = 2 -- With the Obsidian Bulwalk talent
 }
 
--- Opressing Roar
+-- Oppressing Roar
 LCT_SpellData[372048] = {
   class = "EVOKER",
   talent = true,
   cooldown = 120,
   duration = 10
+  -- TODO: Oppressing Roar's cooldown can be reduced when talented into 'Overawe'
+  --       which reduces the CD by 20s/Enrage removed.
 }
 
 -- Sleep Walk
@@ -118,7 +125,8 @@ LCT_SpellData[374251] = {
 LCT_SpellData[358385] = {
   class = "EVOKER",
   talent = true,
-  cooldown = 150
+  cooldown = 150,
+  opt_lower_cooldown = 120 -- Reduced by the 'Forger of Mountains' talent
 }
 
 -- Quell
@@ -127,6 +135,7 @@ LCT_SpellData[351338] = {
   talent = true,
   cooldown = 40,
   interrupt = true,
+  opt_lower_cooldown = 20 -- Reduced by the 'Imposing Presence' talent
 }
 
 -- Renewing Blaze
@@ -136,7 +145,8 @@ LCT_SpellData[374348] = {
   cooldown = 150,
   duration = 8,
   heal = true,
-  defensive = true
+  defensive = true,
+  opt_lower_cooldown = 120 -- Reduced by the 'Fire Within' talent
 }
 
 -- Rescue
@@ -281,6 +291,7 @@ LCT_SpellData[367226] = {
   talent = true,
   cooldown = 30,
   heal = true,
+  opt_lower_cooldown = 20 -- Reduced by the 'Spiritual Clarity' talent
 }
 
 -- Rewind
@@ -290,6 +301,7 @@ LCT_SpellData[363534] = {
   talent = true,
   cooldown = 240,
   heal = true,
+  opt_lower_cooldown = 180 -- Reduced by the 'Temporal Artificer' talent
 }
 
 -- Stasis
@@ -306,6 +318,7 @@ LCT_SpellData[366155] = {
   specID = { SPEC_EVOKER_PRESERVATION },
   talent = true,
   cooldown = 9,
+  opt_charges = 2, -- Charges added with the 'Punctuality' talent
   heal = true
 }
 
