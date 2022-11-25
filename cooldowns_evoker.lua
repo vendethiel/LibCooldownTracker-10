@@ -44,26 +44,11 @@ LCT_SpellData[390386] = {
   cooldown = 300
 }
 
--- Disintegrate
-LCT_SpellData[356995] = {
-  class = "EVOKER"
-}
-
--- Azure Strike
-LCT_SpellData[362969] = {
-  class = "EVOKER"
-}
-
 -- Emerald Blossom
 LCT_SpellData[355913] = {
   class = "EVOKER",
   cooldown = 30,
   heal = true,
-}
-
--- Return
-LCT_SpellData[361227] = {
-  class = "EVOKER"
 }
 
 -- Evoker Talents
@@ -199,12 +184,6 @@ LCT_SpellData[360823] = {
   cooldown_starts_on_dispel = true
 }
 
--- Mass Return
-LCT_SpellData[361178] = {
-  class = "EVOKER",
-  specID = { SPEC_EVOKER_PRESERVATION }
-}
-
 -- Devastation Talents
 -- Dragonrage
 LCT_SpellData[375087] = {
@@ -232,13 +211,6 @@ LCT_SpellData[370452] = {
   cooldown = 15
 }
 
--- Pyre
-LCT_SpellData[357211] = {
-  class = "EVOKER",
-  specID = { SPEC_EVOKER_DEVASTATION },
-  talent = true
-}
-
 -- Firestorm
 LCT_SpellData[368847] = {
   class = "EVOKER",
@@ -248,14 +220,6 @@ LCT_SpellData[368847] = {
 }
 
 -- Preservation Talents
--- Echo
-LCT_SpellData[364343] = {
-  class = "EVOKER",
-  specID = { SPEC_EVOKER_PRESERVATION },
-  talent = true,
-  heal = true,
-}
-
 -- Dream Breath
 LCT_SpellData[355936] = {
   class = "EVOKER",
