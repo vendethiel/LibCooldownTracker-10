@@ -155,3 +155,15 @@ LCT_SpellData[265221] = {
 	race = "DarkIronDwarf",
 	cooldown = 120,
 }
+-- Wing Buffet (Dracthyr)
+LCT_SpellData[357214] = {
+	race = "Dracthyr",
+	cooldown = 72,
+	opt_lower_cooldown = 27 -- Reduced by the 'Heavy Wingbeats' talent
+}
+-- Tail Swipe (Dracthyr)
+LCT_SpellData[368970] = {
+	race = "Dracthyr",
+	cooldown = 72,
+	opt_lower_cooldown = 27 -- Reduced by the 'Clobbering Sweep' talent
+}
