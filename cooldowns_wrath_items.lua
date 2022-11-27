@@ -1,12 +1,16 @@
--- Gladiator's Medallion
+-- PvP Trinket
 LCT_SpellData[42292] = {
 	pvp_trinket = true,
 	cooldown = 120,
 	icon_alliance = [[Interface\Icons\INV_Jewelry_TrinketPVP_01]],
-	icon_horde = [[Interface\Icons\INV_Jewelry_TrinketPVP_02]],
-	sets_cooldown_of = {
+	icon_horde = [[Interface\Icons\INV_Jewelry_TrinketPVP_01]],
+    icon_horde_wotlk = [[Interface\Icons\inv_jewelry_necklace_38]],
+    icon_alliance_wotlk = [[Interface\Icons\inv_jewelry_necklace_37]],
+	sets_cooldowns = {
 		-- WOTF
 		{ spellid = 7744, cooldown = 45 },
+        -- Will to Survive (EMFH)
+        { spellid = 59752, cooldown = 120 },
 	}
 }
 

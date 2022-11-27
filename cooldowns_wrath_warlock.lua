@@ -1,9 +1,14 @@
 -- ================ WARLOCK ================
 
+local SPEC_WARLOCK_AFFLICTION  = 265
+local SPEC_WARLOCK_DEMONOLOGY  = 266
+local SPEC_WARLOCK_DESTRUCTION = 267
+
 -- Conflagrate
 LCT_SpellData[17962] = {
   cooldown = 10,
   class = "WARLOCK",
+  specID = { SPEC_WARLOCK_DESTRUCTION },
 }
 
 -- Suffering
@@ -24,6 +29,7 @@ LCT_SpellData[47990] = 17735
 LCT_SpellData[30283] = {
   class = "WARLOCK",
   cooldown = 20,
+  specID = { SPEC_WARLOCK_DESTRUCTION },
 }
 LCT_SpellData[30413] = 30283
 LCT_SpellData[30414] = 30283
@@ -120,6 +126,7 @@ LCT_SpellData[18288] = {
   class = "WARLOCK",
   cooldown = 180,
   talent = true,
+  specID = { SPEC_WARLOCK_AFFLICTION },
 }
 
 -- Curse of Doom
@@ -149,6 +156,8 @@ LCT_SpellData[58887] = 29893
 LCT_SpellData[17877] = {
   cooldown = 15,
   class = "WARLOCK",
+  specID = { SPEC_WARLOCK_DESTRUCTION },
+
 }
 LCT_SpellData[18867] = 17877
 LCT_SpellData[18868] = 17877
@@ -195,6 +204,7 @@ LCT_SpellData[50796] = {
   class = "WARLOCK",
   cooldown = 12,
   talent = true,
+  specID = { SPEC_WARLOCK_DESTRUCTION },
 }
 
 -- Haunt
@@ -202,6 +212,7 @@ LCT_SpellData[48141] = {
   class = "WARLOCK",
   cooldown = 8,
   talent = true,
+  specID = { SPEC_WARLOCK_AFFLICTION },
 }
 
 -- Metamorphosis
@@ -209,6 +220,7 @@ LCT_SpellData[59672] = {
   class = "WARLOCK",
   cooldown = 180,
   talent = true,
+  specID = { SPEC_WARLOCK_DEMONOLOGY },
 }
 
 -- Shadowflame

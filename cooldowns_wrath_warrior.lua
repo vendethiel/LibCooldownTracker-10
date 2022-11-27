@@ -1,3 +1,9 @@
+-- ================ WARRIOR ================
+
+local SPEC_WARRIOR_ARMS = 71
+local SPEC_WARRIOR_FURY = 72
+local SPEC_WARRIOR_PROT = 73
+
 -- Death Wish
 LCT_SpellData[12292] = {
   class = "WARRIOR",
@@ -17,6 +23,7 @@ LCT_SpellData[12294] = {
   class = "WARRIOR",
   cooldown = 5,
   talent = true,
+  specID = { SPEC_WARRIOR_ARMS },
 }
 LCT_SpellData[21551] = 12294
 LCT_SpellData[21552] = 12294
@@ -96,6 +103,7 @@ LCT_SpellData[12809] = {
   class = "WARRIOR",
   cooldown = 30,
   talent = true,
+  specID = { SPEC_WARRIOR_PROT },
 }
 
 -- Pummel
@@ -127,6 +135,7 @@ LCT_SpellData[676] = {
 LCT_SpellData[6572] = {
   class = "WARRIOR",
   cooldown = 5,
+  specID = { SPEC_WARRIOR_PROT },
 }
 LCT_SpellData[6574] = 6572
 LCT_SpellData[7379] = 6572
@@ -143,6 +152,7 @@ LCT_SpellData[12975] = {
   cooldown = 180,
   talent = true,
   duration = 20,
+  specID = { SPEC_WARRIOR_PROT },
 }
 
 -- Recklessness
@@ -214,6 +224,7 @@ LCT_SpellData[46968] = {
   class = "WARRIOR",
   cooldown = 20,
   talent = true,
+  specID = { SPEC_WARRIOR_PROT },
 }
 
 -- Bladestorm
@@ -221,6 +232,7 @@ LCT_SpellData[46924] = {
   class = "WARRIOR",
   cooldown = 90,
   talent = true,
+  specID = { SPEC_WARRIOR_ARMS },
 }
 
 -- Shattering Throw

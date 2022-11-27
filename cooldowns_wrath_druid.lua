@@ -1,5 +1,9 @@
 -- ================ DRUID ================
 
+local SPEC_DRUID_BALANCE  = 102
+local SPEC_DRUID_FERAL    = 103
+local SPEC_DRUID_RESTO    = 105
+
 -- Barkskin
 LCT_SpellData[22812] = {
   cooldown = 60,
@@ -24,6 +28,7 @@ LCT_SpellData[33831] = {
   class = "DRUID",
   talent = true,
   duration = 30,
+  specID = { SPEC_DRUID_BALANCE },
 }
 
 -- Nature's Grasp
@@ -31,6 +36,7 @@ LCT_SpellData[16689] = {
   cooldown = 60,
   class = "DRUID",
   talent = true,
+  specID = { SPEC_DRUID_BALANCE },
 }
 LCT_SpellData[16810] = 16689
 LCT_SpellData[16811] = 16689
@@ -66,6 +72,7 @@ LCT_SpellData[8983] = 5211
 LCT_SpellData[5215] = {
   class = "DRUID",
   cooldown = 10,
+  cooldown_starts_on_aura_fade = true,
 }
 LCT_SpellData[6783] = 5215
 LCT_SpellData[9913] = 5215
@@ -83,6 +90,7 @@ LCT_SpellData[18562] = {
   class = "DRUID",
   cooldown = 15,
   talent = true,
+  specID = { SPEC_DRUID_RESTO },
 }
 
 -- Growl
@@ -104,6 +112,7 @@ LCT_SpellData[16979] = {
   class = "DRUID",
   cooldown = 15,
   talent = true,
+  specID = { SPEC_DRUID_FERAL },
 }
 
 -- Rebirth
@@ -122,6 +131,8 @@ LCT_SpellData[48477] = 20484
 LCT_SpellData[33878] = {
   class = "DRUID",
   cooldown = 6,
+  talent = true,
+  specID = { SPEC_DRUID_FERAL },
 }
 LCT_SpellData[33986] = 33878
 LCT_SpellData[33987] = 33878
@@ -132,6 +143,7 @@ LCT_SpellData[48564] = 33878
 LCT_SpellData[16857] = {
   class = "DRUID",
   cooldown = 6,
+  specID = { SPEC_DRUID_FERAL },
 }
 
 -- Nature's Swiftness
@@ -139,7 +151,9 @@ LCT_SpellData[17116] = {
   class = "DRUID",
   cooldown = 180,
   talent = true,
-	cooldown_starts_on_dispel = true,
+  cooldown_starts_on_dispel = true,
+  cooldown_starts_on_aura_fade = true,
+  specID = { SPEC_DRUID_RESTO },
 }
 
 -- Tranquility
@@ -170,6 +184,7 @@ LCT_SpellData[48438] = {
   cooldown = 6,
   class = "DRUID",
   talent = true,
+  specID = { SPEC_DRUID_RESTO },
 }
 
 -- Berserk
@@ -177,6 +192,7 @@ LCT_SpellData[50334] = {
   cooldown = 180,
   class = "DRUID",
   talent = true,
+  specID = { SPEC_DRUID_FERAL },
 }
 
 -- Starfall
@@ -185,4 +201,5 @@ LCT_SpellData[48505] = {
   class = "DRUID",
   talent = true,
   duration = 10,
+  specID = { SPEC_DRUID_BALANCE },
 }

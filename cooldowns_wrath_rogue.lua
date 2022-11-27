@@ -1,3 +1,9 @@
+-- ================ ROGUE ================
+
+local SPEC_ROGUE_ASSA = 259
+local SPEC_ROGUE_OUTLAW = 260
+local SPEC_ROGUE_SUB = 261
+
 -- Blind
 LCT_SpellData[2094] = {
   class = "ROGUE",
@@ -10,19 +16,23 @@ LCT_SpellData[13877] = {
   cooldown = 120,
   class = "ROGUE",
   talent = true,
+  specID = { SPEC_ROGUE_COMBAT },
 }
 
 -- Cold Blood
 LCT_SpellData[14177] = {
   cooldown = 180,
   class = "ROGUE",
+  cooldown_starts_on_aura_fade = true,
   talent = true,
+  specID = { SPEC_ROGUE_SUB },
 }
 
 -- Shadowstep
 LCT_SpellData[36554] = {
   cooldown = 30,
   class = "ROGUE",
+  specID = { SPEC_ROGUE_SUB },
 }
 
 -- Kick
@@ -68,6 +78,7 @@ LCT_SpellData[14251] = {
   cooldown = 6,
   class = "ROGUE",
   talent = true,
+  specID = { SPEC_ROGUE_COMBAT },
 }
 
 -- Feint
@@ -94,6 +105,7 @@ LCT_SpellData[14278] = {
 LCT_SpellData[1784] = {
   class = "ROGUE",
   opt_lower_cooldown = 5,
+  cooldown_starts_on_aura_fade = true,
   cooldown = 10,
 }
 
@@ -102,6 +114,7 @@ LCT_SpellData[13750] = {
   cooldown = 180,
   class = "ROGUE",
   talent = true,
+  specID = { SPEC_ROGUE_COMBAT },
 }
 
 -- Premeditation
@@ -116,6 +129,7 @@ LCT_SpellData[13750] = {
 LCT_SpellData[14185] = {
   cooldown = 600,
   class = "ROGUE",
+  specID = { SPEC_ROGUE_SUB },
   talent = true,
   resets = {
     -- Always reset
@@ -150,6 +164,7 @@ LCT_SpellData[51713] = {
   class = "ROGUE",
   cooldown = 60,
   talent = true,
+  specID = { SPEC_ROGUE_SUB },
 }
 
 -- Dismantle
@@ -163,4 +178,5 @@ LCT_SpellData[51690] = {
   class = "ROGUE",
   cooldown = 120,
   talent = true,
+  specID = { SPEC_ROGUE_COMBAT },
 }
