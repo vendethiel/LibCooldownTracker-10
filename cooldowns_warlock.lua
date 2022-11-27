@@ -91,7 +91,7 @@ LCT_SpellData[199892] = {
 -- Grimoire of Sacrifice
 LCT_SpellData[108503] = {
 	class = "WARLOCK",
-	specID = { SPEC_WARLOCK_AFFLICTION, Destruction },
+	specID = { SPEC_WARLOCK_AFFLICTION, SPEC_WARLOCK_DESTRUCTION },
 	talent = true,
 	cooldown = 30
 }
