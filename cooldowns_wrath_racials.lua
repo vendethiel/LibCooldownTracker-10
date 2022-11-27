@@ -10,19 +10,19 @@ LCT_SpellData[28880] = {
 -- Will of the Forsaken (Undead)
 LCT_SpellData[7744] = {
 	race = "Scourge",
-	duration = 3,
 	cooldown = 120,
-  -- TODO sets cd of
+  -- TODO sets cd of trinket
 }
 -- Will to Survive (Human)
 LCT_SpellData[59752] = {
-	race = "Human",
-	duration = 20,
-	cooldown = 120,
-  sets_cooldown_of = {
-    -- WOTF
-    { spellid = 7744, cooldown = 45 },
-  }
+    race = "Human",
+    cooldown = 120,
+    sets_cooldowns = {
+        -- WOTF
+        { spellid = 7744, cooldown = 45 },
+        -- PvP Trinket
+        { spellid = 42292, cooldown = 120 },
+    }
 }
 -- Arcane Torrent (Blood Elf)
 LCT_SpellData[28730] = {

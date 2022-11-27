@@ -1,3 +1,9 @@
+-- ================ DK ================
+
+local SPEC_DK_BLOOD  = 250
+local SPEC_DK_FROST  = 251
+local SPEC_DK_UNHOLY = 252
+
 -- Death Knight/Blood
 -- Blood Tap
 LCT_SpellData[45529] = {
@@ -26,18 +32,21 @@ LCT_SpellData[48982] = {
   class = "DEATHKNIGHT",
   cooldown = 30,
   talent = true,
+  specID = { SPEC_DK_BLOOD },
 }
 -- Unholy Frenzy
 LCT_SpellData[49016] = {
   class = "DEATHKNIGHT",
   cooldown = 180,
   talent = true,
+  specID = { SPEC_DK_UNHOLY },
 }
 -- Dancing Rune Weapon
 LCT_SpellData[49028] = {
   class = "DEATHKNIGHT",
   cooldown = 90,
   talent = true,
+  specID = { SPEC_DK_BLOOD },
 }
 
 -- Death Knight/Frost
@@ -65,6 +74,7 @@ LCT_SpellData[49039] = {
   class = "DEATHKNIGHT",
   cooldown = 120,
   talent = true,
+  specID = { SPEC_DK_UNHOLY },
   duration = 10,
 }
 -- Hungering Cold
@@ -72,6 +82,7 @@ LCT_SpellData[49203] = {
   class = "DEATHKNIGHT",
   cooldown = 60,
   talent = true,
+  specID = { SPEC_DK_FROST },
 }
 
 -- Death Knight/Unholy
@@ -104,6 +115,7 @@ LCT_SpellData[51052] = {
   cooldown = 120,
   talent = true,
   duration = 10,
+  specID = { SPEC_DK_UNHOLY },
 }
 -- Summon Gargoyle
 LCT_SpellData[49206] = {
@@ -111,4 +123,5 @@ LCT_SpellData[49206] = {
   cooldown = 180,
   talent = true,
   duration = 30,
+  specID = { SPEC_DK_UNHOLY },
 }

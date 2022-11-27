@@ -1,3 +1,9 @@
+-- ================ HUNTER ================
+
+local SPEC_HUNTER_BM   = 253
+local SPEC_HUNTER_MM   = 254
+local SPEC_HUNTER_SURV = 255
+
 -- Distracting Shot
 LCT_SpellData[20736] = {
   class = "HUNTER",
@@ -27,6 +33,7 @@ LCT_SpellData[19503] = {
   class = "HUNTER",
   cooldown = 30,
   talent = true,
+  specID = { SPEC_HUNTER_MM },
 }
 
 -- Dash
@@ -126,6 +133,7 @@ LCT_SpellData[19574] = {
   class = "HUNTER",
   cooldown = 120,
   talent = true,
+  specID = { SPEC_HUNTER_BM },
 }
 
 -- Intimidation
@@ -133,6 +141,7 @@ LCT_SpellData[19577] = {
   class = "HUNTER",
   cooldown = 60,
   talent = true,
+  specID = { SPEC_HUNTER_BM },
 }
 
 -- Prowl
@@ -182,6 +191,7 @@ LCT_SpellData[19386] = {
   class = "HUNTER",
   cooldown = 60,
   talent = true,
+  specID = { SPEC_HUNTER_SURV },
 }
 LCT_SpellData[24132] = 19386
 LCT_SpellData[24133] = 19386
@@ -238,7 +248,8 @@ LCT_SpellData[23989] = {
   class = "HUNTER",
   cooldown = 180,
   talent = true,
-  resets = { 5116, 34026, 53271, 1513, 3044, 20736, 1543, 53351, 2643, 3045, 19801, 3034, 19263, 781, 13813, 5384, 60192, 1499, 13809, 13795, 34477, 1495, 2973, 34600, 19434, 53209, 34490, 19503 }
+  resets = { 5116, 34026, 53271, 1513, 3044, 20736, 1543, 53351, 2643, 3045, 19801, 3034, 19263, 781, 13813, 5384, 60192, 1499, 13809, 13795, 34477, 1495, 2973, 34600, 19434, 53209, 34490, 19503 },
+  specID = { SPEC_HUNTER_MM },
 }
 
 -- Silencing Shot
@@ -246,6 +257,7 @@ LCT_SpellData[34490] = {
   class = "HUNTER",
   cooldown = 20,
   talent = true,
+  specID = { SPEC_HUNTER_MM },
 }
 
 -- Cower
@@ -280,9 +292,13 @@ LCT_SpellData[3034] = {
 
 -- Freezing Trap
 LCT_SpellData[1499] = {
-  opt_lower_cooldown = 24,
-  class = "HUNTER",
-  cooldown = 30,
+    opt_lower_cooldown = 24,
+    class = "HUNTER",
+    cooldown = 30,
+    sets_cooldowns = {
+        -- Freezing Arrow
+        { spellid = 60192, cooldown = 30 },
+    }
 }
 LCT_SpellData[14310] = 1499
 LCT_SpellData[14311] = 1499
@@ -386,6 +402,7 @@ LCT_SpellData[53209] = {
   class = "HUNTER",
   cooldown = 10,
   talent = true,
+  specID = { SPEC_HUNTER_MM },
 }
 
 -- Black Arrow
@@ -393,6 +410,7 @@ LCT_SpellData[3674] = {
   class = "HUNTER",
   cooldown = 30,
   talent = true,
+  specID = { SPEC_HUNTER_SURV },
 }
 
 -- Explosive Shot
@@ -401,6 +419,7 @@ LCT_SpellData[53301] = {
   cooldown = 6,
   talent = true,
   detects = { 3674 },
+  specID = { SPEC_HUNTER_SURV },
 }
 
 -- Master's Call
@@ -413,4 +432,8 @@ LCT_SpellData[53271] = {
 LCT_SpellData[60192] = {
   class = "HUNTER",
   cooldown = 30,
+	sets_cooldowns = {
+        -- Freezing Trap
+        { spellid = 1499, cooldown = 30 },
+	}
 }

@@ -1,3 +1,9 @@
+-- ================ PRIEST ================
+
+local SPEC_PRIEST_DISC = 256
+local SPEC_PRIEST_HOLY = 257
+local SPEC_PRIEST_SHADOW = 258
+
 -- Power Word: Shield
 LCT_SpellData[17] = {
   class = "PRIEST",
@@ -49,13 +55,13 @@ LCT_SpellData[10060] = {
   class = "PRIEST",
   cooldown = 120,
   talent = true,
+  specID = { SPEC_PRIEST_DISC },
 }
 
 -- Desperate Prayer
 LCT_SpellData[48173] = {
   class = "PRIEST",
   cooldown = 120,
-  talent = true,
 }
 LCT_SpellData[19236] = 48173
 LCT_SpellData[19238] = 48173
@@ -80,6 +86,7 @@ LCT_SpellData[15487] = {
   class = "PRIEST",
   cooldown = 45,
   talent = true,
+  specID = { SPEC_PRIEST_SHADOW },
 }
 
 -- Shadowfiend
@@ -130,6 +137,7 @@ LCT_SpellData[14751] = {
   class = "PRIEST",
   cooldown = 180,
   talent = true,
+  specID = { SPEC_PRIEST_DISC },
 }
 
 -- Pain Suppression
@@ -137,6 +145,7 @@ LCT_SpellData[33206] = {
   class = "PRIEST",
   cooldown = 180,
   talent = true,
+  specID = { SPEC_PRIEST_DISC },
 }
 
 -- Fear Ward
@@ -150,6 +159,7 @@ LCT_SpellData[724] = {
   class = "PRIEST",
   cooldown = 180,
   talent = true,
+  specID = { SPEC_PRIEST_HOLY },
 }
 LCT_SpellData[27870] = 724
 LCT_SpellData[27871] = 724
@@ -162,6 +172,7 @@ LCT_SpellData[47540] = {
   class = "PRIEST",
   cooldown = 12,
   talent = true,
+  specID = { SPEC_PRIEST_DISC },
 }
 LCT_SpellData[53005] = 47540
 LCT_SpellData[53006] = 47540
@@ -172,6 +183,7 @@ LCT_SpellData[47585] = {
   class = "PRIEST",
   cooldown = 120,
   talent = true,
+  specID = { SPEC_PRIEST_SHADOW },
 }
 
 -- Guardian Spirit
@@ -179,4 +191,5 @@ LCT_SpellData[47788] = {
   class = "PRIEST",
   cooldown = 180,
   talent = true,
+  specID = { SPEC_PRIEST_HOLY },
 }

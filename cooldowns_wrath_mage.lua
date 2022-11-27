@@ -1,8 +1,15 @@
+-- ================ MAGE ================
+
+local SPEC_MAGE_ARCANE = 62
+local SPEC_MAGE_FIRE = 63
+local SPEC_MAGE_FROST = 64
+
 -- Arcane Power
 LCT_SpellData[12042] = {
   class = "MAGE",
   cooldown = 120,
   talent = true,
+  specID = { SPEC_MAGE_ARCANE },
 }
 
 -- Presence of Mind
@@ -10,6 +17,7 @@ LCT_SpellData[12043] = {
   class = "MAGE",
   cooldown = 120,
   talent = true,
+  specID = { SPEC_MAGE_ARCANE },
 }
 
 -- Evocation
@@ -78,6 +86,7 @@ LCT_SpellData[42873] = 2136
 LCT_SpellData[33395] = {
   cooldown = 25,
   class = "MAGE",
+  specID = { SPEC_MAGE_FROST },
 }
 
 -- Cone of Cold
@@ -118,6 +127,7 @@ LCT_SpellData[11958] = {
   cooldown = 480,
   opt_lower_cooldown = 384,
   class = "MAGE",
+  specID = { SPEC_MAGE_FROST },
   talent = true,
   resets = { 122, 120, 12472, 11426, 31687, 45438, 44572 },
 }
@@ -127,6 +137,7 @@ LCT_SpellData[31661] = {
   cooldown = 20,
   class = "MAGE",
   talent = true,
+  specID = { SPEC_MAGE_FIRE },
 }
 LCT_SpellData[33041] = 31661
 LCT_SpellData[33042] = 31661
@@ -146,6 +157,7 @@ LCT_SpellData[11129] = {
   cooldown = 120,
   class = "MAGE",
   talent = true,
+  specID = { SPEC_MAGE_FIRE },
 }
 
 -- Icy Veins
@@ -153,6 +165,7 @@ LCT_SpellData[12472] = {
   cooldown = 180,
   class = "MAGE",
   talent = true,
+  specID = { SPEC_MAGE_FROST },
 }
 
 -- Counterspell
@@ -167,6 +180,7 @@ LCT_SpellData[11113] = {
   cooldown = 30,
   class = "MAGE",
   talent = true,
+  specID = { SPEC_MAGE_FIRE },
 }
 LCT_SpellData[13018] = 11113
 LCT_SpellData[13019] = 11113
@@ -197,6 +211,7 @@ LCT_SpellData[43039] = 11426
 LCT_SpellData[31687] = {
   cooldown = 180,
   class = "MAGE",
+  specID = { SPEC_MAGE_FROST },
 }
 
 -- Ice Block
@@ -217,12 +232,13 @@ LCT_SpellData[27103] = {
 -- Mirror Image
 LCT_SpellData[55342] = {
   class = "MAGE",
-	cooldown = 180
+  cooldown = 180
 }
 
 -- Deep Freeze
 LCT_SpellData[44572] = {
   class = "MAGE",
-	cooldown = 30,
+  cooldown = 30,
   talent = true,
+  specID = { SPEC_MAGE_FROST },
 }

@@ -1,3 +1,9 @@
+-- ================ SHAMAN ================
+
+local SPEC_SHAMAN_ELEMENTAL   = 262
+local SPEC_SHAMAN_ENHANCEMENT = 263
+local SPEC_SHAMAN_RESTORATION = 264
+
 -- Earth Elemental Totem
 LCT_SpellData[2062] = {
   cooldown = 600,
@@ -29,6 +35,7 @@ LCT_SpellData[16190] = {
 LCT_SpellData[2894] = {
   cooldown = 600,
   class = "SHAMAN",
+  specID = { SPEC_SHAMAN_ELEMENTAL },
 }
 
 -- Grounding Totem
@@ -43,6 +50,7 @@ LCT_SpellData[30823] = {
   class = "SHAMAN",
   cooldown = 60,
   talent = true,
+  specID = { SPEC_SHAMAN_ENHANCEMENT },
 }
 
 -- Earth Shock
@@ -83,6 +91,7 @@ LCT_SpellData[16166] = {
   cooldown = 180,
   class = "SHAMAN",
   talent = true,
+  specID = { SPEC_SHAMAN_ELEMENTAL },
 }
 
 -- Heroism
@@ -107,12 +116,14 @@ LCT_SpellData[17364] = {
   class = "SHAMAN",
   cooldown = 8,
   talent = true,
+  specID = { SPEC_SHAMAN_ENHANCEMENT },
 }
 
 -- Chain Lightning
 LCT_SpellData[421] = {
   cooldown = 6,
   class = "SHAMAN",
+  specID = { SPEC_SHAMAN_ELEMENTAL },
 }
 LCT_SpellData[930] = 421
 LCT_SpellData[2860] = 421
@@ -162,6 +173,7 @@ LCT_SpellData[61295] = {
   class = "SHAMAN",
   cooldown = 6,
   talent = true,
+  specID = { SPEC_SHAMAN_RESTORATION },
 }
 LCT_SpellData[61299] = 61295
 LCT_SpellData[61300] = 61295
@@ -172,6 +184,7 @@ LCT_SpellData[51490] = {
   class = "SHAMAN",
   cooldown = 45,
   talent = true,
+  specID = { SPEC_SHAMAN_ELEMENTAL },
 }
 
 -- Hex
@@ -192,6 +205,7 @@ LCT_SpellData[51533] = {
   class = "SHAMAN",
   cooldown = 180,
   talent = true,
+  specID = { SPEC_SHAMAN_ENHANCEMENT },
 }
 
 -- TODO Nature's Guardian (is there an event?)
