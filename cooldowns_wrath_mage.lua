@@ -197,6 +197,7 @@ LCT_SpellData[11426] = {
   opt_lower_cooldown = 24,
   class = "MAGE",
   talent = true,
+  specID = { SPEC_MAGE_FROST },
   detects = { 11958 }
 }
 LCT_SpellData[13031] = 11426

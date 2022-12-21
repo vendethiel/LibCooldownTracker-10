@@ -35,8 +35,6 @@ LCT_SpellData[33831] = {
 LCT_SpellData[16689] = {
   cooldown = 60,
   class = "DRUID",
-  talent = true,
-  specID = { SPEC_DRUID_BALANCE },
 }
 LCT_SpellData[16810] = 16689
 LCT_SpellData[16811] = 16689
