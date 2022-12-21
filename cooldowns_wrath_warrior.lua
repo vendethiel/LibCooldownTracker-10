@@ -10,6 +10,7 @@ LCT_SpellData[12292] = {
   cooldown = 180,
   talent = true,
   duration = 30,
+  specID = { SPEC_WARRIOR_FURY },
 }
 
 -- Shield Block
@@ -38,7 +39,7 @@ LCT_SpellData[23881] = {
   class = "WARRIOR",
   cooldown = 4,
   talent = true,
-  detects = { 12292 },
+  specID = { SPEC_WARRIOR_FURY },
 }
 
 -- Intervene
@@ -128,7 +129,6 @@ LCT_SpellData[18499] = {
 LCT_SpellData[676] = {
   class = "WARRIOR",
   cooldown = 60,
-  talent = true,
 }
 
 -- Revenge

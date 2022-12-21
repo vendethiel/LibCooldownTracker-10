@@ -1,7 +1,7 @@
 -- ================ ROGUE ================
 
 local SPEC_ROGUE_ASSA = 259
-local SPEC_ROGUE_OUTLAW = 260
+local SPEC_ROGUE_COMBAT = 260
 local SPEC_ROGUE_SUB = 261
 
 -- Blind
@@ -99,12 +99,13 @@ LCT_SpellData[14278] = {
   cooldown = 20,
   class = "ROGUE",
   talent = true,
+  specID = { SPEC_ROGUE_SUB },
 }
 
 -- Stealth
 LCT_SpellData[1784] = {
   class = "ROGUE",
-  opt_lower_cooldown = 5,
+  opt_lower_cooldown = 8, -- Camouflage talent
   cooldown_starts_on_aura_fade = true,
   cooldown = 10,
 }
@@ -118,7 +119,7 @@ LCT_SpellData[13750] = {
 }
 
 -- Premeditation
--- XXX Cannot track this as it's only in stealth...
+-- Cannot track this as it's only in stealth...
 --LCT_SpellData[14183] = {
 --  cooldown = 120,
 --  class = "ROGUE",
