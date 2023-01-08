@@ -11,9 +11,14 @@ LCT_SpellData[28880] = {
 LCT_SpellData[7744] = {
 	race = "Scourge",
 	cooldown = 120,
-  -- TODO sets cd of trinket
+    sets_cooldowns = {
+        -- PvP Trinket
+		{ spellid = 42292, cooldown = 45 },
+        -- Will to Survive 
+        { spellid = 59752, cooldown = 45 },
+    },
 }
--- Will to Survive (Human)
+-- Will to Survive / EMFH (Human)
 LCT_SpellData[59752] = {
     race = "Human",
     cooldown = 120,

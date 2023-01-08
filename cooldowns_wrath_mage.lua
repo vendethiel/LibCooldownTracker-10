@@ -212,6 +212,7 @@ LCT_SpellData[43039] = 11426
 LCT_SpellData[31687] = {
   cooldown = 180,
   class = "MAGE",
+  talent = true,
   specID = { SPEC_MAGE_FROST },
 }
 
