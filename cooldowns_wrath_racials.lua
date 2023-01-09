@@ -13,7 +13,7 @@ LCT_SpellData[7744] = {
 	cooldown = 120,
     sets_cooldowns = {
         -- PvP Trinket
-		{ spellid = 42292, cooldown = 45 },
+        { spellid = 42292, cooldown = 45 },
         -- Will to Survive 
         { spellid = 59752, cooldown = 45 },
     },
