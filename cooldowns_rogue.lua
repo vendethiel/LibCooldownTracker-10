@@ -127,7 +127,6 @@ LCT_SpellData[382245] = {
 LCT_SpellData[137619] = {
 	class = "ROGUE",
 	talent = true,
-	offensive = true,
 	cooldown = 60
 }
 -- Echoing Reprimand
@@ -160,7 +159,7 @@ LCT_SpellData[185313] = {
 LCT_SpellData[207777] = {
 	class = "ROGUE",
 	talent = true,
-	defensive = true,
+	cc = true,
 	cooldown = 45,
 }
 -- Smoke Bomb
@@ -199,7 +198,6 @@ LCT_SpellData[385424] = {
 	class = "ROGUE",
 	talent = true,
 	specID = { SPEC_ROGUE_ASSA },
-	offensive = true,
 	charges = 3,
 	cooldown = 30
 }
@@ -295,6 +293,7 @@ LCT_SpellData[196937] = {
 LCT_SpellData[343142] = {
 	class = "ROGUE",
 	talent = true,
+	offensive = true,
 	specID = { SPEC_ROGUE_OUTLAW },
 	cooldown = 90,
 }
