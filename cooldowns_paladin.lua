@@ -101,7 +101,7 @@ LCT_SpellData[1022] = {
 -- Rebuke
 LCT_SpellData[96231] = {
 	class = "PALADIN",
-	specID = { SPEC_PALADIN_PROTECTION, SPEC_PALADIN_RETRIBUTION },
+	talent = true,
 	interrupt = true,
 	cooldown = 15
 }

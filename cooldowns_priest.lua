@@ -403,7 +403,6 @@ LCT_SpellData[64044] = {
 -- Void Shift
 LCT_SpellData[108968] = {
 	class = "PRIEST",
-	specID = { SPEC_PRIEST_SHADOW },
 	talent = true,
 	cooldown = 300
 }
