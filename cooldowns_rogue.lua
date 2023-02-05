@@ -2,42 +2,27 @@
 
 -- TODO how to model 2 charges for ShS for sub
 
+-- Classification structure:
+--	Rogue/baseline
+--	Rogue/talents
+--	Rogue/Assassination
+--	Rogue/Assassination/talents
+--	Rogue/Outlaw
+--	Rogue/Outlaw/talents
+--	Rogue/Subtlety
+--	Rogue/Subtetly/talents
+--	Rogue/Multispec/talents
+
+
 local SPEC_ROGUE_ASSA = 259
 local SPEC_ROGUE_OUTLAW = 260
 local SPEC_ROGUE_SUB = 261
 
 -- Rogue/baseline
--- Shroud of Concealment
-LCT_SpellData[114018] = {
-	class = "ROGUE",
-	defensive = true,
-	duration = 15,
-	cooldown = 360
-}
--- Cloak of Shadows
-LCT_SpellData[31224] = {
-	class = "ROGUE",
-	defensive = true,
-	duration = 5,
-	cooldown = 120
-}
 -- Kick
 LCT_SpellData[1766] = {
 	class = "ROGUE",
 	interrupt = true,
-	cooldown = 15
-}
--- Sprint
-LCT_SpellData[2983] = {
-	class = "ROGUE",
-	duration = 8,
-	cooldown = 60
-}
--- Feint
-LCT_SpellData[1966] = {
-	class = "ROGUE",
-	defensive = true,
-	duration = 6,
 	cooldown = 15
 }
 -- Crimson Vial
@@ -47,6 +32,18 @@ LCT_SpellData[185311] = {
 	duration = 6,
 	cooldown = 30
 }
+-- Kidney Shot
+LCT_SpellData[408] = {
+	class = "ROGUE",
+	stun = true,
+	cooldown = 20
+}
+-- Sprint
+LCT_SpellData[2983] = {
+	class = "ROGUE",
+	duration = 8,
+	cooldown = 60
+}
 -- Vanish
 LCT_SpellData[1856] = {
 	class = "ROGUE",
@@ -54,51 +51,123 @@ LCT_SpellData[1856] = {
 	duration = 3,
 	cooldown = 120,
 	opt_lower_cooldown = 75,
+	opt_charges = 2,
 }
+-- Rogue/talents
 -- Blind
 LCT_SpellData[2094] = {
 	class = "ROGUE",
+	talent = true,
 	cc = true,
 	cooldown = 120,
 	cooldown_overload = {
 		[SPEC_ROGUE_OUTLAW] = 90,
-	},
+	}
 }
--- Rogue/mixed
--- Kidney Shot
-LCT_SpellData[408] = {
+-- Cloak of Shadows
+LCT_SpellData[31224] = {
 	class = "ROGUE",
-	stun = true,
-	cooldown = 20
+	talent = true,
+	defensive = true,
+	duration = 5,
+	cooldown = 120
 }
 -- Evasion
 LCT_SpellData[5277] = {
 	class = "ROGUE",
+	talent = true,
 	defensive = true,
 	duration = 10,
 	cooldown = 120
 }
+-- Feint
+LCT_SpellData[1966] = {
+	class = "ROGUE",
+	talent = true,
+	defensive = true,
+	duration = 6,
+	cooldown = 15
+}
 -- Shadowstep
 LCT_SpellData[36554] = {
 	class = "ROGUE",
-	specID = { SPEC_ROGUE_ASSA, SPEC_ROGUE_SUB },
-	cooldown = 30,
+	talent = true,
+	cooldown = 30, -- note: can be reduced by sub talent "Quick decisions"
 	opt_charges = 2, -- note: subs always have 2 charges of this; but code doesn't handle such cases (yet?)
 }
--- Rogue/talents
+-- Shiv
+LCT_SpellData[5938] = {
+	class = "ROGUE",
+	talent = true,
+	cooldown = 25,
+	opt_charges = 2, -- note: modified by assa talent "Lightweight shiv", 
+}
+-- Gouge
+LCT_SpellData[1776] = {
+	class = "ROGUE",
+	talent = true,
+	cc = true,
+	cooldown = 20,
+}
+-- Tricks of the Trade
+LCT_SpellData[57934] = {
+	class = "ROGUE",
+	talent = true,
+	cooldown = 30,
+	-- note: modified by pvp talent, might want to clasify as offensive
+}
+-- Cold Blood
+LCT_SpellData[382245] = {
+	class = "ROGUE",
+	talent = true,
+	cooldown_starts_on_aura_fade = true,
+	cooldown = 45,
+}
+-- Marked for death
+LCT_SpellData[137619] = {
+	class = "ROGUE",
+	talent = true,
+	cooldown = 60
+}
+-- Echoing Reprimand
+LCT_SpellData[385616] = {
+	class = "ROGUE",
+	talent = true,
+	offensive = true,
+	cooldown = 45
+}
+-- Thistle Tea
+LCT_SpellData[381623] = {
+	class = "ROGUE",
+	talent = true,
+	offensive = true,
+	cooldown = 60,
+	charges = 3,
+}
+-- Shadow Dance
+-- Rogue committee needs to be summoned for this one
+LCT_SpellData[185313] = {
+	class = "ROGUE",
+	talent = true,
+	offensive = true,
+	duration = 6, -- talent Improved Shadow Dance can raise to 7-8 seconds. Didn't find any 'opt_duration' attribute
+	cooldown = 60,
+	opt_charges = 2,
+	opt_lower_cooldown = 40, -- talent Deepening Shadows
+}
+-- Dismantle
+LCT_SpellData[207777] = {
+	class = "ROGUE",
+	talent = true,
+	cc = true,
+	cooldown = 45,
+}
 -- Smoke Bomb
 LCT_SpellData[212182] = {
 	class = "ROGUE",
 	talent = true,
 	duration = 5,
 	cooldown = 180
-}
--- Marked for death
-LCT_SpellData[137619] = {
-	class = "ROGUE",
-	talent = true,
-	offensive = true,
-	cooldown = 60
 }
 -- Death from Above
 LCT_SpellData[269513] = {
@@ -107,16 +176,7 @@ LCT_SpellData[269513] = {
 	offensive = true,
 	cooldown = 30
 }
-
 -- Rogue/Assassination
--- Vendetta
-LCT_SpellData[79140] = {
-	class = "ROGUE",
-	specID = { SPEC_ROGUE_ASSA },
-	offensive = true,
-	duration = 20,
-	cooldown = 120
-}
 -- Garrote
 LCT_SpellData[703] = {
 	class = "ROGUE",
@@ -125,45 +185,47 @@ LCT_SpellData[703] = {
 	cooldown = 6
 }
 -- Rogue/Assassination/talents
+-- Deathmark
+LCT_SpellData[360194] = {
+	class = "ROGUE",
+	talent = true,
+	specID = { SPEC_ROGUE_ASSA },
+	offensive = true,
+	cooldown = 120,
+}
+-- Serrated Bone Spike
+LCT_SpellData[385424] = {
+	class = "ROGUE",
+	talent = true,
+	specID = { SPEC_ROGUE_ASSA },
+	charges = 3,
+	cooldown = 30
+}
 -- Exsanguinate
 LCT_SpellData[200806] = {
 	class = "ROGUE",
+	talent = true,
 	specID = { SPEC_ROGUE_ASSA },
 	offensive = true,
-	cooldown = 45
+	cooldown = 180,
 }
--- Neurotoxin
-LCT_SpellData[206328] = {
+-- Kingsbane
+LCT_SpellData[385627] = {
 	class = "ROGUE",
+	talent = true,
 	specID = { SPEC_ROGUE_ASSA },
 	offensive = true,
-	cooldown = 25
+	cooldown = 60,
 }
--- Toxic Blade
-LCT_SpellData[245388] = {
+-- Indiscriminate Carnage
+LCT_SpellData[381802] = {
 	class = "ROGUE",
+	talent = true,
 	specID = { SPEC_ROGUE_ASSA },
 	offensive = true,
-	cooldown = 25
+	cooldown = 45,
 }
-
--- Rogue/Outlaw
--- Adrenaline Rush
-LCT_SpellData[13750] = {
-	class = "ROGUE",
-	specID = { SPEC_ROGUE_OUTLAW },
-	offensive = true,
-	duration = 15,
-	cooldown = 180
-}
--- Riposte
-LCT_SpellData[199754] = {
-	class = "ROGUE",
-	specID = { SPEC_ROGUE_OUTLAW },
-	defensive = true,
-	duration = 10,
-	cooldown = 120
-}
+-- Rogue/Outlaw - most CDs are rough estimates with cd reduction
 -- Between the Eyes
 LCT_SpellData[315341] = {
 	class = "ROGUE",
@@ -171,41 +233,38 @@ LCT_SpellData[315341] = {
 	cc = true,
 	cooldown = 30
 }
+-- Rogue/Outlaw/talents
 -- Blade Flurry
 LCT_SpellData[13877] = {
 	class = "ROGUE",
+	talent = true,
 	specID = { SPEC_ROGUE_OUTLAW },
-	charges = 2,
-	cooldown = 25
+	cooldown = 20,
+	duration  = 10,
 }
--- Gouge
-LCT_SpellData[1776] = {
+-- Blade Rush
+LCT_SpellData[271877] = {
 	class = "ROGUE",
 	specID = { SPEC_ROGUE_OUTLAW },
-	cc = true,
-	cooldown = 15
+	talent = true,
+	cooldown = 30,
+}
+-- Adrenaline Rush
+LCT_SpellData[13750] = {
+	class = "ROGUE",
+	talent = true,
+	specID = { SPEC_ROGUE_OUTLAW },
+	offensive = true,
+	duration = 20,
+	cooldown = 180
 }
 -- Grappling Hook
 LCT_SpellData[195457] = {
 	class = "ROGUE",
-	specID = { SPEC_ROGUE_OUTLAW },
-	cooldown = 60
-}
--- Rogue/Outlaw/talents
--- Ghostly Strike
-LCT_SpellData[196937] = {
-	class = "ROGUE",
-	specID = { SPEC_ROGUE_OUTLAW },
 	talent = true,
-	cooldown = 35
-}
--- Plunder Armor
-LCT_SpellData[198529] = {
-	class = "ROGUE",
 	specID = { SPEC_ROGUE_OUTLAW },
-	talent = true,
-	duration = 10,
-	cooldown = 120
+	cooldown = 30,
+	opt_lower_cooldown = 15, -- talent 'Retractable Hook'
 }
 -- Killing Spree
 LCT_SpellData[51690] = {
@@ -213,37 +272,39 @@ LCT_SpellData[51690] = {
 	specID = { SPEC_ROGUE_OUTLAW },
 	talent = true,
 	offensive = true,
-	cooldown = 120
+	cooldown = 80,
 }
--- Blade Rush
-LCT_SpellData[271877] = {
+-- Roll the bones
+LCT_SpellData[315508] = {
 	class = "ROGUE",
-	specID = { SPEC_ROGUE_OUTLAW },
 	talent = true,
-	duration = 5,
-	cooldown = 45
-}
--- Blade Rush
-LCT_SpellData[271877] = {
-	class = "ROGUE",
 	specID = { SPEC_ROGUE_OUTLAW },
-	talent = true,
-	cc = true,
-	cooldown = 45
-}
+	cooldown = 30,
 
--- Rogue/Subtlety
--- Shadow Dance
-LCT_SpellData[185313] = {
-	class = "ROGUE",
-	specID = { SPEC_ROGUE_SUB },
-	offensive = true,
-	duration = 6,
-	cooldown = 60,
-	charges = 2,
-	opt_charges = 3,
-	opt_lower_cooldown = 30, -- talent 238104 Enveloping Shadows
 }
+-- Ghostly Strike
+LCT_SpellData[196937] = {
+	class = "ROGUE",
+	specID = { SPEC_ROGUE_OUTLAW },
+	talent = true,
+	cooldown = 25,
+}
+-- Dreadblades
+LCT_SpellData[343142] = {
+	class = "ROGUE",
+	talent = true,
+	offensive = true,
+	specID = { SPEC_ROGUE_OUTLAW },
+	cooldown = 90,
+}
+-- Keep it rolling
+LCT_SpellData[381989] = {
+	class = "ROGUE",
+	talent = true,
+	specID = { SPEC_ROGUE_OUTLAW },
+	cooldown = 300,
+}
+-- Rogue/Subtlety
 -- Symbols of Death
 LCT_SpellData[212283] = {
 	class = "ROGUE",
@@ -252,79 +313,57 @@ LCT_SpellData[212283] = {
 	duration = 10,
 	cooldown = 30,
 }
+-- Rogue/Subtlety/talents
 -- Shadow Blades
 LCT_SpellData[121471] = {
 	class = "ROGUE",
+	talent = true,
 	specID = { SPEC_ROGUE_SUB },
 	offensive = true,
 	duration = 20,
-	cooldown = 180,
-	opt_lower_cooldown = 120, -- Thief's Bargain
-}
--- Rogue/Subtetly/talents
--- Cold Blood
-LCT_SpellData[213981] = {
-	class = "ROGUE",
-	specID = { SPEC_ROGUE_SUB },
-	talent = true,
-	cooldown_starts_on_aura_fade = true,
-	cooldown = 60
+	cooldown = 120, --  will be less in practice, reduced by "Stiletto Staccato" talent
+	opt_lower_cooldown = 80, -- Thief's Bargain
 }
 -- Secret Technique
 LCT_SpellData[280719] = {
 	class = "ROGUE",
 	specID = { SPEC_ROGUE_SUB },
+	offensive = true,
 	talent = true,
-	cooldown = 45
-}
--- Shadowy Duel
-LCT_SpellData[207736] = {
-	class = "ROGUE",
-	specID = { SPEC_ROGUE_SUB },
-	talent = true,
-	duration = 6,
-	cooldown = 120
+	cooldown = 45, -- Real CD is 60s, minus 1s by combo points spent, should never be used without echoing reprimand therefore setting cd at 45
 }
 -- Shuriken Tornado
 LCT_SpellData[277925] = {
 	class = "ROGUE",
 	specID = { SPEC_ROGUE_SUB },
 	talent = true,
-	cooldown = 60
-}
-
--- Covenant Abilities
--- Echoing Reprimand
-LCT_SpellData[323547] = {
-	class = "ROGUE",
-	covenant = "KYRIAN",
+	cooldown = 60,
 	offensive = true,
-	cooldown = 45
 }
-
 -- Flagellation
-LCT_SpellData[323654] = {
+LCT_SpellData[384631] = {
 	class = "ROGUE",
-	covenant = "VENTHYR",
+	talent = true,
+	specID = { SPEC_ROGUE_SUB },
 	offensive = true,
 	duration = 12,
-	cooldown = 90
+	cooldown = 90,
 }
-
--- Serrated Bone Spike
-LCT_SpellData[328547] = {
+-- Shadowy Duel
+LCT_SpellData[207736] = {
 	class = "ROGUE",
-	covenant = "NECROLORD",
-	offensive = true,
-	charges = 3,
-	cooldown = 30
+	specID = { SPEC_ROGUE_SUB },
+	talent = true,
+	duration = 5,
+	cooldown = 120
 }
-
+-- Rogue/Multispec/talents
 -- Sepsis
 LCT_SpellData[328305] = {
 	class = "ROGUE",
-	covenant = "NIGHTFAE",
+	talent = true,
+	specID = { SPEC_ROGUE_ASSA, SPEC_ROGUE_SUB , SPEC_ROGUE_OUTLAW}, -- Is on all three spec trees, don't want to mark it as "baseline" to avoid confusion
 	offensive = true,
-	duration = 10,
 	cooldown = 90
 }
+
