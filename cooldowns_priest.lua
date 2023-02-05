@@ -174,6 +174,7 @@ LCT_SpellData[33206] = {
 	defensive = true,
 	duration = 8,
 	cooldown = 180,
+	opt_charges = 2
 }
 -- Power Word: Radiance
 LCT_SpellData[194509] = {
