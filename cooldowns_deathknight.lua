@@ -5,6 +5,18 @@ local SPEC_DK_FROST  = 251
 local SPEC_DK_UNHOLY = 252
 
 -- DK/baseline
+-- Raise Dead
+LCT_SpellData[46584] = {
+	class = "DEATHKNIGHT",
+	cooldown = 30
+	talent = true,
+}
+-- Corpse Exploder
+LCT_SpellData[127344] = {
+	class = "DEATHKNIGHT",
+	offensive = true,
+	cooldown = 15
+}
 -- Dark Command
 LCT_SpellData[56222] = {
 	class = "DEATHKNIGHT",
@@ -16,44 +28,56 @@ LCT_SpellData[49576] = {
 	class = "DEATHKNIGHT",
 	offensive = true,
 	cooldown = 25,
-  opt_charges = 2, -- Death's Echo
-  opt_charges_linked = { 48265, 43265 } -- Death's Advance, Death and Decay
+	opt_charges = 2, -- Death's Echo
+	opt_charges_linked = { 48265, 43265 } -- Death's Advance, Death and Decay
 }
 -- Death's Advance
 LCT_SpellData[48265] = {
 	class = "DEATHKNIGHT",
 	cooldown = 45,
 	duration = 8,
-  opt_charges = 2, -- Death's Echo
-  opt_charges_linked = { 49576, 43265 } -- Death Grip, Death and Decay
+	opt_charges = 2, -- Death's Echo
+	opt_charges_linked = { 49576, 43265 } -- Death Grip, Death and Decay
 }
 -- Mind Freeze
 LCT_SpellData[47528] = {
 	class = "DEATHKNIGHT",
 	interrupt = true,
+	_talent = true,
 	cooldown = 15
 }
 -- Icebound Fortitude
 LCT_SpellData[48792] = {
 	class = "DEATHKNIGHT",
+	_talent = true,
 	defensive = true,
 	duration = 8,
 	cooldown = 180,
-	opt_lower_cooldown = 148 -- With conduit cooldown reduction, season 2 max is ?? sec, update in future seasons
+	opt_lower_cooldown = 148, -- ?
 }
 -- Anti-Magic Shell
 LCT_SpellData[48707] = {
 	class = "DEATHKNIGHT",
+	_talent = true,
 	defensive = true,
-	duration = 8,
+	duration = 5,
 	cooldown = 60
 }
 -- Anti-Magic Zone
 LCT_SpellData[51052] = {
 	class = "DEATHKNIGHT",
+	_talent = true,
 	defensive = true,
-	duration = 10,
+	duration = 8,
 	cooldown = 120
+}
+-- Blooddrinker
+LCT_SpellData[206931] = {
+	class = "DEATHKNIGHT",
+	talent = true,
+	defensive = true,
+	duration = 3,
+	cooldown = 30
 }
 -- Lichborne
 LCT_SpellData[49039] = {
@@ -61,6 +85,28 @@ LCT_SpellData[49039] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 120
+}
+-- Abomination Limb
+LCT_SpellData[383269] = {
+	class = "DEATHKNIGHT",
+	_talent = true,
+	offensive = true,
+	cooldown = 120
+}
+-- Blood Tap
+LCT_SpellData[221699] = {
+	class = "DEATHKNIGHT",
+	talent = true,
+	cooldown = 60,
+	charges = 2,
+}
+-- Rune Tap
+LCT_SpellData[194679] = {
+	class = "DEATHKNIGHT",
+	talent = true,
+	defensive = true,
+	cooldown = 25,
+	charges = 2,
 }
 
 -- DK/mixed
@@ -71,8 +117,8 @@ LCT_SpellData[43265] = {
 	offensive = true,
 	duration = 10,
 	cooldown = 30,
-  opt_charges = 2, -- Death's Echo
-  opt_charges_linked = { 49576, 48265 } -- Death Grip, Death's Advance
+	opt_charges = 2, -- Death's Echo
+	opt_charges_linked = { 49576, 48265 } -- Death Grip, Death's Advance
 }
 
 -- DK/talents
@@ -81,15 +127,15 @@ LCT_SpellData[212552] = {
 	class = "DEATHKNIGHT",
 	talent = true,
 	offensive = true,
-	duration = 3,
+	duration = 4,
 	cooldown = 60
 }
 -- Dark Simulacrum
 LCT_SpellData[77606] = {
 	class = "DEATHKNIGHT",
 	talent = true,
-	duration = 8,
-	cooldown = 25
+	duration = 12,
+	cooldown = 20
 }
 
 -- DK/mixed/talents
@@ -116,8 +162,7 @@ LCT_SpellData[48743] = {
 LCT_SpellData[108199] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_BLOOD },
-	cc = true,
-	cooldown = 60
+	cooldown = 120
 }
 -- Vampiric Blood
 LCT_SpellData[55233] = {
@@ -142,14 +187,13 @@ LCT_SpellData[49028] = {
 	specID = { SPEC_DK_BLOOD },
 	offensive = true,
 	defensive = true,
-	duration = 12,
+	duration = 8,
 	cooldown = 120
 }
 -- DK/Blood/talents
 -- Strangulate
 LCT_SpellData[47476] = {
 	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_BLOOD },
 	talent = true,
 	silence = true,
 	cooldown = 60
@@ -212,17 +256,8 @@ LCT_SpellData[51271] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_FROST },
 	offensive = true,
-	defensive = true,
 	duration = 12,
 	cooldown = 60
-}
--- Empower Rune Weapon
-LCT_SpellData[47568] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_FROST },
-	offensive = true,
-	duration = 20,
-	cooldown = 105
 }
 -- Remorseless Winter
 LCT_SpellData[196770] = {
@@ -241,14 +276,6 @@ LCT_SpellData[152279] = {
 	cooldown = 120
 }
 -- DK/Frost/talents
--- Glacial Advance
-LCT_SpellData[194913] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_FROST },
-	offensive = true,
-	talent = true,
-	cooldown = 6
-}
 -- Frostwyrm's Fury
 LCT_SpellData[279302] = {
 	class = "DEATHKNIGHT",
@@ -256,7 +283,6 @@ LCT_SpellData[279302] = {
 	offensive = true,
 	duration = 10,
 	cooldown = 180,
-	opt_lower_cooldown = 90, -- Absolute Zero legendary, almost all high level frost DKs play this. TODO: if the meta stays this way, make 90s cooldown a baseline.
 }
 -- Blinding Sleet
 LCT_SpellData[207167] = {
@@ -283,31 +309,18 @@ LCT_SpellData[305392] = {
 }
 
 -- DK/Unholy
--- Raise Dead
-LCT_SpellData[46584] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_UNHOLY },
-	cooldown = 30
-}
--- Corpse shield
-LCT_SpellData[49206] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_UNHOLY },
-	defensive = true,
-	cooldown = 60
-}
 -- Army of the Dead
 LCT_SpellData[42650] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_UNHOLY },
 	offensive = true,
-	duration = 40,
+	duration = 30,
 	cooldown = 480
 }
 -- Dark Transformation
 LCT_SpellData[63560] = {
 	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_UNHOLY },
+	talent = true,
 	offensive = true,
 	duration = 15,
 	cooldown = 60
@@ -316,8 +329,9 @@ LCT_SpellData[63560] = {
 LCT_SpellData[275699] = {
 	class = "DEATHKNIGHT",
 	specID = { SPEC_DK_UNHOLY },
+	talent = true,
 	offensive = true,
-	cooldown = 75
+	cooldown = 90
 }
 -- DK/Unholy/talents
 -- Raise Abomination
@@ -327,7 +341,7 @@ LCT_SpellData[288853] = {
 	talent = true,
 	offensive = true,
 	cooldown = 90,
-  duration = 25
+	duration = 25
 }
 -- Summon Gargoyle
 LCT_SpellData[49206] = {
@@ -335,7 +349,7 @@ LCT_SpellData[49206] = {
 	specID = { SPEC_DK_UNHOLY },
 	talent = true,
 	offensive = true,
-	duration = 30,
+	duration = 25,
 	cooldown = 180
 }
 -- Unholy Blight
@@ -363,8 +377,8 @@ LCT_SpellData[207289] = {
 	specID = { SPEC_DK_UNHOLY },
 	talent = true,
 	offensive = true,
-	duration = 12,
-	cooldown = 75
+	duration = 20,
+	cooldown = 90
 }
 
 -- DK/pet
@@ -373,7 +387,7 @@ LCT_SpellData[47481] = {
 	class = "DEATHKNIGHT",
 	pet = true,
 	stun = true,
-	cooldown = 60
+	cooldown = 90
 }
 LCT_SpellData[91800] = 47481
 -- Huddle
@@ -421,42 +435,5 @@ LCT_SpellData[91802] = {
 	pet = true,
 	interrupt = true,
 	cc = true,
-	cooldown = 30
-}
-
--- Covenant Abilities
--- Shackle the Unworthy
-LCT_SpellData[312202] = {
-	class = "DEATHKNIGHT",
-	covenant = "KYRIAN",
-	offensive = true,
-	duration = 14,
-	cooldown = 60
-}
-
--- Swarming Mist
-LCT_SpellData[311648] = {
-	class = "DEATHKNIGHT",
-	covenant = "VENTHYR",
-	offensive = true,
-	duration = 8,
-	cooldown = 60
-}
-
--- Abomination Limb (aka Slappyhands)
-LCT_SpellData[315443] = {
-	class = "DEATHKNIGHT",
-	covenant = "NECROLORD",
-	offensive = true,
-	duration = 12,
-	cooldown = 120
-}
-
--- Death's Due
-LCT_SpellData[324128] = {
-	class = "DEATHKNIGHT",
-	covenant = "NIGHTFAE",
-	offensive = true,
-	duration = 10,
 	cooldown = 30
 }
