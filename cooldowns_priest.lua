@@ -19,14 +19,6 @@ LCT_SpellData[32379] = {
 	cooldown = 18,
 	opt_lower_cooldown = 9, -- Kiss of Death legendary
 }
--- Symbol of hope
-LCT_SpellData[64901] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_HOLY },
-	defensive = true,
-	duration = 12,
-	cooldown = 300
-}
 -- Power Infusion
 LCT_SpellData[10060] = {
 	class = "PRIEST",
@@ -55,7 +47,7 @@ LCT_SpellData[73325] = {
 	class = "PRIEST",
 	defensive = true,
 	cooldown = 90,
-  opt_charges = 2,
+  opt_charges = 2, -- ?
 }
 -- Desperate Prayer
 LCT_SpellData[19236] = {
@@ -83,8 +75,8 @@ LCT_SpellData[8122] = {
 -- Thoughtsteal
 LCT_SpellData[316262] = {
 	class = "PRIEST",
-  talent = true,
-  duration = 20,
+	talent = true,
+	duration = 20,
 	cooldown = 90
 }
 -- Priest/mixed
@@ -191,14 +183,14 @@ LCT_SpellData[62618] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 180,
-	opt_lower_cooldown = 90, -- with 197590 Dome of Light
+	opt_lower_cooldown = 90, -- with Dome of Light
 }
 -- Rapture
 LCT_SpellData[47536] = {
 	class = "PRIEST",
 	specID = { SPEC_PRIEST_DISC },
 	defensive = true,
-	duration = 10,
+	duration = 8,
 	cooldown = 90,
 }
 
@@ -261,8 +253,8 @@ LCT_SpellData[64901] = {
 	class = "PRIEST",
 	specID = { SPEC_PRIEST_HOLY },
 	defensive = true,
-	duration = 12,
-	cooldown = 300
+	duration = 4,
+	cooldown = 180
 }
 -- Prayer of Mending
 LCT_SpellData[33076] = {
@@ -295,7 +287,8 @@ LCT_SpellData[64843] = {
 	specID = { SPEC_PRIEST_HOLY },
 	heal = true,
 	duration = 8,
-	cooldown = 180
+	cooldown = 180, -- Seraphic Crescendo
+  opt_cooldown = 120,
 }
 -- Holy Word: Chastise
 LCT_SpellData[88625] = {
@@ -311,13 +304,21 @@ LCT_SpellData[2050] = {
 	heal = true,
 	cooldown = 60
 }
+-- Circle of Healing
+LCT_SpellData[204883] = {
+  class = "PRIEST",
+	specID = { SPEC_PRIEST_HOLY },
+  heal = true,
+  cooldown = 15,
+}
 -- Priest/Holy/talents
 -- Ray of Hope
 LCT_SpellData[197268] = {
 	class = "PRIEST",
 	specID = { SPEC_PRIEST_HOLY },
 	talent = true,
-	cooldown = 60
+	cooldown = 90,
+  duration = 6,
 }
 -- Holy Word: Sanctify
 LCT_SpellData[34861] = {
@@ -332,7 +333,7 @@ LCT_SpellData[213610] = {
 	specID = { SPEC_PRIEST_HOLY },
 	talent = true,
 	defensive = true,
-	cooldown = 30
+	cooldown = 45
 }
 -- Holy Word: Salvation
 LCT_SpellData[265202] = {
@@ -341,6 +342,21 @@ LCT_SpellData[265202] = {
 	talent = true,
 	defensive = true,
 	cooldown = 720 -- 12min
+}
+-- Divine Ascension
+LCT_SpellData[328530] = {
+	class = "PRIEST",
+	specID = { SPEC_PRIEST_HOLY },
+	talent = true,
+	cooldown = 60
+}
+-- Greater Heal
+LCT_SpellData[289666] = {
+	class = "PRIEST",
+	specID = { SPEC_PRIEST_HOLY },
+  talent = true,
+	heal = true,
+	cooldown = 12
 }
 
 -- Priest/Shadow
@@ -365,7 +381,7 @@ LCT_SpellData[15286] = {
 	class = "PRIEST",
 	specID = { SPEC_PRIEST_SHADOW },
 	defensive = true,
-	duration = 6,
+	duration = 12,
 	cooldown = 120
 }
 -- Silence
@@ -413,6 +429,7 @@ LCT_SpellData[211522] = {
 	specID = { SPEC_PRIEST_SHADOW },
 	talent = true,
 	cooldown = 45,
+	duration = 12,
 }
 -- Shadow Word: Void
 LCT_SpellData[205351] = {
