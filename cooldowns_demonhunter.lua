@@ -15,14 +15,16 @@ LCT_SpellData[183752] = {
 LCT_SpellData[217832] = {
 	class = "DEMONHUNTER",
 	cc = true,
+	_talent = true,
 	cooldown = 45
 }
 -- Spectral Sight
-LCT_SpellData[278326] = {
+LCT_SpellData[320379] = {
 	class = "DEMONHUNTER",
 	duration = 10,
 	cooldown = 30
 }
+LCT_SpellData[188501] = 320379
 -- Consume Magic
 LCT_SpellData[278326] = {
 	class = "DEMONHUNTER",
@@ -44,6 +46,7 @@ LCT_SpellData[195072] = {
 -- Chaos Nova
 LCT_SpellData[179057] = {
 	class = "DEMONHUNTER",
+	_talent = true,
 	stun = true,
 	cooldown = 60
 }
@@ -51,7 +54,7 @@ LCT_SpellData[179057] = {
 LCT_SpellData[191427] = {
 	class = "DEMONHUNTER",
 	offensive = true,
-	duration = 30,
+	duration = 24,
 	cooldown = 240
 }
 -- DH/talents
@@ -67,9 +70,8 @@ LCT_SpellData[205604] = {
 LCT_SpellData[198013] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_HAVOC },
-	cooldown = 30,
-	duration = 4,
-	opt_lower_cooldown = 4, -- depending on talent
+	cooldown = 40,
+	duration = 2,
 }
 -- Blur
 LCT_SpellData[198589] = {
@@ -83,7 +85,7 @@ LCT_SpellData[198589] = {
 LCT_SpellData[188499] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_HAVOC },
-	cooldown = 9
+	cooldown = 15
 }
 -- Darkness
 LCT_SpellData[196718] = {
@@ -91,7 +93,7 @@ LCT_SpellData[196718] = {
 	specID = { SPEC_DH_HAVOC },
 	defensive = true,
 	duration = 8,
-	cooldown = 180
+	cooldown = 300
 }
 -- DH/Havoc/talents
 -- Netherwalk
@@ -108,45 +110,16 @@ LCT_SpellData[258920] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_HAVOC },
 	talent = true,
-	duration = 10,
+	duration = 6,
 	cooldown = 30
 }
--- Nemesis
-LCT_SpellData[206491] = {
-	class = "DEMONHUNTER",
-	specID = { SPEC_DH_HAVOC },
-	talent = true,
-	cooldown = 120
-}
--- Mana Break
-LCT_SpellData[203704] = {
-	class = "DEMONHUNTER",
-	specID = { SPEC_DH_HAVOC },
-	talent = true,
-	offensive = true,
-	cooldown = 60
-}
--- Mana Rift
-LCT_SpellData[235903] = {
-	class = "DEMONHUNTER",
-	specID = { SPEC_DH_HAVOC },
-	talent = true,
-	offensive = true,
-	cooldown = 10
-}
--- Dark Slash
+-- Essence Break
 LCT_SpellData[258860] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_HAVOC },
 	talent = true,
-	cooldown = 20,
-}
--- Eye of Leotheras
-LCT_SpellData[206649] = {
-	class = "DEMONHUNTER",
-	specID = { SPEC_DH_HAVOC },
-	talent = true,
-	cooldown = 45,
+	duration = 4,
+	cooldown = 40,
 }
 -- Fel Barrage
 LCT_SpellData[258925] = {
@@ -173,14 +146,6 @@ LCT_SpellData[206803] = {
 	talent = true,
 	cooldown = 60,
 }
--- Imprison (Detainment)
-LCT_SpellData[221527] = {
-    class = "DEMONHUNTER",
-    cc = true,
-    talent = true,
-    replaces = 217832,
-    cooldown = 60
-}
 
 -- DH/Vengeance
 -- Sigil of Misery
@@ -188,7 +153,7 @@ LCT_SpellData[207684] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_VENGEANCE },
 	silence = true,
-	cooldown = 90,
+	cooldown = 120,
 }
 -- Sigil of Flame
 LCT_SpellData[204596] = {
@@ -201,14 +166,14 @@ LCT_SpellData[202137] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_VENGEANCE },
 	silence = true,
-	cooldown = 60
+	cooldown = 60,
 }
 -- Demon Spikes
-LCT_SpellData[207684] = {
+LCT_SpellData[203720] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_VENGEANCE },
-	charges = 2,
 	cooldown = 20,
+	charges = 2,
 }
 -- Fiery Brand
 LCT_SpellData[204021] = {
@@ -216,6 +181,7 @@ LCT_SpellData[204021] = {
 	specID = { SPEC_DH_VENGEANCE },
 	offensive = true,
 	cooldown = 60,
+	charges = 2,
 }
 -- Infernal Strike
 LCT_SpellData[189110] = {
@@ -230,7 +196,7 @@ LCT_SpellData[202138] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_VENGEANCE },
 	talent = true,
-	cooldown = 90
+	cooldown = 60
 }
 -- Fel Devastation
 LCT_SpellData[212084] = {
@@ -245,7 +211,7 @@ LCT_SpellData[205629] = {
 	class = "DEMONHUNTER",
 	specID = { SPEC_DH_VENGEANCE },
 	talent = true,
-	cooldown = 45
+	cooldown = 20
 }
 -- Illidan's Grasp
 LCT_SpellData[205630] = {
@@ -270,42 +236,4 @@ LCT_SpellData[263648] = {
 	talent = true,
 	defensive = true,
 	cooldown = 30,
-	duration = 12,
-}
-
--- Covenant Abilities
--- Elysian Decree
-LCT_SpellData[306830] = {
-	class = "DEMONHUNTER",
-	covenant = "KYRIAN",
-	offensive = true,
-	duration = 2,
-	cooldown = 60
-}
-
--- Sinful Brand
-LCT_SpellData[317009] = {
-	class = "DEMONHUNTER",
-	covenant = "VENTHYR",
-	offensive = true,
-	duration = 8,
-	cooldown = 60
-}
-
--- Fodder to the Flame
-LCT_SpellData[329554] = {
-	class = "DEMONHUNTER",
-	covenant = "NECROLORD",
-	offensive = true,
-	duration = 25,
-	cooldown = 120
-}
-
--- The Hunt
-LCT_SpellData[323639] = {
-	class = "DEMONHUNTER",
-	covenant = "NIGHTFAE",
-	offensive = true,
-	duration = 6,
-	cooldown = 90
 }
