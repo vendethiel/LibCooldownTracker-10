@@ -259,7 +259,7 @@ LCT_SpellData[107428] = {
 	cooldown = 10,
 	reduce = {
 		buff = 116680, -- Thunder Focus Tea
-		spellid = 116680, -- ???
+		spellid = 382523, -- self
 		duration = 9,
 	}
 }

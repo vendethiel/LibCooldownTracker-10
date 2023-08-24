@@ -8,20 +8,20 @@ local SPEC_DK_UNHOLY = 252
 -- Raise Dead
 LCT_SpellData[46584] = {
 	class = "DEATHKNIGHT",
-	cooldown = 30
+	cooldown = 30,
 	talent = true,
 }
 -- Corpse Exploder
 LCT_SpellData[127344] = {
 	class = "DEATHKNIGHT",
 	offensive = true,
-	cooldown = 15
+	cooldown = 15,
 }
 -- Dark Command
 LCT_SpellData[56222] = {
 	class = "DEATHKNIGHT",
 	offensive = true,
-	cooldown = 8
+	cooldown = 8,
 }
 -- Death Grip
 LCT_SpellData[49576] = {

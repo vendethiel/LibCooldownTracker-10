@@ -413,6 +413,9 @@ local function CooldownEvent(event, unit, spellid)
             -- We'd go into negative charges. Adjust timer
             use_lower_cd = true
           end
+				else
+					-- No charges left.
+					use_lower_cd = true
         end
       elseif on_cd then
         -- No potential charges, yet the spell was cast while on CD? Adjust timer
@@ -477,13 +480,7 @@ local function CooldownEvent(event, unit, spellid)
         end
 
         -- V: set other cooldown(s)
-        local sets_cooldowns = {}
-        if spelldata.sets_cooldown then
-          sets_cooldowns = {spelldata.sets_cooldown}
-        end
-        if spelldata.sets_cooldowns then
-          sets_cooldowns = spelldata.sets_cooldowns
-        end
+        local sets_cooldowns = spelldata.sets_cooldown or spelldata.sets_cooldown and { spelldata.sets_cooldown }
 
         for i = 1, #sets_cooldowns do
           local cd = sets_cooldowns[i]

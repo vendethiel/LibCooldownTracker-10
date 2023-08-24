@@ -97,7 +97,7 @@ LCT_SpellData[414659] = {
 	defensive = true,
 	duration = 6,
 	cooldown = 240,
-	reduces = 45438
+	replaces = 45438
 }
 -- Mirror Image
 LCT_SpellData[55342] = {
