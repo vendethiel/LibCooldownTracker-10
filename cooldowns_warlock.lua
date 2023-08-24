@@ -55,37 +55,12 @@ LCT_SpellData[108416] = {
 	duration = 20,
 	cooldown = 60
 }
--- Curse of Fragility
-LCT_SpellData[199954] = {
-	class = "WARLOCK",
-	talent = true,
-	cooldown = 45
-}
--- Casting Circle
-LCT_SpellData[221703] = {
-	class = "WARLOCK",
-	talent = true,
-	duration = 8,
-	cooldown = 60
-}
 -- Nether Ward
 LCT_SpellData[212295] = {
 	class = "WARLOCK",
 	talent = true,
 	defensive = true,
 	cooldown = 45
-}
--- Curse of Tongues
-LCT_SpellData[199890] = {
-	class = "WARLOCK",
-	talent = true,
-	cooldown = 15
-}
--- Curse of Weakness
-LCT_SpellData[199892] = {
-	class = "WARLOCK",
-	talent = true,
-	cooldown = 20
 }
 -- Warlock/mixed/talents
 -- Grimoire of Sacrifice
@@ -107,7 +82,7 @@ LCT_SpellData[353294] = {
 	class = "WARLOCK",
 	talent = true,
 	cooldown = 60,
-  duration = 2
+	duration = 2
 }
 
 -- Warlock/Affliction
@@ -117,7 +92,7 @@ LCT_SpellData[205180] = {
 	specID = { SPEC_WARLOCK_AFFLICTION },
 	offensive = true,
 	duration = 20,
-	cooldown = 180
+	cooldown = 120
 }
 -- Warlock/Affliction/talents
 -- Vile Taint
@@ -125,7 +100,7 @@ LCT_SpellData[278350] = {
 	class = "WARLOCK",
 	specID = { SPEC_WARLOCK_AFFLICTION },
 	talent = true,
-	cooldown = 20
+	cooldown = 30
 }
 -- Curse of Shadows
 LCT_SpellData[234877] = {
@@ -156,7 +131,7 @@ LCT_SpellData[264106] = {
 	specID = { SPEC_WARLOCK_AFFLICTION },
 	talent = true,
 	offensive = true,
-	cooldown = 45
+	cooldown = 30,
 }
 -- Haunt
 LCT_SpellData[48181] = {
@@ -196,7 +171,7 @@ LCT_SpellData[267217] = {
 	class = "WARLOCK",
 	specID = { SPEC_WARLOCK_DEMONOLOGY },
 	talent = true,
-	duration = 20,
+	duration = 15,
 	cooldown = 180
 }
 -- Summon Vilefiend
@@ -245,7 +220,7 @@ LCT_SpellData[212459] = {
 	talent = true,
 	offensive = true,
 	duration = 30,
-	cooldown = 90
+	cooldown = 120
 }
 -- Bilescourge Bombers
 LCT_SpellData[267211] = {
@@ -254,7 +229,7 @@ LCT_SpellData[267211] = {
 	talent = true,
 	offensive = true,
 	duration = 6,
-	cooldown = 90
+	cooldown = 30
 }
 -- Demonic Strength
 LCT_SpellData[267171] = {
@@ -263,13 +238,6 @@ LCT_SpellData[267171] = {
 	talent = true,
 	cooldown = 60
 }
--- Call Felhunter
-LCT_SpellData[212619] = {
-	class = "WARLOCK",
-	specID = { SPEC_WARLOCK_DEMONOLOGY },
-	talent = true,
-	cooldown = 24
-}
 -- Call Observer
 LCT_SpellData[201996] = {
 	class = "WARLOCK",
@@ -277,7 +245,7 @@ LCT_SpellData[201996] = {
 	talent = true,
 	offensive = true,
 	duration = 20,
-	cooldown = 90
+	cooldown = 60
 }
 -- Fel Obelisk
 LCT_SpellData[353601] = {
@@ -311,7 +279,7 @@ LCT_SpellData[17962] = {
 	specID = { SPEC_WARLOCK_DESTRUCTION },
 	offensive = true,
 	charges = 2,
-	cooldown = 12
+	cooldown = 13
 }
 -- Warlock/Destruction/talents
 -- Bane of Havoc
@@ -346,7 +314,7 @@ LCT_SpellData[6353] = {
 	specID = { SPEC_WARLOCK_DESTRUCTION },
 	talent = true,
 	offensive = true,
-	cooldown = 20, -- reduced by 2s for every Soul Shard spent
+	cooldown = 45, -- reduced by 2s for every Soul Shard spent
 }
 -- Dark Soul: Instability
 LCT_SpellData[113858] = {
@@ -387,7 +355,7 @@ LCT_SpellData[89751] = {
 	class = "WARLOCK",
 	pet = true,
 	offensive = true,
-	cooldown = 45
+	cooldown = 30
 }
 -- Pursuit
 LCT_SpellData[30151] = {
@@ -413,7 +381,6 @@ LCT_SpellData[19647] = {
 	silence = true,
 	cooldown = 24
 }
-LCT_SpellData[119910] = 19647
 LCT_SpellData[132409] = 19647
 
 -- Warlock/Pet/Observer
@@ -433,7 +400,7 @@ LCT_SpellData[115276] = {
 	class = "WARLOCK",
 	pet = true,
 	dispel = true,
-	cooldown = 30
+	cooldown = 10
 }
 
 -- Warlock/Pet/Imp
@@ -467,7 +434,7 @@ LCT_SpellData[115770] = {
 	pet = true,
 	offensive = true,
 	knockback = true,
-	cooldown = 25
+	cooldown = 6
 }
 
 -- Warlock/Pet/Succubus
@@ -477,7 +444,7 @@ LCT_SpellData[6360] = {
 	pet = true,
 	offensive = true,
 	knockback = true,
-	cooldown = 25
+	cooldown = 6
 }
 
 -- Warlock/Pet/Voidwalker
@@ -498,39 +465,4 @@ LCT_SpellData[115831] = {
 	offensive = true,
 	duration = 6,
 	cooldown = 45
-}
-
--- Covenant Abilities
--- Scouring Tithe
-LCT_SpellData[312321] = {
-	class = "WARLOCK",
-	covenant = "KYRIAN",
-	offensive = true,
-	duration = 18,
-	cooldown = 40
-}
-
--- Impending Catastrophe
-LCT_SpellData[321792] = {
-	class = "WARLOCK",
-	covenant = "VENTHYR",
-	offensive = true,
-	cooldown = 60
-}
-
--- Decimating Bolt
-LCT_SpellData[325289] = {
-	class = "WARLOCK",
-	covenant = "NECROLORD",
-	offensive = true,
-	cooldown = 45
-}
-
--- Soul Rot
-LCT_SpellData[325640] = {
-	class = "WARLOCK",
-	covenant = "NIGHTFAE",
-	offensive = true,
-	duration = 8,
-	cooldown = 60
 }
