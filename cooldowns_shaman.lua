@@ -17,7 +17,8 @@ LCT_SpellData[51886] = {
 -- Tremor Totem
 LCT_SpellData[8143] = {
 	class = "SHAMAN",
-	cooldown = 60
+	talent = true,
+	cooldown = 60,
 }
 -- Earthbind Totem
 LCT_SpellData[2484] = {
@@ -30,19 +31,20 @@ LCT_SpellData[2484] = {
 LCT_SpellData[51514] = {
 	class = "SHAMAN",
 	cc = true,
-	cooldown = 30
+	cooldown = 30,
+	opt_lower_cooldown = 15,
 }
 -- Wind Shear
 LCT_SpellData[57994] = {
 	class = "SHAMAN",
 	interrupt = true,
-	cooldown = 12
+	cooldown = 12,
 }
 -- Capacitator Totem
 LCT_SpellData[192058] = {
 	class = "SHAMAN",
 	cc = true,
-	cooldown = 60, -- can get reduced by Static Charge
+	cooldown = 60,
 }
 -- Earth Elemental
 LCT_SpellData[198103] = {
@@ -56,14 +58,14 @@ LCT_SpellData[204336] = {
 	class = "SHAMAN",
 	talent = true,
 	duration = 3,
-	cooldown = 30
+	cooldown = 30,
 }
 -- Astral Shift
 LCT_SpellData[108271] = {
 	class = "SHAMAN",
 	defensive = true,
 	duration = 8,
-	cooldown = 90
+	cooldown = 90, -- 120s, reduced by 381647 Planes Traveler
 }
 -- Skyfury Totem
 LCT_SpellData[204330] = {
@@ -98,12 +100,12 @@ LCT_SpellData[51505] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ELEMENTAL },
 	offensive = true,
-	cooldown = 8
+	cooldown = 8,
+	opt_charges = 2,
 }
 -- Thunderstorm
 LCT_SpellData[51490] = {
 	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_ELEMENTAL },
 	knockback = true,
 	cc = true,
 	cooldown = 45
@@ -147,14 +149,15 @@ LCT_SpellData[117014] = {
 	specID = { SPEC_SHAMAN_ELEMENTAL },
 	talent = true,
 	offensive = true,
-	cooldown = 12
+	cooldown = 12,
+	opt_charges = 2,
 }
 -- Ascendance (elemental)
 LCT_SpellData[114050] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ELEMENTAL },
 	talent = true,
-	duration = 15,
+	duration = 18,
 	cooldown = 180,
 }
 -- Liquid magma totem
@@ -183,10 +186,9 @@ LCT_SpellData[210714] = {
 -- Lightining Lasso
 LCT_SpellData[305483] = {
 	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_ELEMENTAL },
 	talent = true,
 	duration = 6,
-	cooldown = 30,
+	cooldown = 45,
 }
 -- Shaman/Enhancement
 -- Feral Spirit
@@ -194,9 +196,8 @@ LCT_SpellData[51533] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	offensive = true,
-	heal = true,
 	duration = 15,
-	cooldown = 120
+	cooldown = 90
 }
 -- Spirit Walk
 LCT_SpellData[58875] = {
@@ -211,7 +212,7 @@ LCT_SpellData[17364] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_ENHANCEMENT },
 	offensive = true,
-	cooldown = 9
+	cooldown = 7.5
 }
 -- Shaman/Enhancement/talents
 -- Ascendance (enhancement)
@@ -237,62 +238,29 @@ LCT_SpellData[197214] = {
 	talent = true,
 	cooldown = 40,
 }
--- Ethereal Form
-LCT_SpellData[210918] = {
-	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_ENHANCEMENT },
-	talent = true,
-	cooldown = 45,
-	duration = 15,
-	replaces = 108271, -- Astral Shift
-}
--- Thundercharge
-LCT_SpellData[204366] = {
-	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_ENHANCEMENT },
-	talent = true,
-	cooldown = 45,
-}
--- Shamanism (Alliance)
-LCT_SpellData[204362] = {
-	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_ENHANCEMENT },
-	talent = true,
-	cooldown = 60,
-	duration = 10
-}
--- Shamanism (Horde)
-LCT_SpellData[204361] = {
-	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_ENHANCEMENT },
-	talent = true,
-	cooldown = 60,
-	duration = 10
-}
--- Doom Winds
-LCT_SpellData[335903] = {
+-- Burrow
+LCT_SpellData[409293] = {
 	class = "SHAMAN",
 	talent = true,
-	specID = { SPEC_SHAMAN_ENHANCEMENT },
-	duration = 12,
-	cooldown = 60,
+	cooldown = 120,
+	duration = 5,
 }
 
 -- Shaman/Restoration
 -- Healing Stream Totem
-LCT_SpellData[5394] = {
+LCT_SpellData[392916] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_RESTORATION },
 	heal = true,
 	duration = 15,
 	cooldown = 30
 }
+LCT_SpellData[392915] = 392916
 -- Healing Rain
 LCT_SpellData[73920] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_RESTORATION },
 	heal = true,
-	duration = 10,
 	cooldown = 10
 }
 -- Purify Spirit
@@ -309,17 +277,18 @@ LCT_SpellData[61295] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_RESTORATION },
 	heal = true,
-	cooldown = 6
+	cooldown = 6,
+	opt_charges = 2,
 }
 -- Spirit Link Totem
 LCT_SpellData[98008] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_RESTORATION },
 	defensive = true,
-	duration = 6, -- V: technically it's 20s
-	cooldown = 180
+	cooldown = 180,
+	opt_charges = 2,
 }
--- Stone Bulwark Totem
+-- Earthen Wall Totem
 LCT_SpellData[198838] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_RESTORATION },
@@ -340,7 +309,6 @@ LCT_SpellData[108280] = {
 	class = "SHAMAN",
 	specID = { SPEC_SHAMAN_RESTORATION },
 	heal = true,
-	duration = 10,
 	cooldown = 180
 }
 -- Downpour
@@ -349,7 +317,6 @@ LCT_SpellData[207778] = {
 	specID = { SPEC_SHAMAN_RESTORATION },
 	heal = true,
 	talent = true,
-	duration = 6,
 	cooldown = 5 -- this is impossible to calculate
 }
 -- Shaman/Restoration/talents
@@ -359,12 +326,12 @@ LCT_SpellData[73685] = {
 	specID = { SPEC_SHAMAN_RESTORATION },
 	talent = true,
 	heal = true,
-	cooldown = 15
+	cooldown = 15,
+	opt_charges = 2,
 }
 -- Earthgrab Totem
 LCT_SpellData[51485] = {
 	class = "SHAMAN",
-	specID = { SPEC_SHAMAN_RESTORATION },
 	talent = true,
 	replaces = 2484,
 	cooldown = 30
@@ -393,7 +360,7 @@ LCT_SpellData[157153] = {
 	specID = { SPEC_SHAMAN_RESTORATION },
 	heal = true,
 	talent = true,
-	cooldown = 30,
+	cooldown = 45,
 	replaces = 5394 -- Healing Stream Totem
 }
 -- Wellspring
@@ -403,39 +370,4 @@ LCT_SpellData[197995] = {
 	heal = true,
 	talent = true,
 	cooldown = 20
-}
-
--- Covenant Abilities
--- Vesper Totem
-LCT_SpellData[324386] = {
-	class = "SHAMAN",
-	covenant = "KYRIAN",
-	offensive = true,
-	duration = 30,
-	cooldown = 60
-}
-
--- Chain Harvest
-LCT_SpellData[320674] = {
-	class = "SHAMAN",
-	covenant = "VENTHYR",
-	offensive = true,
-	cooldown = 90
-}
-
--- Primordial Wave
-LCT_SpellData[326059] = {
-	class = "SHAMAN",
-	covenant = "NECROLORD",
-	offensive = true,
-	cooldown = 45
-}
-
--- Fae Transfusion
-LCT_SpellData[328923] = {
-	class = "SHAMAN",
-	covenant = "NIGHTFAE",
-	offensive = true,
-	duration = 3,
-	cooldown = 120
 }
