@@ -15,7 +15,7 @@ LCT_SpellData[109132] = {
 LCT_SpellData[115078] = {
 	class = "MONK",
 	cc = true,
-	cooldown = 45,
+	cooldown = 30,
 }
 -- Transcendence
 LCT_SpellData[101643] = {
@@ -25,14 +25,15 @@ LCT_SpellData[101643] = {
 -- Transcendence: Transfer
 LCT_SpellData[119996] = {
 	class = "MONK",
-	cooldown = 45,
+	cooldown = 30, -- Eminence talent
+	--opt_lower_cooldown = 30,
 }
 -- Leg Sweep
 LCT_SpellData[119381] = {
 	class = "MONK",
 	stun = true,
-	cooldown = 60,
-	opt_lower_cooldown = 50, -- with Tiger Tail Sweep
+	cooldown = 50,
+	--opt_lower_cooldown = 50, -- with Tiger Tail Sweep
 }
 -- Provoke
 LCT_SpellData[115546] = {
@@ -125,48 +126,24 @@ LCT_SpellData[233759] = {
 	talent = true,
 	cc = true,
 	duration = 6,
-	cooldown = 60
+	cooldown = 45
 }
 
 -- Monk/Brewmaster
--- Ironskin Brew
-LCT_SpellData[115308] = {
-	class = "MONK",
-	specID = { SPEC_MONK_BREWMASTER },
-	defensive = true,
-	duration = 3,
-	cooldown = 15,
-	charges = 3, -- TODO shared with Purifying Brew
-}
 -- Keg Smash
 LCT_SpellData[121253] = {
 	class = "MONK",
 	specID = { SPEC_MONK_BREWMASTER },
 	offensive = true,
 	cooldown = 8,
+	opt_charges = 2,
 }
 -- Purifying Brew
 LCT_SpellData[119582] = {
 	class = "MONK",
 	specID = { SPEC_MONK_BREWMASTER },
-	cooldown = 15,
-	charges = 3, -- TODO shared with Ironskin Brew
-}
--- Fortifying Brew (Brewmaster)
-LCT_SpellData[115203] = {
-	class = "MONK",
-	specID = { SPEC_MONK_BREWMASTER },
-	defensive = true,
-	duration = 15,
-	cooldown = 360,
-}
--- Fortifying Brew (Mistweaver/Windwalker)
-LCT_SpellData[115203] = {
-	class = "MONK",
-	specID = { SPEC_MONK_MISTWEAVER, SPEC_MONK_WINDWALKER },
-	defensive = true,
-	duration = 15,
-	cooldown = 180,
+	cooldown = 20,
+	charges = 3,
 }
 -- Breath of Fire
 LCT_SpellData[115181] = {
@@ -189,7 +166,6 @@ LCT_SpellData[115399] = {
 	class = "MONK",
 	specID = { SPEC_MONK_BREWMASTER },
 	talent = true,
-	talent = true,
 	cooldown = 120
 }
 -- Invoke Niuzao, the Black Ox
@@ -211,7 +187,8 @@ LCT_SpellData[116847] = {
 	class = "MONK",
 	specID = { SPEC_MONK_BREWMASTER },
 	talent = true,
-	cooldown = 6
+	cooldown = 6,
+	opt_charges = 2,
 }
 -- Mighty Ox Kick
 LCT_SpellData[202370] = {
@@ -219,22 +196,6 @@ LCT_SpellData[202370] = {
 	specID = { SPEC_MONK_BREWMASTER },
 	talent = true,
 	cooldown = 30
-}
--- Guard
-LCT_SpellData[115295] = {
-	class = "MONK",
-	specID = { SPEC_MONK_BREWMASTER },
-	talent = true,
-	defensive = true,
-	cooldown = 30
-}
--- Craft: Nimble Brew
-LCT_SpellData[213658] = {
-	class = "MONK",
-	specID = { SPEC_MONK_BREWMASTER },
-	talent = true,
-	charges = 2,
-	cooldown = 60
 }
 -- Admonishment
 LCT_SpellData[207025] = {
@@ -287,6 +248,7 @@ LCT_SpellData[113656] = {
 LCT_SpellData[101545] = {
 	class = "MONK",
 	specID = { SPEC_MONK_WINDWALKER },
+	talent = true,
 	cooldown = 25,
 }
 -- Rising Sun Kick
@@ -294,7 +256,12 @@ LCT_SpellData[107428] = {
 	class = "MONK",
 	specID = { SPEC_MONK_WINDWALKER },
 	offensive = true,
-	cooldown = 8,
+	cooldown = 10,
+	reduce = {
+		buff = 116680, -- Thunder Focus Tea
+		spellid = 116680, -- ???
+		duration = 9,
+	}
 }
 -- Touch of Karma
 LCT_SpellData[122470] = {
@@ -304,13 +271,6 @@ LCT_SpellData[122470] = {
 	defensive = true,
 	duration = 10,
 	cooldown = 90
-}
--- Rushing Jade Wind (WW)
-LCT_SpellData[261715] = {
-	class = "MONK",
-	specID = { SPEC_MONK_WINDWALKER },
-	talent = true,
-	cooldown = 6
 }
 -- Invoke Xuen, the White Tiger
 LCT_SpellData[123904] = {
@@ -381,7 +341,8 @@ LCT_SpellData[115310] = {
 	class = "MONK",
 	specID = { SPEC_MONK_MISTWEAVER },
 	mass_dispel = true,
-	cooldown = 180
+	cooldown = 180,
+	opt_charges = 2,
 }
 -- Thunder Focus Tea
 LCT_SpellData[116680] = {
@@ -405,7 +366,7 @@ LCT_SpellData[209584] = {
 	specID = { SPEC_MONK_MISTWEAVER },
 	talent = true,
 	duration = 5,
-	cooldown = 45
+	cooldown = 30
 }
 -- Healing Sphere
 LCT_SpellData[205234] = {
@@ -422,7 +383,8 @@ LCT_SpellData[196725] = {
 	specID = { SPEC_MONK_MISTWEAVER },
 	talent = true,
 	heal = true,
-	cooldown = 9
+	duration = 15,
+	cooldown = 45
 }
 -- Mana Tea
 LCT_SpellData[197908] = {
@@ -440,41 +402,4 @@ LCT_SpellData[198898] = {
 	talent = true,
 	cc = true,
 	cooldown = 30,
-}
-
--- Covenant Abilities
--- Weapons of Order
-LCT_SpellData[310454] = {
-	class = "MONK",
-  	covenant = "KYRIAN",
-	offensive = true,
-	duration = 30,
-	cooldown = 120
-}
-
--- Fallen Order
-LCT_SpellData[326860] = {
-	class = "MONK",
-	covenant = "VENTHYR",
-	offensive = true,
-	duration = 24,
-	cooldown = 180
-}
-
--- Bonedust Brew
-LCT_SpellData[325216] = {
-	class = "MONK",
-	covenant = "NECROLORD",
-	offensive = true,
-	duration = 10,
-	cooldown = 60
-}
-
--- Faeline Stomp
-LCT_SpellData[327104] = {
-	class = "MONK",
-	covenant = "NIGHTFAE",
-	offensive = true,
-	duration = 30,
-	cooldown = 30
 }
