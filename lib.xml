@@ -20,6 +20,5 @@
 	<Script file="cooldowns_warrior.lua"/>
 	<Script file="cooldowns_racials.lua"/>
 	<Script file="cooldowns_items.lua"/>
-	<Script file="cooldowns_covenants.lua"/>
 	<Script file="library.lua"/>
 </Ui>

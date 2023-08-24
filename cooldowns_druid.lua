@@ -15,26 +15,19 @@ LCT_SpellData[102383] = 102401 -- Moonkin
 -- Dash
 LCT_SpellData[1850] = {
 	class = "DRUID",
-	duration = 15,
-	cooldown = 180
+	duration = 10,
+	cooldown = 120
 }
 -- Growl
 LCT_SpellData[6795] = {
 	class = "DRUID",
 	cooldown = 8
 }
--- Stampeding Roar
-LCT_SpellData[77761] = {
-	class = "DRUID",
-	specID = { SPEC_DRUID_GUARDIAN, SPEC_DRUID_FERAL },
-	duration = 8,
-	cooldown = 120
-}
 -- Barkskin
 LCT_SpellData[22812] = {
 	class = "DRUID",
 	defensive = true,
-	duration = 12,
+	duration = 8,
 	cooldown = 60
 }
 LCT_SpellData[77764] = 77761
@@ -43,7 +36,7 @@ LCT_SpellData[106898] = 77761
 -- Innervate
 LCT_SpellData[29166] = {
 	class = "DRUID",
-	specID = { SPEC_DRUID_RESTO, SPEC_DRUID_BALANCE },
+	talent = true,
 	cooldown = 180,
 }
 -- Remove Corruption
@@ -59,7 +52,7 @@ LCT_SpellData[2782] = {
 LCT_SpellData[252216] = {
 	class = "DRUID",
 	talent = true,
-	duration = 15,
+	duration = 5,
 	cooldown = 45,
 	replaces = 1850
 }
@@ -79,9 +72,9 @@ LCT_SpellData[102359] = {
 -- Mighty Bash
 LCT_SpellData[5211] = {
 	class = "DRUID",
-	talent = true,
+	_talent = true,
 	stun = true,
-	cooldown = 50
+	cooldown = 60
 }
 -- Typhoon
 LCT_SpellData[132469] = {
@@ -97,6 +90,7 @@ LCT_SpellData[61336] = {
 	defensive = true,
 	cooldown = 180,
 	duration = 6,
+	opt_charges = 2,
 }
 -- Druid/talents/mixed
 -- Thorns
@@ -112,7 +106,7 @@ LCT_SpellData[108238] = {
 	specID = { SPEC_DRUID_BALANCE, SPEC_DRUID_FERAL, SPEC_DRUID_RESTO },
 	talent = true,
 	heal = true,
-	cooldown = 120
+	cooldown = 90
 }
 
 -- Druid/Balance
@@ -122,16 +116,8 @@ LCT_SpellData[78675] = {
 	specID = { SPEC_DRUID_BALANCE },
 	interrupt = true,
 	silence = true,
-	duration = 10,
+	duration = 8,
 	cooldown = 60
-}
--- Celestial Alignment
-LCT_SpellData[194223] = {
-	class = "DRUID",
-	specID = { SPEC_DRUID_BALANCE },
-	offensive = true,
-	duration = 20,
-	cooldown = 180
 }
 -- Druid/Balance/talents
 -- Incarnation (balance)
@@ -142,7 +128,6 @@ LCT_SpellData[102560] = {
 	offensive = true,
 	duration = 30,
 	cooldown = 180,
-	replaces = 194223 -- Celestial Alignment
 }
 -- Force of Nature
 LCT_SpellData[205636] = {
@@ -165,6 +150,7 @@ LCT_SpellData[209749] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_BALANCE },
 	talent = true,
+	duration = 5,
 	cooldown = 30
 }
 
@@ -174,26 +160,25 @@ LCT_SpellData[5217] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_FERAL },
 	offensive = true,
-	duration = 6,
+	duration = 10,
 	cooldown = 30
 }
 -- Maim
 LCT_SpellData[22570] = {
 	class = "DRUID",
-	specID = { SPEC_DRUID_FERAL },
+	talent = true,
 	stun = true,
-	cooldown = 20
+	cooldown = 20,
 }
 -- Skull Bash
 LCT_SpellData[106839] = {
 	class = "DRUID",
-	specID = { SPEC_DRUID_FERAL, SPEC_DRUID_GUARDIAN },
+	_talent = true,
 	interrupt = true,
 	cooldown = 15,
 }
-LCT_SpellData[93985] = 106839
 -- Berserk
-LCT_SpellData[106951] = {
+LCT_SpellData[343223] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_FERAL },
 	offensive = true,
@@ -211,23 +196,6 @@ LCT_SpellData[102543] = {
 	duration = 30,
 	replaces = 106951 -- Berserk
 }
--- Enraged Maim
-LCT_SpellData[236026] = {
-	class = "DRUID",
-	specID = { SPEC_DRUID_FERAL },
-	talent = true,
-	stun = true,
-	cooldown = 20,
-	replaces = 22570
-}
--- Rip and Tear
-LCT_SpellData[203242] = {
-	class = "DRUID",
-	specID = { SPEC_DRUID_FERAL },
-	talent = true,
-	offensive = true,
-	cooldown = 60
-}
 -- Feral Frenzy
 LCT_SpellData[274837] = {
 	class = "DRUID",
@@ -241,6 +209,7 @@ LCT_SpellData[202028] = {
 	specID = { SPEC_DRUID_FERAL },
 	talent = true,
 	cooldown = 8,
+	charges = 3,
 	-- replaces = 213764, -- replaces Swipe which has no cooldown
 }
 
@@ -248,16 +217,14 @@ LCT_SpellData[202028] = {
 -- Incapacitating Roar
 LCT_SpellData[99] = {
 	class = "DRUID",
-	specID = { SPEC_DRUID_GUARDIAN, SPEC_DRUID_BALANCE, SPEC_DRUID_FERAL, SPEC_DRUID_RESTO },
-	talent = true, -- Baseline for Guardian, but talent for other specs
+	talent = true,
 	cooldown = 30
 }
 -- Frenzied Regeneration
 LCT_SpellData[22842] = {
 	class = "DRUID",
-	specID = { SPEC_DRUID_GUARDIAN },
 	defensive = true,
-	charges = 2,
+	opt_charges = 2,
 	cooldown = 36,
 }
 -- Druid/Guardian/talents
@@ -276,7 +243,7 @@ LCT_SpellData[204066] = {
 	specID = { SPEC_DRUID_GUARDIAN },
 	talent = true,
 	offensive = true,
-	cooldown = 75
+	cooldown = 60
 }
 -- Alpha Challenge
 LCT_SpellData[207017] = {
@@ -285,14 +252,6 @@ LCT_SpellData[207017] = {
 	talent = true,
 	cooldown = 20,
 	replaces = 6795
-}
--- Alpha Challenge
-LCT_SpellData[207017] = {
-	class = "DRUID",
-	specID = { SPEC_DRUID_GUARDIAN },
-	talent = true,
-	cooldown = 30,
-	replaces = 99 -- Incapacitating Roar
 }
 -- Bristling Fur
 LCT_SpellData[155835] = {
@@ -315,14 +274,13 @@ LCT_SpellData[329042] = {
 	specID = { SPEC_DRUID_GUARDIAN },
 	talent = true,
 	cooldown = 120,
-  duration = 8
+	duration = 8
 }
 
 -- Druid/Restoration
 -- Ursol's Vortex
 LCT_SpellData[102793] = {
 	class = "DRUID",
-	specID = { SPEC_DRUID_RESTO },
 	cc = true,
 	cooldown = 60
 }
@@ -347,7 +305,8 @@ LCT_SpellData[18562] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_RESTO },
 	heal = true,
-	cooldown = 25
+	cooldown = 15,
+	opt_charges = 2,
 }
 -- Wild Growth
 LCT_SpellData[48438] = {
@@ -369,6 +328,7 @@ LCT_SpellData[740] = {
 	class = "DRUID",
 	specID = { SPEC_DRUID_RESTO },
 	defensive = true,
+	duration = 8,
 	cooldown = 180,
 }
 -- Nature's Swiftness
@@ -400,42 +360,5 @@ LCT_SpellData[203651] = {
 	specID = { SPEC_DRUID_RESTO },
 	talent = true,
 	heal = true,
-	cooldown = 45
-}
-
--- Covenant Abilities
--- Kindred Spirits
-LCT_SpellData[326434] = {
-	class = "DRUID",
-	covenant = "KYRIAN",
-	offensive = true,		-- varies by spec
-	duration = 10,
 	cooldown = 60
-}
-
--- Ravenous Frenzy
-LCT_SpellData[323546] = {
-	class = "DRUID",
-	covenant = "VENTHYR",
-	offensive = true,
-	duration = 20,
-	cooldown = 180
-}
-
--- Adaptive Swarm
-LCT_SpellData[325727] = {
-	class = "DRUID",
-	covenant = "NECROLORD",
-	duration = 12,
-	cooldown = 25
-}
-
--- Convoke the Spirits
-LCT_SpellData[323764] = {
-	class = "DRUID",
-	covenant = "NIGHTFAE",
-	offensive = true,
-	duration = 4,
-	cooldown = 120,
-	opt_lower_cooldown = 60, -- Legendary
 }
