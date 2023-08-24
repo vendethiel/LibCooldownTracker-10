@@ -5,12 +5,6 @@ local SPEC_WARRIOR_FURY = 72
 local SPEC_WARRIOR_PROT = 73
 
 -- Warrior/baseline
--- Ignore Pain
-LCT_SpellData[190456] = {
-	class = "WARRIOR",
-	defensive = true,
-	cooldown = 12
-}
 -- Spell Reflection
 LCT_SpellData[23920] = {
 	class = "WARRIOR",
@@ -54,6 +48,7 @@ LCT_SpellData[6552] = {
 -- Rallying Cry
 LCT_SpellData[97462] = {
 	class = "WARRIOR",
+	talent = true,
 	defensive = true,
 	duration = 10,
 	cooldown = 180
@@ -62,8 +57,6 @@ LCT_SpellData[97462] = {
 -- Avatar
 LCT_SpellData[107574] = {
 	class = "WARRIOR",
-	-- this spell is a bit weird: it's baseline for Prot, but a talent for Arms.
-	specID = { SPEC_WARRIOR_ARMS, SPEC_WARRIOR_PROT },
 	talent = true,
 	offensive = true,
 	duration = 20,
@@ -73,7 +66,7 @@ LCT_SpellData[107574] = {
 LCT_SpellData[202168] = {
 	class = "WARRIOR",
 	talent = true,
-	cooldown = 30,
+	cooldown = 25,
 	-- replaces = 34428, -- Victory Rush which has no CD
 }
 -- Storm Bolt
@@ -118,7 +111,8 @@ LCT_SpellData[118000] = {
 LCT_SpellData[7384] = {
 	class = "WARRIOR",
 	specID = { SPEC_WARRIOR_ARMS },
-	cooldown = 12
+	cooldown = 12,
+	opt_charges = 3,
 }
 -- Bladestorm
 LCT_SpellData[227847] = {
@@ -144,7 +138,7 @@ LCT_SpellData[118038] = {
 -- Colossus Smash
 LCT_SpellData[167105] = {
 	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_ARMS },
+	talent = true,
 	duration = 10,
 	cooldown = 45,
 }
@@ -171,7 +165,7 @@ LCT_SpellData[152277] = {
 	class = "WARRIOR",
 	specID = { SPEC_WARRIOR_ARMS },
 	talent = true,
-	cooldown = 60,
+	cooldown = 45,
 	duration = 7,
 	replaces = 227847 -- Bladestorm
 }
@@ -180,7 +174,7 @@ LCT_SpellData[845] = {
 	class ="WARRIOR",
 	specID = { SPEC_WARRIOR_ARMS },
 	talent = true,
-	cooldown = 9
+	cooldown = 6
 }
 -- Skullsplitter
 LCT_SpellData[260643] = {
@@ -212,7 +206,7 @@ LCT_SpellData[197690] = {
 	specID = { SPEC_WARRIOR_ARMS },
 	defensive = true,
 	talent = true,
-	cooldown = 6
+	cooldown = 3
 }
 -- Warbanner
 LCT_SpellData[236320] = {
@@ -220,7 +214,6 @@ LCT_SpellData[236320] = {
 	specID = { SPEC_WARRIOR_ARMS },
 	talent = true,
 	cooldown = 90,
-	duration = 15
 }
 -- Duel
 LCT_SpellData[236273] = {
@@ -232,13 +225,6 @@ LCT_SpellData[236273] = {
 }
 
 -- Warrior/Fury
--- Execute
-LCT_SpellData[5308] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_FURY },
-	offensive = true,
-	cooldown = 6,
-}
 -- Raging Blow
 LCT_SpellData[85288] = {
 	class = "WARRIOR",
@@ -259,7 +245,7 @@ LCT_SpellData[1719] = {
 	class = "WARRIOR",
 	specID = { SPEC_WARRIOR_FURY },
 	offensive = true,
-	duration = 5,
+	duration = 12,
 	cooldown = 90
 }
 -- Warrior/Fury/talents
@@ -268,7 +254,7 @@ LCT_SpellData[199261] = {
 	class = "WARRIOR",
 	specID = { SPEC_WARRIOR_FURY },
 	talent = true,
-	cooldown = 5,
+	cooldown = 4,
 }
 -- Siegebreaker
 LCT_SpellData[280772] = {
@@ -310,7 +296,7 @@ LCT_SpellData[2565] = {
 	defensive = true,
 	charges = 2,
 	duration = 6,
-	cooldown = 18
+	cooldown = 16
 }
 -- Shield Wall
 LCT_SpellData[871] = {
@@ -318,7 +304,7 @@ LCT_SpellData[871] = {
 	specID = { SPEC_WARRIOR_PROT },
 	defensive = true,
 	duration = 8,
-	cooldown = 240
+	cooldown = 210
 }
 -- Shockwave
 LCT_SpellData[46968] = {
@@ -327,20 +313,7 @@ LCT_SpellData[46968] = {
 	stun = true,
 	cooldown = 40
 }
--- Revenge
-LCT_SpellData[6572] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_PROT },
-	cooldown = 3
-}
 -- Warrior/Protection/talents
--- Shield Bash
-LCT_SpellData[198912] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_PROT },
-	talent = true,
-	cooldown = 10,
-}
 -- Bodyguard
 LCT_SpellData[213871] = {
 	class = "WARRIOR",
@@ -357,15 +330,6 @@ LCT_SpellData[206572] = {
 	offensive = true,
 	cooldown = 20,
 }
--- Mass Spell Reflection
-LCT_SpellData[213915] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_PROT },
-	talent = true,
-	defensive = true,
-	cooldown = 30,
-	replaces = 23920, -- Spell Reflection
-}
 -- Oppressor
 LCT_SpellData[205800] = {
 	class = "WARRIOR",
@@ -373,32 +337,4 @@ LCT_SpellData[205800] = {
 	talent = true,
 	cooldown = 20,
 	replaces = 355, -- Taunt
-}
-
--- Covenant Abilities
--- Spear of Bastion
-LCT_SpellData[307865] = {
-	class = "WARRIOR",
-	covenant = "KYRIAN",
-	offensive = true,
-	duration = 4,
-	cooldown = 60
-}
-
--- Conquerors Banner
-LCT_SpellData[324143] = {
-	class = "WARRIOR",
-	covenant = "NECROLORD",
-	offensive = true,
-	duration = 20,
-	cooldown = 180
-}
-
--- Ancient Aftershock
-LCT_SpellData[325886] = {
-	class = "WARRIOR",
-	covenant = "NIGHTFAE",
-	offensive = true,
-	duration = 12,
-	cooldown = 90
 }
