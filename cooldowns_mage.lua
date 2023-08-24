@@ -4,13 +4,57 @@ local SPEC_MAGE_ARCANE = 62
 local SPEC_MAGE_FIRE = 63
 local SPEC_MAGE_FROST = 64
 
--- Mage/baseline
+local DRAGON_BREATH = 31661
+local COMBUSTION = 190319
+local db_reduce = {
+	spellid = DRAGON_BREATH,
+	duration = 2
+}
+-- Fingers of Frost
+LCT_SpellData[112965] = {
+	class = "MAGE",
+	reduce = db_reduce,
+	hidden = true,
+	cooldown_starts_on_aura_fade = true,
+}
+-- Clearcasting
+LCT_SpellData[263725] = {
+	class = "MAGE",
+	reduce = db_reduce,
+	hidden = true,
+	cooldown_starts_on_aura_fade = true,
+}
+
+
+local combust_reduce = {
+	spellid = COMBUSTION,
+	buff = COMBUSTION,
+	duration = 1,
+}
+-- Pyroblast
+LCT_SpellData[11366] = {
+	class = "MAGE",
+	reduce = combust_reduce,
+	hidden = true,
+	cooldown_starts_on_aura_fade = true,
+}
+-- Scorch
+LCT_SpellData[2948] = {
+	class = "MAGE",
+	reduce = combust_reduce,
+	hidden = true,
+	cooldown_starts_on_aura_fade = true,
+}
 -- Fireball
 LCT_SpellData[133] = {
 	class = "MAGE",
-	reduce = { spellid = 190319, duration = 3 }, -- Combustion
+	reduce = combust_reduce,
 	hidden = true,
+	cooldown_starts_on_aura_fade = true,
 }
+
+
+-- Mage/baseline
 -- Blink
 LCT_SpellData[1953] = {
 	class = "MAGE",
@@ -36,7 +80,8 @@ LCT_SpellData[2139] = {
 LCT_SpellData[122] = {
 	class = "MAGE",
 	cc = true,
-	cooldown = 30
+	cooldown = 30,
+	opt_charges = 2,
 }
 -- Ice Block
 LCT_SpellData[45438] = {
@@ -45,6 +90,14 @@ LCT_SpellData[45438] = {
 	immune = true,
 	duration = 10,
 	cooldown = 240
+}
+-- Ice Cold
+LCT_SpellData[414659] = {
+	class = "MAGE",
+	defensive = true,
+	duration = 6,
+	cooldown = 240,
+	reduces = 45438
 }
 -- Mirror Image
 LCT_SpellData[55342] = {
@@ -61,22 +114,13 @@ LCT_SpellData[80353] = {
 }
 
 -- Mage/mixed
--- Alter Time (fire & frost)
-LCT_SpellData[108978] = {
-	class = "MAGE",
-	specID = { SPEC_MAGE_FIRE, SPEC_MAGE_FROST },
-	defensive = true,
-	duration = 10,
-	cooldown = 60
-}
--- Alter Time (arcane)
+-- Alter Time
 LCT_SpellData[342245] = {
 	class = "MAGE",
-	specID = { SPEC_MAGE_ARCANE },
 	defensive = true,
 	duration = 10,
 	cooldown = 60,
-	opt_lower_cooldown = 30, -- with 342249 Master of Time
+	opt_lower_cooldown = 50, -- with 342249 Master of Time
 }
 
 -- Mage/talents
@@ -85,7 +129,7 @@ LCT_SpellData[198111] = {
 	class = "MAGE",
 	defensive = true,
 	talent = true,
-	duration = 6,
+	duration = 4,
 	cooldown = 45
 }
 -- Kleptomania
@@ -93,7 +137,7 @@ LCT_SpellData[198100] = {
 	class = "MAGE",
 	defensive = true,
 	talent = true,
-	cooldown = 30
+	cooldown = 20
 }
 -- Ring of Frost
 LCT_SpellData[113724] = {
@@ -107,15 +151,21 @@ LCT_SpellData[113724] = {
 LCT_SpellData[116011] = {
 	class = "MAGE",
 	talent = true,
-	charges = 2,
-	cooldown = 40
+	cooldown = 45,
+	opt_charges = 2,
 }
--- Invisibility (fire & frost)
+-- Invisibility
 LCT_SpellData[66] = {
 	class = "MAGE",
-	specID = { SPEC_MAGE_FIRE, SPEC_MAGE_FROST },
 	defensive = true,
 	duration = 20,
+	cooldown = 300
+}
+-- Mass Invisibility
+LCT_SpellData[414664] = {
+	class = "MAGE",
+	talent = true,
+	duration = 12,
 	cooldown = 300
 }
 
@@ -123,7 +173,7 @@ LCT_SpellData[66] = {
 -- Greater Invisibility (arcane)
 LCT_SpellData[110959] = {
 	class = "MAGE",
-	specID = { SPEC_MAGE_ARCANE },
+	talent = true,
 	defensive = true,
 	duration = 20,
 	cooldown = 120
@@ -134,14 +184,6 @@ LCT_SpellData[12051] = {
 	specID = { SPEC_MAGE_ARCANE },
 	defensive = true,
 	duration = 6,
-	cooldown = 180
-}
--- Arcane Power
-LCT_SpellData[12042] = {
-	class = "MAGE",
-	specID = { SPEC_MAGE_ARCANE },
-	offensive = true,
-	duration = 10,
 	cooldown = 90
 }
 -- Presence of Mind
@@ -149,7 +191,7 @@ LCT_SpellData[205025] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_ARCANE },
 	offensive = true,
-	cooldown = 60
+	cooldown = 45
 }
 -- Prismatic Barrier
 LCT_SpellData[235450] = {
@@ -166,24 +208,7 @@ LCT_SpellData[195676] = {
 	cooldown = 30,
 	resets = { 1953 }
 }
--- Displacement when Shimmer (Arcane)
-LCT_SpellData[212801] = {
-	class = "MAGE",
-	specID = { SPEC_MAGE_ARCANE },
-	defensive = true,
-	cooldown = 30,
-	replaces = 195676,
-	restore_charges = { 212653 },
-}
 -- Mage/Arcane/talents
--- Mass Invisibility
-LCT_SpellData[198158] = {
-	class = "MAGE",
-	specID = { SPEC_MAGE_ARCANE },
-	talent = true,
-	duration = 5,
-	cooldown = 60
-}
 -- Arcane Orb
 LCT_SpellData[153626] = {
 	class = "MAGE",
@@ -198,13 +223,6 @@ LCT_SpellData[157980] = {
 	talent = true,
 	cooldown = 25
 }
--- Charged Up
-LCT_SpellData[205032] = {
-	class = "MAGE",
-	specID = { SPEC_MAGE_ARCANE },
-	talent = true,
-	cooldown = 40
-}
 -- Arcanosphere
 LCT_SpellData[353128] = {
 	class = "MAGE",
@@ -215,7 +233,7 @@ LCT_SpellData[353128] = {
 
 -- Mage/Fire
 -- Combustion
-LCT_SpellData[190319] = {
+LCT_SpellData[COMBUSTION] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE },
 	offensive = true,
@@ -223,11 +241,11 @@ LCT_SpellData[190319] = {
 	cooldown = 120
 }
 -- Dragon's Breath
-LCT_SpellData[31661] = {
+LCT_SpellData[DRAGON_BREATH] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE },
 	cc = true,
-	cooldown = 20
+	cooldown = 45
 }
 -- Blazing Barrier
 LCT_SpellData[235313] = {
@@ -241,7 +259,15 @@ LCT_SpellData[108853] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE },
 	offensive = true,
-	cooldown = 12
+	cooldown = 12,
+	reduces = {
+		combust_reduce,
+		{ -- like db_reduce, but only for fire
+			spellid = DRAGON_BREATH,
+			specId = SPEC_MAGE_FIRE,
+			duration = 2
+		}
+	}
 }
 -- Cauterize
 LCT_SpellData[86949] = {
@@ -258,14 +284,14 @@ LCT_SpellData[157981] = {
 	specID = { SPEC_MAGE_FIRE },
 	talent = true,
 	offensive = true,
-	cooldown = 25
+	cooldown = 30
 }
 -- Living Bomb
 LCT_SpellData[44457] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE },
 	talent = true,
-	cooldown = 12
+	cooldown = 30
 }
 -- Meteor
 LCT_SpellData[153561] = {
@@ -279,8 +305,9 @@ LCT_SpellData[257541] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FIRE },
 	talent = true,
-	cooldown = 30,
+	cooldown = 25,
 	charges = 3,
+	reduce = combust_reduce
 }
 -- Ring of Fire
 LCT_SpellData[353082] = {
@@ -312,21 +339,21 @@ LCT_SpellData[12472] = {
 	specID = { SPEC_MAGE_FROST },
 	offensive = true,
 	duration = 20,
-	cooldown = 180
+	cooldown = 120,
 }
 -- Cold Snap
 LCT_SpellData[235219] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FROST },
-	resets = { 11426, 45438, 122, 120 }, -- ice barrier, ice block, frost nova, cone of cold
-	cooldown = 300
+	resets = { 11426, 45438, 122, 120, 414659 }, -- ice barrier, ice block, frost nova, cone of cold, ice cold
+	cooldown = 300,
 }
 -- Cone of Cold
 LCT_SpellData[120] = {
 	class = "MAGE",
 	specID = { SPEC_MAGE_FROST },
 	offensive = true,
-	cooldown = 12
+	cooldown = 12,
 }
 -- Summon Water Elemental
 LCT_SpellData[31687] = {
@@ -364,7 +391,7 @@ LCT_SpellData[205021] = {
 	specID = { SPEC_MAGE_FROST },
 	talent = true,
 	offensive = true,
-	cooldown = 75
+	cooldown = 60,
 }
 -- Ice Floes
 LCT_SpellData[108839] = {
@@ -380,7 +407,7 @@ LCT_SpellData[257537] = {
 	specID = { SPEC_MAGE_FROST },
 	talent = true,
 	offensive = true,
-	cooldown = 45,
+	cooldown = 30,
 }
 -- Ice Wall
 LCT_SpellData[352278] = {
@@ -398,39 +425,9 @@ LCT_SpellData[33395] = {
 	pet = true,
 	cooldown = 25
 }
-
--- Covenant Abilities
--- Radiant Spark
-LCT_SpellData[307443] = {
-	class = "MAGE",
-  covenant = "KYRIAN",
-	offensive = true,
-	duration = 10,
-	cooldown = 30
-}
-
--- Mirrors of Torment
-LCT_SpellData[314793] = {
-	class = "MAGE",
-	covenant = "VENTHYR",
-	offensive = true,
-	duration = 25,
-	cooldown = 90
-}
-
--- Deathborne
-LCT_SpellData[324220] = {
-	class = "MAGE",
-	covenant = "NECROLORD",
-	offensive = true,
-	duration = 20,
-	cooldown = 180
-}
-
 -- Shifting Power
-LCT_SpellData[314791] = {
+LCT_SpellData[382440] = {
 	class = "MAGE",
-	covenant = "NIGHTFAE",
 	offensive = true,
 	duration = 4,
 	cooldown = 60,

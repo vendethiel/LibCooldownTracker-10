@@ -7,7 +7,7 @@
 		lib:RegisterUnit(unitid)
 		lib:UnregisterUnit(unitid)
 		tpu = lib:GetUnitCooldownInfo(unitid, spellid, used_start, used_end, cooldown_start)
-		for spellid, spell_data in lib:IterateCooldowns(class, specID, race, covenant) do
+		for spellid, spell_data in lib:IterateCooldowns(class, specID, race) do
 		spell_data = lib:GetCooldownData(spellid)
 		spells_data = lib:GetCooldownsData()
 ]]
@@ -18,7 +18,7 @@ local IsRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 local LGIST = IsRetail and LibStub:GetLibrary("LibGroupInSpecT-1.1")
 local fn = LibStub("LibFunctional-1.0")
 
-local keys, map, filter = fn.keys, fn.map, fn.filter
+local keys, map, filter, any = fn.keys, fn.map, fn.filter, fn.any
 
 if not lib then return end
 
@@ -44,20 +44,6 @@ local class_spelldata = {}
 local race_spelldata = {}
 local item_spelldata = {}
 local pvp_spelldata = {}
-local covenant_spelldata = {}
-
-local by_covenant_by_class = {
-  ["KYRIAN"] = {},
-  ["NIGHTFAE"] = {},
-  ["NECROLORD"] = {},
-  ["VENTHYR"] = {},
-}
-local major_covenant_spell = {
-  ["KYRIAN"] = true,
-  ["NIGHTFAE"] = true,
-  ["NECROLORD"] = true,
-  ["VENTHYR"] = true,
-}
 
 -- generate lookup tables
 do
@@ -110,28 +96,6 @@ do
 				if spelldata.pvp_trinket then
 					pvp_spelldata[spellid] = spelldata
 				end
-        if spelldata.covenant then
-          if spelldata.class then
-            if by_covenant_by_class[spelldata.covenant] then
-              if by_covenant_by_class[spelldata.covenant][spelldata.class] then
-              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: duplicate spell for covenant: " .. spelldata.covenant .. " and class: " .. spelldata.class)
-              else
-                by_covenant_by_class[spelldata.covenant][spelldata.class] = spellid
-              end
-            else
-              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: invalid covenant1: " .. spelldata.covenant)
-            end
-          else
-            if major_covenant_spell[spelldata.covenant] == true then
-              major_covenant_spell[spelldata.covenant] = spellid
-              covenant_spelldata[spellid] = spelldata
-            elseif major_covenant_spell[spelldata.covenant] then
-              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: duplicate major covenant spell: " .. spellid)
-            else
-              DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: invalid covenant: " .. spelldata.covenant)
-            end
-          end
-        end
 			end
 		end
 	end
@@ -266,6 +230,35 @@ local function AddCharge(unit, spellid)
 	end
 end
 
+local function check_reduce(reduce, unit, spellid)
+	if reduce.spell_cast_buff then
+		if not FindAuraById(spellid, unit) then
+			return false
+		end
+	end
+
+	local buffs = reduce.buffs or reduce.buff and { reduce.buff }
+	if buffs then
+		for buff in pairs(buffs) do
+			if not FindAuraById(buff, unit) then
+				return false
+			end
+		end
+	end
+
+	local specIDs = reduce.specIDs or reduce.specID and { reduce.specID }
+	local unitSpec = GladiusEx and GladiusEx.buttons[unit] and GladiusEx.buttons[unit].specID
+	if specIDs and unitSpec then
+		local hasSpec = any(specIDs, function (spec) return spec == unitSpec end) 
+		if not hasSpec then
+			-- we're not one of the required specs
+			return false
+		end
+	end
+
+	return true
+end
+
 local function CooldownEvent(event, unit, spellid)
 	local spelldata = SpellData[spellid]
 	if not spelldata then return end
@@ -314,33 +307,33 @@ local function CooldownEvent(event, unit, spellid)
     end
     local tps = tpu[spellid]
 
-    -- Find out if casting this spell reduces any cooldown
-    local reduces = spelldata.reduces or spelldata.reduce and { spelldata.reduce }
-    if reduces then
-      for i = 1, #reduces do
-        local reduce = reduces[i]
-        
-        -- TODO checks like "if it's this spec ID, if this talent is detected (or not)"
+		-- Find out if casting this spell reduces any cooldown
+		local reduces = spelldata.reduces or spelldata.reduce and { spelldata.reduce }
+		if reduces then
+			for i = 1, #reduces do
+				local reduce = reduces[i]
 
-        local reduce_spellids = reduce.spellids or reduce.spellid and { reduce.spellid }
-        if reduce_spellids then
-          for each_spellid in pairs(reduce_spellids) do
-            if tpu[each_spellid] and tpu[each_spellid].cooldown_start then
-              tpu[each_spellid].cooldown_end = tpu[each_spellid].cooldown_end - reduce.duration
-            end
-          end
-        end
+				-- Make sure the reduction applies in this case (spec id, aura present, ...)
+				if check_reduce(reduce, unit, spellid) then
+					local reduce_spellids = reduce.spellids or reduce.spellid and { reduce.spellid }
+					if reduce_spellids then
+						for each_spellid in pairs(reduce_spellids) do
+							if tpu[each_spellid] and tpu[each_spellid].cooldown_start then
+								tpu[each_spellid].cooldown_end = tpu[each_spellid].cooldown_end - reduce.duration
+							end
+						end
+					end
 
-        -- XXX Things like Shifting Powers work in ticks, TODO interrupts?
-        if reduce.all then
-          for each_tps in ipairs(tpu) do
-            if each_tps.cooldown_start then
-              each_tps.cooldown_end = each_tps.cooldown_end - reduce.duration
-            end
-          end
-        end
-      end
-    end
+					if reduce.all then
+						for each_tps in ipairs(tpu) do
+							if each_tps.cooldown_start then
+								each_tps.cooldown_end = each_tps.cooldown_end - reduce.duration
+							end
+						end
+					end
+				end
+			end
+		end
 
     -- find what actions are needed
     local used_start, used_end, cooldown_start
@@ -382,9 +375,6 @@ local function CooldownEvent(event, unit, spellid)
       if not tpu[spellid].detected then
         -- XXX use DetectSpell() here instead?
         tpu[spellid].detected = true
-        if spelldata.covenant then
-          lib.callbacks:Fire("LCT_CovenantDetected", unit, spelldata.covenant)
-        end
       end
     end
 
@@ -694,12 +684,7 @@ local function CooldownIterator(state, spellid)
 		-- ignore references to other spells
 		if type(spelldata) ~= "number" then
 			if state.class and state.class == spelldata.class then
-        if spelldata.covenant then
-          if spelldata.covenant == state.covenant then
-            -- add covenant spell
-            return spellid, spelldata
-          end
-        elseif spelldata.specID_table then
+        if spelldata.specID_table then
           if state.specID and spelldata.specID_table[state.specID] then
             -- add spec
             return spellid, spelldata
@@ -721,10 +706,6 @@ local function CooldownIterator(state, spellid)
 					return spellid, spelldata
 				end
 			end
-
-      if spelldata.covenant and spelldata.covenant == state.covenant and not spelldata.class then
-        return spellid, spelldata
-      end
 		end
 	end
 end
@@ -732,20 +713,6 @@ end
 -- uses lookup tables
 local function FastCooldownIterator(state, spellid)
 	local spelldata
-	if not state.covenant_seen then
-		if state.data_source then
-			spellid, spelldata = CooldownIterator(state, spellid)
-		end
-    if spellid then
-      return spellid, spelldata
-    else
-      state.data_source = class_spelldata[state.class]
-      -- There's probably a better way, but we can't nil `state.covenant` or we won't get class-specific covenant spells
-      state.covenant_seen = true
-      spellid = nil
-    end
-	end
-
 	-- class
 	if state.class then
 		if state.data_source then
@@ -813,18 +780,16 @@ end
 -- @param class The unit class. Can be nil.
 -- @param specID The unit talent spec ID. Can be nil.
 -- @param race The unit race. Can be nil.
--- @param race The unit covenant. Can be nil, or true for all related.
-function lib:IterateCooldowns(class, specID, race, covenant)
+function lib:IterateCooldowns(class, specID, race)
 	local state = {}
 	state.class = class
 	state.specID = specID
 	state.race = race or ""
 	state.item = true
 	state.pvp = true
-	state.covenant = covenant
 
 	if class then
-		state.data_source = covenant_spelldata
+		state.data_source = class_spelldata
 
 		return FastCooldownIterator, state
 	else
@@ -841,7 +806,7 @@ function events:PLAYER_ENTERING_WORLD()
 	local isInInstance = IsInInstance()
 
 	-- reset cooldowns if we're entering an instance
-  -- this might be incorrect (only bgs & arenas reset cooldowns), but is important to reset covenant/talents when zoning in
+  -- this might be incorrect (only bgs & arenas reset cooldowns), but is important to reset talents when zoning in
 	if isInInstance then
 		ClearTimers()
 		for unit in pairs(lib.tracked_players) do
