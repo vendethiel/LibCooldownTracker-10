@@ -42,7 +42,7 @@ LCT_SpellData[104773] = {
 -- Mortal Coil
 LCT_SpellData[6789] = {
 	class = "WARLOCK",
-	talent = true,
+	_talent = true,
 	cc = true,
 	heal = true,
 	cooldown = 45
@@ -50,7 +50,7 @@ LCT_SpellData[6789] = {
 -- Dark Pact
 LCT_SpellData[108416] = {
 	class = "WARLOCK",
-	talent = true,
+	_talent = true,
 	defensive = true,
 	duration = 20,
 	cooldown = 60

@@ -60,14 +60,14 @@ LCT_SpellData[1856] = {
 -- Blind
 LCT_SpellData[2094] = {
 	class = "ROGUE",
-	talent = true,
+	_talent = true,
 	cc = true,
 	cooldown = 120,
 }
 -- Cloak of Shadows
 LCT_SpellData[31224] = {
 	class = "ROGUE",
-	talent = true,
+	_talent = true,
 	defensive = true,
 	duration = 5,
 	cooldown = 120
@@ -75,7 +75,7 @@ LCT_SpellData[31224] = {
 -- Evasion
 LCT_SpellData[5277] = {
 	class = "ROGUE",
-	talent = true,
+	_talent = true,
 	defensive = true,
 	duration = 10,
 	cooldown = 120
@@ -91,7 +91,7 @@ LCT_SpellData[1966] = {
 -- Shadowstep
 LCT_SpellData[36554] = {
 	class = "ROGUE",
-	talent = true,
+	_talent = true,
 	cooldown = 30,
 	opt_charges = 2, -- note: subs always have 2 charges of this; but code doesn't handle such cases
 }

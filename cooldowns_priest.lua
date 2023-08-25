@@ -390,7 +390,7 @@ LCT_SpellData[64044] = {
 -- Void Shift
 LCT_SpellData[108968] = {
 	class = "PRIEST",
-	talent = true,
+	_talent = true,
 	cooldown = 300
 }
 -- Psyfiend

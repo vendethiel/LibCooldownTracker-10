@@ -44,7 +44,7 @@ LCT_SpellData[355913] = {
 -- Obsidian Scales
 LCT_SpellData[363916] = {
 	class = "EVOKER",
-	talent = true,
+	_talent = true,
 	duration = 12,
 	cooldown = 90,
 	defensive = true,
@@ -98,7 +98,7 @@ LCT_SpellData[358385] = {
 -- Quell
 LCT_SpellData[351338] = {
 	class = "EVOKER",
-	talent = true,
+	_talent = true,
 	cooldown = 40,
 	interrupt = true,
 	opt_lower_cooldown = 20 -- Reduced by the 'Imposing Presence' talent
@@ -115,7 +115,7 @@ LCT_SpellData[374348] = {
 -- Rescue
 LCT_SpellData[370665] = {
 	class = "EVOKER",
-	talent = true,
+	_talent = true,
 	cooldown = 60
 }
 -- Verdant Embrace
@@ -128,7 +128,7 @@ LCT_SpellData[360995] = {
 -- Tip the Scales
 LCT_SpellData[370553] = {
 	class = "EVOKER",
-	talent = true,
+	_talent = true,
 	cooldown = 120,
 	cooldown_starts_on_aura_fade = true,
 }

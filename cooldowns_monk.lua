@@ -67,7 +67,7 @@ LCT_SpellData[116705] = {
 -- Tiger's Lust
 LCT_SpellData[116841] = {
 	class = "MONK",
-	talent = true,
+	_talent = true,
 	defensive = true,
 	duration = 6,
 	cooldown = 30,
@@ -75,7 +75,7 @@ LCT_SpellData[116841] = {
 -- Dampen Harm
 LCT_SpellData[122278] = {
 	class = "MONK",
-	talent = true,
+	_talent = true,
 	defensive = true,
 	duration = 10,
 	cooldown = 120,

@@ -56,7 +56,7 @@ LCT_SpellData[198103] = {
 -- Grounding Totem
 LCT_SpellData[204336] = {
 	class = "SHAMAN",
-	talent = true,
+	_talent = true,
 	duration = 3,
 	cooldown = 30,
 }
