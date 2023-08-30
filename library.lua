@@ -267,6 +267,10 @@ local function CooldownEvent(event, unit, spellid)
 		spellid = spelldata
 		spelldata = SpellData[spelldata]
 	end
+  if not spelldata then
+    -- TODO log error
+    return
+  end
 	local duration = spelldata.duration
 
 	if lib:IsUnitRegistered(unit) then
@@ -480,7 +484,7 @@ local function CooldownEvent(event, unit, spellid)
         end
 
         -- V: set other cooldown(s)
-        local sets_cooldowns = spelldata.sets_cooldown or spelldata.sets_cooldown and { spelldata.sets_cooldown }
+        local sets_cooldowns = spelldata.sets_cooldown or spelldata.sets_cooldown and { spelldata.sets_cooldown } or {}
 
         for i = 1, #sets_cooldowns do
           local cd = sets_cooldowns[i]
@@ -786,7 +790,7 @@ function lib:IterateCooldowns(class, specID, race)
 	state.pvp = true
 
 	if class then
-		state.data_source = class_spelldata
+		state.data_source = class_spelldata[class]
 
 		return FastCooldownIterator, state
 	else
