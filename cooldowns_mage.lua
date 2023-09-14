@@ -94,6 +94,7 @@ LCT_SpellData[45438] = {
 -- Ice Cold
 LCT_SpellData[414659] = {
 	class = "MAGE",
+  talent = true,
 	defensive = true,
 	duration = 6,
 	cooldown = 240,
