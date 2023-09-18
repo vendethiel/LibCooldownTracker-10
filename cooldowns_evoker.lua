@@ -333,6 +333,13 @@ LCT_SpellData[360827] = {
 	talent = true,
 	cooldown = 30
 }
+-- Upheaval
+LCT_SpellData[396286] = {
+	class = "EVOKER",
+	specID = { SPEC_EVOKER_AUGMENTATION },
+	talent = true,
+	cooldown = 40
+}
 
 
 -- Evoker/Preservation/talents

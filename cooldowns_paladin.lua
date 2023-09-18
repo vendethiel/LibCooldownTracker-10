@@ -108,7 +108,7 @@ LCT_SpellData[96231] = {
 -- Divine Protection
 LCT_SpellData[498] = {
 	class = "PALADIN",
-	specID = { SPEC_PALADIN_PROTECTION, SPEC_PALADIN_HOLY },
+	talent = true,
 	defensive = true,
 	duration = 8,
 	cooldown = 60,
