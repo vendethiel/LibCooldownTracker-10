@@ -319,15 +319,6 @@ LCT_SpellData[207028] = {
 	cooldown = 20,
 	replaces = 62124, -- Hand of Reckoning
 }
--- Seraphim
-LCT_SpellData[152262] = {
-	class = "PALADIN",
-	talent = true,
-	cooldown = 45,
-	duration = 15,
-	offensive = true
-	-- TODO consumes charges of Shield of the Righteous
-}
 -- Blessing of Spellwarding
 LCT_SpellData[204018] = {
 	class = "PALADIN",

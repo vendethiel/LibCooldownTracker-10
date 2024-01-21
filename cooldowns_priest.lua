@@ -179,14 +179,6 @@ LCT_SpellData[214621] = {
 	offensive = true,
 	cooldown = 24,
 }
--- Power Word: Solace
-LCT_SpellData[129250] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_DISC },
-	talent = true,
-	offensive = true,
-	cooldown = 12,
-}
 -- Evangelism
 LCT_SpellData[246287] = {
 	class = "PRIEST",
