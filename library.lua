@@ -215,7 +215,7 @@ local function AddCharge(unit, spellid)
 	if not tps then
 		return
 	end
-	tps.charges = tps.charges + 1
+	tps.charges = (tps.charges or 0) + 1
 	lib.callbacks:Fire("LCT_CooldownUsed", unit, spellid)
 
 	-- schedule another timer if there are more charges in cooldown
