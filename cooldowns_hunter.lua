@@ -182,6 +182,14 @@ LCT_SpellData[19574] = {
 	duration = 15,
 	cooldown = 90
 }
+-- Call of the Wild
+LCT_SpellData[359844] = {
+	class = "HUNTER",
+	specID = { SPEC_HUNTER_BM },
+	offensive = true,
+	duration = 20,
+	cooldown = 120
+}
 -- Aspect of the wild
 LCT_SpellData[193530] = {
 	class = "HUNTER",
