@@ -396,7 +396,6 @@ LCT_SpellData[211522] = {
 -- Mindgames
 LCT_SpellData[375901] = {
 	class = "PRIEST",
-	covenant = "VENTHYR",
 	offensive = true,
 	duration = 5,
 	cooldown = 45,

@@ -179,6 +179,14 @@ LCT_SpellData[110959] = {
 	duration = 20,
 	cooldown = 120
 }
+-- Arcane Surge
+LCT_SpellData[365350] = {
+	class = "MAGE",
+	specID = { SPEC_MAGE_ARCANE },
+	offensive = true,
+	duration = 15,
+	cooldown = 90
+}
 -- Evocation
 LCT_SpellData[12051] = {
 	class = "MAGE",

@@ -5,6 +5,13 @@ local SPEC_DH_HAVOC     = 577
 local SPEC_DH_VENGEANCE = 581
 
 -- Demon Hunter/baseline
+-- The Hunt
+LCT_SpellData[370965] = {
+	class = "DEMONHUNTER",
+	offensive = true,
+	cooldown = 90
+}
+LCT_SpellData[370965] = 370965
 -- Disrupt
 LCT_SpellData[183752] = {
 	class = "DEMONHUNTER",

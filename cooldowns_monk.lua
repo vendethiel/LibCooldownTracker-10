@@ -119,6 +119,16 @@ LCT_SpellData[122783] = {
 	duration = 6,
 	cooldown = 90
 }
+-- Fortifying Brew
+LCT_SpellData[388917] = {
+	class = "MONK",
+	talent = true,
+  defensive = true,
+	duration = 15,
+	cooldown = 360
+}
+LCT_SpellData[120954] = 388917
+LCT_SpellData[322960] = 388917
 -- Grapple Weapon
 LCT_SpellData[233759] = {
 	class = "MONK",
