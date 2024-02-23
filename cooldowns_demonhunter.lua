@@ -4,6 +4,16 @@
 local SPEC_DH_HAVOC     = 577
 local SPEC_DH_VENGEANCE = 581
 
+LCT_SpellData[204157] = {
+  class = "DEMONHUNTER",
+  hidden = true,
+  reduce = {
+    spellid = 370965,
+    duration = 2.1
+  }
+}
+LCT_SpellData[185123] = 204157
+
 -- Demon Hunter/baseline
 -- The Hunt
 LCT_SpellData[370965] = {
