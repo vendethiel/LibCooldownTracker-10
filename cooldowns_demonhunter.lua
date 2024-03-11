@@ -4,6 +4,7 @@
 local SPEC_DH_HAVOC     = 577
 local SPEC_DH_VENGEANCE = 581
 
+-- Throw Glaive
 LCT_SpellData[204157] = {
   class = "DEMONHUNTER",
   hidden = true,
@@ -21,7 +22,7 @@ LCT_SpellData[370965] = {
 	offensive = true,
 	cooldown = 90
 }
-LCT_SpellData[370965] = 370965
+LCT_SpellData[323639] = 370965
 -- Disrupt
 LCT_SpellData[183752] = {
 	class = "DEMONHUNTER",
