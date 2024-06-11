@@ -11,7 +11,7 @@ LCT_SpellData[59547] = {
 LCT_SpellData[7744] = {
 	race = "Scourge",
 	cooldown = 120,
-    sets_cooldown = {
+    sets_cooldowns = {
         -- PvP Trinket
         { spellid = 42292, cooldown = 30 },
         -- Every Man for Himself
@@ -22,7 +22,7 @@ LCT_SpellData[7744] = {
 LCT_SpellData[59752] = {
     race = "Human",
     cooldown = 120,
-    sets_cooldown = {
+    sets_cooldowns = {
         -- WOTF
         { spellid = 7744, cooldown = 30 },
         -- PvP Trinkets
