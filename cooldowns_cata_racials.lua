@@ -21,6 +21,7 @@ LCT_SpellData[7744] = {
 -- Will to Survive / EMFH (Human)
 LCT_SpellData[59752] = {
     race = "Human",
+	pvp_trinket = true,
     cooldown = 120,
     sets_cooldowns = {
         -- WOTF
@@ -33,9 +34,12 @@ LCT_SpellData[59752] = {
 LCT_SpellData[28730] = {
 	race = "BloodElf",
 	cooldown = 120,
-  silence = true,
+	silence = true,
 }
+LCT_SpellData[69179] = 28730
 LCT_SpellData[25046] = 28730
+LCT_SpellData[50613] = 28730
+LCT_SpellData[80483] = 28730
 
 -- Blood Fury (Orc)
 LCT_SpellData[20572] = {
@@ -57,7 +61,7 @@ LCT_SpellData[20577] = {
 LCT_SpellData[20589] = {
 	race = "Gnome",
 	defensive = true,
-	cooldown = 105,
+	cooldown = 90,
 }
 -- Shadowmeld (Night Elf)
 LCT_SpellData[58984] = {

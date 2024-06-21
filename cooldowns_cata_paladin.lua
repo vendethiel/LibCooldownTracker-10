@@ -4,28 +4,53 @@ local SPEC_PALADIN_HOLY        = 65
 local SPEC_PALADIN_PROTECTION  = 66
 local SPEC_PALADIN_RETRIBUTION = 70
 
--- Blessing of Freedom
+-- Rebuke
+LCT_SpellData[96231] = {
+  cooldown = 10,
+  class = "PALADIN",
+  duration = 10,
+}
+
+-- Hand of Freedom
 LCT_SpellData[1044] = {
   class = "PALADIN",
   cooldown = 25,
+  opt_lower_cooldown = 20,
+  cooldown_overload = { [SPEC_PALADIN_RETRIBUTION] = 20, },
 }
 
 -- Crusader Strike
 LCT_SpellData[35395] = {
   class = "PALADIN",
-  cooldown = 4,
+  cooldown = 4.5,
 }
 
 -- Hand of Sacrifice
 LCT_SpellData[6940] = {
   class = "PALADIN",
   cooldown = 120,
+  opt_lower_cooldown = 96,
+  cooldown_overload = { [SPEC_PALADIN_RETRIBUTION] = 96, [SPEC_PALADIN_HOLY] = 90, },
+}
+
+-- Word of Glory
+LCT_SpellData[85673] = {
+  class = "PALADIN",
+  cooldown = 20,
+}
+
+-- Word of Glory
+LCT_SpellData[85673] = {
+  class = "PALADIN",
+  cooldown = 120,
+  specID = { SPEC_PALADIN_HOLY },
+  talent = true,
 }
 
 -- Lay on Hands
 LCT_SpellData[633] = {
-  opt_lower_cooldown = 2400,
-  cooldown = 1200,
+  cooldown = 600,
+  opt_lower_cooldown = 420, -- Glyph of Lay on Hands
   class = "PALADIN",
 }
 LCT_SpellData[2800] = 633
@@ -51,6 +76,8 @@ LCT_SpellData[48801] = 879
 LCT_SpellData[31884] = {
   class = "PALADIN",
   cooldown = 180,
+  opt_lower_cooldown = 120,
+  cooldown_overload = { [SPEC_PALADIN_HOLY] = 120, },
 }
 
 -- Divine Illumination
@@ -63,8 +90,9 @@ LCT_SpellData[31842] = {
 
 -- Hammer of Justice
 LCT_SpellData[853] = {
-  cooldown = 40, -- Note: The CD is generally 60sec but is reduced by Imp. HoJ talent (early prot) which everyone takes
-  opt_lower_cooldown = 30, -- Note: There is another deep prot talent to reduce the CD by another 10 seconds
+  cooldown = 60,
+  opt_lower_cooldown = 40,
+  cooldown_overload = { [SPEC_PALADIN_HOLY] = 40, [SPEC_PALADIN_PROTECTION] = 40, }, -- Note: Early Prot talent is picked by Prot and Holy
   class = "PALADIN",
 }
 LCT_SpellData[5588] = 853
@@ -75,6 +103,13 @@ LCT_SpellData[10308] = 853
 LCT_SpellData[642] = {
   class = "PALADIN",
   cooldown = 300,
+}
+
+-- Guardian of Ancient Kings
+LCT_SpellData[86150] = {
+  class = "PALADIN",
+  cooldown = 300,
+  duration = 30,
 }
 
 -- Holy Shield
@@ -113,7 +148,8 @@ LCT_SpellData[20271] = {
 -- Consecration
 LCT_SpellData[26573] = {
   class = "PALADIN",
-  cooldown = 8,
+  cooldown = 30,
+  opt_lower_cooldown = 24, -- Glyph of Consecration
 }
 LCT_SpellData[20922] = 26573
 LCT_SpellData[20923] = 26573
@@ -151,7 +187,9 @@ LCT_SpellData[20066] = {
 -- Divine Protection
 LCT_SpellData[498] = {
   class = "PALADIN",
-  cooldown = 180,
+  cooldown = 60,
+  opt_lower_cooldown = 30,
+  cooldown_overload = { [SPEC_PALADIN_HOLY] = 30, },
 }
 
 -- Holy Shock
@@ -172,16 +210,17 @@ LCT_SpellData[48825] = 20473
 -- Holy Wrath
 LCT_SpellData[2812] = {
   class = "PALADIN",
-  cooldown = 30,
+  cooldown = 15,
 }
 LCT_SpellData[10318] = 2812
 LCT_SpellData[27139] = 2812
 LCT_SpellData[48816] = 2812
 LCT_SpellData[48817] = 2812
 
--- Blessing of Protection
+-- Hand of Protection
 LCT_SpellData[1022] = {
   opt_lower_cooldown = 180,
+  cooldown_overload = { [SPEC_PALADIN_RETRIBUTION] = 180 },
   cooldown = 300,
   class = "PALADIN",
 }
@@ -191,9 +230,9 @@ LCT_SpellData[10278] = 1022
 -- Divine Storm
 LCT_SpellData[53385] = {
   class = "PALADIN",
-  cooldown = 10,
+  cooldown = 4.5,
   talent = true,
-  specID = { SPEC_PALADIN_PROTECTION },
+  specID = { SPEC_PALADIN_RETRIBUTION },
 }
 
 -- Hammer of the Righteous
@@ -211,10 +250,3 @@ LCT_SpellData[54428] = {
   talent = true,
   specID = { SPEC_PALADIN_HOLY },
 }
-
--- Shield of Righteousness
-LCT_SpellData[53600] = {
-  class = "PALADIN",
-  cooldown = 6,
-}
-LCT_SpellData[61411] = 53600
