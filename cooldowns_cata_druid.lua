@@ -4,11 +4,36 @@ local SPEC_DRUID_BALANCE  = 102
 local SPEC_DRUID_FERAL    = 103
 local SPEC_DRUID_RESTO    = 105
 
+-- Skull Bash
+LCT_SpellData[80965] = {
+  cooldown_overload = { [SPEC_DRUID_FERAL] = 10, },
+  opt_lower_cooldown = 10,
+  cooldown = 60,
+  class = "DRUID",
+}
+LCT_SpellData[80964] = 80965
+
+-- Solar Beam
+LCT_SpellData[78675] = {
+  cooldown = 60,
+  class = "DRUID",
+  specID = { SPEC_DRUID_BALANCE },
+  duration = 10,
+}
+
 -- Barkskin
 LCT_SpellData[22812] = {
   cooldown = 60,
   class = "DRUID",
   duration = 12,
+}
+
+-- Starsurge
+LCT_SpellData[78674] = {
+  cooldown = 15,
+  class = "DRUID",
+  specID = { SPEC_DRUID_BALANCE },
+  reduce = { spellid = 48505, duration = 5, }, -- Glyph of Starsurge (reduces Starfall CD)
 }
 
 -- Cower
@@ -48,20 +73,21 @@ LCT_SpellData[53312] = 16689
 LCT_SpellData[22842] = {
   class = "DRUID",
   cooldown = 180,
-  duration = 10,
+  duration = 20,
 }
 
 -- Challenging Roar
 LCT_SpellData[5209] = {
   class = "DRUID",
   cooldown = 180,
-  duration = 6,
 }
 
 -- Bash
 LCT_SpellData[5211] = {
   class = "DRUID",
   cooldown = 60,
+  opt_lower_cooldown = 50,
+  cooldown_overload = { [SPEC_DRUID_FERAL] = 50, },
 }
 LCT_SpellData[6798] = 5211
 LCT_SpellData[8983] = 5211
@@ -87,7 +113,6 @@ LCT_SpellData[5229] = {
 LCT_SpellData[18562] = {
   class = "DRUID",
   cooldown = 15,
-  talent = true,
   specID = { SPEC_DRUID_RESTO },
 }
 
@@ -179,7 +204,7 @@ LCT_SpellData[29166] = {
 
 -- Wild Growth
 LCT_SpellData[48438] = {
-  cooldown = 6,
+  cooldown = 8,
   class = "DRUID",
   talent = true,
   specID = { SPEC_DRUID_RESTO },
@@ -189,14 +214,21 @@ LCT_SpellData[48438] = {
 LCT_SpellData[50334] = {
   cooldown = 180,
   class = "DRUID",
-  talent = true,
+  specID = { SPEC_DRUID_FERAL },
+}
+
+-- Survival Instincts
+LCT_SpellData[61336] = {
+  cooldown = 180,
+  duration = 12,
+  class = "DRUID",
   specID = { SPEC_DRUID_FERAL },
 }
 
 -- Starfall
 LCT_SpellData[48505] = {
   cooldown = 60,
-  -- opt_cooldown = 60 Note: Assume everyone runs with the glyph
+  -- opt_lower_cooldown = 60 Note: Assume everyone runs with the glyph
   class = "DRUID",
   talent = true,
   duration = 10,

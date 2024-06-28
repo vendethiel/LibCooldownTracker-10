@@ -26,7 +26,7 @@ LCT_SpellData[12051] = {
   class = "MAGE",
 }
 
--- Fire Ward
+-- Mage Ward
 LCT_SpellData[543] = {
   cooldown = 30,
   class = "MAGE",
@@ -44,31 +44,9 @@ LCT_SpellData[66] = {
   class = "MAGE",
 }
 
--- Frost Ward
--- LCT_SpellData[6143] = {
---   cooldown = 30,
---   class = "MAGE",
--- }
--- LCT_SpellData[8461] = 6143
--- LCT_SpellData[8462] = 6143
--- LCT_SpellData[10177] = 6143
--- LCT_SpellData[28609] = 6143
--- LCT_SpellData[32796] = 6143
--- LCT_SpellData[43012] = 6143
---
--- Redirect Frost Ward to Fire Ward
-LCT_SpellData[6143] = 543
-LCT_SpellData[8461] = 543
-LCT_SpellData[8462] = 543
-LCT_SpellData[10177] = 543
-LCT_SpellData[28609] = 543
-LCT_SpellData[32796] = 543
-LCT_SpellData[43012] = 543
-
 -- Fire Blast
 LCT_SpellData[2136] = {
   cooldown = 8,
-  opt_lower_cooldown = 6.5,
   class = "MAGE",
 }
 LCT_SpellData[2137] = 2136
@@ -87,12 +65,14 @@ LCT_SpellData[33395] = {
   cooldown = 25,
   class = "MAGE",
   specID = { SPEC_MAGE_FROST },
+  pet = true,
 }
 
 -- Cone of Cold
 LCT_SpellData[120] = {
   cooldown = 10,
   opt_lower_cooldown = 8,
+  cooldown_overload = { [SPEC_MAGE_FROST] = 8, },
   class = "MAGE",
 }
 LCT_SpellData[8492] = 120
@@ -106,7 +86,8 @@ LCT_SpellData[42931] = 120
 -- Frost Nova
 LCT_SpellData[122] = {
   cooldown = 25,
-  opt_lower_cooldown = 21,
+  opt_lower_cooldown = 20,
+  cooldown_overload = { [SPEC_MAGE_FROST] = 20, },
   class = "MAGE",
 }
 LCT_SpellData[865] = 122
@@ -126,6 +107,7 @@ LCT_SpellData[58659] = 43987
 LCT_SpellData[11958] = {
   cooldown = 480,
   opt_lower_cooldown = 384,
+  cooldown_overload = { [SPEC_MAGE_FROST] = 384, },
   class = "MAGE",
   specID = { SPEC_MAGE_FROST },
   talent = true,
@@ -135,6 +117,8 @@ LCT_SpellData[11958] = {
 -- Dragon's Breath
 LCT_SpellData[31661] = {
   cooldown = 20,
+  opt_lower_cooldown = 17, -- Glyph of Dragon's Breath
+  cooldown_overload = { [SPEC_MAGE_FIRE] = 17, }, -- assume everyone runs the glyph
   class = "MAGE",
   talent = true,
   specID = { SPEC_MAGE_FIRE },
@@ -163,6 +147,8 @@ LCT_SpellData[11129] = {
 -- Icy Veins
 LCT_SpellData[12472] = {
   cooldown = 180,
+  opt_lower_cooldown = 144,
+  cooldown_overload = { [SPEC_MAGE_FROST] = 144, },
   class = "MAGE",
   talent = true,
   specID = { SPEC_MAGE_FROST },
@@ -177,7 +163,7 @@ LCT_SpellData[2139] = {
 
 -- Blast Wave
 LCT_SpellData[11113] = {
-  cooldown = 30,
+  cooldown = 15,
   class = "MAGE",
   talent = true,
   specID = { SPEC_MAGE_FIRE },
@@ -195,6 +181,7 @@ LCT_SpellData[42945] = 11113
 LCT_SpellData[11426] = {
   cooldown = 30,
   opt_lower_cooldown = 24,
+  cooldown_overload = { [SPEC_MAGE_FROST] = 24, },
   class = "MAGE",
   talent = true,
   specID = { SPEC_MAGE_FROST },
@@ -220,6 +207,7 @@ LCT_SpellData[31687] = {
 LCT_SpellData[45438] = {
   cooldown = 300,
   opt_lower_cooldown = 240,
+  cooldown_overload = { [SPEC_MAGE_FROST] = 240, },
   class = "MAGE",
 }
 

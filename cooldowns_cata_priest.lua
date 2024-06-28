@@ -7,7 +7,9 @@ local SPEC_PRIEST_SHADOW = 258
 -- Power Word: Shield
 LCT_SpellData[17] = {
   class = "PRIEST",
-  cooldown = 4,
+  cooldown = 3,
+  opt_lower_cooldown = 1,
+  cooldown_overload = { [SPEC_PRIEST_DISC] = 1, },
 }
 LCT_SpellData[592] = 17
 LCT_SpellData[600] = 17
@@ -48,7 +50,7 @@ LCT_SpellData[586] = {
   class = "PRIEST",
   cooldown = 30,
   specID = { SPEC_PRIEST_SHADOW },
-  opt_lower_cooldown = 24,
+  opt_lower_cooldown = 21, -- Glyph of Fade
 }
 
 -- Power Infusion
@@ -86,6 +88,7 @@ LCT_SpellData[34433] = {
 LCT_SpellData[8122] = {
   class = "PRIEST",
   cooldown = 30,
+  cooldown_overload = { [SPEC_PRIEST_SHADOW] = 26, },
   opt_lower_cooldown = 26,
 }
 LCT_SpellData[8124] = 8122
@@ -96,7 +99,8 @@ LCT_SpellData[10890] = 8122
 LCT_SpellData[8092] = {
   class = "PRIEST",
   cooldown = 8,
-  opt_lower_cooldown = 5.5,
+  cooldown_overload = { [SPEC_PRIEST_SHADOW] = 6.5, },
+  opt_lower_cooldown = 6.5,
 }
 LCT_SpellData[8102] = 8092
 LCT_SpellData[8103] = 8092
@@ -139,6 +143,7 @@ LCT_SpellData[33206] = {
 LCT_SpellData[6346] = {
   class = "PRIEST",
   cooldown = 180,
+  opt_lower_cooldown = 120, -- Glyph of Fear Ward (usually not picked)
 }
 
 -- Lightwell
@@ -158,6 +163,7 @@ LCT_SpellData[48087] = 724
 LCT_SpellData[47540] = {
   class = "PRIEST",
   cooldown = 12,
+  opt_lower_cooldown = 10,
   talent = true,
   specID = { SPEC_PRIEST_DISC },
 }
@@ -169,6 +175,8 @@ LCT_SpellData[53007] = 47540
 LCT_SpellData[47585] = {
   class = "PRIEST",
   cooldown = 120,
+  opt_lower_cooldown = 75,
+  cooldown_overload = { [SPEC_PRIEST_SHADOW] = 75, },
   talent = true,
   specID = { SPEC_PRIEST_SHADOW },
 }
@@ -177,6 +185,8 @@ LCT_SpellData[47585] = {
 LCT_SpellData[47788] = {
   class = "PRIEST",
   cooldown = 180,
+  cooldown_overload = { [SPEC_PRIEST_HOLY] = 150, },
+  opt_lower_cooldown = 150,
   talent = true,
   specID = { SPEC_PRIEST_HOLY },
 }
@@ -185,6 +195,8 @@ LCT_SpellData[47788] = {
 LCT_SpellData[64044] = {
   class = "PRIEST",
   cooldown = 120,
+  cooldown_overload = { [SPEC_PRIEST_SHADOW] = 90, },
+  opt_lower_cooldown = 90,
   talent = true,
   specID = { SPEC_PRIEST_SHADOW },
 }

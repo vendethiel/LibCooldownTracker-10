@@ -4,6 +4,13 @@ local SPEC_SHAMAN_ELEMENTAL   = 262
 local SPEC_SHAMAN_ENHANCEMENT = 263
 local SPEC_SHAMAN_RESTORATION = 264
 
+-- Spirit Link Totem
+LCT_SpellData[98008] = {
+  cooldown = 180,
+  class = "SHAMAN",
+  spec = { SPEC_SHAMAN_RESTORATION },
+}
+
 -- Earth Elemental Totem
 LCT_SpellData[2062] = {
   cooldown = 600,
@@ -13,6 +20,7 @@ LCT_SpellData[2062] = {
 -- Astral Recall
 LCT_SpellData[556] = {
   cooldown = 900,
+  opt_lower_cooldown = 450, -- Glyph of Astral Recall
   class = "SHAMAN",
 }
 
@@ -22,7 +30,7 @@ LCT_SpellData[16188] = {
   class = "SHAMAN",
   talent = true,
   specID = { SPEC_SHAMAN_RESTORATION },
-	cooldown_starts_on_dispel = true,
+  cooldown_starts_on_dispel = true,
 }
 
 -- Mana Tide Totem
@@ -36,15 +44,14 @@ LCT_SpellData[16190] = {
 -- Fire Elemental Totem
 LCT_SpellData[2894] = {
   cooldown = 600,
+  opt_lower_cooldown = 300, -- Glyph of Fire Elemental Totem
   class = "SHAMAN",
-  specID = { SPEC_SHAMAN_ELEMENTAL },
 }
 
 -- Grounding Totem
 LCT_SpellData[8177] = {
   class = "SHAMAN",
-  cooldown = 15,
-  opt_lower_cooldown = 13,
+  cooldown = 25,
 }
 
 -- Shamanistic Rage
@@ -184,7 +191,9 @@ LCT_SpellData[61301] = 61295
 -- Thunderstorm
 LCT_SpellData[51490] = {
   class = "SHAMAN",
-  cooldown = 35,
+  cooldown = 45,
+  cooldown_overload = { [SPEC_SHAMAN_ELEMENTAL] = 35, },
+  opt_lower_cooldown = 35, -- Glyph of Thunder
   talent = true,
   specID = { SPEC_SHAMAN_ELEMENTAL },
 }
@@ -193,13 +202,15 @@ LCT_SpellData[51490] = {
 LCT_SpellData[51514] = {
   class = "SHAMAN",
   cooldown = 45,
+  cooldown_overload = { [SPEC_SHAMAN_RESTORATION] = 35, [SPEC_SHAMAN_ELEMENTAL] = 35, }, -- Ele/Resto usually run the glyph
+  opt_lower_cooldown = 35, -- Glyph of Hex
   cc = true,
 }
 
 -- Wind Shear
 LCT_SpellData[57994] = {
   class = "SHAMAN",
-  cooldown = 6,
+  cooldown = 15,
 }
 
 -- Feral Spirit

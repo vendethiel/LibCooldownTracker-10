@@ -19,14 +19,25 @@ LCT_SpellData[48743] = {
 LCT_SpellData[47476] = {
   class = "DEATHKNIGHT",
   cooldown = 120,
+  opt_lower_cooldown = 60,
+  cooldown_overload = { [SPEC_DK_BLOOD] = 60, },
+}
+
+-- Death Knight/Blood/talents
+-- Bone Shield
+LCT_SpellData[49222] = {
+  class = "DEATHKNIGHT",
+  cooldown = 60,
+  talent = true,
+  specID = { SPEC_DK_BLOOD },
 }
 -- Vampiric Blood
 LCT_SpellData[55233] = {
   class = "DEATHKNIGHT",
   cooldown = 60,
+  talent = true,
+  specID = { SPEC_DK_BLOOD },
 }
-
--- Death Knight/Blood/talents
 -- Rune Tap
 LCT_SpellData[48982] = {
   class = "DEATHKNIGHT",
@@ -34,13 +45,7 @@ LCT_SpellData[48982] = {
   talent = true,
   specID = { SPEC_DK_BLOOD },
 }
--- Unholy Frenzy
-LCT_SpellData[49016] = {
-  class = "DEATHKNIGHT",
-  cooldown = 180,
-  talent = true,
-  specID = { SPEC_DK_UNHOLY },
-}
+
 -- Dancing Rune Weapon
 LCT_SpellData[49028] = {
   class = "DEATHKNIGHT",
@@ -84,6 +89,13 @@ LCT_SpellData[49203] = {
   talent = true,
   specID = { SPEC_DK_FROST },
 }
+-- Pillar of Frost
+LCT_SpellData[51271] = {
+  class = "DEATHKNIGHT",
+  cooldown = 60,
+  talent = true,
+  specID = { SPEC_DK_FROST },
+}
 
 -- Death Knight/Unholy
 -- Anti-Magic Shell
@@ -96,6 +108,8 @@ LCT_SpellData[48707] = {
 LCT_SpellData[49576] = {
   class = "DEATHKNIGHT",
   cooldown = 35,
+  opt_lower_cooldown = 25,
+  cooldown_overload = { [SPEC_DK_UNHOLY] = 25, [SPEC_DK_FROST] = 25, },
 }
 -- Death and Decay
 LCT_SpellData[43265] = {
@@ -106,8 +120,8 @@ LCT_SpellData[43265] = {
 LCT_SpellData[46584] = {
   class = "DEATHKNIGHT",
   cooldown = 180,
+  specID = { SPEC_DK_BLOOD, SPEC_DK_FROST, },
 }
-
 -- Death Knight/Unholy/talents
 -- Anti-Magic Zone
 LCT_SpellData[51052] = {
@@ -123,5 +137,12 @@ LCT_SpellData[49206] = {
   cooldown = 180,
   talent = true,
   duration = 30,
+  specID = { SPEC_DK_UNHOLY },
+}
+-- Unholy Frenzy
+LCT_SpellData[49016] = {
+  class = "DEATHKNIGHT",
+  cooldown = 180,
+  talent = true,
   specID = { SPEC_DK_UNHOLY },
 }

@@ -4,6 +4,13 @@ local SPEC_WARRIOR_ARMS = 71
 local SPEC_WARRIOR_FURY = 72
 local SPEC_WARRIOR_PROT = 73
 
+-- Rallying Cry
+LCT_SpellData[97462] = {
+  class = "WARRIOR",
+  cooldown = 180,
+  duration = 10,
+}
+
 -- Death Wish
 LCT_SpellData[12292] = {
   class = "WARRIOR",
@@ -11,6 +18,8 @@ LCT_SpellData[12292] = {
   talent = true,
   duration = 30,
   specID = { SPEC_WARRIOR_FURY },
+  opt_lower_cooldown = 144,
+  cooldown_overload = { [SPEC_WARRIOR_FURY] = 144, },
 }
 
 -- Shield Block
@@ -59,6 +68,8 @@ LCT_SpellData[355] = {
 LCT_SpellData[100] = {
   class = "WARRIOR",
   cooldown = 15,
+  opt_lower_cooldown = 12, -- Glyph of Rapid Charge + Arms Juggernaut talent
+  cooldown_overload = { [SPEC_WARRIOR_ARMS] = 13, }, -- Assuming only Juggernaut talent
 }
 LCT_SpellData[6178] = 100
 LCT_SpellData[11578] = 100
@@ -66,7 +77,8 @@ LCT_SpellData[11578] = 100
 -- Spell Reflection
 LCT_SpellData[23920] = {
   class = "WARRIOR",
-  cooldown = 10,
+  cooldown = 25,
+  opt_lower_cooldown = 20,
 }
 
 -- Shield Slam
@@ -123,6 +135,8 @@ LCT_SpellData[29704] = 6552
 LCT_SpellData[18499] = {
   class = "WARRIOR",
   cooldown = 30,
+  opt_lower_cooldown = 24,
+  cooldown_overload = { [SPEC_WARRIOR_FURY] = 24, },
 }
 
 -- Disarm
@@ -159,6 +173,8 @@ LCT_SpellData[12975] = {
 LCT_SpellData[1719] = {
   class = "WARRIOR",
   cooldown = 300,
+  opt_lower_cooldown = 240,
+  cooldown_overload = { [SPEC_WARRIOR_FURY] = 240, },
 }
 
 -- Thunder Clap
@@ -206,6 +222,16 @@ LCT_SpellData[12328] = {
 LCT_SpellData[20252] = {
   class = "WARRIOR",
   cooldown = 30,
+  opt_lower_cooldown = 20,
+  cooldown_overload = { [SPEC_WARRIOR_FURY] = 20, },
+}
+
+-- Heroic Leap
+LCT_SpellData[6544] = {
+  class = "WARRIOR",
+  cooldown = 60,
+  opt_lower_cooldown = 40,
+  cooldown_overload = { [SPEC_WARRIOR_FURY] = 40, },
 }
 
 -- Overpower
@@ -218,6 +244,7 @@ LCT_SpellData[7384] = {
 LCT_SpellData[46968] = {
   class = "WARRIOR",
   cooldown = 20,
+  opt_lower_cooldown = 17,
   talent = true,
   specID = { SPEC_WARRIOR_PROT },
 }
@@ -226,8 +253,26 @@ LCT_SpellData[46968] = {
 LCT_SpellData[46924] = {
   class = "WARRIOR",
   cooldown = 90,
+  opt_lower_cooldown = 75, -- Glyph of Bladestorm
+  cooldown_overload = { [SPEC_WARRIOR_ARMS] = 75 }, -- Everyone plays the glyph
   talent = true,
   specID = { SPEC_WARRIOR_ARMS },
+}
+
+-- Heroic Fury
+LCT_SpellData[60970] = {
+  class = "WARRIOR",
+  cooldown = 30,
+  talent = true,
+  specID = { SPEC_WARRIOR_FURY },
+}
+
+-- Raging Blow
+LCT_SpellData[85288] = {
+  class = "WARRIOR",
+  cooldown = 6,
+  talent = true,
+  specID = { SPEC_WARRIOR_FURY },
 }
 
 -- Shattering Throw
@@ -240,5 +285,7 @@ LCT_SpellData[64382] = {
 LCT_SpellData[57755] = {
   class = "WARRIOR",
   cooldown = 60,
+  opt_lower_cooldown = 45,
+  cooldown_overload = { [SPEC_WARRIOR_PROT] = 45, [SPEC_WARRIOR_ARMS] = 45, },
 }
 

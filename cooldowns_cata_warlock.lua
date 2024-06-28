@@ -7,6 +7,8 @@ local SPEC_WARLOCK_DESTRUCTION = 267
 -- Conflagrate
 LCT_SpellData[17962] = {
   cooldown = 10,
+  opt_lower_cooldown = 8, -- Glyph of Conflagrate
+  cooldown_overload = { [SPEC_WARLOCK_DESTRUCTION] = 8, }, -- everyone uses the glyph
   class = "WARLOCK",
   specID = { SPEC_WARLOCK_DESTRUCTION },
 }
@@ -29,6 +31,7 @@ LCT_SpellData[47990] = 17735
 LCT_SpellData[30283] = {
   class = "WARLOCK",
   cooldown = 20,
+  talent = true,
   specID = { SPEC_WARLOCK_DESTRUCTION },
 }
 LCT_SpellData[30413] = 30283
@@ -63,6 +66,8 @@ LCT_SpellData[18540] = {
 LCT_SpellData[5484] = {
   class = "WARLOCK",
   cooldown = 40,
+  opt_lower_cooldown = 32,
+  cooldown_overload = { [SPEC_WARLOCK_AFFLICTION] = 32, [SPEC_WARLOCK_DESTRUCTION] = 32, },
 }
 LCT_SpellData[17928] = 5484
 
@@ -148,6 +153,7 @@ LCT_SpellData[58887] = 29893
 LCT_SpellData[17877] = {
   cooldown = 15,
   class = "WARLOCK",
+  talent = true,
   specID = { SPEC_WARLOCK_DESTRUCTION },
 
 }
@@ -195,6 +201,8 @@ LCT_SpellData[48011] = 19505
 LCT_SpellData[50796] = {
   class = "WARLOCK",
   cooldown = 12,
+  opt_lower_cooldown = 10, -- Glyph of Chaos Bolt
+  cooldown_overload = { [SPEC_WARLOCK_DESTRUCTION] = 10, }, -- Everyone plays the glyph
   talent = true,
   specID = { SPEC_WARLOCK_DESTRUCTION },
 }
@@ -205,6 +213,22 @@ LCT_SpellData[48141] = {
   cooldown = 8,
   talent = true,
   specID = { SPEC_WARLOCK_AFFLICTION },
+}
+
+-- Hand of Gul'Dan
+LCT_SpellData[71521] = {
+  class = "WARLOCK",
+  cooldown = 12,
+  talent = true,
+  specID = { SPEC_WARLOCK_DEMONOLOGY },
+}
+
+-- Demonic Empowerment
+LCT_SpellData[47193] = {
+  class = "WARLOCK",
+  cooldown = 12,
+  talent = true,
+  specID = { SPEC_WARLOCK_DEMONOLOGY },
 }
 
 -- Metamorphosis
@@ -222,9 +246,20 @@ LCT_SpellData[47897] = {
 }
 LCT_SpellData[61290] = 47897
 
+-- Soul Swap
+LCT_SpellData[86211] = {
+  class = "WARLOCK",
+  cooldown = 30,
+  talent = true,
+  specID = { SPEC_WARLOCK_AFFLICTION },
+}
+LCT_SpellData[86121] = 86211
+
 -- Demonic Circle: Teleport
 LCT_SpellData[48020] = {
   class = "WARLOCK",
   cooldown = 30,
+  opt_lower_cooldown = 26, -- Glyph of Demonic Circle
+  cooldown_overload = { [SPEC_WARLOCK_DESTRUCTION] = 26, }, -- Everyone uses the glyph
 }
 LCT_SpellData[61290] = 47897

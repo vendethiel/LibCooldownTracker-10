@@ -36,17 +36,28 @@ LCT_SpellData[19503] = {
   specID = { SPEC_HUNTER_MM },
 }
 
+-- Bad Manner
+LCT_SpellData[90337] = {
+  class = "HUNTER",
+  pet = true,
+  cooldown = 60,
+  --specID = { SPEC_HUNTER_MM, SPEC_HUNTER_SURV }, -- BM doesn't use this
+}
+
 -- Dash
 LCT_SpellData[61684] = {
   class = "HUNTER",
   pet = true,
   cooldown = 32,
+  opt_lower_cooldown = 16, -- this pet talent is taken by everyone
+  cooldown_overload = { [SPEC_HUNTER_MM] = 16, [SPEC_HUNTER_SURV] = 16, [SPEC_HUNTER_BM] = 16 },
 }
 
 -- Deterrence
 LCT_SpellData[19263] = {
   class = "HUNTER",
-  cooldown = 90,
+  cooldown = 120,
+  opt_lower_cooldown = 110,
 }
 
 -- Scorpid Poison
@@ -59,12 +70,6 @@ LCT_SpellData[24586] = 24640
 LCT_SpellData[27060] = 24640
 LCT_SpellData[24587] = 24640
 LCT_SpellData[55728] = 24640
-
--- Tranquilizing Shot
-LCT_SpellData[19801] = {
-  class = "HUNTER",
-  cooldown = 8,
-}
 
 -- Bite
 LCT_SpellData[17253] = {
@@ -80,24 +85,12 @@ LCT_SpellData[17257] = 17253
 LCT_SpellData[17256] = 17253
 LCT_SpellData[17255] = 17253
 
--- Aimed Shot
-LCT_SpellData[19434] = {
-  class = "HUNTER",
-  cooldown = 10,
-}
-LCT_SpellData[20900] = 19434
-LCT_SpellData[20902] = 19434
-LCT_SpellData[20903] = 19434
-LCT_SpellData[20904] = 19434
-LCT_SpellData[27065] = 19434
-LCT_SpellData[20901] = 19434
-LCT_SpellData[49049] = 19434
-LCT_SpellData[49050] = 19434
-
 -- Dive
 LCT_SpellData[23145] = {
   class = "HUNTER",
   cooldown = 32,
+  opt_lower_cooldown = 16, -- Pet talent that everyone picks
+  cooldown_overload = { [SPEC_HUNTER_MM] = 16, [SPEC_HUNTER_SURV] = 16, [SPEC_HUNTER_BM] = 16 },
 }
 
 -- Poison Spit
@@ -132,6 +125,8 @@ LCT_SpellData[49045] = 3044
 LCT_SpellData[19574] = {
   class = "HUNTER",
   cooldown = 120,
+  cooldown_overload = { [SPEC_HUNTER_BM] = 100, }, -- assume people use the glyph
+  opt_lower_cooldown = 100,
   talent = true,
   specID = { SPEC_HUNTER_BM },
 }
@@ -170,9 +165,8 @@ LCT_SpellData[48996] = 2973
 
 -- Concussive Shot
 LCT_SpellData[5116] = {
-  opt_lower_cooldown = 12,
   class = "HUNTER",
-  cooldown = 12,
+  cooldown = 5,
 }
 
 -- Counterattack
@@ -202,9 +196,11 @@ LCT_SpellData[49012] = 19386
 -- Snake Trap
 LCT_SpellData[34600] = {
   opt_lower_cooldown = 24,
+  cooldown_overload = { [SPEC_HUNTER_SURV] = 24, },
   class = "HUNTER",
   cooldown = 30,
 }
+LCT_SpellData[82948] = 34600 -- Snake Trap - Trap Launcher
 
 -- Growl
 LCT_SpellData[2649] = {
@@ -248,7 +244,7 @@ LCT_SpellData[23989] = {
   class = "HUNTER",
   cooldown = 180,
   talent = true,
-  resets = { 5116, 34026, 53271, 1513, 3044, 20736, 1543, 53351, 2643, 3045, 19801, 19263, 781, 13813, 5384, 60192, 1499, 13809, 13795, 34477, 2973, 34600, 19434, 53209, 34490, 19503 },
+  resets = { 1499, 5116, 34026, 53271, 1513, 3044, 20736, 1543, 53351, 2643, 3045, 19801, 19263, 781, 13813, 5384, 60192, 1499, 13809, 13795, 34477, 2973, 34600, 19434, 53209, 34490, 19503 },
   specID = { SPEC_HUNTER_MM },
 }
 
@@ -276,18 +272,16 @@ LCT_SpellData[26064] = {
 
 -- Freezing Trap
 LCT_SpellData[1499] = {
-    opt_lower_cooldown = 24,
-    class = "HUNTER",
-    cooldown = 30,
-    sets_cooldown = {
-        -- Freezing Arrow
-        { spellid = 60192, cooldown = 30 },
-        -- Frost Trap
-        { spellid = 13809, cooldown = 30 },
-    }
+  opt_lower_cooldown = 24,
+  cooldown_overload = { [SPEC_HUNTER_SURV] = 24, },
+  class = "HUNTER",
+  cooldown = 30,
+  sets_cooldowns = {
+      -- Ice Trap
+      { spellid = 13809, cooldown = 30 },
+  }
 }
-LCT_SpellData[14310] = 1499
-LCT_SpellData[14311] = 1499
+LCT_SpellData[60192] = 1499 -- Freezing Trap - Trap Launcher
 
 -- Pummel
 LCT_SpellData[26090] = {
@@ -298,8 +292,13 @@ LCT_SpellData[26090] = {
 -- Immolation Trap
 LCT_SpellData[13795] = {
   opt_lower_cooldown = 24,
+  cooldown_overload = { [SPEC_HUNTER_SURV] = 24, },
   class = "HUNTER",
   cooldown = 30,
+  sets_cooldowns = {
+    -- Explosive Trap 
+    { spellid = 13813, cooldown = 30, }, 
+  },
 }
 LCT_SpellData[27023] = 13795
 LCT_SpellData[14302] = 13795
@@ -308,6 +307,7 @@ LCT_SpellData[14304] = 13795
 LCT_SpellData[14305] = 13795
 LCT_SpellData[49055] = 13795
 LCT_SpellData[49056] = 13795
+LCT_SpellData[82945] = 13795 -- Immolation Trap - Trap Launcher
 
 -- Rapid Fire
 LCT_SpellData[3045] = {
@@ -315,14 +315,6 @@ LCT_SpellData[3045] = {
   class = "HUNTER",
   cooldown = 300,
 }
-
--- Scare Beast
-LCT_SpellData[1513] = {
-  class = "HUNTER",
-  cooldown = 30,
-}
-LCT_SpellData[14326] = 1513
-LCT_SpellData[14327] = 1513
 
 -- Kill Command
 LCT_SpellData[34026] = {
@@ -341,48 +333,41 @@ LCT_SpellData[66493] = 24604
 LCT_SpellData[66494] = 24604
 LCT_SpellData[66495] = 24604
 
--- Frost Trap
+-- Ice Trap
 LCT_SpellData[13809] = {
   opt_lower_cooldown = 24,
+  cooldown_overload = { [SPEC_HUNTER_SURV] = 24, },
   class = "HUNTER",
   cooldown = 30,
-	sets_cooldown = {
-        -- Freezing Trap
-        { spellid = 1499, cooldown = 30 },
-        -- Freezing Arrow
-        { spellid = 60192, cooldown = 30 },
-	}
+  sets_cooldowns = {
+      -- Freezing Trap
+      { spellid = 1499, cooldown = 30 },
+  }
 }
 
 -- Explosive Trap
 LCT_SpellData[13813] = {
   opt_lower_cooldown = 24,
+  cooldown_overload = { [SPEC_HUNTER_SURV] = 24, },
   class = "HUNTER",
   cooldown = 30,
+  sets_cooldowns = {
+    -- Immolation Trap 
+    { spellid = 13795, cooldown = 30, }, 
+  },
 }
 LCT_SpellData[27025] = 13813
 LCT_SpellData[14316] = 13813
 LCT_SpellData[14317] = 13813
 LCT_SpellData[49066] = 13813
 LCT_SpellData[49067] = 13813
-
--- Multi-Shot
-LCT_SpellData[2643] = {
-  class = "HUNTER",
-  cooldown = 10,
-}
-LCT_SpellData[27021] = 2643
-LCT_SpellData[25294] = 2643
-LCT_SpellData[14288] = 2643
-LCT_SpellData[14289] = 2643
-LCT_SpellData[14290] = 2643 
-LCT_SpellData[49047] = 2643 
-LCT_SpellData[49048] = 2643 
+LCT_SpellData[82939] = 13813 -- Explosive Trap - Trap Launcher
 
 -- Chimera Shot
 LCT_SpellData[53209] = {
   class = "HUNTER",
   cooldown = 10,
+  opt_lower_cooldown = 9, -- Glyph of Chimera Shot
   talent = true,
   specID = { SPEC_HUNTER_MM },
 }
@@ -407,19 +392,7 @@ LCT_SpellData[53301] = {
 -- Master's Call
 LCT_SpellData[53271] = {
   class = "HUNTER",
-  cooldown = 60,
-}
-
--- Freezing Arrow
-LCT_SpellData[60192] = {
-  class = "HUNTER",
-  cooldown = 30,
-	sets_cooldown = {
-        -- Freezing Trap
-        { spellid = 1499, cooldown = 30 },
-        -- Frost Trap
-        { spellid = 13809, cooldown = 30 },
-	}
+  cooldown = 45,
 }
 
 -- Roar of Sacrifice
