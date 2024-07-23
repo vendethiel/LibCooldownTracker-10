@@ -4,11 +4,17 @@ local SPEC_SHAMAN_ELEMENTAL   = 262
 local SPEC_SHAMAN_ENHANCEMENT = 263
 local SPEC_SHAMAN_RESTORATION = 264
 
+-- Tremor Totem
+LCT_SpellData[8143] = {
+  cooldown = 60,
+  class = "SHAMAN",
+}
+
 -- Spirit Link Totem
 LCT_SpellData[98008] = {
   cooldown = 180,
   class = "SHAMAN",
-  spec = { SPEC_SHAMAN_RESTORATION },
+  specID = { SPEC_SHAMAN_RESTORATION },
 }
 
 -- Earth Elemental Totem
