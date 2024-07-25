@@ -52,7 +52,7 @@ LCT_SpellData[48792] = {
 	_talent = true,
 	defensive = true,
 	duration = 8,
-	cooldown = 180,
+	cooldown = 120,
 	opt_lower_cooldown = 148, -- ?
 }
 -- Anti-Magic Shell

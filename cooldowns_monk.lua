@@ -305,16 +305,6 @@ LCT_SpellData[261947] = {
 	talent = true,
 	cooldown = 30,
 }
--- Serenity
-LCT_SpellData[152173] = {
-	class = "MONK",
-	specID = { SPEC_MONK_WINDWALKER },
-	talent = true,
-	offensive = true,
-	duration = 8,
-	cooldown = 90,
-	replaces = 137639 -- Storm, Earth, and Fire
-}
 
 -- Monk/Mistweaver
 -- Detox
@@ -324,12 +314,6 @@ LCT_SpellData[115450] = {
 	dispel = true,
 	cooldown_starts_on_dispel = true,
 	cooldown = 8,
-}
--- Essence Font
-LCT_SpellData[191837] = {
-	class = "MONK",
-	specID = { SPEC_MONK_MISTWEAVER },
-	cooldown = 12,
 }
 -- Life Cocoon
 LCT_SpellData[116849] = {
