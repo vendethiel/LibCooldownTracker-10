@@ -105,6 +105,21 @@ LCT_SpellData[118000] = {
 	duration = 6,
 	cooldown = 35,
 }
+-- Ravager
+LCT_SpellData[228920] = {
+	class = "WARRIOR",
+	specID = { SPEC_WARRIOR_FURY, SPEC_WARRIOR_ARMS },
+	talent = true,
+	cooldown = 90
+}
+-- Bladestorm
+LCT_SpellData[46924] = {
+	class = "WARRIOR",
+	specID = { SPEC_WARRIOR_FURY, SPEC_WARRIOR_ARMS },
+	talent = true,
+	offensive = true,
+	cooldown = 90
+}
 
 -- Warrior/Arms
 -- Overpower
@@ -113,12 +128,6 @@ LCT_SpellData[7384] = {
 	specID = { SPEC_WARRIOR_ARMS },
 	cooldown = 12,
 	opt_charges = 3,
-}
--- Bladestorm
-LCT_SpellData[227847] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_ARMS },
-	cooldown = 90
 }
 -- Mortal Strike
 LCT_SpellData[12294] = {
@@ -160,15 +169,6 @@ LCT_SpellData[262161] = {
 	cooldown = 45,
 	replaces = 167105, -- Colossus Smash
 }
--- Ravager
-LCT_SpellData[152277] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_ARMS },
-	talent = true,
-	cooldown = 45,
-	duration = 7,
-	replaces = 227847 -- Bladestorm
-}
 -- Cleave
 LCT_SpellData[845] = {
 	class ="WARRIOR",
@@ -201,9 +201,9 @@ LCT_SpellData[262228] = {
 	cooldown = 60
 }
 -- Defensive Stance
-LCT_SpellData[197690] = {
+LCT_SpellData[386208] = {
 	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_ARMS },
+	specID = { SPEC_WARRIOR_ARMS, SPEC_WARRIOR_FURY },
 	defensive = true,
 	talent = true,
 	cooldown = 3
@@ -262,15 +262,6 @@ LCT_SpellData[280772] = {
 	specID = { SPEC_WARRIOR_FURY },
 	talent = true,
 	cooldown = 30,
-}
--- Bladestorm
-LCT_SpellData[46924] = {
-	class = "WARRIOR",
-	specID = { SPEC_WARRIOR_FURY },
-	talent = true,
-	offensive = true,
-	duration = 6,
-	cooldown = 60
 }
 
 -- Warrior/Protection
