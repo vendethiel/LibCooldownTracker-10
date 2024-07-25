@@ -99,6 +99,7 @@ LCT_SpellData[236077] = {
 -- Dragon Roar
 LCT_SpellData[118000] = {
 	class = "WARRIOR",
+	specID = { SPEC_WARRIOR_FURY, SPEC_WARRIOR_PROT },
 	talent = true,
 	knockback = true,
 	duration = 6,
