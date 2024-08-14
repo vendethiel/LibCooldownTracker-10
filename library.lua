@@ -49,26 +49,33 @@ local pvp_spelldata = {}
 do
 	for spellid, spelldata in pairs(LCT_SpellData) do
 		if type(spelldata) == "table" then
-			local spellIconTable = C_Spell.GetSpellInfo(spellid)
+			local name, icon
 
-			if not spellIconTable then
+			if WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+				local spellInfoTable = C_Spell.GetSpellInfo(spellid)
+				name = spellInfoTable.name
+				icon = spellInfoTable.iconID
+			else
+				name, _, icon = GetSpellInfo(spellid)
+			end
+
+			if not name then
 				DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: bad spellid for " .. (spelldata.class or spelldata.race or "ITEM") .. ": " .. spellid)
 				LCT_SpellData[spellid] = nil
 			else
 				-- add name and icon
-				spelldata.name = spellIconTable.name
+				spelldata.name = name
 				if not spelldata.icon then
 					if type(spelldata.item) == 'number' then
 						spelldata.icon = GetItemIcon(spelldata.item)
 					else
-						spelldata.icon = spellIconTable.iconID
+						spelldata.icon = icon
 					end
 				end
 
 				-- add required aura name
 				if spelldata.requires_aura then
-					local spellIconTable = C_Spell.GetSpellInfo(spelldata.requires_aura)
-					spelldata.requires_aura_name = spellIconTable.name
+					spelldata.requires_aura_name = GetSpellInfo(spelldata.requires_aura)
 					if not spelldata.requires_aura_name then
 						DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: bad aura spellid: " .. spelldata.requires_aura)
 					end
