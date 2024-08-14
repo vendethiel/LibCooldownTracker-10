@@ -75,7 +75,12 @@ do
 
 				-- add required aura name
 				if spelldata.requires_aura then
-					spelldata.requires_aura_name = GetSpellInfo(spelldata.requires_aura)
+					if WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+						local spellIconTable = C_Spell.GetSpellInfo(spelldata.requires_aura)
+						spelldata.requires_aura_name = spellIconTable.name
+					else
+						spelldata.requires_aura_name = GetSpellInfo(spelldata.requires_aura)
+					end
 					if not spelldata.requires_aura_name then
 						DEFAULT_CHAT_FRAME:AddMessage("LibCooldownTracker-1.0: bad aura spellid: " .. spelldata.requires_aura)
 					end
