@@ -137,7 +137,13 @@ LCT_SpellData[77606] = {
 	duration = 12,
 	cooldown = 20
 }
-
+-- Blinding Sleet
+LCT_SpellData[207167] = {
+	class = "DEATHKNIGHT",
+	talent = true,
+	cc = true,
+	cooldown = 60
+}
 -- DK/mixed/talents
 -- Asphyxiate
 LCT_SpellData[108194] = {
@@ -283,14 +289,6 @@ LCT_SpellData[279302] = {
 	offensive = true,
 	duration = 10,
 	cooldown = 180,
-}
--- Blinding Sleet
-LCT_SpellData[207167] = {
-	class = "DEATHKNIGHT",
-	specID = { SPEC_DK_FROST },
-	talent = true,
-	cc = true,
-	cooldown = 60
 }
 -- Horn of Winter
 LCT_SpellData[57330] = {

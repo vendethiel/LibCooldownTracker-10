@@ -97,19 +97,12 @@ LCT_SpellData[5116] = {
 	cc = true,
 	cooldown = 5
 }
--- Intimidation
-LCT_SpellData[19577] = {
-	class = "HUNTER",
-	specID = { SPEC_HUNTER_BM, SPEC_HUNTER_SURV },
-	stun = true,
-	cooldown = 60,
-}
 -- Counter Shot
 LCT_SpellData[147362] = {
 	class = "HUNTER",
 	_talent = true,
 	interrupt = true,
-	cooldown = 24,
+	cooldown = 22,
 }
 -- Hunter/talents
 -- Roar of Sacrifice
@@ -119,6 +112,22 @@ LCT_SpellData[53480] = {
 	defensive = true,
 	duration = 12,
 	cooldown = 60
+}
+--Survival of the Fittest
+LCT_SpellData[264735] = {
+	class = "HUNTER",
+	talent = true,
+	defensive = true,
+	duration = 8,
+	cooldown = 90,
+	charges = 2,
+}
+-- Intimidation
+LCT_SpellData[19577] = {
+	class = "HUNTER",
+	talent = true,
+	stun = true,
+	cooldown = 55
 }
 -- Binding Shot
 LCT_SpellData[109248] = {
@@ -165,7 +174,7 @@ LCT_SpellData[217200] = {
 	specID = { SPEC_HUNTER_BM },
 	offensive = true,
 	cooldown = 12,
-	charges = 2
+	charges = 2,
 }
 -- Kill Command
 LCT_SpellData[34026] = {

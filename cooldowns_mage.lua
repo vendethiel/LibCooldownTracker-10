@@ -148,6 +148,13 @@ LCT_SpellData[113724] = {
 	duration = 10,
 	cooldown = 45
 }
+-- Dragon's Breath
+LCT_SpellData[DRAGON_BREATH] = {
+	class = "MAGE",
+	talent = true,
+	cc = true,
+	cooldown = 45
+}
 -- Rune of Power
 LCT_SpellData[116011] = {
 	class = "MAGE",
@@ -248,13 +255,6 @@ LCT_SpellData[COMBUSTION] = {
 	offensive = true,
 	duration = 10,
 	cooldown = 120
-}
--- Dragon's Breath
-LCT_SpellData[DRAGON_BREATH] = {
-	class = "MAGE",
-	specID = { SPEC_MAGE_FIRE },
-	cc = true,
-	cooldown = 45
 }
 -- Blazing Barrier
 LCT_SpellData[235313] = {

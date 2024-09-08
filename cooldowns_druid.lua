@@ -153,7 +153,6 @@ LCT_SpellData[209749] = {
 	duration = 5,
 	cooldown = 30
 }
-
 -- Druid/Feral
 -- Tiger's Fury
 LCT_SpellData[5217] = {

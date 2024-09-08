@@ -31,7 +31,7 @@ LCT_SpellData[586] = {
 	class = "PRIEST",
 	defensive = true,
 	duration = 1,
-	cooldown = 30
+	cooldown = 20
 }
 -- Leap of Faith
 LCT_SpellData[73325] = {
@@ -105,7 +105,7 @@ LCT_SpellData[120517] = {
 	class = "PRIEST",
 	talent = true,
 	heal = true,
-	cooldown = 40
+	cooldown = 60
 }
 
 -- Priest/Discipline
@@ -117,6 +117,15 @@ LCT_SpellData[197871] = {
 	offensive = true,
 	duration = 8,
 	cooldown = 60
+}
+-- Ultimate Penitence
+LCT_SpellData[421453] = {
+	class = "PRIEST",
+	specID = { SPEC_PRIEST_DISC },
+	talent = true,
+	defensive = true,
+	duration = 6,
+	cooldown = 240
 }
 -- Archangel
 LCT_SpellData[197862] = {
@@ -360,6 +369,14 @@ LCT_SpellData[263165] = {
 	specID = { SPEC_PRIEST_SHADOW },
 	talent = true,
 	cooldown = 45
+}
+-- Void Eruption
+LCT_SpellData[228260] = {
+	class = "PRIEST",
+	specID = { SPEC_PRIEST_SHADOW },
+	talent = true,
+	duration = 20,
+	cooldown = 120
 }
 -- Mindbender (Shadow)
 LCT_SpellData[200174] = {

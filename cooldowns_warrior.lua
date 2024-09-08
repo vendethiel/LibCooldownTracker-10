@@ -72,9 +72,9 @@ LCT_SpellData[202168] = {
 -- Storm Bolt
 LCT_SpellData[107570] = {
 	class = "WARRIOR",
-	_talent = true,
+	talent = true,
 	stun = true,
-	cooldown = 30
+	cooldown = 28
 }
 -- Intimidating Shout
 LCT_SpellData[5246] = {

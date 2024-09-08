@@ -91,9 +91,9 @@ LCT_SpellData[1966] = {
 -- Shadowstep
 LCT_SpellData[36554] = {
 	class = "ROGUE",
-	_talent = true,
-	cooldown = 30,
-	opt_charges = 2, -- note: subs always have 2 charges of this; but code doesn't handle such cases
+	talent = true,
+	cooldown = 24,
+	charges = 2, -- note: subs always have 2 charges of this; but code doesn't handle such cases
 }
 -- Shiv
 LCT_SpellData[5938] = {

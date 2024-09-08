@@ -12,8 +12,8 @@ LCT_SpellData[85673] = {
 	reduce = fist_of_justice,
 	hidden = true
 }
--- Templar's Verdict
-LCT_SpellData[85256] = {
+-- Final Vedrict
+LCT_SpellData[383328] = {
 	class = "PALADIN",
 	specID = { SPEC_PALADIN_RETRIBUTION },
 	reduce = fist_of_justice,
