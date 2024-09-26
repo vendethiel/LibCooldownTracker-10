@@ -63,6 +63,12 @@ LCT_SpellData[48707] = {
 	duration = 5,
 	cooldown = 60
 }
+LCT_SpellData[311975] = 48707
+LCT_SpellData[454863] = 48707
+LCT_SpellData[171465] = 48707
+LCT_SpellData[218988] = 48707
+LCT_SpellData[410358] = 48707
+LCT_SpellData[451777] = 48707
 -- Anti-Magic Zone
 LCT_SpellData[51052] = {
 	class = "DEATHKNIGHT",
