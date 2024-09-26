@@ -886,7 +886,7 @@ function events:ARENA_COOLDOWNS_UPDATE(event, unit)
 
   local spellid, startTime, duration = C_PvP.GetArenaCrowdControlInfo(unit)
 
-  if not isRetail then
+  if WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE then
     -- K: Haxx to make up for Blizzard mistakes carrying over DF changes to Classic during early Cata Classic
 
     -- K: Blizzard made the API return 60sec CD for regular PvP Trinket in Classic (carry-over from Mainline)
