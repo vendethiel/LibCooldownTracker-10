@@ -109,14 +109,6 @@ LCT_SpellData[234877] = {
 	talent = true,
 	cooldown = 30
 }
--- Dark Soul: Misery
-LCT_SpellData[113860] = {
-	class = "WARLOCK",
-	specID = { SPEC_WARLOCK_AFFLICTION },
-	talent = true,
-	duration = 20,
-	cooldown = 120
-}
 -- Rapid Contagion
 LCT_SpellData[344566] = {
 	class = "WARLOCK",
@@ -315,15 +307,6 @@ LCT_SpellData[6353] = {
 	talent = true,
 	offensive = true,
 	cooldown = 45, -- reduced by 2s for every Soul Shard spent
-}
--- Dark Soul: Instability
-LCT_SpellData[113858] = {
-	class = "WARLOCK",
-	specID = { SPEC_WARLOCK_DESTRUCTION },
-	talent = true,
-	offensive = true,
-	duration = 20,
-	cooldown = 120
 }
 -- Shadowburn
 LCT_SpellData[17877] = {

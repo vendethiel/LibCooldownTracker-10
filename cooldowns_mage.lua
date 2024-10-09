@@ -120,8 +120,8 @@ LCT_SpellData[342245] = {
 	class = "MAGE",
 	defensive = true,
 	duration = 10,
-	cooldown = 60,
-	opt_lower_cooldown = 50, -- with 342249 Master of Time
+	cooldown = 50,
+	-- opt_lower_cooldown = 50, -- with 342249 Master of Time
 }
 
 -- Mage/talents
@@ -175,6 +175,12 @@ LCT_SpellData[414664] = {
 	talent = true,
 	duration = 12,
 	cooldown = 300
+}
+-- Mass barrier
+LCT_SpellData[414660] = {
+	class = "MAGE",
+	talent = true,
+	cooldown = 180
 }
 
 -- Mage/Arcane

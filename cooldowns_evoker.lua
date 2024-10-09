@@ -145,6 +145,13 @@ LCT_SpellData[374227] = {
 	duration = 8,
 	cooldown = 120
 }
+-- Ebon Might
+LCT_SpellData[395152] = {
+	class = "EVOKER",
+	talent = true,
+	duration = 10,
+	cooldown = 30
+}
 
 -- Evoker/Devastation/talents
 -- Dragonrage

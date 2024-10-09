@@ -146,7 +146,7 @@ LCT_SpellData[258925] = {
 	talent = true,
 	offensive = true,
 	duration = 3,
-	cooldown = 60,
+	cooldown = 90,
 }
 -- Fel Eruption
 LCT_SpellData[211881] = {

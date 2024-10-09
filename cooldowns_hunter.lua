@@ -293,15 +293,6 @@ LCT_SpellData[288613] = {
 }
 
 -- Hunter/Marksmanship/talents
--- Doubletap
-LCT_SpellData[260402] = {
-	class = "HUNTER",
-	specID = { SPEC_HUNTER_MM },
-	talent = true,
-	offensive = true,
-	duration = 3,
-	cooldown = 60
-}
 
 -- Hunter/Survival
 -- Aspect of the eagle
