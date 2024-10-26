@@ -13,6 +13,14 @@ LCT_SpellData[80965] = {
 }
 LCT_SpellData[80964] = 80965
 
+-- Stampeding Roar
+LCT_SpellData[77764] = {
+  cooldown = 120,
+  class = "DRUID",
+  duration = 8,
+}
+LCT_SpellData[77761] = 77764
+
 -- Solar Beam
 LCT_SpellData[78675] = {
   cooldown = 60,
