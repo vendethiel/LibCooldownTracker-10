@@ -145,13 +145,6 @@ LCT_SpellData[374227] = {
 	duration = 8,
 	cooldown = 120
 }
--- Ebon Might
-LCT_SpellData[395152] = {
-	class = "EVOKER",
-	talent = true,
-	duration = 10,
-	cooldown = 30
-}
 
 -- Evoker/Devastation/talents
 -- Dragonrage
@@ -300,6 +293,13 @@ LCT_SpellData[370388] = {
 }
 
 -- Evoker/Augmentation/talents
+-- Ebon Might
+LCT_SpellData[395152] = {
+	class = "EVOKER",
+	talent = true,
+	duration = 10,
+	cooldown = 30
+}
 -- Time Skip
 LCT_SpellData[404977] = {
 	class = "EVOKER",

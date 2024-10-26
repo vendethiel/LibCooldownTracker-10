@@ -11,6 +11,16 @@ LCT_SpellData[336126] = {
 	talent = true,
 	sets_cooldowns = set_wotf_emfh,
 	cooldown = 120,
+  -- Manually map healer specs
+  cooldown_overload = {
+    [65]   = 90, -- Paladin Holy
+    [105]  = 90, -- Druid Restoration
+    [256]  = 90, -- Priest Disc
+    [257]  = 90, -- Priest Holy
+    [264]  = 90, -- Shaman Restoration
+    [270]  = 90, -- Monk Mistweaver
+    [1468] = 90, -- Evoker Preservation
+  }
 }
 -- Adaptation
 LCT_SpellData[336135] = {
