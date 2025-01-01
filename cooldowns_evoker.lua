@@ -101,6 +101,9 @@ LCT_SpellData[351338] = {
 	_talent = true,
 	cooldown = 40,
 	interrupt = true,
+  cooldown_overload = {
+    [SPEC_EVOKER_DEVASTATION] = 20,
+  },
 	opt_lower_cooldown = 20 -- Reduced by the 'Imposing Presence' talent
 }
 -- Renewing Blaze

@@ -58,7 +58,6 @@ LCT_SpellData[218164] = {
 -- Spear Hand Strike
 LCT_SpellData[116705] = {
 	class = "MONK",
-	specID = { SPEC_MONK_BREWMASTER, SPEC_MONK_WINDWALKER },
 	interrupt = true,
 	silence = true,
 	cooldown = 15,
