@@ -51,10 +51,12 @@ do
 		if type(spelldata) == "table" then
 			local name, icon
 
-			if WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+			if C_Spell and C_Spell.GetSpellInfo then
 				local spellInfoTable = C_Spell.GetSpellInfo(spellid)
-				name = spellInfoTable.name
-				icon = spellInfoTable.iconID
+				if spellInfoTable then
+					name = spellInfoTable.name
+					icon = spellInfoTable.iconID
+				end
 			else
 				name, _, icon = GetSpellInfo(spellid)
 			end

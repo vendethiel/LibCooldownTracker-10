@@ -189,13 +189,13 @@ LCT_SpellData[214621] = {
 	cooldown = 24,
 }
 -- Evangelism
-LCT_SpellData[246287] = {
-	class = "PRIEST",
-	specID = { SPEC_PRIEST_DISC },
-	talent = true,
-	duration = 6,
-	cooldown = 90,
-}
+--LCT_SpellData[246287] = {
+--	class = "PRIEST",
+--	specID = { SPEC_PRIEST_DISC },
+--	talent = true,
+--	duration = 6,
+--	cooldown = 90,
+--}
 -- Mindbender (Disc)
 LCT_SpellData[123040] = {
 	class = "PRIEST",
