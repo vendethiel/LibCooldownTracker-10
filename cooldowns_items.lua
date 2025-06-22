@@ -7,19 +7,24 @@ set_wotf_emfh = {
 
 -- Gladiator's Medallion
 LCT_SpellData[336126] = {
-	pvp_trinket = true,
-	talent = true,
-	sets_cooldowns = set_wotf_emfh,
-	cooldown = 120,
-  -- Manually map healer specs
-  cooldown_overload = {
-    [65]   = 90, -- Paladin Holy
-    [105]  = 90, -- Druid Restoration
-    [256]  = 90, -- Priest Disc
-    [257]  = 90, -- Priest Holy
-    [264]  = 90, -- Shaman Restoration
-    [270]  = 90, -- Monk Mistweaver
-    [1468] = 90, -- Evoker Preservation
+    pvp_trinket = true,
+    talent = true,
+    sets_cooldowns = set_wotf_emfh,
+    cooldown = 120,
+    icon_gladiator = [[Interface\\Icons\\Ability_PVP_GladiatorMedallion]],
+    icon_alliance = [[Interface\Icons\INV_Jewelry_TrinketPVP_01]],
+    icon_horde = [[Interface\Icons\INV_Jewelry_TrinketPVP_02]],
+    icon_horde_wotlk = [[Interface\Icons\inv_jewelry_necklace_38]],
+    icon_alliance_wotlk = [[Interface\Icons\inv_jewelry_necklace_37]],
+    -- Manually map healer specs
+    cooldown_overload = {
+        [65]   = 90, -- Paladin Holy
+        [105]  = 90, -- Druid Restoration
+        [256]  = 90, -- Priest Disc
+        [257]  = 90, -- Priest Holy
+        [264]  = 90, -- Shaman Restoration
+        [270]  = 90, -- Monk Mistweaver
+        [1468] = 90, -- Evoker Preservation
   }
 }
 -- Adaptation
