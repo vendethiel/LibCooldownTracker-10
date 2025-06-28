@@ -13,7 +13,7 @@ LCT_SpellData[42292] = {
         { spellid = 7744, cooldown = 30 },
         -- Will to Survive (EMFH)
         { spellid = 59752, cooldown = 120 },
-        }
+    }
 }
 
 -- Healthstone
