@@ -87,20 +87,6 @@ LCT_SpellData[10326] = {
 	cooldown = 15
 }
 -- Paladin/talents
--- Beacon of Insight
-LCT_SpellData[157007] = {
-	class = "PALADIN",
-	specID = { 65 },
-	heal = true,
-	cooldown = 15
-}
--- Seraphim
-LCT_SpellData[152262] = {
-	class = "PALADIN",
-	specID = { 66, 70 },
-	offensive = true,
-	cooldown = 30
-}
 -- Blinding Light
 LCT_SpellData[115750] = {
 	class = "PALADIN",

@@ -72,12 +72,6 @@ LCT_SpellData[51753] = {
 	duration = 6,
 	cooldown = 60
 }
--- Aspect of the fox
-LCT_SpellData[172106] = {
-	class = "HUNTER",
-	duration = 6,
-	cooldown = 180
-}
 -- Hunter/talent
 -- Stampede
 LCT_SpellData[121818] = {

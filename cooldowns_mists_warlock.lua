@@ -112,13 +112,6 @@ LCT_SpellData[108508] = {
 	duration = 10,
 	cooldown = 60
 }
--- Cataclysm
-LCT_SpellData[152108] = {
-	class = "WARLOCK",
-	talent = true,
-	offensive = true,
-	cooldown = 60
-}
 -- Warlock/265 - Affliction
 -- Seed of Corruption
 LCT_SpellData[87385] = {

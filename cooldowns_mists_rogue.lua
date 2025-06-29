@@ -152,13 +152,6 @@ LCT_SpellData[36554] = {
 	duration = 2,
 	cooldown = 20
 }
--- Death from above 
-LCT_SpellData[152150] = {
-	class = "ROGUE",
-	talent = true,
-	offensive = true,
-	cooldown = 20
-}
 -- Marked for death
 LCT_SpellData[137619] = {
 	class = "ROGUE",

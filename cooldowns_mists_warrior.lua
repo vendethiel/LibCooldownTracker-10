@@ -63,25 +63,6 @@ LCT_SpellData[23920] = {
 	cooldown = 25
 }
 -- Warrior/talents
--- Siegebreaker
-LCT_SpellData[176289] = {
-	class = "WARRIOR",
-	talent = true,
-	specID = { 71, 72 },
-	offensive = true,
-	knockback = true,
-	replaces = 5246,
-	duration = 1,
-	cooldown = 45
-}
--- Ravager
-LCT_SpellData[152277] = {
-	class = "WARRIOR",
-	talent = true,
-	offensive = true,
-	duration = 10,
-	cooldown = 60
-}
 -- Enraged Regeneration
 LCT_SpellData[55694] = {
 	class = "WARRIOR",
