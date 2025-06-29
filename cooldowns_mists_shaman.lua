@@ -194,34 +194,6 @@ LCT_SpellData[108273] = {
 	duration = 6,
 	cooldown = 60
 }
--- Cloudburst totem
-LCT_SpellData[157153] = {
-	class = "SHAMAN",
-	talent = true,
-	specID = { 264 },
-	defensive = true,
-	duration = 15,
-	cooldown = 30
-}
--- Storm elemental totem
-LCT_SpellData[152256] = {
-	class = "SHAMAN",
-	talent = true,
-	duration = 60,
-	defensive = true,
-	offensive = true,
-	cooldown = 300
-}
--- Liquid magma
-LCT_SpellData[152255] = {
-	class = "SHAMAN",
-	talent = true,
-	specID = { 262, 263 },
-	offensive = true,
-	duration = 10,
-	cooldown = 45
-}
-
 -- Shaman/Elemental
 -- Earth Shock
 LCT_SpellData[8042] = {
@@ -252,13 +224,6 @@ LCT_SpellData[51490] = {
 	knockback = true,
 	cc = true,
 	cooldown = 45
-}
--- Unleash Flame
-LCT_SpellData[165462] = {
-	class = "SHAMAN",
-	specID = { 262 },
-	offensive = true,
-	cooldown = 15
 }
 -- Shaman/Enhancement
 -- Unleash Elements

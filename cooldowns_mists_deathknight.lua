@@ -151,26 +151,6 @@ LCT_SpellData[108200] = {
 	duration = 8,
 	cooldown = 60
 }
--- Breath of Sindragosa
-LCT_SpellData[152279] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	offensive = true,
-	heal = true,
-	-- Duration is function of runic power. 15 + 15/s
-	cooldown = 120
-}
--- Defile
-LCT_SpellData[152280] = {
-	class = "DEATHKNIGHT",
-	talent = true,
-	offensive = true,
-	defensive = true,
-	replaces = 43265,
-	duration = 10,
-	cooldown = 30
-}
-
 -- DK/250 - Blood
 -- Vampiric Blood
 LCT_SpellData[55233] = {
