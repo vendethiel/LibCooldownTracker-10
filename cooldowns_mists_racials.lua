@@ -1,6 +1,17 @@
 -- Racials
--- Every Man for Himself (Human)
-LCT_SpellData[59752] = 42292
+-- Will to Survive / EMFH (Human)
+LCT_SpellData[59752] = {
+    race = "Human",
+    pvp_trinket = true,
+    cooldown = 120,
+    sets_cooldowns = {
+        -- WOTF
+        { spellid = 7744, cooldown = 30 },
+        -- PvP Trinkets
+        { spellid = 42292, cooldown = 120 },
+    },
+}
+
 -- Gift of the Naaru (Draenei)
 LCT_SpellData[59544] = {
 	race = "Draenei",
