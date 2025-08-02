@@ -9,6 +9,7 @@
 	<Script file="cooldowns_mists_deathknight.lua"/>
 	<Script file="cooldowns_mists_hunter.lua"/>
 	<Script file="cooldowns_mists_mage.lua"/>
+	<Script file="cooldowns_mists_monk.lua"/>
 	<Script file="cooldowns_mists_paladin.lua"/>
 	<Script file="cooldowns_mists_priest.lua"/>
 	<Script file="cooldowns_mists_rogue.lua"/>
