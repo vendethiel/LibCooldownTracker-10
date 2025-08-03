@@ -94,6 +94,14 @@ LCT_SpellData[108843] = {
 	duration = 1.5,
 	cooldown = 25
 }
+-- Presence of Mind
+LCT_SpellData[12043] = {
+	class = "MAGE",
+	specID = { 62 },
+	offensive = true,
+	cooldown_starts_on_aura_fade = true,
+	cooldown = 90
+}
 -- Cauterize
 LCT_SpellData[86949] = {
 	class = "MAGE",
@@ -174,14 +182,6 @@ LCT_SpellData[115610] = {
 	cooldown = 25
 }
 -- Mage/Arcane
--- Presence of Mind
-LCT_SpellData[12043] = {
-	class = "MAGE",
-	specID = { 62 },
-	offensive = true,
-	cooldown_starts_on_aura_fade = true,
-	cooldown = 90
-}
 -- Arcane Power
 LCT_SpellData[12042] = {
 	class = "MAGE",
