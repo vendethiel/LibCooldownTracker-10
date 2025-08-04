@@ -269,7 +269,7 @@ LCT_SpellData[102342] = {
 	specID = { 105 },
 	defensive = true,
 	duration = 12,
-	cooldown = 60
+	cooldown = 30 -- Not 60, cuz 4 pieces PvP set bonus for rdru reduce cd by 30 sec
 }
 -- Nature's Cure
 LCT_SpellData[88423] = {
