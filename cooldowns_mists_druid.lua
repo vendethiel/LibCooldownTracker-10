@@ -250,7 +250,7 @@ LCT_SpellData[61336] = {
 -- Nature's Swiftness
 LCT_SpellData[132158] = {
 	class = "DRUID",
-	specID = { 105 },
+	specID = { 102, 105 },
 	heal = true,
 	cooldown_starts_on_aura_fade = true,
 	cooldown = 60
@@ -269,7 +269,7 @@ LCT_SpellData[102342] = {
 	specID = { 105 },
 	defensive = true,
 	duration = 12,
-	cooldown = 60
+	cooldown = 30 -- Not 60, cuz 4 pieces PvP set bonus for rdru reduce cd by 30 sec
 }
 -- Nature's Cure
 LCT_SpellData[88423] = {
