@@ -37,7 +37,7 @@ LCT_SpellData[8122] = {
 	class = "PRIEST",
 	talent = true,
 	cc = true,
-	cooldown = 45,
+	cooldown = 27,
 }
 -- Void Tendrils
 LCT_SpellData[108920] = {
@@ -264,7 +264,7 @@ LCT_SpellData[64044] = {
 -- Silence
 LCT_SpellData[15487] = {
 	class = "PRIEST",
-	specID = { 258, 256 },
+	specID = { 258 },
 	silence = true,
 	cooldown = 45
 }

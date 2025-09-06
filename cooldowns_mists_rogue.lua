@@ -80,6 +80,13 @@ LCT_SpellData[1856] = {
 	duration = 3,
 	cooldown = 120
 }
+-- Shadow Blades
+LCT_SpellData[121471] = {
+	class = "ROGUE",
+	offensive = true,
+	duration = 12,
+	cooldown = 180
+}
 
 -- Rogue/Assassination 259
 -- Vendetta

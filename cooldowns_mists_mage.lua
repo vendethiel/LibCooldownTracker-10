@@ -35,7 +35,7 @@ LCT_SpellData[2136] = {
 LCT_SpellData[122] = {
 	class = "MAGE",
 	cc = true,
-	cooldown = 30
+	cooldown = 25
 }
 -- Ice Block
 LCT_SpellData[45438] = {
@@ -97,8 +97,8 @@ LCT_SpellData[108843] = {
 -- Presence of Mind
 LCT_SpellData[12043] = {
 	class = "MAGE",
-	specID = { 62 },
 	offensive = true,
+	talent = true,
 	cooldown_starts_on_aura_fade = true,
 	cooldown = 90
 }
@@ -114,7 +114,7 @@ LCT_SpellData[86949] = {
 LCT_SpellData[11958] = {
 	class = "MAGE",
 	talent = true,
-	resets = { 45438, 157913, 31661, 122, 120, 157980 },
+	resets = { 45438, 157913, 122, 120 },
 	cooldown = 180
 }
 -- Frostjaw
@@ -147,6 +147,7 @@ LCT_SpellData[108839] = {
 	class = "MAGE",
 	talent = true,
 	offensive = true,
+	charges = 3,
 	duration = 15,
 	cooldown = 20
 }

@@ -139,7 +139,7 @@ LCT_SpellData[114028] = {
 	defensive = true,
 	replaces = 23920,
 	duration = 5,
-	cooldown = 30
+	cooldown = 60,
 }
 -- Avatar
 LCT_SpellData[107574] = {

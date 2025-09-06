@@ -22,14 +22,14 @@ LCT_SpellData[781] = {
 LCT_SpellData[1499] = {
 	class = "HUNTER",
 	cc = true,
-	cooldown = 30
+	cooldown = 28
 }
 -- Explosive Trap
 LCT_SpellData[13813] = {
 	class = "HUNTER",
 	knockback = true, -- With the glyph
 	offensive = true,
-	cooldown = 30
+	cooldown = 28
 }
 -- Flare
 LCT_SpellData[1543] = {
@@ -41,14 +41,14 @@ LCT_SpellData[1543] = {
 LCT_SpellData[13809] = {
 	class = "HUNTER",
 	cc = true,
-	cooldown = 30
+	cooldown = 28
 }
 -- Snake Trap
 LCT_SpellData[34600] = {
 	class = "HUNTER",
 	replaces = 13809,
 	cc = true,
-	cooldown = 30
+	cooldown = 28
 }
 -- Master's Call
 LCT_SpellData[53271] = {
