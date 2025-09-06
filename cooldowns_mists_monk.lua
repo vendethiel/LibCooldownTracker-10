@@ -151,6 +151,7 @@ LCT_SpellData[116841] = {
 	duration = 6,
 	cooldown = 30,
 }
+--[[ WoD
 -- Serenity
 LCT_SpellData[152173] = {
 	class = "MONK",
@@ -178,6 +179,8 @@ LCT_SpellData[152175] = {
 	duration = 2,
 	cooldown = 45,
 }
+--]]
+
 -- Monk/Brewmaster
 -- Elusive Brew
 LCT_SpellData[115308] = {
@@ -295,3 +298,4 @@ LCT_SpellData[116680] = {
 	duration = 30,
 	cooldown = 45
 }
+
