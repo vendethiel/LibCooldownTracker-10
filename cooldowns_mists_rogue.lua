@@ -81,7 +81,7 @@ LCT_SpellData[1856] = {
 	cooldown = 120
 }
 -- Shadow Blades
-LCT_SpellData[51713] = {
+LCT_SpellData[121471] = {
 	class = "ROGUE",
 	offensive = true,
 	duration = 12,
