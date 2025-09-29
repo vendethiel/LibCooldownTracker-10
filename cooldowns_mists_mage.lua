@@ -59,17 +59,6 @@ LCT_SpellData[475] = {
 	cooldown_starts_on_dispel = true,
 	cooldown = 8
 }
-
---[[
--- Time Warp
-LCT_SpellData[80353] = {
-	class = "MAGE",
-	offensive = true,
-	duration = 40,
-	cooldown = 300
-}
-]]
--- Mage/talents
 -- Alter Time
 LCT_SpellData[108978] = {
 	class = "MAGE",
@@ -86,6 +75,16 @@ LCT_SpellData[55342] = {
 	duration = 40,
 	cooldown = 120
 }
+--[[
+-- Time Warp
+LCT_SpellData[80353] = {
+	class = "MAGE",
+	offensive = true,
+	duration = 40,
+	cooldown = 300
+}
+]]
+-- Mage/talents
 -- Blazing Speed
 LCT_SpellData[108843] = {
 	class = "MAGE",
@@ -114,7 +113,8 @@ LCT_SpellData[86949] = {
 LCT_SpellData[11958] = {
 	class = "MAGE",
 	talent = true,
-	resets = { 45438, 157913, 122, 120 },
+	resets = { 45438, 
+		122, 120 },
 	cooldown = 180
 }
 -- Frostjaw

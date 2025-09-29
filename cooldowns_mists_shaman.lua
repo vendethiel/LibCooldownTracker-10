@@ -154,7 +154,7 @@ LCT_SpellData[108271] = {
 LCT_SpellData[108285] = {
 	class = "SHAMAN",
 	talent = true,
-	resets = { 157153, 108269, 8143, 8177, 51485, 108273, 5394, 2484, 108270, },
+	resets = { 108269, 8143, 8177, 51485, 108273, 5394, 2484, 108270, },
 	cooldown = 180
 }
 -- Earthgrab Totem
